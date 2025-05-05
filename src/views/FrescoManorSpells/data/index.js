@@ -196,7 +196,7 @@ export const featuredProducts = [
     title: 'FRESCO Manor Map',
     rating: 5,
   },
-  {
+/*   {
     image: {
       src: '/assets/runiverse-image-2@2x.webp 2x',
       srcSet: '/assets/runiverse-image-2@2x.webp 2x',
@@ -222,6 +222,39 @@ export const featuredProducts = [
     price: '$290',
     title: 'Equipment',
     rating: 5,
-  },
+  }, */
  
+];
+
+export const breadcrumb = [
+  {
+    href: '/runiverse',
+    title: 'Tools',
+    isActive: false,
+  },
+  {
+    href: '/runiverse/spells',
+    title: 'Spells',
+    isActive: false,
+  },
+  {
+    href: '/runiverse/equipment',
+    title: 'Equipment',
+    isActive: false,
+  },
+  {
+    href: '/runiverse/monster-drops',
+    title: 'Monster Drops',
+    isActive: false,
+  },
+  {
+    href: '/runiverse/resources',
+    title: 'Resource Finder',
+    isActive: false,
+  },
+  {
+    href: '/runiverse/status-effects',
+    title: 'Status Effects',
+    isActive: false,
+  },
 ];

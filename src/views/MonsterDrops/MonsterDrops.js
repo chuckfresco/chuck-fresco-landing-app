@@ -1,7 +1,10 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from 'react-helmet'; // 👈 Add Helmet
-import { Section } from 'components/organisms';
+import { Section, SectionAlternate } from 'components/organisms';
+import { Breadcrumb } from 'components/molecules'
+import { breadcrumb } from 'components/molecules/Breadcrumb/data'
+
 import {
   Hero,
   Products
@@ -64,6 +67,12 @@ const useStyles = makeStyles(theme => ({
       paddingTop: 5,
     },
   },
+  sectionBreadcrumb: {
+    '& > *': {
+      paddingTop: '15px !important',
+      paddingBottom: '15px !important',
+    },
+  },
 }));
 
 const MonsterDrops = () => {
@@ -74,7 +83,7 @@ const MonsterDrops = () => {
       <Helmet>
         <title>Monster Drop Table | Forgotten Runiverse Guide</title>
         <meta name="description" content="Browse all monster drops and loot in Runiverse, including materials and skills dropped by creatures across all regions." />
-        <meta property="og:title" content="Forgotten Runiverse | Monster Drops Guide" />
+        <meta property="og:title" content="Monster Drops Guide | Forgotten Runiverse" />
         <meta property="og:description" content="Get full details on monster drops, materials, and skills to enhance your adventure in the Runiverse." />
         <meta property="og:image" content="%PUBLIC_URL%/assets/social-monster-drops.jpg" />
         <meta property="og:url" content="https://chuckfresco.com/runiverse/monster-drops" />
@@ -82,9 +91,13 @@ const MonsterDrops = () => {
 
       <Hero />
 
+      <SectionAlternate className={classes.sectionBreadcrumb}>
+          <Breadcrumb data={breadcrumb} />
+      </SectionAlternate>
+{/* 
       <Section className={classes.imagesSection}>
           <Products data={featuredProducts} />
-        </Section>
+        </Section> */}
 
 
 

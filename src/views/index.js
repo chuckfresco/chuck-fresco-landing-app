@@ -6,6 +6,7 @@ export { default as FrescoManorSpells } from './FrescoManorSpells';
 export { default as StatusEffects } from './StatusEffects';
 export { default as Runiverse } from './Runiverse';
 export { default as RuniverseEquipment } from './RuniverseEquipment';
+export { default as RuniverseEquipmentFresco } from './RuniverseEquipmentFresco';
 export { default as RuniverseResources } from './RuniverseResources';
 
 

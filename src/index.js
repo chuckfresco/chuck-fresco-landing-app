@@ -6,6 +6,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './fonts.css';
+
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 

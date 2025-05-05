@@ -81,7 +81,7 @@ const Products = ({ data, className, ...rest }) => {
 
   return (
     <div className={className} {...rest}>
-      <SectionHeader title="Runiverse Tools" subtitle="" data-aos="fade-up" />
+      {/* <SectionHeader title="Runiverse Tools" subtitle="" data-aos="fade-up" /> */}
       <Grid container spacing={isMd ? 4 : 2}>
         {data.map((item, index) => (
           <Grid item xs={12} sm={6} md={3} key={index} data-aos="fade-up">

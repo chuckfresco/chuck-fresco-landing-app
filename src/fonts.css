@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'SmallestPixel7';
+  src: url('./assets/fonts/smallest_pixel-7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.smallest-pixel-text {
+  font-family: 'SmallestPixel7', sans-serif;
+  font-size: 1rem;
+}

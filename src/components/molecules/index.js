@@ -6,3 +6,5 @@ export { default as CountUpNumber } from './CountUpNumber';
 export { default as OverlapedImages } from './OverlapedImages';
 export { default as SwiperNumber } from './SwiperNumber';
 export { default as TypedText } from './TypedText';
+export { default as Breadcrumb } from './Breadcrumb';
+

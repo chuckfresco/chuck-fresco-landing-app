@@ -2,7 +2,9 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from 'react-helmet';
-import { Section } from 'components/organisms';
+import { Section, SectionAlternate } from 'components/organisms';
+import { Breadcrumb } from 'components/molecules'
+import { breadcrumb } from 'components/molecules/Breadcrumb/data'
 import {
   Hero,
   Products,
@@ -65,6 +67,12 @@ const useStyles = makeStyles(theme => ({
       paddingTop: 5,
     },
   },
+  sectionBreadcrumb: {
+    '& > *': {
+      paddingTop: '15px !important',
+      paddingBottom: '15px !important',
+    },
+  },
 }));
 
 const StatusEffects = () => {
@@ -75,7 +83,7 @@ const StatusEffects = () => {
       <Helmet>
         <title>Forgotten Runiverse | Status Effects Guide</title>
         <meta name="description" content="Explore every buff and debuff in the Forgotten Runiverse. Learn what they do and how long they last." />
-        <meta property="og:title" content="Forgotten Runiverse | Status Effects Guide" />
+        <meta property="og:title" content="Status Effects Guide | Forgotten Runiverse" />
         <meta property="og:description" content="Full guide to buffs and debuffs in the Forgotten Runiverse with visuals and searchable effects." />
         <meta property="og:image" content="%PUBLIC_URL%/assets/social-runiverse.jpg" />
         <meta property="og:url" content="https://chuckfresco.com/runiverse/status-effects" />
@@ -83,10 +91,13 @@ const StatusEffects = () => {
 
       <Hero />
 
+      <SectionAlternate className={classes.sectionBreadcrumb}>
+          <Breadcrumb data={breadcrumb} />
+      </SectionAlternate>
+{/* 
       <Section className={classes.imagesSection}>
-        <Products data={featuredProducts} />
-      </Section>
-
+          <Products data={featuredProducts} />
+        </Section> */}
       <Section id="status-effects-table" className={classes.halfWidthSection}>
         <BuffsDebuffsTable />
       </Section>

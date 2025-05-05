@@ -1,11 +1,15 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from 'react-helmet'; // 👈 Add this line
-import { Section } from 'components/organisms';
+import { Section, SectionAlternate } from 'components/organisms';
+import { Breadcrumb } from 'components/molecules'
+import { breadcrumb } from 'components/molecules/Breadcrumb/data'
 import {
   Hero,
   Products,
 } from './components';
+
+
 
 import {
   featuredProducts,
@@ -52,7 +56,7 @@ const useStyles = makeStyles(theme => ({
   imagesSection: {
     paddingLeft: 60,
     paddingRight: 60,
-    paddingTop: 10, 
+    paddingTop: 25, 
     paddingBottom: 0, 
     margin: 0,
     width: '100%',
@@ -61,6 +65,13 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: 10,
       paddingRight: 10,
       paddingTop: 5,
+    },
+  },
+
+  sectionBreadcrumb: {
+    '& > *': {
+      paddingTop: '15px !important',
+      paddingBottom: '15px !important',
     },
   },
 }));
@@ -73,12 +84,16 @@ const RuniverseEquipment = () => {
       <Helmet>
         <title>Forgotten Runiverse | Best Equipment Guide</title>
         <meta name="description" content="Explore top-tier equipment including relics, headgear, and suits found throughout the Forgotten Runiverse." />
-        <meta property="og:title" content="Forgotten Runiverse | Ultimate Equipment Guide" />
+        <meta property="og:title" content="Full Equipment List | Forgotten Runiverse" />
         <meta property="og:description" content="Master your journey with powerful gear – discover the best equipment, materials, and crafting workshops in the Runiverse!" />
         <meta property="og:image" content="%PUBLIC_URL%/assets/social-runiverse.jpg" />
-        <meta property="og:url" content="https://chuckfresco.com/runiverse/equipment" />
+        <meta property="og:url" content="https://chuckfresco.com/runiverse/equipment/all" />
       </Helmet>
       <Hero />
+
+      <SectionAlternate className={classes.sectionBreadcrumb}>
+        <Breadcrumb data={breadcrumb} />
+      </SectionAlternate>
 
       <Section className={classes.imagesSection}>
         <Products data={featuredProducts} />

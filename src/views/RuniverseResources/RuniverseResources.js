@@ -1,7 +1,10 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from 'react-helmet'; // 👈 Add this line
-import { Section } from 'components/organisms';
+import { Section, SectionAlternate } from 'components/organisms';
+import { Breadcrumb } from 'components/molecules'
+import { breadcrumb } from 'components/molecules/Breadcrumb/data'
+
 import {
   Hero,
   Products,
@@ -63,6 +66,12 @@ const useStyles = makeStyles(theme => ({
       paddingTop: 5,
     },
   },
+  sectionBreadcrumb: {
+    '& > *': {
+      paddingTop: '15px !important',
+      paddingBottom: '15px !important',
+    },
+  },
 }));
 
 const RuniverseResources = () => {
@@ -73,16 +82,20 @@ const RuniverseResources = () => {
       <Helmet>
         <title>Forgotten Runiverse | Resources Guide</title>
         <meta name="description" content="Discover the essential resources of Forgotten Runiverse, categorized for crafting, forging, and upgrades." />
-        <meta property="og:title" content="Forgotten Runiverse | Resources Guide" />
+        <meta property="og:title" content="Resources Guide | Forgotten Runiverse" />
         <meta property="og:description" content="Master resource gathering with our detailed guide to wood, stone, fabric, gems, metals, and more in the Runiverse." />
         <meta property="og:image" content="%PUBLIC_URL%/assets/social-runiverse.jpg" />
         <meta property="og:url" content="https://chuckfresco.com/runiverse/resources" />
       </Helmet>
       <Hero />
 
+      <SectionAlternate className={classes.sectionBreadcrumb}>
+          <Breadcrumb data={breadcrumb} />
+      </SectionAlternate>
+{/* 
       <Section className={classes.imagesSection}>
-        <Products data={featuredProducts} />
-      </Section>
+          <Products data={featuredProducts} />
+        </Section> */}
 
       <Section id="spells-table" className={classes.halfWidthSection}>
         <ResourcesTable />

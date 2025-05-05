@@ -99,7 +99,7 @@ const EquipmentTable = () => {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Box p={2}>
-        <Typography variant="h5" gutterBottom>Fresco Forge Equipment</Typography>
+        <Typography variant="h5" gutterBottom>Full Equipment List</Typography>
 
         <Box mb={1} display="flex" flexWrap="wrap" gap={1}>
           <Button variant={filterType === 'All' ? 'contained' : 'outlined'} onClick={() => setFilterType('All')}>All</Button>

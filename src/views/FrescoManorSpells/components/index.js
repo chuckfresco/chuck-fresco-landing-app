@@ -12,3 +12,4 @@ export { default as Team } from './Team';
 export { default as Trucking } from './Trucking';
 export { default as Video } from './Video';
 export { default as Products } from './Products';
+export { default as Breadcrumb } from './Breadcrumb';

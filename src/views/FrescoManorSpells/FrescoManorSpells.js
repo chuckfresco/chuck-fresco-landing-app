@@ -1,15 +1,21 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from 'react-helmet'; // 👈 Add this line
-import { Section } from 'components/organisms';
+import { Section, SectionAlternate } from 'components/organisms';
+import { Breadcrumb } from 'components/molecules'
+import { breadcrumb } from 'components/molecules/Breadcrumb/data'
+
 import {
   Hero,
   Products,
 } from './components';
 
+
 import {
   featuredProducts,
 } from './data';
+
+
 
 import SpellsTable from './SpellsTable';
 
@@ -52,7 +58,7 @@ const useStyles = makeStyles(theme => ({
   imagesSection: {
     paddingLeft: 60,
     paddingRight: 60,
-    paddingTop: 10, 
+    paddingTop: 30, 
     paddingBottom: 0, 
     margin: 0,
     width: '100%',
@@ -63,7 +69,16 @@ const useStyles = makeStyles(theme => ({
       paddingTop: 5,
     },
   },
+
+  sectionBreadcrumb: {
+    '& > *': {
+      paddingTop: '15px !important',
+      paddingBottom: '15px !important',
+    },
+  },
 }));
+
+
 
 const FrescoManorSpells = () => {
   const classes = useStyles();
@@ -73,13 +88,17 @@ const FrescoManorSpells = () => {
       <Helmet>
         <title>Forgotten Runiverse | Best Mage Spells</title>
         <meta name="description" content="Discover elite spells, monster drops, and magic workshops at Fresco Manor in Runiverse." />
-        <meta property="og:title" content="Forgotten Runiverse | Best Mage Spells" />
+        <meta property="og:title" content="Best Mage Spells | Forgotten Runiverse" />
         <meta property="og:description" content="Unlock powerful spells and explore our Mage Workshops in Runiverse!" />
         <meta property="og:image" content="%PUBLIC_URL%/assets/social-runiverse.jpg" />
-        <meta property="og:url" content="https://chuckfresco.com/runiverse" />
+        <meta property="og:url" content="https://chuckfresco.com/runiverse/spells" />
       </Helmet>
 
       <Hero />
+
+      <SectionAlternate className={classes.sectionBreadcrumb}>
+        <Breadcrumb data={breadcrumb} />
+      </SectionAlternate>
 
       <Section className={classes.imagesSection}>
         <Products data={featuredProducts} />

@@ -42,8 +42,8 @@ const Hero = props => {
   return (
     <div className={clsx(classes.root, className)} {...rest}>
       <Image
-        src="/assets/hero-pixels-4.png"
-        srcSet="/assets/hero-pixels-4.png 2x"
+        src="/assets/hero-bg-3.jpg"
+        srcSet="/assets/hero-bg-3.jpg 2x"
         alt="About"
         className={classes.image}
         lazyProps={{

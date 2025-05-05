@@ -39,6 +39,7 @@ import {
   Runiverse as RuniverseView,
   RuniverseEquipment as RuniverseEquipmentView,
   RuniverseResources as RuniverseResourcesView,
+  RuniverseEquipmentFresco as RuniverseEquipmentFrescoView,
 
   Ecommerce as EcommerceView,
   Pricing as PricingView,
@@ -151,7 +152,19 @@ const Routes = () => {
       />
       <Route
         exact
-        path="/runiverse/equipment"
+        path="/runiverse/equipment/"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={RuniverseEquipmentFrescoView}
+            layout={MainLayout}
+          />
+        )}
+      />
+
+      <Route
+        exact
+        path="/runiverse/equipment/all"
         render={matchProps => (
           <WithLayout
             {...matchProps}

@@ -19,6 +19,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Tooltip from '@material-ui/core/Tooltip';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
 
 import {
 
@@ -83,6 +90,11 @@ const SpellsTable = () => {
   const [statFilters, setStatFilters] = useState([]);
   const [activeColor, setActiveColor] = useState("All");
   const [expandedRows, setExpandedRows] = useState([]);
+  const [showImageGrid, setShowImageGrid] = useState(false);
+  const [showHigh, setShowHigh] = useState(false);
+  const [showUncommon, setShowUncommon] = useState(false);
+
+  
 
   const getRemainingToNextLevel = (total) => {
     if (total == null) return Infinity;
@@ -99,8 +111,21 @@ const SpellsTable = () => {
     return <span style={{ fontSize: "14px" }}>{"★".repeat(count)}{"☆".repeat(max - count)}</span>;
   };
 
-  const applyFilters = (recipesList, term = searchTerm, stats = statFilters, color = activeColor) => {
+  const applyFilters = (recipesList, term = searchTerm, stats = statFilters, color = activeColor, high = showHigh,
+    uncommon = showUncommon) => {
     let filtered = [...recipesList];
+
+      // High/Uncommon logic
+  if (high && !uncommon) {
+    filtered = filtered.filter(spell =>
+      ["High", "HighCantrip"].includes(spell.type)
+    );
+  } else if (uncommon && !high) {
+    filtered = filtered.filter(spell =>
+      !["High", "HighCantrip"].includes(spell.type)
+    );
+    // If both are selected, show all (do nothing)
+  }
   
     if (color !== "All") {
       const materialId = materialFilterMap[color];
@@ -262,160 +287,372 @@ const SpellsTable = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      {loading ? (
-
-      <Box display="flex" justifyContent="center" alignItems="center" height="80vh">
-      <img src="/assets/loading-runiverse.gif" alt="Loading..." style={{ width: '80px', height: '80px' }} />
-      </Box>
-
+      <Box>
+        {loading ? (
+          <Box display="flex" justifyContent="center" alignItems="center" height="80vh">
+            <img
+              src="/assets/loading-runiverse.gif"
+              alt="Loading..."
+              style={{ width: '80px', height: '80px' }}
+            />
+          </Box>
         ) : (
-      <Box p={2}>
-        <Typography variant="h5" gutterBottom>Fresco Manor Spells</Typography>
-
-        <Box display="flex" flexWrap="wrap" gap={3} mb={2}>
-          {Object.keys(pastelColors).map(color => (
-            <Button key={color} onClick={() => { setActiveColor(color); applyFilters(recipes, searchTerm, statFilters, color); }} variant={activeColor === color ? "contained" : "outlined"} style={{ backgroundColor: pastelColors[color].bg, color: pastelColors[color].text, fontWeight: "bold", marginRight: 7 }}>{color}</Button>
-          ))}
-          <Button style={{marginLeft: 10}} variant="outlined" onClick={() => { setSearchTerm(""); setStatFilters([]); setActiveColor("All"); setExpandedRows([]); applyFilters(recipes, "", [], "All"); }}>Clear Filters</Button>
-        </Box>
-
-        <Box mb={2} display="flex" flexWrap="wrap" gap={2}>
-          <TextField label="Search" variant="outlined" fullWidth value={searchTerm} onChange={(e) => { const val = e.target.value; setSearchTerm(val); applyFilters(recipes, val, statFilters, activeColor); }} style={{ marginBottom: 0, maxWidth: 600 }} />
-        </Box>
-        {['strength', 'constitution', 'dexterity', 'intelligence', 'wisdom'].map(stat => (
-          <FormControlLabel style={{ marginBottom: 8}} key={stat} control={<Checkbox checked={statFilters.includes(stat)} onChange={(e) => { const updated = e.target.checked ? [...statFilters, stat] : statFilters.filter(s => s !== stat); setStatFilters(updated); applyFilters(recipes, searchTerm, updated, activeColor); }} color="primary" />} label={stat.charAt(0).toUpperCase() + stat.slice(1)} />
-        ))}
-
-        <TableContainer component={Paper}>
-          <Table size="small">
-            <TableHead>
-              <TableRow>
-                <TableCell>Icon</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>Stars</TableCell>
-                <TableCell>Inscriptions</TableCell>
-                <TableCell>Description</TableCell>
-                <TableCell>Cost</TableCell>
-                <TableCell>Materials</TableCell>
-                <TableCell>Workshop</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {filteredRecipes.map((item, idx) => {
-                const isExpanded = expandedRows.includes(idx);
-                const gemMaterial = item.materials.find(mat =>
-                  ['gem', 'crystal'].includes(mat.resolvedType.toLowerCase())
-                );
-
-                const otherMaterials = item.materials.filter(mat =>
-                  !['gem', 'crystal'].includes(mat.resolvedType.toLowerCase())
-                );              
-                const isHigh = ["High", "HighCantrip"].includes(item.type);
-                return (
-                  <React.Fragment key={idx}>
-                    <TableRow onClick={() => setExpandedRows(prev => isExpanded ? prev.filter(i => i !== idx) : [...prev, idx])} style={{ backgroundColor: idx % 2 === 0 ? "#2b2b2b" : "#1f1f1f", cursor: "pointer", transition: "background-color 0.2s ease", }} onMouseEnter={e => e.currentTarget.style.backgroundColor = "#3a3a3a"}
-                      onMouseLeave={e => e.currentTarget.style.backgroundColor = idx % 2 === 0 ? "#2b2b2b" : "#1f1f1f"}>
-                      <TableCell><Avatar src={item.properties_crystal?.ability_properties?.icon} alt={item.name} variant="square" style={isHigh ? { border: "2px solid gold", boxShadow: "0 0 6px gold" } : {}} /></TableCell>
-                      <TableCell>{item.name}</TableCell>
-                      <TableCell>{renderStars(item.station_data?.level ?? 0)}</TableCell>
-                      <TableCell>
-                        {(item.station_data?.level ?? 0) === 5
-                          ? "COMPLETE"
-                          : `Next LVL: ${getRemainingToNextLevel(item.station_data?.total_inscriptions ?? 0)}`}
-                      </TableCell>
-
-
-
-                      <TableCell style={{ whiteSpace: 'normal', wordWrap: 'break-word', maxWidth: 300 }}>{item.properties_crystal?.ability_properties?.description || "—"}</TableCell>
-                      <TableCell>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          <img src="/assets/gold-runiverse.png" alt="gold" style={{ width: '16px', height: '16px' }} />
-                          <span>{item.currencies?.gold ?? 0} Gold</span>
-                        </div>
-                        {gemMaterial && (
-                          <div style={{ display: "flex", alignItems: "center", gap: "4px", marginTop: 4 }}>
-                            <Avatar src={gemMaterial.icon} alt="gem" style={{ width: 20, height: 20 }} />
-                            <span>{gemMaterial.amount}x {gemMaterial.resolvedName}</span>
-                          </div>
-                        )}
-                      </TableCell>
-                      <TableCell>
-                        {otherMaterials.map((mat, i) => (
-                          <div key={i} style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: 2 }}>
-                            <Avatar src={mat.icon} alt={mat.type} style={{ width: 20, height: 20 }} />
-                            <span>{mat.amount}x {mat.resolvedName}</span>
-                          </div>
-                        ))}
-                      </TableCell>
-                      <TableCell>{getWorkshopTag(item.location)}</TableCell>
-                    </TableRow>
-                    {isExpanded && (
-                      <TableRow>
-                        <TableCell colSpan={8} style={{ backgroundColor: "#1a1a1a" }}>
-                            <Box display="flex" alignItems="center" gap={1} flexWrap="nowrap">
-
-                              {/* Column 0: Image */}
-                              <Box flex={0.06} minWidth={30} display="flex" justifyContent="center" alignItems="center">
-                                <Avatar
-                                  src={item.image}
-                                  alt={item.name}
-                                  variant="square"
-                                  style={{ width: 35, height: 35 }}
-                                />
-                              </Box>
-
-                              {/* Column 1: Stats */}
-                              <Box flex={0.1} minWidth={150}>
-                                {Object.entries(item.properties_crystal?.stats || {})
-                                  .filter(([_, value]) => value > 0)
-                                  .sort(([, aVal], [, bVal]) => bVal - aVal)
-                                  .map(([stat, value]) => (
-                                    <Box
-                                      key={stat}
-                                      display="flex"
-                                      alignItems="center"
-                                      mb={0.5}
-                                    >
-                                    <span style={{ minWidth: '80px' }}>
-                                      {addStatTooltips(stat)}:
-                                    </span>
-                                      <span style={{ marginLeft: '16px' }}>
-                                        {"★".repeat(value)}{"☆".repeat(3 - value)}
-                                      </span>
-                                    </Box>
-                                ))}
-                              </Box>
-
-                              {/* Column 2: Cooldown */}
-                              <Box flex={0.1} minWidth={50} display="flex" justifyContent="center" alignItems="center">
-                                <span><strong>Cooldown:</strong> {item.properties_crystal?.ability_properties?.cooldown ?? "—"}</span>
-                              </Box>
-
-                              {/* Column 3: Target */}
-                              <Box flex={0.1} minWidth={50} display="flex" justifyContent="center" alignItems="center">
-                                <span><strong>Target:</strong> {item.properties_crystal?.ability_properties?.target_type ?? "—"}</span>
-                              </Box>
-
-                              {/* Column 4: Type */}
-                              <Box flex={0.1} minWidth={50} display="flex" justifyContent="center" alignItems="center">
-                                <span><strong>Type:</strong> {item.type ?? "—"}</span>
-                              </Box>
-
-                            </Box>
+          <Box p={2}>
+            <Typography variant="h5" gutterBottom>
+              Fresco Manor Spells
+            </Typography>
+  
+            <Box display="flex" flexWrap="wrap" gap={3} mb={2}>
+              {Object.keys(pastelColors).map((color) => (
+                <Button
+                  key={color}
+                  onClick={() => {
+                    setActiveColor(color);
+                    applyFilters(recipes, searchTerm, statFilters, color);
+                  }}
+                  variant={activeColor === color ? 'contained' : 'outlined'}
+                  style={{
+                    backgroundColor: pastelColors[color].bg,
+                    color: pastelColors[color].text,
+                    fontWeight: 'bold',
+                    marginRight: 7,
+                  }}
+                >
+                  {color}
+                </Button>
+              ))}
+              <Button
+                style={{ marginLeft: 10 }}
+                variant="outlined"
+                onClick={() => {
+                  setSearchTerm('');
+                  setStatFilters([]);
+                  setActiveColor('All');
+                  setExpandedRows([]);
+                  setShowHigh(false);
+                  setShowUncommon(false);
+                  applyFilters(recipes, '', [], 'All');
+                }}
+              >
+                Clear Filters
+              </Button>
+            </Box>
+  
+            <Box mb={2} display="flex" flexWrap="wrap" gap={2}>
+              <TextField
+                label="Search"
+                variant="outlined"
+                fullWidth
+                value={searchTerm}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setSearchTerm(val);
+                  applyFilters(recipes, val, statFilters, activeColor);
+                }}
+                style={{ marginBottom: 0, maxWidth: 600 }}
+              />
+            </Box>
+  
+            <Box mb={2} display="flex" flexWrap="wrap" gap={2}>
+            {['strength', 'constitution', 'dexterity', 'intelligence', 'wisdom'].map((stat) => (
+              <FormControlLabel
+                key={stat}
+                style={{ marginBottom: 8 }}
+                control={
+                  <Checkbox
+                    checked={statFilters.includes(stat)}
+                    onChange={(e) => {
+                      const updated = e.target.checked
+                        ? [...statFilters, stat]
+                        : statFilters.filter((s) => s !== stat);
+                      setStatFilters(updated);
+                      applyFilters(recipes, searchTerm, updated, activeColor, showHigh, showUncommon);
+                    }}
+                    color="primary"
+                  />
+                }
+                label={stat.charAt(0).toUpperCase() + stat.slice(1)}
+              />
+            ))}
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={showHigh}
+                  onChange={(e) => {
+                    const val = e.target.checked;
+                    setShowHigh(val);
+                    applyFilters(recipes, searchTerm, statFilters, activeColor, val, showUncommon);
+                  }}
+                  color="primary"
+                />
+              }
+              label="High Spells"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={showUncommon}
+                  onChange={(e) => {
+                    const val = e.target.checked;
+                    setShowUncommon(val);
+                    applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, val);
+                  }}
+                  color="primary"
+                />
+              }
+              label="Uncommon Spells"
+            />
+          </Box>
+  
+            <TableContainer component={Paper}>
+              <Table size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Icon</TableCell>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Stars</TableCell>
+                    <TableCell>Inscriptions</TableCell>
+                    <TableCell>Description</TableCell>
+                    <TableCell>Cost</TableCell>
+                    <TableCell>Materials</TableCell>
+                    <TableCell>Workshop</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                {[...filteredRecipes].sort((a, b) => {
+                  const isHighA = ['High', 'HighCantrip'].includes(a.type);
+                  const isHighB = ['High', 'HighCantrip'].includes(b.type);
+                  if (isHighA && !isHighB) return -1;
+                  if (!isHighA && isHighB) return 1;
+                  return 0;
+                }).map((item, idx) => {
+                  const isExpanded = expandedRows.includes(idx);
+                  const gemMaterial = item.materials.find((mat) =>
+                    ['gem', 'crystal'].includes(mat.resolvedType.toLowerCase())
+                  );
+                  const otherMaterials = item.materials.filter(
+                    (mat) => !['gem', 'crystal'].includes(mat.resolvedType.toLowerCase())
+                  );
+                  const isHigh = ['High', 'HighCantrip'].includes(item.type);
+  
+                    return (
+                      <React.Fragment key={idx}>
+                        <TableRow
+                          onClick={() =>
+                            setExpandedRows((prev) =>
+                              isExpanded ? prev.filter((i) => i !== idx) : [...prev, idx]
+                            )
+                          }
+                          style={{
+                            backgroundColor: idx % 2 === 0 ? '#2b2b2b' : '#1f1f1f',
+                            cursor: 'pointer',
+                            transition: 'background-color 0.2s ease',
+                          }}
+                          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#3a3a3a')}
+                          onMouseLeave={(e) =>
+                            (e.currentTarget.style.backgroundColor =
+                              idx % 2 === 0 ? '#2b2b2b' : '#1f1f1f')
+                          }
+                        >
+                          <TableCell>
+                            <Avatar
+                              src={item.properties_crystal?.ability_properties?.icon}
+                              alt={item.name}
+                              variant="square"
+                              style={
+                                isHigh
+                                  ? {
+                                      border: '2px solid gold',
+                                      boxShadow: '0 0 6px gold',
+                                    }
+                                  : {}
+                              }
+                            />
                           </TableCell>
+                          <TableCell>{item.name}</TableCell>
+                          <TableCell>{renderStars(item.station_data?.level ?? 0)}</TableCell>
+                          <TableCell>
+                            {item.station_data?.level === 5
+                              ? 'COMPLETE'
+                              : `Next LVL: ${getRemainingToNextLevel(
+                                  item.station_data?.total_inscriptions ?? 0
+                                )}`}
+                          </TableCell>
+                          <TableCell style={{ whiteSpace: 'normal', maxWidth: 300 }}>
+                            {item.properties_crystal?.ability_properties?.description || '—'}
+                          </TableCell>
+                          <TableCell>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                              <img
+                                src="/assets/gold-runiverse.png"
+                                alt="gold"
+                                style={{ width: '16px', height: '16px' }}
+                              />
+                              <span>{item.currencies?.gold ?? 0} Gold</span>
+                            </div>
+                            {gemMaterial && (
+                              <div
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '4px',
+                                  marginTop: 4,
+                                }}
+                              >
+                                <Avatar
+                                  src={gemMaterial.icon}
+                                  alt="gem"
+                                  style={{ width: 20, height: 20 }}
+                                />
+                                <span>
+                                  {gemMaterial.amount}x {gemMaterial.resolvedName}
+                                </span>
+                              </div>
+                            )}
+                          </TableCell>
+                          <TableCell>
+                            {otherMaterials.map((mat, i) => (
+                              <div
+                                key={i}
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '4px',
+                                  marginBottom: 2,
+                                }}
+                              >
+                                <Avatar
+                                  src={mat.icon}
+                                  alt={mat.type}
+                                  style={{ width: 20, height: 20 }}
+                                />
+                                <span>
+                                  {mat.amount}x {mat.resolvedName}
+                                </span>
+                              </div>
+                            ))}
+                          </TableCell>
+                          <TableCell>{getWorkshopTag(item.location)}</TableCell>
+                        </TableRow>
+                      </React.Fragment>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </TableContainer>
+  
+            <Box mt={2} display="flex" justifyContent="flex-end">
+              <Button variant="contained" size="small" onClick={() => setShowImageGrid(true)}>
+                <CameraAltIcon />
+              </Button>
+            </Box>
+  
+            <Dialog
+              open={showImageGrid}
+              onClose={() => setShowImageGrid(false)}
+              maxWidth="xl"
+              fullWidth
+            >
+              <DialogTitle style={{ color: '#fff' }}>
+                Top Visual Spells
+                <IconButton
+                  aria-label="close"
+                  onClick={() => setShowImageGrid(false)}
+                  style={{ position: 'absolute', right: 8, top: 8, color: '#aaa' }}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </DialogTitle>
+              <DialogContent dividers style={{ backgroundColor: '#0b4b54' }}>
+            <Typography
+              style={{
+                color: '#00fddb',
+                fontFamily: 'SmallestPixel7',
+                fontSize: '3em',
+                textAlign: 'center',
+                marginBottom: 16
+              }}
+              gutterBottom
+            >
+              Fresco Manor Spells
+            </Typography>
+                <Box display="flex" flexWrap="wrap" justifyContent="center" gap={3}>
+                  {[...filteredRecipes]
+                    .filter((spell) => spell.tier_text !== 'TIER I')
+                    .sort((a, b) => {
+                      const isHighA = ['High', 'HighCantrip'].includes(a.type);
+                      const isHighB = ['High', 'HighCantrip'].includes(b.type);
+                      const levelA = a.station_data?.level ?? 0;
+                      const levelB = b.station_data?.level ?? 0;
+                      if (isHighA && !isHighB) return -1;
+                      if (!isHighA && isHighB) return 1;
+                      return levelB - levelA;
+                    })
+                    .slice(0, 12)
+                    .map((spell, index) => {
+                      const isHigh = ['High', 'HighCantrip'].includes(spell.type);
+                      const filled = spell.station_data?.level ?? 0;
+                      return (
+                        <Box
+                          key={index}
+                          width={240}
+                          textAlign="center"
+                          p={2}
+                          borderRadius={4}
+                          style={{
+                            backgroundImage: 'url(/assets/bg-workshop.png)',
+                            backgroundSize: 'cover',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                          }}
+                        >
+                          <Avatar
+                            src={spell.properties_crystal?.ability_properties?.icon}
+                            variant="square"
+                            style={{
+                              width: 72,
+                              height: 72,
+                              margin: '0 auto',
+                              border: isHigh ? '2px solid gold' : 'none',
+                              boxShadow: isHigh ? '0 0 10px gold' : 'none',
+                            }}
+                          />
+                        <Typography
+                          variant="subtitle1"
+                          className="smallest-pixel-text"
+                          style={{
+                            marginTop: 8,
+                            color: '#8dec82',
+                            fontFamily: 'SmallestPixel7',
+                          }}
+                        >
+                          {spell.name}
+                        </Typography>
 
-                      </TableRow>
-                    )}
-                  </React.Fragment>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </TableContainer>
+                          <Box display="flex" justifyContent="center" gap={0.5} mt={1}>
+                            {Array.from({ length: 5 }).map((_, i) => (
+                              <img
+                                key={i}
+                                src={i < filled ? "/assets/star-filled.png" : "/assets/star-unfilled.png"}
+                                alt="star"
+                                style={{ width: 20, height: 20, marginRight: 4  }}
+                              />
+                            ))}
+                          </Box>
+                        </Box>
+                      );
+                    })}
+                </Box>
+              </DialogContent>
+            </Dialog>
+          </Box>
+        )}
       </Box>
-      )}
     </ThemeProvider>
   );
+  
+  
+  
 };
 
 export default SpellsTable;
