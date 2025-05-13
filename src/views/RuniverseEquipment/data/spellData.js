@@ -35,6 +35,1142 @@ export const workshops = [
 
 export const equipmentTable = [
     {
+        "_id": "68080da5ade0fec677af06fc",
+        "recipe_type": "Equipment",
+        "name": "Corrupt Fold Armor",
+        "image": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/ForgingIcon/Image/ICO_CORRUPTED-Cardboard_Gear.png",
+        "tier_text": "TIER II",
+        "rarity": 1,
+        "type": "Suits",
+        "description": "A heavy step marches twice as far.",
+        "materials": [
+            {
+                "amount": 40,
+                "material": "67ffdc1dade0fec677a62f0d",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Corrupted_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 230,
+                "material": "67ffdbc5ade0fec677a62ee3",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Corrupted_Shard_Uncommon.png",
+                "generic": false,
+                "type": "shard"
+            },
+            {
+                "amount": 50,
+                "material": "631fbd60308c6c735bd57404",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Metal_Tin.png",
+                "generic": false,
+                "type": "metal"
+            },
+            {
+                "amount": 50,
+                "material": "634ed426808f6bf4626a3240",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/3_7_Stone_Granite_Normal.png",
+                "generic": false,
+                "type": "stone"
+            }
+        ],
+        "currencies": {
+            "gold": 10000,
+            "mana": 300
+        },
+        "properties_atelier": {
+            "can_interior": false,
+            "can_exterior": false,
+            "can_rotate": false,
+            "surface_type": 1
+        },
+        "properties_forge": {
+            "affixes": [
+                {
+                    "type": "Defensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a83f888ed77a53035db52",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "6807a96bade0fec677ab68a7",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                }
+            ],
+            "affixes_pool": [
+                {
+                    "type": "Defensive",
+                    "affix": "679a835f88ed77a53035daee",
+                    "name": "Hardened I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a838c88ed77a53035db04",
+                    "name": "Hardened II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d46176b2102728065ef2de",
+                    "name": "Hardened III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a82ae88ed77a53035dabe",
+                    "name": "Reflective I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a831588ed77a53035dad8",
+                    "name": "Reflective II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d46136b2102728065ef295",
+                    "name": "Reflective III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5d0588ed77a53033846a",
+                    "name": "Nourished",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5c1d88ed77a530338428",
+                    "name": "Bulky",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                }
+            ]
+        },
+        "properties_crystal": {
+            "stats": {
+                "strength": 0,
+                "dexterity": 0,
+                "constitution": 0,
+                "intelligence": 0,
+                "wisdom": 0
+            },
+            "ability_properties": {
+                "icon": "",
+                "name": "",
+                "description": "",
+                "target_type": "Enemy",
+                "cooldown": 0
+            }
+        },
+        "one_time_use": false,
+        "sprite": "6807f4dfade0fec677ae5b8b",
+        "station_data": {
+            "extra_time": 0,
+            "last_inscription": "Fri May 09 2025 17:53:06 GMT+0000 (Coordinated Universal Time)",
+            "level": 1,
+            "total_inscriptions": 1
+        }
+    },
+    {
+        "_id": "68080415ade0fec677aebdb5",
+        "recipe_type": "Equipment",
+        "name": "Golden Fire Blade",
+        "image": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/ForgingIcon/Image/ico-firebladey.png",
+        "tier_text": "TIER II",
+        "rarity": 1,
+        "type": "Weapon",
+        "description": "SMITE THY FOES!",
+        "materials": [
+            {
+                "amount": 40,
+                "material": "67ffdad2ade0fec677a62e8f",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Apex_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 230,
+                "material": "67ffd643ade0fec677a5f64c",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Apex_Shard_Uncommon.png",
+                "generic": false,
+                "type": "shard"
+            },
+            {
+                "amount": 50,
+                "material": "631fbe90308c6c735bd574a5",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Wood_Oak.png",
+                "generic": false,
+                "type": "wood"
+            },
+            {
+                "amount": 50,
+                "material": "634f644fbbce1b02b687d6ef",
+                "rarity": 2,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Element_Hydrogen.png",
+                "generic": false,
+                "type": "element"
+            }
+        ],
+        "currencies": {
+            "gold": 10000,
+            "mana": 300
+        },
+        "properties_atelier": {
+            "can_interior": false,
+            "can_exterior": false,
+            "can_rotate": false,
+            "surface_type": 1
+        },
+        "properties_forge": {
+            "affixes": [
+                {
+                    "type": "Offensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a846888ed77a53035db68",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "6807a458ade0fec677ab5e74",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                }
+            ],
+            "affixes_pool": [
+                {
+                    "type": "Offensive",
+                    "affix": "679a60c788ed77a530338506",
+                    "name": "Mighty I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a611088ed77a53033851c",
+                    "name": "Mighty II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "67d45ea3b2102728065ed90f",
+                    "name": "Mighty III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a618c88ed77a530338554",
+                    "name": "Brilliant I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a61b588ed77a53033856a",
+                    "name": "Brilliant II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "67d45ef2b2102728065ed9a9",
+                    "name": "Brilliant III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a6b3088ed77a5303401bb",
+                    "name": "Protective I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a6ba888ed77a5303421d7",
+                    "name": "Protective II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d45fdeb2102728065edb9c",
+                    "name": "Protective III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                }
+            ]
+        },
+        "properties_crystal": {
+            "stats": {
+                "strength": 0,
+                "dexterity": 0,
+                "constitution": 0,
+                "intelligence": 0,
+                "wisdom": 0
+            },
+            "ability_properties": {
+                "icon": "",
+                "name": "",
+                "description": "",
+                "target_type": "Enemy",
+                "cooldown": 0
+            }
+        },
+        "one_time_use": false,
+        "sprite": "6807f87cade0fec677ae5d92",
+        "station_data": {
+            "extra_time": 1746871729425,
+            "last_inscription": "Sat May 10 2025 08:08:49 GMT+0000 (Coordinated Universal Time)",
+            "level": 1,
+            "total_inscriptions": 1
+        }
+    },
+    {
+        "_id": "68080595ade0fec677aebe48",
+        "recipe_type": "Equipment",
+        "name": "Golden Plate",
+        "image": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/ForgingIcon/Image/ICO_APEX-Royal_Gear.png",
+        "tier_text": "TIER II",
+        "rarity": 1,
+        "type": "Suits",
+        "description": "It's shiny plates will never scratch as long as your resolve is true.",
+        "materials": [
+            {
+                "amount": 40,
+                "material": "67ffdad2ade0fec677a62e8f",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Apex_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 230,
+                "material": "67ffd643ade0fec677a5f64c",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Apex_Shard_Uncommon.png",
+                "generic": false,
+                "type": "shard"
+            },
+            {
+                "amount": 50,
+                "material": "634ef96e808f6bf4626a347a",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Iron_Icon.png",
+                "generic": false,
+                "type": "metal"
+            },
+            {
+                "amount": 50,
+                "material": "634ed2a9808f6bf4626a3226",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/3_2_Stone_Basalt_Normal.png",
+                "generic": false,
+                "type": "stone"
+            }
+        ],
+        "currencies": {
+            "gold": 10000,
+            "mana": 300
+        },
+        "properties_atelier": {
+            "can_interior": false,
+            "can_exterior": false,
+            "can_rotate": false,
+            "surface_type": 1
+        },
+        "properties_forge": {
+            "affixes": [
+                {
+                    "type": "Defensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a83f888ed77a53035db52",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "6807a56eade0fec677ab5ea6",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                }
+            ],
+            "affixes_pool": [
+                {
+                    "type": "Support",
+                    "affix": "679a637a88ed77a5303392e7",
+                    "name": "Quick I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a63ba88ed77a5303392fd",
+                    "name": "Quick II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "67d45f32b2102728065eda1b",
+                    "name": "Quick III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a59af88ed77a530337b17",
+                    "name": "Lucky I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5aa288ed77a53033832b",
+                    "name": "Lucky II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a685888ed77a53033b249",
+                    "name": "Healthy I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a6a1988ed77a53033dec4",
+                    "name": "Healthy II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d45f8bb2102728065edacf",
+                    "name": "Healthy III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                }
+            ]
+        },
+        "properties_crystal": {
+            "stats": {
+                "strength": 0,
+                "dexterity": 0,
+                "constitution": 0,
+                "intelligence": 0,
+                "wisdom": 0
+            },
+            "ability_properties": {
+                "icon": "",
+                "name": "",
+                "description": "",
+                "target_type": "Enemy",
+                "cooldown": 0
+            }
+        },
+        "one_time_use": false,
+        "sprite": "6807f51eade0fec677ae5bb3",
+        "station_data": {
+            "extra_time": 1746871755431,
+            "last_inscription": "Sat May 10 2025 08:09:15 GMT+0000 (Coordinated Universal Time)",
+            "level": 1,
+            "total_inscriptions": 1
+        }
+    },
+    {
+        "_id": "679cee5088ed77a53041c0e4",
+        "recipe_type": "Equipment",
+        "name": "Green Wizard Hat",
+        "image": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/ForgingIcon/Image/ICO_green_wizard_hat_headgear.png",
+        "tier_text": "TIER II",
+        "rarity": 1,
+        "type": "Headgear",
+        "description": "Whenever you look upon this hat, a single word fills your mind: \"Iconic\".",
+        "materials": [
+            {
+                "amount": 27,
+                "material": "67ac0eb6b4ee8b4c5f3fa8d5",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Dragon_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 27,
+                "material": "67ac05b9b4ee8b4c5f3fa77d",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Insect_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 27,
+                "material": "67abd621b4ee8b4c5f3dddde",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Beast_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 15,
+                "material": "634f2e76808f6bf4626a370e",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Fabric_Jute.png",
+                "generic": false,
+                "type": "fabric"
+            },
+            {
+                "amount": 15,
+                "material": "634f644fbbce1b02b687d6ef",
+                "rarity": 2,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Element_Hydrogen.png",
+                "generic": false,
+                "type": "element"
+            },
+            {
+                "amount": 15,
+                "material": "634f579fbbce1b02b687d699",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Element_Carbon.png",
+                "generic": false,
+                "type": "element"
+            }
+        ],
+        "currencies": {
+            "gold": 1000,
+            "mana": 300
+        },
+        "properties_atelier": {
+            "can_interior": false,
+            "can_exterior": false,
+            "can_rotate": false,
+            "surface_type": 1
+        },
+        "properties_forge": {
+            "affixes": [
+                {
+                    "type": "Offensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                }
+            ],
+            "affixes_pool": [
+                {
+                    "type": "Offensive",
+                    "affix": "679a60c788ed77a530338506",
+                    "name": "Mighty I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a611088ed77a53033851c",
+                    "name": "Mighty II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a618c88ed77a530338554",
+                    "name": "Brilliant I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a61b588ed77a53033856a",
+                    "name": "Brilliant II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a82ae88ed77a53035dabe",
+                    "name": "Reflective I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a831588ed77a53035dad8",
+                    "name": "Reflective II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a835f88ed77a53035daee",
+                    "name": "Hardened I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a838c88ed77a53035db04",
+                    "name": "Hardened II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a6c0688ed77a530342202",
+                    "name": "Gracious I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a6c3088ed77a530342548",
+                    "name": "Gracious II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a637a88ed77a5303392e7",
+                    "name": "Quick I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a63ba88ed77a5303392fd",
+                    "name": "Quick II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5e6488ed77a5303384d8",
+                    "name": "Paragon",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a846888ed77a53035db68",
+                    "name": "Aggresive",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "67d45ea3b2102728065ed90f",
+                    "name": "Mighty III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "67d45ef2b2102728065ed9a9",
+                    "name": "Brilliant III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d46136b2102728065ef295",
+                    "name": "Reflective III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d46176b2102728065ef2de",
+                    "name": "Hardened III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "67d46050b2102728065ee58b",
+                    "name": "Gracious III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "67d45f32b2102728065eda1b",
+                    "name": "Quick III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                }
+            ]
+        },
+        "properties_crystal": {
+            "stats": {
+                "strength": 0,
+                "dexterity": 0,
+                "constitution": 0,
+                "intelligence": 0,
+                "wisdom": 0
+            },
+            "ability_properties": {
+                "icon": "",
+                "name": "",
+                "description": "",
+                "target_type": "Enemy",
+                "cooldown": 0
+            }
+        },
+        "one_time_use": false,
+        "sprite": "678eb6b6353f07a47b562bc4",
+        "station_data": {
+            "extra_time": 0,
+            "last_inscription": "Fri May 09 2025 16:07:19 GMT+0000 (Coordinated Universal Time)",
+            "level": 1,
+            "total_inscriptions": 2
+        }
+    },
+    {
+        "_id": "68080f17ade0fec677af0d1d",
+        "recipe_type": "Equipment",
+        "name": "Corrupt Dark Mask",
+        "image": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/ForgingIcon/Image/ICO_CORRUPTED-Bone_Headgear.png",
+        "tier_text": "TIER II",
+        "rarity": 1,
+        "type": "Headgear",
+        "description": "A frenzied blade stabs twice as deep.",
+        "materials": [
+            {
+                "amount": 40,
+                "material": "67ffdc1dade0fec677a62f0d",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Corrupted_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 230,
+                "material": "67ffdbc5ade0fec677a62ee3",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Corrupted_Shard_Uncommon.png",
+                "generic": false,
+                "type": "shard"
+            },
+            {
+                "amount": 50,
+                "material": "634f38abbbce1b02b687d49e",
+                "rarity": 2,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Fabric_Wool.png",
+                "generic": false,
+                "type": "fabric"
+            },
+            {
+                "amount": 50,
+                "material": "634f1f7f808f6bf4626a3570",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Wood_Olive.png",
+                "generic": false,
+                "type": "wood"
+            }
+        ],
+        "currencies": {
+            "gold": 10000,
+            "mana": 300
+        },
+        "properties_atelier": {
+            "can_interior": false,
+            "can_exterior": false,
+            "can_rotate": false,
+            "surface_type": 1
+        },
+        "properties_forge": {
+            "affixes": [
+                {
+                    "type": "Offensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a846888ed77a53035db68",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "6807aa13ade0fec677ab7f65",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                }
+            ],
+            "affixes_pool": [
+                {
+                    "type": "Offensive",
+                    "affix": "679a526a88ed77a53032a68f",
+                    "name": "Strong I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a53b788ed77a53032c44b",
+                    "name": "Strong II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "67d45cddb2102728065e5ef9",
+                    "name": "Strong III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a550d88ed77a53032eba7",
+                    "name": "Intelligent I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a554d88ed77a53032f5d9",
+                    "name": "Intelligent II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "67d45d25b2102728065e8b59",
+                    "name": "Intelligent III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5e6488ed77a5303384d8",
+                    "name": "Paragon",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5d7088ed77a530338496",
+                    "name": "Scrappy",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a59af88ed77a530337b17",
+                    "name": "Lucky I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5aa288ed77a53033832b",
+                    "name": "Lucky II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                }
+            ]
+        },
+        "properties_crystal": {
+            "stats": {
+                "strength": 0,
+                "dexterity": 0,
+                "constitution": 0,
+                "intelligence": 0,
+                "wisdom": 0
+            },
+            "ability_properties": {
+                "icon": "",
+                "name": "",
+                "description": "",
+                "target_type": "Enemy",
+                "cooldown": 0
+            }
+        },
+        "one_time_use": false,
+        "sprite": "6807f76cade0fec677ae5cc0",
+        "station_data": {
+            "extra_time": 1746777964334,
+            "last_inscription": "Fri May 09 2025 06:06:04 GMT+0000 (Coordinated Universal Time)",
+            "level": 1,
+            "total_inscriptions": 1
+        }
+    },
+    {
+        "_id": "68081007ade0fec677af2f80",
+        "recipe_type": "Equipment",
+        "name": "Corrupt Dark Suit",
+        "image": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/ForgingIcon/Image/ICO_CORRUPTED-Bone_Gear.png",
+        "tier_text": "TIER II",
+        "rarity": 1,
+        "type": "Suits",
+        "description": "A hungry predator runs twice as fast.",
+        "materials": [
+            {
+                "amount": 40,
+                "material": "67ffdc1dade0fec677a62f0d",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Corrupted_Ember_Uncommon.png",
+                "generic": false,
+                "type": "ember"
+            },
+            {
+                "amount": 230,
+                "material": "67ffdbc5ade0fec677a62ee3",
+                "rarity": 1,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Corrupted_Shard_Uncommon.png",
+                "generic": false,
+                "type": "shard"
+            },
+            {
+                "amount": 50,
+                "material": "634f30b4808f6bf4626a3720",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/Fabric_Flax.png",
+                "generic": false,
+                "type": "fabric"
+            },
+            {
+                "amount": 50,
+                "material": "634ed2a9808f6bf4626a3226",
+                "rarity": 0,
+                "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/3_2_Stone_Basalt_Normal.png",
+                "generic": false,
+                "type": "stone"
+            }
+        ],
+        "currencies": {
+            "gold": 10000,
+            "mana": 300
+        },
+        "properties_atelier": {
+            "can_interior": false,
+            "can_exterior": false,
+            "can_rotate": false,
+            "surface_type": 1
+        },
+        "properties_forge": {
+            "affixes": [
+                {
+                    "type": "Defensive",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "Random",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Offensive",
+                    "affix": "679a84f888ed77a53035eaa8",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Offensive.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "6807aa55ade0fec677ab8adc",
+                    "name": "",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                }
+            ],
+            "affixes_pool": [
+                {
+                    "type": "Support",
+                    "affix": "679a5bd788ed77a530338412",
+                    "name": "Athletic",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a5ccd88ed77a530338454",
+                    "name": "Quick Witted",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a55c288ed77a53033008c",
+                    "name": "Dexterous I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Support",
+                    "affix": "679a563988ed77a5303311c3",
+                    "name": "Dexterous II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Support.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a835f88ed77a53035daee",
+                    "name": "Hardened I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a838c88ed77a53035db04",
+                    "name": "Hardened II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d46176b2102728065ef2de",
+                    "name": "Hardened III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a82ae88ed77a53035dabe",
+                    "name": "Reflective I",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "679a831588ed77a53035dad8",
+                    "name": "Reflective II",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                },
+                {
+                    "type": "Defensive",
+                    "affix": "67d46136b2102728065ef295",
+                    "name": "Reflective III",
+                    "description": "",
+                    "icon": "../images/UI/Crafting/Affixes/Affix_Defensive.png"
+                }
+            ]
+        },
+        "properties_crystal": {
+            "stats": {
+                "strength": 0,
+                "dexterity": 0,
+                "constitution": 0,
+                "intelligence": 0,
+                "wisdom": 0
+            },
+            "ability_properties": {
+                "icon": "",
+                "name": "",
+                "description": "",
+                "target_type": "Enemy",
+                "cooldown": 0
+            }
+        },
+        "one_time_use": false,
+        "sprite": "6807f4ccade0fec677ae5b4f",
+        "station_data": {
+            "extra_time": 1746751628089,
+            "last_inscription": "Thu May 08 2025 22:47:08 GMT+0000 (Coordinated Universal Time)",
+            "level": 1,
+            "total_inscriptions": 1
+        }
+    },
+    {
         "_id": "66bbc3e287375013b0368c96",
         "recipe_type": "Equipment",
         "name": "Amber Guard Armor",
@@ -13654,6 +14790,16 @@ export const equipmentTable = [
 
 export const idAffix = [
 {
+    "6807a96bade0fec677ab68a7": "Thick Darkness - Increase your Defenses but lose Speed.",
+    "67d45e15b2102728065eb882": "Lucky III - Increase LCK.",
+    "6807a245ade0fec677ab5d9b": "Yellow Flash - Increase your Might, Brilliance, and Speed.",
+    "6807a29dade0fec677ab5dc3": "Critical Speed - While Hasted gain Critical DMG and Critical Chance.",
+    "6807a9baade0fec677ab6f67": "Blood Moon - Increase your Might and Brilliance, but lose Max HP.",
+    "6807a96bade0fec677ab68a7": "Thick Darkness - Increase your Defenses but lose Speed.",
+    "6807a458ade0fec677ab5e74": "Paragold - Increase all your Stats, favoring CON and WIS. ",
+    "6807a56eade0fec677ab5ea6": "Golden Example - While you are Buffed increase your team's defenses and LCK.",
+    "6807aa55ade0fec677ab8adc": "Swift Shade - Gain Speed but lose CON.",
+    "6807aa13ade0fec677ab7f65": "Night Mind - Gain Critical Chance and DMG. but lose WIS.",
     "679a53b788ed77a53032c44b": "Strong II - Increase STR.",
     "679a554d88ed77a53032f5d9": "Intelligent II - Increase INT.",
     "679a563988ed77a5303311c3": "Dexterous II - Increase DEX.",
@@ -13701,6 +14847,30 @@ export const idAffix = [
 
 export const idDescriptors = [
   [
+    {
+        "_id": "67ffd643ade0fec677a5f64c",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f859e4ade0fec6779b080a",
+        "minteable": false,
+        "name": "Apex Shard II",
+        "rarity": 1,
+        "type": "shard"
+    },
+        {
+        "_id": "67ffdad2ade0fec677a62e8f",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f85a77ade0fec6779b0974",
+        "minteable": false,
+        "name": "Apex Ember II",
+        "rarity": 1,
+        "type": "ember"
+    },
     {
         "_id": "631fbd60308c6c735bd57404",
         "__v": 0,

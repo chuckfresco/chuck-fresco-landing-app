@@ -13654,6 +13654,16 @@ export const equipmentTable = [
 
 export const idAffix = [
 {
+    "6807a96bade0fec677ab68a7": "Thick Darkness - Increase your Defenses but lose Speed.",
+    "67d45e15b2102728065eb882": "Lucky III - Increase LCK.",
+    "6807a245ade0fec677ab5d9b": "Yellow Flash - Increase your Might, Brilliance, and Speed.",
+    "6807a29dade0fec677ab5dc3": "Critical Speed - While Hasted gain Critical DMG and Critical Chance.",
+    "6807a9baade0fec677ab6f67": "Blood Moon - Increase your Might and Brilliance, but lose Max HP.",
+    "6807a96bade0fec677ab68a7": "Thick Darkness - Increase your Defenses but lose Speed.",
+    "6807a458ade0fec677ab5e74": "Paragold - Increase all your Stats, favoring CON and WIS. ",
+    "6807a56eade0fec677ab5ea6": "Golden Example - While you are Buffed increase your team's defenses and LCK.",
+    "6807aa55ade0fec677ab8adc": "Swift Shade - Gain Speed but lose CON.",
+    "6807aa13ade0fec677ab7f65": "Night Mind - Gain Critical Chance and DMG. but lose WIS.",
     "679a53b788ed77a53032c44b": "Strong II - Increase STR.",
     "679a554d88ed77a53032f5d9": "Intelligent II - Increase INT.",
     "679a563988ed77a5303311c3": "Dexterous II - Increase DEX.",
@@ -13701,6 +13711,42 @@ export const idAffix = [
 
 export const idDescriptors = [
   [
+    {
+        "_id": "67ffd643ade0fec677a5f64c",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f859e4ade0fec6779b080a",
+        "minteable": false,
+        "name": "Apex Shard II",
+        "rarity": 1,
+        "type": "shard"
+    },
+    {
+        "_id": "67ffdad2ade0fec677a62e8f",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f85a77ade0fec6779b0974",
+        "minteable": false,
+        "name": "Apex Ember II",
+        "rarity": 1,
+        "type": "ember"
+    },
+    {
+        "_id": "67ffdad2ade0fec677a62e8f",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f85a77ade0fec6779b0974",
+        "minteable": false,
+        "name": "Apex Ember II",
+        "rarity": 1,
+        "type": "ember"
+    },
     {
         "_id": "631fbd60308c6c735bd57404",
         "__v": 0,

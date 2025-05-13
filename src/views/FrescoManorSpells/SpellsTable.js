@@ -93,6 +93,8 @@ const SpellsTable = () => {
   const [showImageGrid, setShowImageGrid] = useState(false);
   const [showHigh, setShowHigh] = useState(false);
   const [showUncommon, setShowUncommon] = useState(false);
+  const [workshopFilter, setWorkshopFilter] = useState("All");
+
 
   
 
@@ -112,7 +114,7 @@ const SpellsTable = () => {
   };
 
   const applyFilters = (recipesList, term = searchTerm, stats = statFilters, color = activeColor, high = showHigh,
-    uncommon = showUncommon) => {
+    uncommon = showUncommon,  workshop = workshopFilter) => {
     let filtered = [...recipesList];
 
       // High/Uncommon logic
@@ -137,13 +139,19 @@ const SpellsTable = () => {
     if (term.trim()) {
       const terms = term.toLowerCase().split(",").map(t => t.trim()).filter(t => t);
       filtered = filtered.filter(item => {
-        const itemText = [
-          item.name,
-          item.properties_crystal?.ability_properties?.description,
-          ...item.materials.map(mat => mat.resolvedName || '')
-        ].join(" ").toLowerCase();
+      const itemText = [
+        item.name,
+        item.properties_crystal?.ability_properties?.description,
+        ...item.materials.map(mat => mat.resolvedName || ''),
+        item.type  // 👈 Add this line
+      ].join(" ").toLowerCase();
+
         return terms.every(t => itemText.includes(t));
       });
+    }
+
+    if (workshop !== "All") {
+      filtered = filtered.filter(item => item.location === workshop);
     }
   
     if (stats.length > 0) {
@@ -166,21 +174,26 @@ const SpellsTable = () => {
       // 👇 Custom sort logic based on color
       if (color === "All") {
         filtered.sort((a, b) => {
-            // Sort by tier first
-          const tierOrder = { "TIER II": 0, "TIER I": 1 }; // lower number = higher priority
+          const tierOrder = { "TIER II": 0, "TIER I": 1 };
           const tierA = tierOrder[a.tier_text] ?? 99;
           const tierB = tierOrder[b.tier_text] ?? 99;
           if (tierA !== tierB) return tierA - tierB;
-
+      
+          const isHighA = ["High", "HighCantrip"].includes(a.type);
+          const isHighB = ["High", "HighCantrip"].includes(b.type);
+          if (isHighA && !isHighB) return -1;
+          if (!isHighA && isHighB) return 1;
+      
           const starsA = a.station_data?.level ?? 0;
           const starsB = b.station_data?.level ?? 0;
           if (starsB !== starsA) return starsB - starsA;
-  
+      
           const remainingA = getRemainingToNextLevel(a.station_data?.total_inscriptions);
           const remainingB = getRemainingToNextLevel(b.station_data?.total_inscriptions);
           return remainingA - remainingB;
         });
-      } else {
+      }
+      else {
 
         filtered.sort((a, b) => {
           // Sort by tier first
@@ -302,13 +315,47 @@ const SpellsTable = () => {
               Fresco Manor Spells
             </Typography>
   
+            <Box display="flex" flexWrap="wrap" gap={2} mb={2}>
+              <Button
+                onClick={() => {
+                  setWorkshopFilter("All");
+                  applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, showUncommon, "All");
+                }}
+                variant={workshopFilter === "All" ? 'contained' : 'outlined'}
+                style={{
+                  fontWeight: 'bold',
+                  border: '1px solid #ccc',
+                  marginRight: 7,
+                }}
+              >
+                All Forges
+              </Button>
+              {["Red Workshop", "Green Workshop", "Blue Workshop", "Yellow Workshop"].map((workshop) => (
+                <Button
+                  key={workshop}
+                  onClick={() => {
+                    setWorkshopFilter(workshop);
+                    applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, showUncommon, workshop);
+                  }}
+                  variant={workshopFilter === workshop ? 'contained' : 'outlined'}
+                  style={{
+                    fontWeight: 'bold',
+                    border: '1px solid #ccc',
+                    marginRight: 7,
+                  }}
+                >
+                  {workshop}
+                </Button>
+              ))}
+            </Box>
+  
             <Box display="flex" flexWrap="wrap" gap={3} mb={2}>
               {Object.keys(pastelColors).map((color) => (
                 <Button
                   key={color}
                   onClick={() => {
                     setActiveColor(color);
-                    applyFilters(recipes, searchTerm, statFilters, color);
+                    applyFilters(recipes, searchTerm, statFilters, color, showHigh, showUncommon, workshopFilter);
                   }}
                   variant={activeColor === color ? 'contained' : 'outlined'}
                   style={{
@@ -328,10 +375,11 @@ const SpellsTable = () => {
                   setSearchTerm('');
                   setStatFilters([]);
                   setActiveColor('All');
+                  setWorkshopFilter('All');
                   setExpandedRows([]);
                   setShowHigh(false);
                   setShowUncommon(false);
-                  applyFilters(recipes, '', [], 'All');
+                  applyFilters(recipes, '', [], 'All', false, false, 'All');
                 }}
               >
                 Clear Filters
@@ -347,64 +395,64 @@ const SpellsTable = () => {
                 onChange={(e) => {
                   const val = e.target.value;
                   setSearchTerm(val);
-                  applyFilters(recipes, val, statFilters, activeColor);
+                  applyFilters(recipes, val, statFilters, activeColor, showHigh, showUncommon, workshopFilter);
                 }}
                 style={{ marginBottom: 0, maxWidth: 600 }}
               />
             </Box>
   
             <Box mb={2} display="flex" flexWrap="wrap" gap={2}>
-            {['strength', 'constitution', 'dexterity', 'intelligence', 'wisdom'].map((stat) => (
+              {['strength', 'constitution', 'dexterity', 'intelligence', 'wisdom'].map((stat) => (
+                <FormControlLabel
+                  key={stat}
+                  style={{ marginBottom: 8 }}
+                  control={
+                    <Checkbox
+                      checked={statFilters.includes(stat)}
+                      onChange={(e) => {
+                        const updated = e.target.checked
+                          ? [...statFilters, stat]
+                          : statFilters.filter((s) => s !== stat);
+                        setStatFilters(updated);
+                        applyFilters(recipes, searchTerm, updated, activeColor, showHigh, showUncommon, workshopFilter);
+                      }}
+                      color="primary"
+                    />
+                  }
+                  label={stat.charAt(0).toUpperCase() + stat.slice(1)}
+                />
+              ))}
               <FormControlLabel
-                key={stat}
-                style={{ marginBottom: 8 }}
                 control={
                   <Checkbox
-                    checked={statFilters.includes(stat)}
+                    checked={showHigh}
                     onChange={(e) => {
-                      const updated = e.target.checked
-                        ? [...statFilters, stat]
-                        : statFilters.filter((s) => s !== stat);
-                      setStatFilters(updated);
-                      applyFilters(recipes, searchTerm, updated, activeColor, showHigh, showUncommon);
+                      const val = e.target.checked;
+                      setShowHigh(val);
+                      applyFilters(recipes, searchTerm, statFilters, activeColor, val, showUncommon, workshopFilter);
                     }}
                     color="primary"
                   />
                 }
-                label={stat.charAt(0).toUpperCase() + stat.slice(1)}
+                label="High Spells"
               />
-            ))}
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={showHigh}
-                  onChange={(e) => {
-                    const val = e.target.checked;
-                    setShowHigh(val);
-                    applyFilters(recipes, searchTerm, statFilters, activeColor, val, showUncommon);
-                  }}
-                  color="primary"
-                />
-              }
-              label="High Spells"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={showUncommon}
-                  onChange={(e) => {
-                    const val = e.target.checked;
-                    setShowUncommon(val);
-                    applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, val);
-                  }}
-                  color="primary"
-                />
-              }
-              label="Uncommon Spells"
-            />
-          </Box>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={showUncommon}
+                    onChange={(e) => {
+                      const val = e.target.checked;
+                      setShowUncommon(val);
+                      applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, val, workshopFilter);
+                    }}
+                    color="primary"
+                  />
+                }
+                label="Uncommon Spells"
+              />
+            </Box>
   
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} style={{ marginTop: 16 }}>
               <Table size="small">
                 <TableHead>
                   <TableRow>
@@ -419,22 +467,9 @@ const SpellsTable = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                {[...filteredRecipes].sort((a, b) => {
-                  const isHighA = ['High', 'HighCantrip'].includes(a.type);
-                  const isHighB = ['High', 'HighCantrip'].includes(b.type);
-                  if (isHighA && !isHighB) return -1;
-                  if (!isHighA && isHighB) return 1;
-                  return 0;
-                }).map((item, idx) => {
-                  const isExpanded = expandedRows.includes(idx);
-                  const gemMaterial = item.materials.find((mat) =>
-                    ['gem', 'crystal'].includes(mat.resolvedType.toLowerCase())
-                  );
-                  const otherMaterials = item.materials.filter(
-                    (mat) => !['gem', 'crystal'].includes(mat.resolvedType.toLowerCase())
-                  );
-                  const isHigh = ['High', 'HighCantrip'].includes(item.type);
-  
+                  {[...filteredRecipes].map((item, idx) => {
+                    const isExpanded = expandedRows.includes(idx);
+                    const isHigh = ['High', 'HighCantrip'].includes(item.type);
                     return (
                       <React.Fragment key={idx}>
                         <TableRow
@@ -459,14 +494,7 @@ const SpellsTable = () => {
                               src={item.properties_crystal?.ability_properties?.icon}
                               alt={item.name}
                               variant="square"
-                              style={
-                                isHigh
-                                  ? {
-                                      border: '2px solid gold',
-                                      boxShadow: '0 0 6px gold',
-                                    }
-                                  : {}
-                              }
+                              style={isHigh ? { border: '2px solid gold', boxShadow: '0 0 6px gold' } : {}}
                             />
                           </TableCell>
                           <TableCell>{item.name}</TableCell>
@@ -474,9 +502,7 @@ const SpellsTable = () => {
                           <TableCell>
                             {item.station_data?.level === 5
                               ? 'COMPLETE'
-                              : `Next LVL: ${getRemainingToNextLevel(
-                                  item.station_data?.total_inscriptions ?? 0
-                                )}`}
+                              : `Next LVL: ${getRemainingToNextLevel(item.station_data?.total_inscriptions ?? 0)}`}
                           </TableCell>
                           <TableCell style={{ whiteSpace: 'normal', maxWidth: 300 }}>
                             {item.properties_crystal?.ability_properties?.description || '—'}
@@ -490,42 +516,11 @@ const SpellsTable = () => {
                               />
                               <span>{item.currencies?.gold ?? 0} Gold</span>
                             </div>
-                            {gemMaterial && (
-                              <div
-                                style={{
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  gap: '4px',
-                                  marginTop: 4,
-                                }}
-                              >
-                                <Avatar
-                                  src={gemMaterial.icon}
-                                  alt="gem"
-                                  style={{ width: 20, height: 20 }}
-                                />
-                                <span>
-                                  {gemMaterial.amount}x {gemMaterial.resolvedName}
-                                </span>
-                              </div>
-                            )}
                           </TableCell>
                           <TableCell>
-                            {otherMaterials.map((mat, i) => (
-                              <div
-                                key={i}
-                                style={{
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  gap: '4px',
-                                  marginBottom: 2,
-                                }}
-                              >
-                                <Avatar
-                                  src={mat.icon}
-                                  alt={mat.type}
-                                  style={{ width: 20, height: 20 }}
-                                />
+                            {item.materials.map((mat, i) => (
+                              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                <Avatar src={mat.icon} alt={mat.type} style={{ width: 20, height: 20 }} />
                                 <span>
                                   {mat.amount}x {mat.resolvedName}
                                 </span>
@@ -534,6 +529,52 @@ const SpellsTable = () => {
                           </TableCell>
                           <TableCell>{getWorkshopTag(item.location)}</TableCell>
                         </TableRow>
+  
+                        {isExpanded && (
+                          <TableRow>
+                            <TableCell colSpan={8} style={{ backgroundColor: '#1a1a1a' }}>
+                              <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr" gap={4} p={2}>
+                                <Box>
+                                  {[...(item.properties_crystal?.stats ? Object.entries(item.properties_crystal.stats) : [])]
+                                    .filter(([, value]) => value > 0)
+                                    .sort((a, b) => b[1] - a[1])
+                                    .map(([key, value]) => (
+                                      <Box key={key} display="flex" alignItems="center" mb={1}>
+                                        <Typography variant="body2" style={{ minWidth: 100 }}>
+                                          {addStatTooltips(key)}
+                                        </Typography>
+                                        <Box display="flex" gap={0.5} alignItems="center">
+                                          {Array.from({ length: value }).map((_, i) => (
+                                            <span
+                                              key={i}
+                                              style={{ fontSize: 14, color: '#fff' }}
+                                            >
+                                              ★
+                                            </span>
+                                          ))}
+                                        </Box>
+                                      </Box>
+                                    ))}
+                                </Box>
+                                <Box>
+                                  <Typography variant="body2" style={{ color: '#ccc' }}>
+                                    <strong>Target:</strong> {item.properties_crystal?.ability_properties?.target_type || '—'}
+                                  </Typography>
+                                </Box>
+                                <Box>
+                                  <Typography variant="body2" style={{ color: '#ccc' }}>
+                                    <strong>Cooldown:</strong> {item.properties_crystal?.ability_properties?.cooldown ?? '—'}
+                                  </Typography>
+                                </Box>
+                                <Box>
+                                  <Typography variant="body2" style={{ color: '#ccc' }}>
+                                    <strong>Type:</strong> {item.type || '—'}
+                                  </Typography>
+                                </Box>
+                              </Box>
+                            </TableCell>
+                          </TableRow>
+                        )}
                       </React.Fragment>
                     );
                   })}
@@ -564,18 +605,18 @@ const SpellsTable = () => {
                 </IconButton>
               </DialogTitle>
               <DialogContent dividers style={{ backgroundColor: '#0b4b54' }}>
-            <Typography
-              style={{
-                color: '#00fddb',
-                fontFamily: 'SmallestPixel7',
-                fontSize: '3em',
-                textAlign: 'center',
-                marginBottom: 16
-              }}
-              gutterBottom
-            >
-              Fresco Manor Spells
-            </Typography>
+                <Typography
+                  style={{
+                    color: '#00fddb',
+                    fontFamily: 'SmallestPixel7',
+                    fontSize: '3em',
+                    textAlign: 'center',
+                    marginBottom: 16
+                  }}
+                  gutterBottom
+                >
+                  Fresco Manor Spells
+                </Typography>
                 <Box display="flex" flexWrap="wrap" justifyContent="center" gap={3}>
                   {[...filteredRecipes]
                     .filter((spell) => spell.tier_text !== 'TIER I')
@@ -617,25 +658,24 @@ const SpellsTable = () => {
                               boxShadow: isHigh ? '0 0 10px gold' : 'none',
                             }}
                           />
-                        <Typography
-                          variant="subtitle1"
-                          className="smallest-pixel-text"
-                          style={{
-                            marginTop: 8,
-                            color: '#8dec82',
-                            fontFamily: 'SmallestPixel7',
-                          }}
-                        >
-                          {spell.name}
-                        </Typography>
-
+                          <Typography
+                            variant="subtitle1"
+                            className="smallest-pixel-text"
+                            style={{
+                              marginTop: 8,
+                              color: '#8dec82',
+                              fontFamily: 'SmallestPixel7',
+                            }}
+                          >
+                            {spell.name}
+                          </Typography>
                           <Box display="flex" justifyContent="center" gap={0.5} mt={1}>
                             {Array.from({ length: 5 }).map((_, i) => (
                               <img
                                 key={i}
                                 src={i < filled ? "/assets/star-filled.png" : "/assets/star-unfilled.png"}
                                 alt="star"
-                                style={{ width: 20, height: 20, marginRight: 4  }}
+                                style={{ width: 20, height: 20, marginRight: 4 }}
                               />
                             ))}
                           </Box>
@@ -650,7 +690,6 @@ const SpellsTable = () => {
       </Box>
     </ThemeProvider>
   );
-  
   
   
 };

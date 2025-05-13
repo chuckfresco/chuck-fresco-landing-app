@@ -1,4 +1,4 @@
-// EquipmentTable.js
+// FRESCO EquipmentTable.js
 import React, { useEffect, useState } from 'react';
 import {
   ThemeProvider, createTheme,
@@ -31,22 +31,29 @@ const EquipmentTable = () => {
 
   useEffect(() => {
     const sorted = [...equipmentTable].sort((a, b) => {
+      const groupPriority = name => {
+        if (/Druid|Amber Guard|Moth|Lunar/.test(name)) return 0;
+        if (/^Corrupt|Golden/.test(name)) return 1;
+        return 2;
+      };
+    
       const tierOrder = { 'TIER II': 0, 'TIER I': 1 };
+      const groupA = groupPriority(a.name);
+      const groupB = groupPriority(b.name);
+    
+      if (groupA !== groupB) return groupA - groupB;
+    
       const tierA = tierOrder[a.tier_text] ?? 99;
       const tierB = tierOrder[b.tier_text] ?? 99;
-    
-      const specialGroupA = /Druid|Amber Guard|Moth|Lunar/.test(a.name) ? -1 : 0;
-      const specialGroupB = /Druid|Amber Guard|Moth|Lunar/.test(b.name) ? -1 : 0;
+      if (tierA !== tierB) return tierA - tierB;
     
       const goldA = a.currencies?.gold ?? 0;
       const goldB = b.currencies?.gold ?? 0;
-    
-      if (specialGroupA !== specialGroupB) return specialGroupA - specialGroupB;
-      if (tierA !== tierB) return tierA - tierB;
       if (goldA !== goldB) return goldB - goldA;
     
       return a.name.localeCompare(b.name);
     });
+    
     
     const filtered = sorted.filter(item => !item.one_time_use);
 
@@ -91,9 +98,30 @@ const EquipmentTable = () => {
   });
   
 
+  const groupPriority = name => {
+    if (/Druid|Amber Guard|Moth|Lunar/.test(name)) return 0;
+    if (/^Corrupt|Golden/.test(name)) return 1;
+    return 2;
+  };
+  
+  const tierOrder = { 'TIER II': 0, 'TIER I': 1 };
+  
   const highlightedFirst = [...filteredData].sort((a, b) => {
-    return (b.isHighlighted ? 1 : 0) - (a.isHighlighted ? 1 : 0);
+    const groupA = groupPriority(a.name);
+    const groupB = groupPriority(b.name);
+    if (groupA !== groupB) return groupA - groupB;
+  
+    const tierA = tierOrder[a.tier_text] ?? 99;
+    const tierB = tierOrder[b.tier_text] ?? 99;
+    if (tierA !== tierB) return tierA - tierB;
+  
+    const goldA = a.currencies?.gold ?? 0;
+    const goldB = b.currencies?.gold ?? 0;
+    if (goldA !== goldB) return goldB - goldA;
+  
+    return a.name.localeCompare(b.name);
   });
+  
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -150,7 +178,11 @@ const EquipmentTable = () => {
                           backgroundColor: 'transparent',
                           p: 0.5,
                           boxSizing: 'border-box',
-                          border: item.isHighlighted ? '2px solid gold' : 'none'
+                          border: item.isHighlighted
+                          ? '2px solid gold'
+                          : /^Corrupt|Golden/.test(item.name)
+                          ? '2px solid silver'
+                          : 'none'
                         }}
                       />
                     </TableCell>

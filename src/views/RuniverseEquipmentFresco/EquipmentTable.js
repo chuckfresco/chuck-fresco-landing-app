@@ -115,7 +115,8 @@ const fetchAndMergeData = async () => {
   return Array.from(map.values());
 };
 
-
+const normalizeTier = (text) => text?.trim().toUpperCase() || '';
+const tierOrder = { 'TIER II': 0, 'TIER I': 1 };
 
 const EquipmentTable = () => {
   const [loading, setLoading] = useState(true);
@@ -138,20 +139,32 @@ const EquipmentTable = () => {
       const sorted = [...items].sort((a, b) => {
         const nameA = a.name || '';
         const nameB = b.name || '';
-        const specialRegex = /Druid|Amber Guard|Moth|Lunar/;
-        const isSpecialA = specialRegex.test(nameA);
-        const isSpecialB = specialRegex.test(nameB);
-        if (isSpecialA && !isSpecialB) return -1;
-        if (!isSpecialA && isSpecialB) return 1;
-
+      
+        const isTopTier = (name) => /Druid|Amber Guard|Moth|Lunar/.test(name);
+        const isSecondTier = (name) => /^Corrupt|^Golden|^Yellow/.test(name);
+      
+        const tierRank = (name) =>
+          isTopTier(name) ? 0 :
+          isSecondTier(name) ? 1 :
+          2;
+      
+        const rankA = tierRank(nameA);
+        const rankB = tierRank(nameB);
+        if (rankA !== rankB) return rankA - rankB;
+      
+        const tierA = tierOrder[normalizeTier(a.tier_text)] ?? 99;
+        const tierB = tierOrder[normalizeTier(b.tier_text)] ?? 99;
+        if (tierA !== tierB) return tierA - tierB;
+      
         const starsA = a.station_data?.level ?? 0;
         const starsB = b.station_data?.level ?? 0;
         if (starsB !== starsA) return starsB - starsA;
-
+      
         const insA = a.station_data?.total_inscriptions ?? 0;
         const insB = b.station_data?.total_inscriptions ?? 0;
         return insB - insA;
       });
+      
       sorted.forEach(item => {
         item.materials = item.materials?.map(mat => ({
           ...mat,
@@ -204,6 +217,9 @@ const EquipmentTable = () => {
       <Box px={1.5} py={0.5} style={{ borderRadius: 6, fontWeight: 'bold', fontSize: '0.75rem', backgroundColor: color?.bg, color: color?.text, border: '1px solid rgba(255,255,255,0.2)', textTransform: 'uppercase' }}>{forge}</Box>
     );
   };
+
+
+
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -302,7 +318,11 @@ const EquipmentTable = () => {
                 <React.Fragment key={item._id}>
                   <TableRow className={classes.hoverRow} onClick={() => toggleRow(item._id)}>
                     <TableCell>
-                      <Box component="img" src={item.image} alt={item.name} sx={{ width: 40, height: 40, objectFit: 'contain', p: 0.5, border: item.isHighlighted ? '2px solid gold' : 'none' }} />
+                      <Box component="img" src={item.image} alt={item.name} sx={{ width: 40, height: 40, objectFit: 'contain', p: 0.5, border: item.isHighlighted
+      ? '2px solid gold'
+      : /^Corrupt|^Golden|^Yellow/.test(item.name)
+      ? '2px solid silver'
+      : 'none' }} />
                     </TableCell>
                     <TableCell>{item.name}</TableCell>
                     <TableCell>{renderStars(item.station_data?.level ?? 0)}</TableCell>
@@ -384,6 +404,7 @@ const EquipmentTable = () => {
             <CameraAltIcon />
           </Button>
         </Box>
+
   
         <Dialog open={showTopDialog} onClose={() => setShowTopDialog(false)} maxWidth="xl" fullWidth>
           <DialogTitle style={{ color: '#fff' }}>
@@ -403,15 +424,32 @@ const EquipmentTable = () => {
                   /Amber Guard|Moth|Druid|Lunar/.test(eq.name) ||
                   eq.tier_text === 'TIER II'
                 )
+
                 .sort((a, b) => {
-                  const specialA = /Druid|Amber Guard|Moth|Lunar/.test(a.name);
-                  const specialB = /Druid|Amber Guard|Moth|Lunar/.test(b.name);
-                  if (specialA && !specialB) return -1;
-                  if (!specialA && specialB) return 1;
+                  const isTopTier = (name) => /Druid|Amber Guard|Moth|Lunar/.test(name);
+                  const isSecondTier = (name) => /^Corrupt|^Golden|^Yellow/.test(name);
+                  
+                  const tierRank = (name) =>
+                    isTopTier(name) ? 0 :
+                    isSecondTier(name) ? 1 :
+                    2;
+                
+                  const rankA = tierRank(a.name);
+                  const rankB = tierRank(b.name);
+                  if (rankA !== rankB) return rankA - rankB;
+                
+                  const normalizeTier = (text) => text?.trim().toUpperCase() || '';
+                  const tierOrder = { 'TIER II': 0, 'TIER I': 1 };
+                  const tierA = tierOrder[normalizeTier(a.tier_text)] ?? 99;
+                  const tierB = tierOrder[normalizeTier(b.tier_text)] ?? 99;
+                  if (tierA !== tierB) return tierA - tierB;
+                
                   const starsA = a.station_data?.level ?? 0;
                   const starsB = b.station_data?.level ?? 0;
                   return starsB - starsA;
                 })
+                
+                
                 .slice(0, 12)
                 .map((item, index) => (
                   <Box key={index} width={240} height={260} textAlign="center" p={2} borderRadius={4} style={{ backgroundImage: 'url(/assets/bg-workshop.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
@@ -424,7 +462,11 @@ const EquipmentTable = () => {
                         height={60}
                         style={{
                           backgroundColor: '#1e1e1e',
-                          boxShadow: item.isHighlighted ? '0 0 12px 3px gold' : 'none',
+                          boxShadow: item.isHighlighted
+                          ? '0 0 12px 3px gold'
+                          : /^Corrupt|^Golden|^Yellow/.test(item.name)
+                          ? '0 0 12px 3px silver'
+                          : 'none',
                           borderRadius: 4,
                           overflow: 'hidden'
                         }}

@@ -34,6 +34,19 @@ export const workshops = [
 
 export const idDescriptors = [
   [
+        {
+        "_id": "67ffdad2ade0fec677a62e8f",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f85a77ade0fec6779b0974",
+        "minteable": false,
+        "name": "Apex Ember II",
+        "rarity": 1,
+        "type": "ember"
+    },
+    
     {
         "_id": "631fbd60308c6c735bd57404",
         "__v": 0,
