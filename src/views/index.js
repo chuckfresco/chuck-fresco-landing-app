@@ -8,7 +8,7 @@ export { default as Runiverse } from './Runiverse';
 export { default as RuniverseEquipment } from './RuniverseEquipment';
 export { default as RuniverseEquipmentFresco } from './RuniverseEquipmentFresco';
 export { default as RuniverseResources } from './RuniverseResources';
-
+export { default as LevelUpGuide } from './LevelUpGuide';
 
 
 export { default as Agency } from './Agency';

@@ -18,6 +18,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 
 const useStyles = makeStyles(() => ({
@@ -303,6 +305,7 @@ const EquipmentTable = () => {
           <Table size="small">
             <TableHead>
               <TableRow>
+                <TableCell /> 
                 <TableCell>Image</TableCell>
                 <TableCell>Name</TableCell>
                 <TableCell>Stars</TableCell>
@@ -317,6 +320,11 @@ const EquipmentTable = () => {
               {filteredData.map(item => (
                 <React.Fragment key={item._id}>
                   <TableRow className={classes.hoverRow} onClick={() => toggleRow(item._id)}>
+                  <TableCell padding="checkbox">
+                    {expandedRows.includes(item._id) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                  </TableCell>
+                    
+                    
                     <TableCell>
                       <Box component="img" src={item.image} alt={item.name} sx={{ width: 40, height: 40, objectFit: 'contain', p: 0.5, border: item.isHighlighted
       ? '2px solid gold'

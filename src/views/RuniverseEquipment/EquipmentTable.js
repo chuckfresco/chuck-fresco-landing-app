@@ -8,6 +8,9 @@ import {
 } from '@material-ui/core';
 import { idAffix, idDescriptors, equipmentTable } from './data/spellData';
 
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+
 const darkTheme = createTheme({
   palette: { type: 'dark' },
   overrides: {
@@ -152,6 +155,7 @@ const EquipmentTable = () => {
           <Table size="small">
             <TableHead>
               <TableRow>
+                <TableCell /> 
                 <TableCell>Image</TableCell>
                 <TableCell>Name</TableCell>
                 <TableCell>Affixes</TableCell>
@@ -166,6 +170,10 @@ const EquipmentTable = () => {
                     style={{ backgroundColor: '#2b2b2b', cursor: 'pointer' }}
                     onClick={() => toggleRow(item._id)}
                   >
+
+                    <TableCell padding="checkbox">
+                      {expandedRows.includes(item._id) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                    </TableCell>
                     <TableCell>
                       <Box
                         component="img"

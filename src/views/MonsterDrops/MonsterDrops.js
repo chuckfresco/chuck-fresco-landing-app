@@ -102,7 +102,8 @@ const MonsterDrops = () => {
 
 
       <Section className={classes.halfWidthSection}>
-        <div style={{ width: '100%', maxWidth: '90%' }}>
+        <div style={{ width: '100%', overflowX: 'auto' }}>
+
           <MonsterDropsTable />
         </div>
       </Section>

@@ -189,33 +189,33 @@ export const pricings = [
 ];
 
 export const rows = [
-  { id: 1, region: "Azure Expanse", monster: "Blue Ice Slime", materialDrop: "Disturbing Ember II", equipment: "Flowing Robes, Dynasty Crown", skills: "Frost Phaser II, Rift Pox II",   icon: "/assets/monsters/slimeice.png" },
-  { id: 2, region: "Azure Expanse", monster: "Red Lava Slime", materialDrop: "Disturbing Shard II", equipment: "Tactitian's Helm, Spiked Helm, Rifle and Bayonet", skills: "Drawing of Chaos II", icon: "/assets/monsters/slimelava.png" },
-  { id: 3, region: "Azure Expanse", monster: "Green Slime", materialDrop: "Disturbing Shard II", equipment: "Rifle Bayonet, Kirama Demon Helm, Fisherman Garb, Fell Stone", skills: "Leach Blossom II", icon: "/assets/monsters/slimegreen.png" },
-  { id: 4, region: "Azure Expanse", monster: "Black Eagle", materialDrop: "Feral Ember II", equipment: "Raven Staff", skills: "Cleansing Rune II, Tremor II, Fate Reversal II", icon: "/assets/monsters/eagle-b.png" },
-  { id: 5, region: "Azure Expanse", monster: "Giant Rat", materialDrop: "Feral Shard II", equipment: "Tactician's Armor", skills: "Volatile Gambit II", icon: "/assets/monsters/rat-a.png" },
-  { id: 6, region: "Azure Expanse", monster: "Owl", materialDrop: "Feral Shard II", equipment: "Royal Plate, Plant", skills: "Ice Spear II", icon: "/assets/monsters/owl-a.png" },
-  { id: 7, region: "Azure Expanse", monster: "Brown Eagle", materialDrop: "Feral Shard II", equipment: "Fishing Hat, Witch's Robes, Dynasty Dress", skills: "Frag Wall II", icon: "/assets/monsters/eagle-a.png" },
-  { id: 8, region: "Azure Expanse", monster: "Blue Djinn", materialDrop: "Pulsing Ember II", equipment: "Kirama Demon Armor, Soulblade", skills: "Heat Wave II, Decoy II", icon: "/assets/monsters/djinnblue.png" },
-  { id: 9, region: "Azure Expanse", monster: "Miasma Toad", materialDrop: "Pulsing Ember II", equipment: "Sconce Blade", skills: "Fated Defiance II, Shattered Crystal II" , icon: "/assets/monsters/miasma-toad.png" },
-  { id: 10, region: "Azure Expanse", monster: "Red Firefly Erynis", materialDrop: "Pulsing Ember II", equipment: "Red Candle", skills: "Firebolt II", icon: "/assets/monsters/firefly-red.png" },
-  { id: 11, region: "Azure Expanse", monster: "Red Djinn", materialDrop: "Pulsing Shard II", equipment: "Magic Lamp", skills: "Fractal Barrier II, Wild Call II" , icon: "/assets/monsters/djinn-red.png" },
-  { id: 12, region: "Azure Expanse", monster: "Gold Firefly Erynis", materialDrop: "Pulsing Shard II", equipment: "Spiked Plate", skills: "Sparkling Volley II, Zoom Attack II", icon: "/assets/monsters/erynis-c.png" },
-  { id: 13, region: "Azure Expanse", monster: "Fae Cobra", materialDrop: "Pulsing Ember II", equipment: "Kirama Style Vest, Serpent Circle", skills: "Life Bloom II", icon: "/assets/monsters/fae-cobra.png" },
+  { "region": "Azure Expanse", "monster": "Blue Ice Jelly", "materialDrop": "Disturbing Ember II", "equipment": "Flowing Robes, Dynasty Crown", "skills": "Frost Phaser II, Rift Pox II", "decorations": "Witch Cauldron", "icon": "/assets/monsters/slimeice.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Red Lava Slime", "materialDrop": "Disturbing Shard II", "equipment": "Tactitian's Helm, Spiked Helm, Rifle and Bayonet", "skills": "Drawing of Chaos II", "decorations": "N/A", "icon": "/assets/monsters/slimelava.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Green Quantum Jelly", "materialDrop": "Disturbing Shard II", "equipment": "Rifle Bayonet, Kirama Demon Helm, Fisherman Garb, Fell Stone", "skills": "Leach Blossom II", "decorations": "Empty Picture Frame", "icon": "/assets/monsters/slimegreen.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Black Eagle", "materialDrop": "Feral Ember II", "equipment": "Raven Staff", "skills": "Cleansing Rune II, Tremor II, Fate Reversal II", "decorations": "Simple Cactus", "icon": "/assets/monsters/eagle-b.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Giant Rat", "materialDrop": "Feral Shard II", "equipment": "Tactician's Armor, Kirama Style Mask", "skills": "Volatile Gambit II", "decorations": "Empty Frame", "icon": "/assets/monsters/rat-a.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Owl", "materialDrop": "Feral Shard II", "equipment": "Royal Plate, Plant", "skills": "Ice Spear II", "decorations": "Plain Rug", "icon": "/assets/monsters/owl-a.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Brown Eagle", "materialDrop": "Feral Shard II", "equipment": "Fishing Hat, Witch's Robes, Dynasty Dress", "skills": "Frag Wall II", "decorations": "Simple Tall Plant", "icon": "/assets/monsters/eagle-a.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Blue Djinn", "materialDrop": "Pulsing Ember II", "equipment": "Kirama Demon Armor, Soulblade", "skills": "Heat Wave II, Decoy II", "decorations": "Tarot Cards, Rustic Chair", "icon": "/assets/monsters/djinnblue.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Miasma Toad", "materialDrop": "Pulsing Ember II", "equipment": "Sconce Blade", "skills": "Fated Defiance II, Shattered Crystal II", "decorations": "Simple Flower Pot", "icon": "/assets/monsters/miasma-toad.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Red Firefly Erynis", "materialDrop": "Pulsing Ember II", "equipment": "Red Candle", "skills": "Firebolt II", "decorations": "Rustic Bookshelf, Everburning Candle", "icon": "/assets/monsters/firefly-red.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Red Djinn", "materialDrop": "Pulsing Shard II", "equipment": "Magic Lamp", "skills": "Fractal Barrier II, Wild Call II", "decorations": "Rustic Bed", "icon": "/assets/monsters/djinn-red.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Gold Firefly Erynis", "materialDrop": "Pulsing Shard II", "equipment": "Spiked Plate", "skills": "Sparkling Volley II, Zoom Attack II", "decorations": "Rustic Table", "icon": "/assets/monsters/erynis-c.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Azure Expanse", "monster": "Fae Cobra", "materialDrop": "Pulsing Ember II", "equipment": "Kirama Style Vest, Serpent Circle", "skills": "Life Bloom II", "decorations": "Rustic End Table", "icon": "/assets/monsters/fae-cobra.png", "regionCategory": "world map", "categoryMonster": "normal" },
 
-  { id: 14, region: "Moon Wood", monster: "Yellow Giant Wasp", materialDrop: "Chittering Shard II", equipment: "N/A", skills: "Brief Respite II" , icon: "/assets/monsters/wasp-yellow.png" },
-  { id: 15, region: "Moon Wood", monster: "Brown Giant Ant", materialDrop: "Chittering Shard II", equipment: "N/A", skills: "N/A", icon: "/assets/monsters/ant-a.png" },
-  { id: 16, region: "Moon Wood", monster: "Cherry Pink Spider", materialDrop: "Chittering Ember II", equipment: "Cardboard Armor, Devouring Scythe", skills: "N/A", icon: "/assets/monsters/cherry-spider.png" },
-  { id: 17, region: "Moon Wood", monster: "Black Giant Ant", materialDrop: "Chittering Ember II", equipment: "Assassin Garb", skills: "N/A" , icon: "/assets/monsters/ant-b.png" },
-  { id: 18, region: "Moon Wood", monster: "Grey Giant Wasp", materialDrop: "Chittering Ember II", equipment: "N/A", skills: "Wheel of Chaos II", icon: "/assets/monsters/wasp-grey.png" },
-  { id: 19, region: "Moon Wood", monster: "Green Giant Spider", materialDrop: "Chittering Shard II", equipment: "Galactic Armor", skills: "N/A" , icon: "/assets/monsters/spider-green.png" },
-  { id: 20, region: "Moon Wood", monster: "Seventh Devout", materialDrop: "Cunning Shard II", equipment: "N/A", skills: "Violent Dismissal II, Traitor's Reward II", icon: "/assets/monsters/seventh-devouth.png" },
-  { id: 21, region: "Moon Wood", monster: "Chemist", materialDrop: "Cunning Shard II", equipment: "Galactic Band", skills: "Chilling Breath II" , icon: "/assets/monsters/chemist-a.png" },
-  { id: 22, region: "Moon Wood", monster: "Red Gunslinger", materialDrop: "Cunning Shard II", equipment: "Kung Pao Robes", skills: "N/A" , icon: "/assets/monsters/gunslinger-red.png" },
-  { id: 23, region: "Moon Wood", monster: "Red Firefly Erynis", materialDrop: "Pulsing Ember II", equipment: "Assassin Cowl, Green Wizard Hat", skills: "N/A" , icon: "/assets/monsters/firefly-red.png" },
-  { id: 24, region: "Moon Wood", monster: "Gold Erynis", materialDrop: "Pulsing Shard II", equipment: "Kung Pao Band", skills: "Fate Reversal II", icon: "/assets/monsters/erynis-c.png" },
-  { id: 25, region: "Moon Wood", monster: "Miasma Toad", materialDrop: "Pulsing Ember II", equipment: "Cardboard Helmet", skills: "Kinetic Trasnfer II", icon: "/assets/monsters/miasma-toad.png" },
-  { id: 26, region: "Moon Wood", monster: "Red Enforcer", materialDrop: "Cunning Ember II", equipment: "Cardboard Sword", skills: "N/A", icon: "/assets/monsters/enforcer-red.png" },
+  { "region": "Moon Wood", "monster": "Yellow Gigas Hornet", "materialDrop": "Chittering Shard II", "equipment": "N/A", "skills": "Brief Respite II", "decorations": "Hedge Wizard Rug", "icon": "/assets/monsters/wasp-yellow.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Brown Giant Ant", "materialDrop": "Chittering Shard II", "equipment": "N/A", "skills": "N/A", "decorations": "Cookpot, Camp Bench", "icon": "/assets/monsters/ant-a.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Cherry Pink Spider", "materialDrop": "Chittering Ember II", "equipment": "Cardboard Armor, Devouring Scythe", "skills": "N/A", "decorations": "Bedroll", "icon": "/assets/monsters/cherry-spider.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Black Giant Ant", "materialDrop": "Chittering Ember II", "equipment": "Assassin Garb", "skills": "N/A", "decorations": "Famous Wizard Painting", "icon": "/assets/monsters/ant-b.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Grey Vespula Hornet", "materialDrop": "Chittering Ember II", "equipment": "N/A", "skills": "Wheel of Chaos II", "decorations": "Southern Thicket Tree", "icon": "/assets/monsters/wasp-grey.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Green Giant Spider", "materialDrop": "Chittering Shard II", "equipment": "Galactic Armor", "skills": "N/A", "decorations": "Opal Orb", "icon": "/assets/monsters/spider-green.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Seventh Devouth", "materialDrop": "Cunning Shard II", "equipment": "N/A", "skills": "Violent Dismissal II, Traitor's Reward II", "decorations": "Old Magic Book", "icon": "/assets/monsters/seventh-devouth.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Chemist", "materialDrop": "Cunning Shard II", "equipment": "Galactic Band", "skills": "Chilling Breath II", "decorations": "Water Tub", "icon": "/assets/monsters/chemist-a.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Red Gunslinger", "materialDrop": "Cunning Shard II", "equipment": "Kung Pao Robes", "skills": "N/A", "decorations": "Camping Bag", "icon": "/assets/monsters/gunslinger-red.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Red Firefly Erynis", "materialDrop": "Pulsing Ember II", "equipment": "Assassin Cowl, Green Wizard Hat", "skills": "N/A", "decorations": "Firepit", "icon": "/assets/monsters/firefly-red.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Gold Erynis", "materialDrop": "Pulsing Shard II", "equipment": "Kung Pao Band", "skills": "Fate Reversal II", "decorations": "N/A", "icon": "/assets/monsters/erynis-c.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Miasma Toad", "materialDrop": "Pulsing Ember II", "equipment": "Cardboard Helmet", "skills": "Kinetic Transfer II", "decorations": "Small Bucket", "icon": "/assets/monsters/miasma-toad.png", "regionCategory": "world map", "categoryMonster": "normal" },
+  { "region": "Moon Wood", "monster": "Red Enforcer", "materialDrop": "Cunning Ember II", "equipment": "Cardboard Sword", "skills": "N/A", "decorations": "Stack of Books, Stone Couch", "icon": "/assets/monsters/enforcer-red.png", "regionCategory": "world map", "categoryMonster": "normal" },
 
   { id: 27, region: "The Wild", monster: "Black Slime", materialDrop: "Disturbing Shard I", equipment: "Dreamy Time Pajamas", skills: "N/A" },
   { id: 28, region: "The Wild", monster: "Grey Slime", materialDrop: "Disturbing Ember I", equipment: "Arcanist Robe, Corsair Bandana", skills: "Rift Pox I" },
@@ -258,143 +258,24 @@ export const rows = [
   { id: 64, region: "Northern Thicket", monster: "Chemist", materialDrop: "Cunning Shard I", equipment: "N/A", skills: "Shattered Crystal I" },
   { id: 65, region: "Northern Thicket", monster: "Brown Bear", materialDrop: "Feral Shard I", equipment: "N/A", skills: "Solar Blast I" },
   { id: 66, region: "Northern Thicket", monster: "Rat", materialDrop: "Feral Shard I", equipment: "N/A", skills: "N/A" },
-
-  {
-    "id": 67,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Living Flower",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id":68,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Forest Slime",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id":69,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Bee",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id":70,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Two-Headed Raven",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 71,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Giant Mushroom",
-    "materialDrop": "Timeless Ember II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 72,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Giant Mushroom",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 73,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Forest Elementals",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 74,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Forest Ghost",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 75,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Owl",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 76,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Forest Elementals Boss",
-    "materialDrop": "Timeless Ember II, Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 77,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Furious Bear Boss",
-    "materialDrop": "Timeless Essence II, Timeless Ember II, Timeless Shard II ",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 78,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Forest Spider",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 79,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Forest Rat",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 80,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Grizzly",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 81,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Lunar Wolf",
-    "materialDrop": "Timeless Shard II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 82,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Mossy Boar",
-    "materialDrop": "Timeless Ember II",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
-  {
-    "id": 83,
-    "region": "Windmill (Dungeon in The Wild)",
-    "monster": "Witch Boss",
-    "materialDrop": "Timeless Essence II, Timeless Ember II, Timeless Shard II, Witch's Glass Eye ",
-    "equipment": "N/A",
-    "skills": "N/A"
-  },
+  
+   { "region": "Windmill (Dungeon)", "monster": "Rotten Weeds", "materialDrop": "Timeless Shard II", "equipment": "Plant", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/rotten-weed.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Pink Quantum Jelly", "materialDrop": "Timeless Shard II", "equipment": "Tactician's Helm", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/pink-quantum-jelly.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Gigas Hornet", "materialDrop": "Timeless Shard II", "equipment": "N/A", "skills": "Ice Spear II", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/wasp-windmill.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Two-Headed Crow", "materialDrop": "Timeless Shard II", "equipment": "Raven Staff", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/crow-black.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Mirrored Trapper", "materialDrop": "Timeless Shard II", "equipment": "N/A", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/mirrored-trapper.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Forest Elementals", "materialDrop": "Timeless Shard II", "equipment": "N/A", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "Cookpot", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/blue-orb.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Green Specter", "materialDrop": "Timeless Shard II", "equipment": "N/A", "skills": "Brief Respite II", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/specter-green.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Owl", "materialDrop": "Timeless Shard II", "equipment": "N/A", "skills": "Fate Reverlsal II", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/owl-red.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Giant Spider", "materialDrop": "Timeless Shard II", "equipment": "N/A", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "Water Tub", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/spider-red.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Giant Rat", "materialDrop": "Timeless Shard II", "equipment": "N/A", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "Stack of Booka", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/rat-beige.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Grizzly Bear", "materialDrop": "Timeless Shard II", "equipment": "Tacticians Armor", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/bear-beige.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Lunar Wolf", "materialDrop": "Timeless Shard II", "equipment": "Kung Pow Band", "skills": "N/A", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Dungeon Monster", "icon": "/assets/monsters/windmill/wolf-a.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Shroom Golem (Boss)", "materialDrop": "Timeless Ember II", "equipment": "N/A", "skills": "Sylvan Embrace, Life Bloom II", "regionCategory": "Dungeon", "decorations": "Stone Couch", "categoryMonster": "Boss", "icon": "/assets/monsters/shroom-golem-boss.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Mossy Boar (Boss)", "materialDrop": "Timeless Ember II", "equipment": "Spiked Helm", "skills": "Order of the Eternal Rose, Wild Call II", "regionCategory": "Dungeon", "decorations": "Firepit", "categoryMonster": "Boss", "icon": "/assets/monsters/windmill/truffle-beast.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Forest Elementals (Boss)", "materialDrop": "Timeless Ember II, Timeless Shard II", "equipment": "Druid Vestments", "skills": "Arctic Vortex, Chilling Breathe II", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Boss", "icon": "/assets/monsters/windmill/willowisp-green.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Furious Bear (Boss)", "materialDrop": "Timeless Essence II, Timeless Ember II, Timeless Shard II", "equipment": "Druid Crown, Spiked Plate, Kung Pow Robes", "skills": "Artic Vortex, Shattering Pallisade", "regionCategory": "Dungeon", "decorations": "N/A", "categoryMonster": "Boss", "icon": "/assets/monsters/black-bear-boss.png" },
+  { "region": "Windmill (Dungeon)", "monster": "Witch of the Wild (Boss)", "materialDrop": "Timeless Essence II, Timeless Ember II, Timeless Shard II, Witch's Glass Eye", "equipment": "Druidic Staff", "skills": "Fortunate Blizzard, Piercing Hail, Symbiotic Spores, Healing Canopy", "regionCategory": "Dungeon", "decorations": "Miniature Larissa", "categoryMonster": "Boss", "icon": "/assets/monsters/witch-boss.png" }
 
 ];
 
