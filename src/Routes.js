@@ -41,6 +41,7 @@ import {
   RuniverseResources as RuniverseResourcesView,
   RuniverseEquipmentFresco as RuniverseEquipmentFrescoView,
   LevelUpGuide as LevelUpGuideView,
+  RuniverseSupport as RuniverseSupportView,
 
   Ecommerce as EcommerceView,
   Pricing as PricingView,
@@ -169,7 +170,7 @@ const Routes = () => {
         render={matchProps => (
           <WithLayout
             {...matchProps}
-            component={RuniverseEquipmentView}
+            component={RuniverseSupportView}
             layout={MainLayout}
           />
         )}
@@ -188,7 +189,7 @@ const Routes = () => {
 
       <Route
         exact
-        path="/runiverse/level-up"
+        path="/runiverse/level-up-guide"
         render={matchProps => (
           <WithLayout
             {...matchProps}
@@ -197,6 +198,19 @@ const Routes = () => {
           />
         )}
       />
+
+      <Route
+        exact
+        path="/runiverse/support"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={RuniverseSupportView}
+            layout={MainLayout}
+          />
+        )}
+      />
+
       <Route
         exact
         path="/career-listing"

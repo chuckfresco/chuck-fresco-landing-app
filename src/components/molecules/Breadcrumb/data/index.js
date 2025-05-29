@@ -25,6 +25,11 @@ export const breadcrumb = [
       isActive: false,
     },
     {
+      href: '/runiverse/level-up-guide',
+      title: 'Level Up Guide',
+      isActive: false,
+    },
+    {
       href: '/runiverse/status-effects',
       title: 'Status Effects',
       isActive: false,

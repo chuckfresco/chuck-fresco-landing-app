@@ -54,6 +54,14 @@ export const services = [
     link: '/runiverse/resources',
     description: 'Find where to farm specific materials by region and category.',
   },
+
+    {
+    icon: 'fas fa-virus',
+    title: 'Level Up Guide',
+    image: '/assets/level-up-guide.png',
+    link: '/runiverse/level-up-guide',
+    description: 'Learn what is the fastest way to level from 1 to 25.',
+  },
   {
     icon: 'fas fa-virus',
     title: 'Status Effects',
