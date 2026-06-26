@@ -7,6 +7,10 @@ import {
   Paper, Typography, Box, TextField
 } from '@material-ui/core';
 
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+
 const darkTheme = createTheme({
   palette: { type: 'dark' },
   overrides: {
@@ -96,6 +100,17 @@ const renderMaterials = (materials) => {
 const ResourcesTable = () => {
   const [searchText, setSearchText] = useState('');
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const searchParam = params.get('search');
+    if (searchParam) {
+      setSearchText(searchParam);
+    }
+  }, [location.search]);
+
+
   const filteredData = resourceData.filter(row => {
     const searchTerms = searchText.toLowerCase().split(',').map(term => term.trim()).filter(Boolean);
 
@@ -119,7 +134,7 @@ const ResourcesTable = () => {
       <Box p={2}>
         <Typography variant="h5" gutterBottom>Resources Table</Typography>
 
-        <Box mb={2}>
+        <Box display="flex" alignItems="center" mb={2}>
           <TextField
             variant="outlined"
             size="small"
@@ -128,7 +143,23 @@ const ResourcesTable = () => {
             onChange={e => setSearchText(e.target.value)}
             style={{ width: 400 }}
           />
+          <button
+            onClick={() => setSearchText('')}
+            style={{
+              marginLeft: 16,
+              backgroundColor: "#444",
+              border: "1px solid #777",
+              color: "#fff",
+              padding: "8px 16px",
+              borderRadius: 4,
+              cursor: "pointer",
+              height: 36
+            }}
+          >
+            Clear
+          </button>
         </Box>
+
 
         <TableContainer component={Paper}>
           <Table size="small">

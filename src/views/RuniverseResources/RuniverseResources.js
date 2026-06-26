@@ -80,7 +80,7 @@ const RuniverseResources = () => {
   return (
     <div>
       <Helmet>
-        <title>Forgotten Runiverse | Resources Guide</title>
+        <title>Resources Guide | Forgotten Runiverse </title>
         <meta name="description" content="Discover the essential resources of Forgotten Runiverse, categorized for crafting, forging, and upgrades." />
         <meta property="og:title" content="Resources Guide | Forgotten Runiverse" />
         <meta property="og:description" content="Master resource gathering with our detailed guide to wood, stone, fabric, gems, metals, and more in the Runiverse." />

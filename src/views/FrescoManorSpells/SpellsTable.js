@@ -149,6 +149,7 @@ const SpellsTable = () => {
   const [showImageGrid, setShowImageGrid] = useState(false);
   const [showHigh, setShowHigh] = useState(false);
   const [showUncommon, setShowUncommon] = useState(false);
+  const [showCommon, setShowCommon] = useState(false);
   const [workshopFilter, setWorkshopFilter] = useState("All");
 
 
@@ -169,38 +170,55 @@ const SpellsTable = () => {
     return <span style={{ fontSize: "14px" }}>{"★".repeat(count)}{"☆".repeat(max - count)}</span>;
   };
 
-  const applyFilters = (recipesList, term = searchTerm, stats = statFilters, color = activeColor, high = showHigh,
-    uncommon = showUncommon,  workshop = workshopFilter) => {
+  const applyFilters = (
+    recipesList,
+    term = searchTerm,
+    stats = statFilters,
+    color = activeColor,
+    high = showHigh,
+    uncommon = showUncommon,
+    workshop = workshopFilter,
+    common = showCommon // ✅ new parameter
+  ) => {
     let filtered = [...recipesList];
 
-      // High/Uncommon logic
-  if (high && !uncommon) {
-    filtered = filtered.filter(spell =>
-      ["High", "HighCantrip"].includes(spell.type)
-    );
-  } else if (uncommon && !high) {
-    filtered = filtered.filter(spell =>
-      !["High", "HighCantrip"].includes(spell.type)
-    );
-    // If both are selected, show all (do nothing)
+  if (high || uncommon || common) {
+    filtered = filtered.filter(spell => {
+      const isHigh = ["High", "HighCantrip"].includes(spell.type);
+      const isUncommon =
+        (spell.type === "Normal" || spell.type === "Cantrip") &&
+        spell.tier_text === "TIER II";
+
+      const isCommon =
+        (spell.type === "Normal" || spell.type === "Cantrip") &&
+        spell.tier_text === "TIER I";
+
+      return (
+        (high && isHigh) ||
+        (uncommon && isUncommon) ||
+        (common && isCommon)
+      );
+    });
   }
-  
+
+
+
     if (color !== "All") {
       const materialId = materialFilterMap[color];
       filtered = filtered.filter(item =>
         item.materials.some(mat => mat.material === materialId)
       );
     }
-  
+
     if (term.trim()) {
       const terms = term.toLowerCase().split(",").map(t => t.trim()).filter(t => t);
       filtered = filtered.filter(item => {
-      const itemText = [
-        item.name,
-        item.properties_crystal?.ability_properties?.description,
-        ...item.materials.map(mat => mat.resolvedName || ''),
-        item.type  // 👈 Add this line
-      ].join(" ").toLowerCase();
+        const itemText = [
+          item.name,
+          item.properties_crystal?.ability_properties?.description,
+          ...item.materials.map(mat => mat.resolvedName || ''),
+          item.type
+        ].join(" ").toLowerCase();
 
         return terms.every(t => itemText.includes(t));
       });
@@ -209,12 +227,12 @@ const SpellsTable = () => {
     if (workshop !== "All") {
       filtered = filtered.filter(item => item.location === workshop);
     }
-  
+
     if (stats.length > 0) {
       filtered = filtered.filter(item =>
         stats.every(s => (item.properties_crystal?.stats?.[s] ?? 0) > 0)
       );
-  
+
       const primary = stats[0];
       filtered.sort((a, b) => {
         const aStat = a.properties_crystal?.stats?.[primary] ?? 0;
@@ -227,59 +245,55 @@ const SpellsTable = () => {
         return bStat - aStat;
       });
     } else {
-      // 👇 Custom sort logic based on color
-      if (color === "All") {
-        filtered.sort((a, b) => {
-          const tierOrder = { "TIER II": 0, "TIER I": 1 };
-          const tierA = tierOrder[a.tier_text] ?? 99;
-          const tierB = tierOrder[b.tier_text] ?? 99;
-          if (tierA !== tierB) return tierA - tierB;
-      
-          const isHighA = ["High", "HighCantrip"].includes(a.type);
-          const isHighB = ["High", "HighCantrip"].includes(b.type);
-          if (isHighA && !isHighB) return -1;
-          if (!isHighA && isHighB) return 1;
-      
-          const starsA = a.station_data?.level ?? 0;
-          const starsB = b.station_data?.level ?? 0;
-          if (starsB !== starsA) return starsB - starsA;
-      
-          const remainingA = getRemainingToNextLevel(a.station_data?.total_inscriptions);
-          const remainingB = getRemainingToNextLevel(b.station_data?.total_inscriptions);
-          return remainingA - remainingB;
-        });
-      }
-      else {
+      // Custom sort logic
+      const sortByTierTypeStars = (a, b) => {
+        const tierOrder = { "TIER II": 0, "TIER I": 1 };
+        const tierA = tierOrder[a.tier_text] ?? 99;
+        const tierB = tierOrder[b.tier_text] ?? 99;
+        if (tierA !== tierB) return tierA - tierB;
 
-        filtered.sort((a, b) => {
-          // Sort by tier first
-          const tierOrder = { "TIER II": 0, "TIER I": 1 };
-          const tierA = tierOrder[a.tier_text] ?? 99;
-          const tierB = tierOrder[b.tier_text] ?? 99;
-          if (tierA !== tierB) return tierA - tierB;
-        
-          // Sort by type (High/HighCantrip first)
-          const isHighA = ["High", "HighCantrip"].includes(a.type);
-          const isHighB = ["High", "HighCantrip"].includes(b.type);
-        
-          if (isHighA && !isHighB) return -1;
-          if (!isHighA && isHighB) return 1;
-        
-          // Sort by stars, then by remaining inscriptions
-          const starsA = a.station_data?.level ?? 0;
-          const starsB = b.station_data?.level ?? 0;
-          if (starsB !== starsA) return starsB - starsA;
-        
-          const remainingA = getRemainingToNextLevel(a.station_data?.total_inscriptions);
-          const remainingB = getRemainingToNextLevel(b.station_data?.total_inscriptions);
-          return remainingA - remainingB;
-        });
-        
-      }
+        const isHighA = ["High", "HighCantrip"].includes(a.type);
+        const isHighB = ["High", "HighCantrip"].includes(b.type);
+        if (isHighA && !isHighB) return -1;
+        if (!isHighA && isHighB) return 1;
+
+        const starsA = a.station_data?.level ?? 0;
+        const starsB = b.station_data?.level ?? 0;
+        if (starsB !== starsA) return starsB - starsA;
+
+        const remainingA = getRemainingToNextLevel(a.station_data?.total_inscriptions);
+        const remainingB = getRemainingToNextLevel(b.station_data?.total_inscriptions);
+        return remainingA - remainingB;
+      };
+
+      filtered.sort(sortByTierTypeStars);
     }
-  
+
+    // ✅ Universal sorting: always put High/HighCantrip spells on top
+    filtered.sort((a, b) => {
+      const isHighA = ["High", "HighCantrip"].includes(a.type);
+      const isHighB = ["High", "HighCantrip"].includes(b.type);
+      if (isHighA && !isHighB) return -1;
+      if (!isHighA && isHighB) return 1;
+
+      const tierOrder = { "TIER II": 0, "TIER I": 1 };
+      const tierA = tierOrder[a.tier_text] ?? 99;
+      const tierB = tierOrder[b.tier_text] ?? 99;
+      if (tierA !== tierB) return tierA - tierB;
+
+      const starsA = a.station_data?.level ?? 0;
+      const starsB = b.station_data?.level ?? 0;
+      if (starsB !== starsA) return starsB - starsA;
+
+      const remainingA = getRemainingToNextLevel(a.station_data?.total_inscriptions);
+      const remainingB = getRemainingToNextLevel(b.station_data?.total_inscriptions);
+      return remainingA - remainingB;
+    });
+
+
     setFilteredRecipes(filtered);
   };
+
 
 
   const getWorkshopTag = (location) => {
@@ -375,7 +389,7 @@ const SpellsTable = () => {
               <Button
                 onClick={() => {
                   setWorkshopFilter("All");
-                  applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, showUncommon, "All");
+                  applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, showUncommon, "All", showCommon);
                 }}
                 variant={workshopFilter === "All" ? 'contained' : 'outlined'}
                 style={{
@@ -391,7 +405,7 @@ const SpellsTable = () => {
                   key={workshop}
                   onClick={() => {
                     setWorkshopFilter(workshop);
-                    applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, showUncommon, workshop);
+                    applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, showUncommon, workshop, showCommon);
                   }}
                   variant={workshopFilter === workshop ? 'contained' : 'outlined'}
                   style={{
@@ -411,7 +425,7 @@ const SpellsTable = () => {
                   key={color}
                   onClick={() => {
                     setActiveColor(color);
-                    applyFilters(recipes, searchTerm, statFilters, color, showHigh, showUncommon, workshopFilter);
+                    applyFilters(recipes, searchTerm, statFilters, color, showHigh, showUncommon, workshopFilter, showCommon);
                   }}
                   variant={activeColor === color ? 'contained' : 'outlined'}
                   style={{
@@ -451,7 +465,7 @@ const SpellsTable = () => {
                 onChange={(e) => {
                   const val = e.target.value;
                   setSearchTerm(val);
-                  applyFilters(recipes, val, statFilters, activeColor, showHigh, showUncommon, workshopFilter);
+                  applyFilters(recipes, val, statFilters, activeColor, showHigh, showUncommon, workshopFilter, showCommon);
                 }}
                 style={{ marginBottom: 0, maxWidth: 600 }}
               />
@@ -470,7 +484,7 @@ const SpellsTable = () => {
                           ? [...statFilters, stat]
                           : statFilters.filter((s) => s !== stat);
                         setStatFilters(updated);
-                        applyFilters(recipes, searchTerm, updated, activeColor, showHigh, showUncommon, workshopFilter);
+                        applyFilters(recipes, searchTerm, updated, activeColor, showHigh, showUncommon, workshopFilter, showCommon);
                       }}
                       color="primary"
                     />
@@ -485,7 +499,7 @@ const SpellsTable = () => {
                     onChange={(e) => {
                       const val = e.target.checked;
                       setShowHigh(val);
-                      applyFilters(recipes, searchTerm, statFilters, activeColor, val, showUncommon, workshopFilter);
+                      applyFilters(recipes, searchTerm, statFilters, activeColor, val, showUncommon, workshopFilter, showCommon);
                     }}
                     color="primary"
                   />
@@ -506,6 +520,22 @@ const SpellsTable = () => {
                 }
                 label="Uncommon Spells"
               />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={showCommon}
+                    onChange={(e) => {
+                      const val = e.target.checked;
+                      setShowCommon(val);
+                      applyFilters(recipes, searchTerm, statFilters, activeColor, showHigh, showUncommon, workshopFilter, val);
+                    }}
+                    color="primary"
+                  />
+                }
+                label="Common Spells"
+              />
+
+              
             </Box>
   
             <TableContainer component={Paper} style={{ marginTop: 16 }}>

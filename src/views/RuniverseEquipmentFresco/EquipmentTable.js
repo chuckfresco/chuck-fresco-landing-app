@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { idAffix, idDescriptors } from './data/spellData';
+//import { idAffix, idDescriptors } from './data/spellData';
 import { Link as RouterLink } from 'react-router-dom'
 
 import Dialog from '@material-ui/core/Dialog';
@@ -20,6 +20,16 @@ import CloseIcon from '@material-ui/icons/Close';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import Tooltip from '@material-ui/core/Tooltip';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+
+
+
+import { idAffix, idDescriptors, buffs, debuffs } from 'components/molecules/data'
 
 
 const useStyles = makeStyles(() => ({
@@ -68,6 +78,98 @@ const postBodies = [
   { id: "680b20aab8b5759c0eef397f", requester_id: "CFC4DA6D24CA928D", excluded_items: ["64e6821fe8ec8d469b25f199"], character_id: "5AC9BD3F729CD59C" },
   { id: "681003a0bf5528ac42a0f8f1", requester_id: "CFC4DA6D24CA928D", excluded_items: ["679d246c88ed77a53048057d"], character_id: "5AC9BD3F729CD59C" }
 ];
+
+const statDescriptions = {
+  Strength: `**Might** - Determines the Power of your Physical Spells.`,
+  Dexterity: `**Speed** - Determines how fast you act.<br />**Agility** - Determines your chance to dodge attacks.`,
+  Constitution: `**Mettle** - Determines the power of your shields.<br />**Durability** - Determines your resistance to Physical Attacks.<br />**Toughness** - Determines how much HP you have.`,
+  Intelligence: `**Brilliance** - Determines the Power of your Magical Spells.`,
+  Luck: `**Crit Chance** - Determines your chance to deal critical damage.<br />**Crit Damage** - Determines the power of your critical hits.`,
+  Wisdom: `**Grace** - Determines the power of your heals.<br />**Insight** - Determines your resistance to Magical Attacks.<br />**Resilience** - Determines your resistance to status effects.`,
+
+  Might: `**Might** - Determines the Power of your Physical Spells.`,
+  Speed: `**Speed** - Determines how fast you act.`,
+  Agility: `**Agility** - Determines your chance to dodge attacks.`,
+  Mettle: `**Mettle** - Determines the power of your shields.`,
+  Durability: `**Durability** - Determines your resistance to Physical Attacks.`,
+  Toughness: `**Toughness** - Determines how much HP you have.`,
+  Brilliance: `**Brilliance** - Determines the Power of your Magical Spells.`,
+  "Critical Chance": `**Crit Chance** - Determines your chance to deal critical damage.`,
+  "Critical DMG": `**Crit Damage** - Determines the power of your critical hits.`,
+  Grace: `**Grace** - Determines the power of your heals.`,
+  Insight: `**Insight** - Determines your resistance to Magical Attacks.`,
+  Resilience: `**Resilience** - Determines your resistance to status effects.`,
+    // Aliases
+  STR: `**Might** - Determines the Power of your Physical Spells.`,
+  DEX: `**Speed** - Determines how fast you act.<br />**Agility** - Determines your chance to dodge attacks.`,
+  CON: `**Mettle** - Determines the power of your shields.<br />**Durability** - Determines your resistance to Physical Attacks.<br />**Toughness** - Determines how much HP you have.`,
+  INT: `**Brilliance** - Determines the Power of your Magical Spells.`,
+  WIS: `**Grace** - Determines the power of your heals.<br />**Insight** - Determines your resistance to Magical Attacks.<br />**Resilience** - Determines your resistance to status effects.`,
+  LCK: `**Crit Chance** - Determines your chance to deal critical damage.<br />**Crit Damage** - Determines the power of your critical hits.`,
+  "Crit DMG": `**Crit Damage** - Determines the power of your critical hits.`,
+
+};
+
+const statusDescriptions = {};
+
+[...buffs, ...debuffs].forEach(({ name, description, duration }) => {
+  statusDescriptions[name.toLowerCase()] = `**${name}** - ${description}<br />*${duration}*`;
+});
+
+
+const addStatTooltips = (text) => {
+  const allTerms = {
+    ...statDescriptions,
+    ...Object.fromEntries(buffs.map(b => [b.name, `**${b.name}** - ${b.description} (${b.duration})`])), 
+    ...Object.fromEntries(debuffs.map(d => [d.name, `**${d.name}** - ${d.description} (${d.duration})`])),
+  };
+
+  const iconMap = {
+    ...Object.fromEntries(buffs.map(b => [b.name.toLowerCase(), b.icon])),
+    ...Object.fromEntries(debuffs.map(d => [d.name.toLowerCase(), d.icon])),
+  };
+
+  const regex = new RegExp(`\\b(${Object.keys(allTerms).join("|")})\\b`, "gi");
+  const parts = text.split(regex);
+
+  return parts.map((part, i) => {
+    const key = Object.keys(allTerms).find(k => k.toLowerCase() === part.toLowerCase());
+    if (!key) return part;
+
+    const isStatus = iconMap[key.toLowerCase()];
+    const description = allTerms[key];
+    const icon = iconMap[key.toLowerCase()];
+
+    return (
+    <Tooltip
+      key={i}
+      arrow
+      title={
+        <Box display="flex" flexDirection="column" alignItems="start" gap={1}>
+          {icon && <img src={icon} alt={key} style={{ width: 24, height: 24, marginBottom: 5 }} />}
+          <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
+            components={{
+              br: () => <><br /></>,
+              strong: ({ children }) => <span style={{ color: 'gold', fontWeight: 'bold' }}>{children}</span>
+            }}
+          >
+            {description}
+          </ReactMarkdown>
+        </Box>
+      }
+    >
+      <span style={{ borderBottom: "1px dotted #90caf9", color: "#90caf9" }}>
+        {part}
+      </span>
+    </Tooltip>
+
+    );
+  });
+};
+
+
+
 
 const fetchWithRetry = async (body, retries = 5, delay = 2000) => {
   for (let attempt = 1; attempt <= retries; attempt++) {
@@ -120,6 +222,43 @@ const fetchAndMergeData = async () => {
 const normalizeTier = (text) => text?.trim().toUpperCase() || '';
 const tierOrder = { 'TIER II': 0, 'TIER I': 1 };
 
+const groupAffixes = (affixPool = []) => {
+  const romanOrder = ['I','II','III','IV','V','VI','VII','VIII','IX','X'];
+
+  const grouped = affixPool.reduce((acc, affix) => {
+    const match = affix.name.match(/^(.*?)(?:\s+(I|II|III|IV|V|VI|VII|VIII|IX|X))?$/);
+    if (!match) return acc;
+
+    const [, base, levelRaw] = match;
+    const baseName = base.trim();
+    const level = levelRaw || 'I'; // Treat missing numeral as "I"
+    const key = `${affix.type}||${baseName}`;
+
+    if (!acc[key]) acc[key] = { type: affix.type, base: baseName, levels: new Set(), affix };
+    acc[key].levels.add(level);
+    return acc;
+  }, {});
+
+  return Object.values(grouped).map(({ type, base, levels, affix }) => {
+    const sortedLevels = Array.from(levels).sort(
+      (a, b) => romanOrder.indexOf(a) - romanOrder.indexOf(b)
+    );
+
+    const label = sortedLevels.length === 1
+      ? `${base} ${sortedLevels[0]}`
+      : `${base} ${sortedLevels[0]}–${sortedLevels[sortedLevels.length - 1]}`;
+
+    const description = idAffix[0]?.[affix.affix] || 'No description available';
+    return { type, name: label, description };
+  }).reduce((acc, affix) => {
+    if (!acc[affix.type]) acc[affix.type] = [];
+    acc[affix.type].push(affix);
+    return acc;
+  }, {});
+};
+
+
+
 const EquipmentTable = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -128,6 +267,12 @@ const EquipmentTable = () => {
   const [filterType, setFilterType] = useState('All');
   const [showTopDialog, setShowTopDialog] = useState(false);
   const [filterForge, setFilterForge] = useState('All');
+  const [tierFilters, setTierFilters] = useState({
+    High: false,
+    Uncommon: false,
+    Common: false,
+  });
+
   const classes = useStyles();
 
   useEffect(() => {
@@ -143,7 +288,9 @@ const EquipmentTable = () => {
         const nameB = b.name || '';
       
         const isTopTier = (name) => /Druid|Amber Guard|Moth|Lunar/.test(name);
-        const isSecondTier = (name) => /^Corrupt|^Golden|^Yellow/.test(name);
+        const isSecondTier = (name) =>
+          /^Corrupt|^Golden|^Dark|^Toxic|^Yellow/.test(name) || name.includes("Fold");
+
       
         const tierRank = (name) =>
           isTopTier(name) ? 0 :
@@ -192,15 +339,29 @@ const EquipmentTable = () => {
   const filteredData = data.filter(item => {
     const matchesType = filterType === 'All' || item.type === filterType;
     const matchesForge = filterForge === 'All' || item.forge === filterForge;
-  
+
+    const tierMap = {
+      "TIER I": "Common",
+      "TIER II": "Uncommon",
+      "TIER III": "High",
+    };
+    const tierLabel = tierMap[item.tier_text?.trim()] || "";
+
+    const anyTierChecked = Object.values(tierFilters).some(val => val);
+    const matchesTier = !anyTierChecked || tierFilters[tierLabel];
+
     const affixText = item.properties_forge?.affixes?.map(a => affixDescriptions[a.affix] || '').join(' ') || '';
     const affixPoolText = item.properties_forge?.affixes_pool?.map(a => a.name.toLowerCase()).join(' ') || '';
     const materialText = item.materials?.map(m => m.type).join(' ') || '';
     const forgeText = item.forge?.toLowerCase() || '';
     const fullText = `${item.name} ${affixText} ${affixPoolText} ${materialText} ${forgeText}`.toLowerCase();
-  
-    return matchesType && matchesForge && search.toLowerCase().split(',').every(term => fullText.includes(term.trim()));
+
+    return matchesType && matchesForge && matchesTier &&
+      search.toLowerCase().split(',').every(term => fullText.includes(term.trim()));
   });
+
+
+
   
 
   const renderStars = (level = 0) => {
@@ -270,7 +431,10 @@ const EquipmentTable = () => {
                   setFilterType('All');
                   setSearch('');
                   setExpandedRows([]);
+                  setTierFilters({ High: false, Uncommon: false, Common: false });
                 }}
+
+
               >
                 Clear Filters
               </Button>
@@ -296,6 +460,42 @@ const EquipmentTable = () => {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 style={{ width: 500 }}
+              />
+            </Box>
+
+            <Box display="flex" flexDirection="row" mt={1} mb={2}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={tierFilters.High}
+                    onChange={(e) =>
+                      setTierFilters({ ...tierFilters, High: e.target.checked })
+                    }
+                  />
+                }
+                label="High"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={tierFilters.Uncommon}
+                    onChange={(e) =>
+                      setTierFilters({ ...tierFilters, Uncommon: e.target.checked })
+                    }
+                  />
+                }
+                label="Uncommon"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={tierFilters.Common}
+                    onChange={(e) =>
+                      setTierFilters({ ...tierFilters, Common: e.target.checked })
+                    }
+                  />
+                }
+                label="Common"
               />
             </Box>
           </>
@@ -328,7 +528,7 @@ const EquipmentTable = () => {
                     <TableCell>
                       <Box component="img" src={item.image} alt={item.name} sx={{ width: 40, height: 40, objectFit: 'contain', p: 0.5, border: item.isHighlighted
       ? '2px solid gold'
-      : /^Corrupt|^Golden|^Yellow/.test(item.name)
+      : /^Corrupt|^Golden|^Dark|^Toxic|^Yellow/.test(item.name) || item.name.includes("Fold")
       ? '2px solid silver'
       : 'none' }} />
                     </TableCell>
@@ -339,19 +539,25 @@ const EquipmentTable = () => {
                         ? 'COMPLETE'
                         : `Next LVL: ${getRemainingToNextLevel(item.station_data?.total_inscriptions ?? 0, item.station_data?.level ?? 0)}`}
                     </TableCell>
+
                     <TableCell>
                       <Box display="flex" flexDirection="column" gap={0.5}>
                         {item.properties_forge?.affixes?.filter(a => a.affix !== 'Random')
                           .concat(item.properties_forge?.affixes?.filter(a => a.affix === 'Random') || [])
-                          .map((affix, i) => (
-                            <span key={i}>
-                              {affix.affix === 'Random'
-                                ? `+${affix.type} - Random`
-                                : (affixDescriptions[affix.affix] || `${affix.type} - ${affix.affix}`)}
-                            </span>
-                          ))}
+                          .map((affix, i) => {
+                            const affixText = affix.affix === 'Random'
+                              ? `+${affix.type} - Random`
+                              : (affixDescriptions[affix.affix] || `${affix.type} - ${affix.affix}`);
+
+                            return (
+                              <Typography key={i} variant="body2">
+                                {addStatTooltips(affixText)}
+                              </Typography>
+                            );
+                          })}
                       </Box>
                     </TableCell>
+
                     <TableCell>
                       <Box display="flex" alignItems="center" gap={1}>
                         <img src="/assets/gold-runiverse.png" alt="gold" style={{ width: 16, height: 16 }} />
@@ -381,22 +587,29 @@ const EquipmentTable = () => {
                           Random Affix Pool:
                         </Typography>
                         <Box display="flex" flexWrap="wrap" gap={4}>
-                          {Object.entries(
-                            (item.properties_forge?.affixes_pool || []).reduce((acc, affix) => {
-                              if (!acc[affix.type]) acc[affix.type] = [];
-                              acc[affix.type].push(affix);
-                              return acc;
-                            }, {})
-                          ).map(([type, affixes]) => (
+                          {Object.entries(groupAffixes(item.properties_forge?.affixes_pool)).map(([type, affixes]) => (
                             <Box key={type} sx={{ minWidth: 150, mr: 4 }}>
                               <Typography variant="subtitle2" style={{ color: '#90caf9', marginBottom: 4 }}>{type}</Typography>
                               <Box display="flex" flexDirection="column" gap={1}>
                                 {affixes.map((affix, index) => (
-                                  <Typography key={index} variant="body2" style={{ color: '#ccc' }}>{affix.name}</Typography>
+                                  <Tooltip
+                                    key={index}
+                                    arrow
+                                    title={
+                                      <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                        {affix.description}
+                                      </ReactMarkdown>
+                                    }
+                                  >
+                                    <Typography variant="body2" style={{ color: '#ffffff', cursor: 'help' }}>
+                                      {affix.name}
+                                    </Typography>
+                                  </Tooltip>
                                 ))}
                               </Box>
                             </Box>
                           ))}
+
                         </Box>
                       </TableCell>
                     </TableRow>
@@ -435,7 +648,9 @@ const EquipmentTable = () => {
 
                 .sort((a, b) => {
                   const isTopTier = (name) => /Druid|Amber Guard|Moth|Lunar/.test(name);
-                  const isSecondTier = (name) => /^Corrupt|^Golden|^Yellow/.test(name);
+                  const isSecondTier = (name) =>
+                    /^Corrupt|^Golden|^Dark|^Toxic|^Yellow/.test(name) || name.includes("Fold");
+
                   
                   const tierRank = (name) =>
                     isTopTier(name) ? 0 :
@@ -472,7 +687,7 @@ const EquipmentTable = () => {
                           backgroundColor: '#1e1e1e',
                           boxShadow: item.isHighlighted
                           ? '0 0 12px 3px gold'
-                          : /^Corrupt|^Golden|^Yellow/.test(item.name)
+                          : /^Corrupt|^Golden|^Dark|^Toxic|^Yellow/.test(item.name) || item.name.includes("Fold")
                           ? '0 0 12px 3px silver'
                           : 'none',
                           borderRadius: 4,

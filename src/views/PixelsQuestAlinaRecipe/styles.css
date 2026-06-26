@@ -1,0 +1,14 @@
+.responsive-table {
+    max-width: 800px;
+    width: 100%;
+    margin-left: 0; /* Left-align on large screens */
+    margin-right: auto; /* Prevent shifting to center */
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-table {
+      margin-left: auto;
+      margin-right: auto; /* Center on small screens */
+    }
+  }
+  

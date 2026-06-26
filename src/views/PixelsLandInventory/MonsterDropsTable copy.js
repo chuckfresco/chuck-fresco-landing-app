@@ -1,0 +1,425 @@
+import React, { useState, useMemo, useEffect } from "react";
+import {
+  ThemeProvider,
+  createTheme,
+  CssBaseline,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  TextField,
+  Typography,
+  Box,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+  Select,
+  MenuItem
+} from "@material-ui/core";
+import { rows } from "./data/index";
+import { useLocation } from "react-router-dom";
+
+
+const baseIconPath = "/assets/monsters/";
+const defaultIcon = "/assets/monsters/monsters-image.png";
+
+
+
+
+const silverGlow = {
+  border: "1px solid #C0C0C0",
+  boxShadow: "0 0 6px 2px rgba(192, 192, 192, 0.6)",
+  backgroundColor: "#1a1a1a",
+  borderRadius: 6,
+  width: 42,
+  height: 42,
+  overflow: "hidden",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+};
+
+const goldGlow = {
+  border: "1px solid gold",
+  boxShadow: "0 0 8px 3px rgba(255, 215, 0, 0.8)",
+  backgroundColor: "#1a1a1a",
+  borderRadius: 6,
+  width: 42,
+  height: 42,
+  overflow: "hidden",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+};
+
+const uncommonDecorationColors = {
+  "Famous Wizard Painting": "#e57373", // Red
+  "Firepit": "#e57373",
+  "Simple Cactus": "#fff176", // Yellow
+  "Water Tub": "#fff176",
+  "Small Bucket": "#81c784", // Green
+  "Miniature Larissa": "#81c784",
+  "Witch Cauldron": "#64b5f6", // Blue
+  "Tarot Cards": "#64b5f6",
+  "Everburning Candle": "#ba68c8", // Purple
+  "Opal Orb": "#e0e0e0", // White
+  "Cookpot": "#a1887f" // Brown
+};
+
+
+const darkTheme = createTheme({
+  palette: { type: "dark" },
+  overrides: {
+    MuiTableCell: {
+      root: {
+        padding: "6px 10px",
+        fontSize: "0.85rem",
+        whiteSpace: "nowrap"
+      },
+      head: {
+        backgroundColor: "#333",
+        color: "#fff",
+        fontWeight: "bold"
+      }
+    },
+    MuiCheckbox: {
+      colorSecondary: {
+        '&$checked': {
+          color: '#2196f3'
+        }
+      }
+    }
+  }
+});
+
+const wrapText = (text, maxLength = 78) => {
+  if (!text) return "";
+  const regex = new RegExp(`(.{1,${maxLength}})(\\s|$)`, "g");
+  return text.match(regex)?.join("\n") ?? text;
+};
+
+const regionOrder = [
+  "Azure Expanse",
+  "Moon Wood",
+  "The Wild",
+  "Northern Thicket",
+  "Southern Thicket",
+  "Windmill (Dungeon)"
+];
+
+
+const MonsterDropsTable = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showDungeon, setShowDungeon] = useState(false);
+  const [showNonDungeon, setShowNonDungeon] = useState(false);
+  const [showBoss, setShowBoss] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const search = params.get("search");
+    if (search) {
+      setSearchTerm(search);
+    }
+  }, [location.search]);
+
+
+  const processedRows = useMemo(() =>
+    rows.map(row => {
+      if (row.icon) return row;
+      const fileName = row.monster
+        ? row.monster.toLowerCase().replace(/[ ()]/g, "").replace(/[^a-z0-9]/gi, "_")
+        : null;
+      return {
+        ...row,
+        icon: fileName ? `${baseIconPath}${fileName}.png` : defaultIcon
+      };
+    }), []
+  );
+
+    const [selectedRegion, setSelectedRegion] = useState("All");
+    const allRegions = useMemo(() => {
+      const regionSet = new Set(rows.map(row => row.region).filter(Boolean));
+      return ["All", ...Array.from(regionSet).sort((a, b) => regionOrder.indexOf(a) - regionOrder.indexOf(b))];
+    }, []);
+
+    const filteredData = useMemo(() => {
+    const filtered = processedRows.filter(row => {
+      const matchesSearch = Object.values(row).some(value =>
+        String(value).toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      const isDungeon = row.regionCategory === "Dungeon";
+      const isBoss = row.categoryMonster === "Boss";
+      const dungeonMatch = showDungeon ? isDungeon : true;
+      const nonDungeonMatch = showNonDungeon ? !isDungeon : true;
+      const bossMatch = showBoss ? isBoss : true;
+      const regionMatch = selectedRegion === "All" || row.region === selectedRegion;
+
+      return matchesSearch && dungeonMatch && nonDungeonMatch && bossMatch && regionMatch;
+
+    });
+
+return filtered.sort((a, b) => {
+  const regionCompare = regionOrder.indexOf(a.region) - regionOrder.indexOf(b.region);
+  if (regionCompare !== 0) return regionCompare;
+
+  const getCount = (val) =>
+    val && val !== "N/A"
+      ? val.split(",").map(s => s.trim()).filter(Boolean).length
+      : 0;
+
+  const score = (row) =>
+    getCount(row.equipment) + getCount(row.skills) + getCount(row.decorations);
+
+  const scoreA = score(a);
+  const scoreB = score(b);
+
+  if (scoreA !== scoreB) return scoreB - scoreA;
+
+  if (a.categoryMonster === "Boss" && b.categoryMonster !== "Boss") return -1;
+  if (a.categoryMonster !== "Boss" && b.categoryMonster === "Boss") return 1;
+
+  return a.monster.localeCompare(b.monster);
+});
+
+
+}, [searchTerm, processedRows, showDungeon, showNonDungeon, showBoss, selectedRegion]);
+
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Box p={2}>
+        <Typography variant="h5" gutterBottom>
+          Pixels Land Inventory
+        </Typography>
+
+      <Box mb={2}>
+        <Box display="flex" alignItems="center">
+          <TextField
+            label="Search"
+            variant="outlined"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+            style={{ width: 400 }}
+          />
+          <button
+            onClick={() => {
+              setSearchTerm("");
+              setShowDungeon(false);
+              setShowNonDungeon(false);
+              setShowBoss(false);
+              setSelectedRegion("All");
+            }}
+            style={{
+              marginLeft: 16,
+              backgroundColor: "#444",
+              border: "1px solid #777",
+              color: "#fff",
+              padding: "10px 16px",
+              borderRadius: 4,
+              cursor: "pointer",
+              height: 40
+            }}
+          >
+            Clear
+          </button>
+        </Box>
+
+        <Box mt={1}>
+          <Select
+            value={selectedRegion}
+            onChange={e => setSelectedRegion(e.target.value)}
+            variant="outlined"
+            style={{ width: 300 }}
+            displayEmpty
+          >
+            {allRegions.map(region => (
+              <MenuItem key={region} value={region}>
+                {region}
+              </MenuItem>
+            ))}
+          </Select>
+        </Box>
+      </Box>
+
+
+
+        <FormGroup row style={{ marginBottom: 16 }}>
+          <FormControlLabel
+            control={<Checkbox color="primary" checked={showDungeon} onChange={e => setShowDungeon(e.target.checked)} />}
+            label="Dungeons"
+          />
+          <FormControlLabel
+            control={<Checkbox color="primary" checked={showNonDungeon} onChange={e => setShowNonDungeon(e.target.checked)} />}
+            label="Non-Dungeons"
+          />
+          <FormControlLabel
+            control={<Checkbox color="primary" checked={showBoss} onChange={e => setShowBoss(e.target.checked)} />}
+            label="Boss"
+          />
+        </FormGroup>
+
+
+
+
+
+
+
+        <Box
+          mb={2}
+          p={1}
+          style={{
+            backgroundColor: "#2e2e2e",
+            borderRadius: 6,
+            border: "1px solid #444",
+            fontSize: "0.85rem",
+            width: 800,
+            color: "#ccc"
+          }}
+        >
+          <Typography variant="subtitle2" gutterBottom style={{ color: "#fff" }}>
+            Recipe Drop Rate
+          </Typography>
+          <Box display="flex" justifyContent="space-between" gap={2}>
+            {[
+              [
+                { label: "High Spell", value: "0.17%" },
+                { label: "High Equipment", value: "0.17%" }
+              ],
+              [
+                { label: "Uncommon Spells", value: "0.83%" },
+                { label: "Uncommon Equipment", value: "0.83%" }
+              ],
+              [
+                { label: "Uncommon Decoration", value: "0.5%" },
+                { label: "Common Decoration", value: "2.0%" },
+              ],
+              [
+                { label: "Common Spell", value: "5%" },
+                { label: "Common Equipment", value: "2.5%" }
+              ]
+            ].map((column, idx) => (
+              <Box key={idx} width="25%" px={1}>
+                {column.map((item, i) => (
+                  <Box
+                    key={i}
+                    display="flex"
+                    justifyContent="space-between"
+                    style={{ minWidth: 160 }}
+                  >
+                    <span>{item.label}</span>
+                    <span>{item.value}</span>
+                  </Box>
+                ))}
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
+
+        <TableContainer component={Paper}>
+          <Table size="small">
+            <colgroup>
+              <col style={{ width: '6%' }} />
+              <col style={{ width: '7%' }} />
+              <col style={{ width: '10%' }} />
+              <col style={{ width: '12%' }} />
+              <col style={{ width: '15%' }} />
+              <col style={{ width: '15%' }} />
+              <col style={{ width: '15%' }} />
+            </colgroup>
+            <TableHead>
+              <TableRow>
+                <TableCell>Icon</TableCell>
+                <TableCell>Region</TableCell>
+                <TableCell>Monster</TableCell>
+                <TableCell>Material Drop</TableCell>
+                <TableCell>Equipment</TableCell>
+                <TableCell>Skills</TableCell>
+                <TableCell>Decorations</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {filteredData.map((row, index) => (
+                <TableRow
+                  key={`${row.monster}-${index}`}
+                  style={{
+                    backgroundColor: index % 2 === 0 ? "#2b2b2b" : "#1f1f1f",
+                    transition: "background-color 0.2s ease"
+                  }}
+                  onMouseEnter={e =>
+                    (e.currentTarget.style.backgroundColor = "#3a3a3a")
+                  }
+                  onMouseLeave={e =>
+                    (e.currentTarget.style.backgroundColor =
+                      index % 2 === 0 ? "#2b2b2b" : "#1f1f1f")
+                  }
+                >
+                  <TableCell>
+                    <div style={row.categoryMonster === "Boss" ? goldGlow : silverGlow}>
+                      <img
+                        src={row.icon || defaultIcon}
+                        alt={row.monster || "Unknown"}
+                        style={{
+                          width: "150%",
+                          height: "150%",
+                          objectFit: "contain",
+                          display: "block"
+                        }}
+                        onError={(e) => {
+                          if (!e.currentTarget.src.endsWith(defaultIcon)) {
+                            e.currentTarget.src = defaultIcon;
+                          }
+                        }}
+                      />
+                    </div>
+                  </TableCell>
+                  <TableCell>{row.region}</TableCell>
+                  <TableCell>{row.monster}</TableCell>
+                  <TableCell style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
+                    {wrapText(row.materialDrop)}
+                  </TableCell>
+                  <TableCell>{row.equipment}</TableCell>
+                  <TableCell>{row.skills}</TableCell>
+                 <TableCell>
+                  {row.decorations && row.decorations !== "N/A" ? row.decorations.split(",").map((item, idx) => {
+                    const trimmed = item.trim();
+                    const color = uncommonDecorationColors[trimmed];
+                    return (
+                      <span key={idx} style={{
+                        color: color || undefined,
+                        fontWeight: color ? 'bold' : undefined,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        marginRight: 8
+                      }}>
+                        {color && (
+                          <span style={{
+                            width: 10,
+                            height: 10,
+                            borderRadius: "50%",
+                            backgroundColor: color,
+                            display: "inline-block",
+                            marginRight: 4
+                          }} />
+                        )}
+                        {trimmed}
+                      </span>
+                    );
+                  }) : ""}
+                </TableCell>
+
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+    </ThemeProvider>
+  );
+};
+
+export default MonsterDropsTable;

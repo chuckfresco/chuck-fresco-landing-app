@@ -23,6 +23,8 @@ export const pastelColors = {
 
 
 
+
+
 export const starThresholds = [0, 25, 75, 325, 1575];
 
 export const workshops = [
@@ -13711,6 +13713,30 @@ export const idAffix = [
 
 export const idDescriptors = [
   [
+        {
+        "_id": "67ffdc1dade0fec677a62f0d",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f85bbcade0fec6779b0cec",
+        "minteable": false,
+        "name": "Corrupted Ember II",
+        "rarity": 1,
+        "type": "ember"
+    },
+    {
+        "_id": "67ffdbc5ade0fec677a62ee3",
+        "__v": 0,
+        "bag": 2,
+        "burneable": false,
+        "family": "",
+        "icon": "67f85b61ade0fec6779b0bc4",
+        "minteable": false,
+        "name": "Corrupted Shard II",
+        "rarity": 1,
+        "type": "shard"
+    },
     {
         "_id": "67ffd643ade0fec677a5f64c",
         "__v": 0,

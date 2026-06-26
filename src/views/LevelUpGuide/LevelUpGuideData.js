@@ -9,10 +9,10 @@ export const levelSections = [
   },
   {
     levelRange: "3-4",
-    description: "Farm Brown Wolf level 3 and level 4 Yellow wasp to farm some Chilling Shard in Southern Thicket.",
+    description: "Farm Warg level 3 and level 4 Gigas Hornet to farm some Chilling Shard in Southern Thicket.",
     monsters: [
-      { name: "Brown Wolf", image: "/assets/level-up/southern-thicket/wolf_b_portrait.png", location: "Southern Thicket" },
-      { name: "Yellow Wasp", image: "/assets/level-up/southern-thicket/wasp_a_portrait.png", location: "Southern Thicket", keyDrops: "Chilling Shard" }
+      { name: "Warg", image: "/assets/level-up/southern-thicket/wolf_b_portrait.png", location: "Southern Thicket", keyDrops: "Feral Ember"  },
+      { name: "Gigas Hornet", image: "/assets/level-up/southern-thicket/wasp_a_portrait.png", location: "Southern Thicket", keyDrops: "Chilling Shard" }
     ]
   },
   {
@@ -26,7 +26,7 @@ export const levelSections = [
     levelRange: "6-7",
     description: "Farm Chemist in Northern Thicket and craft Heat Wave once you finish Quest #1.",
     monsters: [
-      { name: "Chemist", image: "/assets/level-up/northern-thicket/chemist_a_portrait.png", location: "Northern Thicket", keyDrops: "Cunning Shard" }
+      { name: "Chemist", image: "/assets/level-up/northern-thicket/chemist_a_portrait.png", location: "Northern Thicket", keyDrops: "Cunning Shard I" }
     ],
     upgradeSpells: ["📜Heat Wave"],
 
@@ -49,16 +49,16 @@ export const levelSections = [
     levelRange: "12",
     description: "Move to The Wild. Farm Grey Rat.",
     monsters: [
-      { name: "Grey Rat", image: "/assets/level-up/the-wild/rat_a_portrait.png", location: "The Wild", keyDrops: "Volatile Gambit (Recipe)" }
+      { name: "Grey Rat", image: "/assets/level-up/the-wild/rat_a_portrait.png", location: "The Wild", keyDrops: "Feral Shard I, Volatile Gambit (Recipe)" }
     ]
   },
   {
     levelRange: "13",
-    description: "Farm Yellow Firefly to craft Volatile Gambit Spell. Continue to farm Grey Goo and Tiger.",
+    description: "Farm Yellow Firefly to craft Volatile Gambit Spell. Continue to farm Grey Goo and Warg.",
     monsters: [
-      { name: "Erynis Yellow Firefly", image: "/assets/level-up/the-wild/erynis_c_portrait.png", location: "The Wild", keyDrops: "Pulsing Shard" },
+      { name: "Erynis Yellow Firefly", image: "/assets/level-up/the-wild/erynis_c_portrait.png", location: "The Wild", keyDrops: "Pulsing Shard I" },
       { name: "Smoking Slime", image: "/assets/level-up/the-wild/slimegrey.png", location: "The Wild" },
-      { name: "Tiger", image: "/assets/level-up/the-wild/tiger_b_portrait.png", location: "The Wild" }
+      { name: "Warg", image: "/assets/level-up/southern-thicket/wolf_b_portrait.png", location: "The Wild", keyDrops: "Feral Ember I" },
     ],
      upgradeSpells: ["Volatile Gambit"],
   },
@@ -74,9 +74,11 @@ export const levelSections = [
   },
   {
     levelRange: "15-16",
-    description: "Farm Green Slime for materials for Demon Armor and upgrade Halting Staff.",
+    description: "Farm Green Slime and then Blue Djinn for materials to craft Demon Armor and craft Halting Staff.",
     monsters: [
-      { name: "Green Slime", image: "/assets/level-up/azure-expanse/slimegreen.png", location: "Azure Expanse", keyDrops: "Disturbing Shard II"  }
+      { name: "Green Slime", image: "/assets/level-up/azure-expanse/slimegreen.png", location: "Azure Expanse", keyDrops: "Disturbing Shard II"  },
+      { name: "Blue Djinn", image: "/assets/level-up/azure-expanse/djinnblue.png", location: "Azure Expanse", keyDrops: "Pulsing Ember II" },
+
     ],
 
       equipmentList: ["Kirama Demon Armor", "Halting Staff"],
@@ -92,11 +94,12 @@ export const levelSections = [
   },
   {
     levelRange: "18",
-    description: "Farm Blue Djinn after crafting Demon Armor & Halting Staff. Consider completing Quest #9 to get Devouring Scythe Relic.",
+    description: "Continue to farm Blue Djinn after crafting Demon Armor & Halting Staff. Consider completing Quest #9 to get Devouring Scythe Relic. Farm Miama Toad in the Wild for materials" ,
     monsters: [
-      { name: "Blue Djinn", image: "/assets/level-up/azure-expanse/djinnblue.png", location: "Azure Expanse", keyDrops: "Pulsing Ember II" }
+      { name: "Blue Djinn", image: "/assets/level-up/azure-expanse/djinnblue.png", location: "Azure Expanse", keyDrops: "Pulsing Ember II" },
+      { name: "Miasma Toad", image: "/assets/level-up/moon-wood/Miasmatoad_icon.png", location: "The Wild",  keyDrops: "Pulsing Ember, Halting Staff (Recipe)" }
     ],
-    equipmentList: ["Nimbus 1337", "📜Devouring Scythe"],
+    equipmentList: ["Halting Staff", ],
   },
   {
     levelRange: "19",
@@ -107,9 +110,10 @@ export const levelSections = [
   },
   {
     levelRange: "20-22",
-    description: "Move to Moon Wood. Farm Chemist for Cunning Shard II and craft Volatile Gambit II & Heat Wave II.",
+    description: "Move to Moon Wood. Farm Chemist for Cunning Shard II and Gigas Hornet for Crittering Shard II. Craft Volatile Gambit II & Heat Wave II.",
     monsters: [
-      { name: "Scientist", image: "/assets/level-up/moon-wood/chemist_a_portrait.png", location: "Moon Wood", keyDrops: "Cunning Shard II" }
+      { name: "Scientist", image: "/assets/level-up/moon-wood/chemist_a_portrait.png", location: "Moon Wood", keyDrops: "Cunning Shard II" },
+      { name: "Gigas Hornet", image: "/assets/level-up/southern-thicket/wasp_a_portrait.png", location: "Moon Wood", keyDrops: "Chilling Shard II" }
     ],
 
     upgradeSpells: ["Heat Wave II", "Volatile Gambit II"],
@@ -139,7 +143,8 @@ export const levelSections = [
 export const sideQuests = [
 {
   title: "Quest #1: The Gathering Tree",
-  levelRange: "6-7",
+  youtube: "https://youtu.be/R0K0COdizEI?si=klVb-kPHwTKTB7y9",
+  levelRange: "5",
   mapImage: "/assets/level-up/quests/images/quest-1-map.jpg",
   steps: [
     "Initiate the quest by speaking with the Green Emissary located at marker #1.",
@@ -161,7 +166,8 @@ export const sideQuests = [
 },
   {
   title: "Quest #2: The Mining Rights",
-  levelRange: "6-7",
+  youtube: "https://youtu.be/qDBtuu8jwyw?si=Kz2K-3GK35BaCV7b",
+  levelRange: "5",
   mapImage: "/assets/level-up/quests/images/quest-2-map.jpg",
 steps: [
   "Talk to the Red Emissary at point #1.",
@@ -180,14 +186,16 @@ steps: [
     mapImage: "/assets/level-up/quests/images/quest-9-map.jpg",
     steps: [
       "From The Wild Stone, head northeast to find the White Rabbit near a cave.",
-      "Craft and equip a magical relic like Nimbus 1337 to be allowed inside.",
+      "Craft and equip a magical relic like Halting Staff to be allowed inside.",
       "Enter the cave and defeat the lurking beast.",
       "Go back to the Rabbit to finish your mission.",
       "Quest completed!"
     ],
     
 
-    reward: "Devouring Scythe"
+    reward: "Devouring Scythe",
+
+    equipmentList: ["Halting Staff", "📜Devouring Scythe"],
   },
 
 ];

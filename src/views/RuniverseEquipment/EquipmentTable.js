@@ -6,10 +6,15 @@ import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
   Paper, Typography, Avatar, Box, Grid, TextField, Button
 } from '@material-ui/core';
-import { idAffix, idDescriptors, equipmentTable } from './data/spellData';
+//import { idAffix, idDescriptors, equipmentTable } from './data/spellData';
 
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+
+import { idAffix, idDescriptors, equipmentTable } from 'components/molecules/data'
+
+
+
 
 const darkTheme = createTheme({
   palette: { type: 'dark' },
@@ -32,46 +37,53 @@ const EquipmentTable = () => {
   const [search, setSearch] = useState('');
   const [filterType, setFilterType] = useState('All');
 
-  useEffect(() => {
-    const sorted = [...equipmentTable].sort((a, b) => {
-      const groupPriority = name => {
-        if (/Druid|Amber Guard|Moth|Lunar/.test(name)) return 0;
-        if (/^Corrupt|Golden/.test(name)) return 1;
-        return 2;
-      };
-    
-      const tierOrder = { 'TIER II': 0, 'TIER I': 1 };
-      const groupA = groupPriority(a.name);
-      const groupB = groupPriority(b.name);
-    
-      if (groupA !== groupB) return groupA - groupB;
-    
-      const tierA = tierOrder[a.tier_text] ?? 99;
-      const tierB = tierOrder[b.tier_text] ?? 99;
-      if (tierA !== tierB) return tierA - tierB;
-    
-      const goldA = a.currencies?.gold ?? 0;
-      const goldB = b.currencies?.gold ?? 0;
-      if (goldA !== goldB) return goldB - goldA;
-    
-      return a.name.localeCompare(b.name);
-    });
-    
-    
-    const filtered = sorted.filter(item => !item.one_time_use);
+      useEffect(() => {
+        // ✅ Deep clone equipmentTable to avoid mutating module-scoped data
 
-    filtered.forEach(item => {
-      item.materials = item.materials?.map(mat => ({
-        ...mat,
-        type: descriptorMap[mat.material] || mat.type,
-        isHighlighted: /Lunar|Golden|Timeless/.test(descriptorMap[mat.material] || '')
-      })) || [];
+          const ids = new Set();
+          const duplicates = [];
 
-      item.isHighlighted = item.materials.some(m => m.isHighlighted);
-    });
+          equipmentTable.forEach(item => {
+            if (ids.has(item._id)) duplicates.push(item.name);
+            ids.add(item._id);
+          });
 
-    setData(filtered);
-  }, []);
+          if (duplicates.length > 0) {
+            console.warn("Duplicate items found in equipmentTable:", duplicates);
+          }
+        const cloned = JSON.parse(JSON.stringify(equipmentTable));
+
+        const sorted = cloned.sort((a, b) => {
+          const groupPriority = name => {
+            if (/Druid|Amber Guard|Moth|Lunar/.test(name)) return 0;
+            if (/^Corrupt|Golden/.test(name)) return 1;
+            return 2;
+          };
+
+          const tierOrder = { 'TIER II': 0, 'TIER I': 1 };
+          const groupA = groupPriority(a.name);
+          const groupB = groupPriority(b.name);
+
+          if (groupA !== groupB) return groupA - groupB;
+
+          const tierA = tierOrder[a.tier_text] ?? 99;
+          const tierB = tierOrder[b.tier_text] ?? 99;
+          if (tierA !== tierB) return tierA - tierB;
+
+          const goldA = a.currencies?.gold ?? 0;
+          const goldB = b.currencies?.gold ?? 0;
+          if (goldA !== goldB) return goldB - goldA;
+
+          return a.name.localeCompare(b.name);
+        });
+
+        setData(sorted.filter(item => !item.one_time_use));
+      }, []);
+
+
+
+
+
 
   const toggleRow = (id) => {
     setExpandedRows(prev =>
@@ -81,7 +93,26 @@ const EquipmentTable = () => {
 
   const affixDescriptions = idAffix[0];
 
-  const filteredData = data.filter(item => {
+const processedData = data.map(item => {
+  const newMaterials = (item.materials || []).map(mat => {
+    const descriptor = descriptorMap[mat.material] || mat.type;
+    return {
+      ...mat,
+      type: descriptor,
+      isHighlighted: /Lunar|Golden|Timeless/.test(descriptor)
+    };
+  });
+
+  return {
+    ...item,
+    materials: newMaterials,
+    isHighlighted: newMaterials.some(m => m.isHighlighted)
+  };
+});
+
+
+
+  const filteredData = processedData.filter(item => {
     const matchesType = filterType === 'All' || item.type === filterType;
   
     const affixText = item.properties_forge?.affixes?.map(affix =>
@@ -134,9 +165,10 @@ const EquipmentTable = () => {
 
         <Box mb={1} display="flex" flexWrap="wrap" gap={1}>
           <Button variant={filterType === 'All' ? 'contained' : 'outlined'} onClick={() => setFilterType('All')}>All</Button>
-          <Button variant={filterType === 'Relic' ? 'contained' : 'outlined'} onClick={() => setFilterType('Weapon')}>Relics</Button>
+          <Button variant={filterType === 'Weapon' ? 'contained' : 'outlined'} onClick={() => setFilterType('Weapon')}>Relics</Button>
           <Button variant={filterType === 'Headgear' ? 'contained' : 'outlined'} onClick={() => setFilterType('Headgear')}>Headgear</Button>
-          <Button variant={filterType === 'Suit' ? 'contained' : 'outlined'} onClick={() => setFilterType('Suits')}>Suits</Button>
+          <Button variant={filterType === 'Suits' ? 'contained' : 'outlined'} onClick={() => setFilterType('Suits')}>Suits</Button>
+
           <Button variant="outlined" onClick={() => { setFilterType('All'); setSearch(''); }}>Clear</Button>
         </Box>
 
@@ -165,7 +197,7 @@ const EquipmentTable = () => {
             </TableHead>
             <TableBody>
               {highlightedFirst.map((item) => (
-                <React.Fragment key={item._id}>
+                <React.Fragment key={`${item._id}-${item.name}`}>
                   <TableRow
                     style={{ backgroundColor: '#2b2b2b', cursor: 'pointer' }}
                     onClick={() => toggleRow(item._id)}

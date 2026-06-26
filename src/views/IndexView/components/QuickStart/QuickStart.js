@@ -52,7 +52,7 @@ const QuickStart = ({ className, ...rest }) => {
 
   );
 
-  const buyFrescoButton = (
+ /*  const buyFrescoButton = (
 
     <Button size="large" variant="contained"  component="a" href="https://app.roninchain.com/swap?outputCurrency=0x08efAE2069fA21F94Af50D9DdBaa268FA514006F&inputCurrency=RON#/swap">
     Buy $FRESCO
@@ -73,7 +73,7 @@ const QuickStart = ({ className, ...rest }) => {
       Get Started
     </Button>
   );
-
+ */
   return (
     <div className={className} {...rest}>
       <Grid container justify="space-between" spacing={2}>
@@ -82,9 +82,9 @@ const QuickStart = ({ className, ...rest }) => {
             <Grid item xs={12} md={5} data-aos={'fade-right'}>
               <SectionHeader
                 id="Giveaway"
-                title="$FRESCO Giveaways"
-                subtitle="The $FRESCO Giveaway is hosted monthly to give back to the community for the support. We select a winner from our Twitter. Check in regularly on Twitter for more chances to win! #frescogiveaway"
-                ctaGroup={[docsButton, buyFrescoButton]}
+                title="Giveaways"
+                subtitle="The Giveaway is hosted monthly to give back to the community for the support. We select a winner from our X. Check in regularly on X for more chances to win! #frescogiveaway"
+                ctaGroup={[docsButton]}
                 align={isMd ? 'left' : 'center'}
                 disableGutter
                 titleVariant="h3"
@@ -95,7 +95,7 @@ const QuickStart = ({ className, ...rest }) => {
             <Grid item container alignItems="center"  justifyContent="center" xs={12} md={7} data-aos={'fade-left'}>
 
             <Image
-            src="/assets/fresco-coin.webp"
+            src="/assets/landing-page/chuck-giveaway.webp"
             alt="Chuck Fresco Giveaway"
             className={classes.image}
           />

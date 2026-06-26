@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   ThemeProvider,
   createTheme,
@@ -15,12 +15,19 @@ import {
   Box,
   FormGroup,
   FormControlLabel,
-  Checkbox
+  Checkbox,
+  Select,
+  MenuItem
 } from "@material-ui/core";
 import { rows } from "./data/index";
+import { useLocation } from "react-router-dom";
+
 
 const baseIconPath = "/assets/monsters/";
 const defaultIcon = "/assets/monsters/monsters-image.png";
+
+
+
 
 const silverGlow = {
   border: "1px solid #C0C0C0",
@@ -109,6 +116,16 @@ const MonsterDropsTable = () => {
   const [showDungeon, setShowDungeon] = useState(false);
   const [showNonDungeon, setShowNonDungeon] = useState(false);
   const [showBoss, setShowBoss] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const search = params.get("search");
+    if (search) {
+      setSearchTerm(search);
+    }
+  }, [location.search]);
+
 
   const processedRows = useMemo(() =>
     rows.map(row => {
@@ -123,7 +140,13 @@ const MonsterDropsTable = () => {
     }), []
   );
 
-  const filteredData = useMemo(() => {
+    const [selectedRegion, setSelectedRegion] = useState("All");
+    const allRegions = useMemo(() => {
+      const regionSet = new Set(rows.map(row => row.region).filter(Boolean));
+      return ["All", ...Array.from(regionSet).sort((a, b) => regionOrder.indexOf(a) - regionOrder.indexOf(b))];
+    }, []);
+
+    const filteredData = useMemo(() => {
     const filtered = processedRows.filter(row => {
       const matchesSearch = Object.values(row).some(value =>
         String(value).toLowerCase().includes(searchTerm.toLowerCase())
@@ -133,7 +156,10 @@ const MonsterDropsTable = () => {
       const dungeonMatch = showDungeon ? isDungeon : true;
       const nonDungeonMatch = showNonDungeon ? !isDungeon : true;
       const bossMatch = showBoss ? isBoss : true;
-      return matchesSearch && dungeonMatch && nonDungeonMatch && bossMatch;
+      const regionMatch = selectedRegion === "All" || row.region === selectedRegion;
+
+      return matchesSearch && dungeonMatch && nonDungeonMatch && bossMatch && regionMatch;
+
     });
 
 return filtered.sort((a, b) => {
@@ -160,7 +186,7 @@ return filtered.sort((a, b) => {
 });
 
 
-  }, [searchTerm, processedRows, showDungeon, showNonDungeon, showBoss]);
+}, [searchTerm, processedRows, showDungeon, showNonDungeon, showBoss, selectedRegion]);
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -170,14 +196,56 @@ return filtered.sort((a, b) => {
           Monster Drop Table
         </Typography>
 
-        <TextField
-          label="Search"
-          variant="outlined"
-          fullWidth
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-          style={{ marginBottom: 20, maxWidth: 400 }}
-        />
+      <Box mb={2}>
+        <Box display="flex" alignItems="center">
+          <TextField
+            label="Search"
+            variant="outlined"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+            style={{ width: 400 }}
+          />
+          <button
+            onClick={() => {
+              setSearchTerm("");
+              setShowDungeon(false);
+              setShowNonDungeon(false);
+              setShowBoss(false);
+              setSelectedRegion("All");
+            }}
+            style={{
+              marginLeft: 16,
+              backgroundColor: "#444",
+              border: "1px solid #777",
+              color: "#fff",
+              padding: "10px 16px",
+              borderRadius: 4,
+              cursor: "pointer",
+              height: 40
+            }}
+          >
+            Clear
+          </button>
+        </Box>
+
+        <Box mt={1}>
+          <Select
+            value={selectedRegion}
+            onChange={e => setSelectedRegion(e.target.value)}
+            variant="outlined"
+            style={{ width: 300 }}
+            displayEmpty
+          >
+            {allRegions.map(region => (
+              <MenuItem key={region} value={region}>
+                {region}
+              </MenuItem>
+            ))}
+          </Select>
+        </Box>
+      </Box>
+
+
 
         <FormGroup row style={{ marginBottom: 16 }}>
           <FormControlLabel
@@ -194,37 +262,62 @@ return filtered.sort((a, b) => {
           />
         </FormGroup>
 
-            <Box
-              mb={2}
-              p={1}
-              style={{
-                backgroundColor: "#2e2e2e",
-                borderRadius: 6,
-                border: "1px solid #444",
-                fontSize: "0.85rem",
-                maxWidth: 700,
-                color: "#ccc"
-              }}
-            >
-              <Typography variant="subtitle2" gutterBottom style={{ color: "#fff" }}>
-                Recipe Drop Rate
-              </Typography>
-              <Box display="flex" justifyContent="space-between">
-                <Box width="32%">
-                  <div>Tier II Uncommon Spells: 0.83%</div>
-                  <div>Tier II Equipment: 0.83%</div>
-                </Box>
-                <Box width="32%">
-                  <div>High Uncommon Spell: 0.17%</div>
-                  <div>High Equipment: 0.17%</div>
-                </Box>
-                <Box width="32%">
-                  <div>Common Decoration: 2%</div>
-                  <div>Uncommon Decoration: 0.5%</div>
-                </Box>
-              </Box>
-            </Box>
 
+
+
+
+
+
+        <Box
+          mb={2}
+          p={1}
+          style={{
+            backgroundColor: "#2e2e2e",
+            borderRadius: 6,
+            border: "1px solid #444",
+            fontSize: "0.85rem",
+            width: 800,
+            color: "#ccc"
+          }}
+        >
+          <Typography variant="subtitle2" gutterBottom style={{ color: "#fff" }}>
+            Recipe Drop Rate
+          </Typography>
+          <Box display="flex" justifyContent="space-between" gap={2}>
+            {[
+              [
+                { label: "High Spell", value: "0.17%" },
+                { label: "High Equipment", value: "0.17%" }
+              ],
+              [
+                { label: "Uncommon Spells", value: "0.83%" },
+                { label: "Uncommon Equipment", value: "0.83%" }
+              ],
+              [
+                { label: "Uncommon Decoration", value: "0.5%" },
+                { label: "Common Decoration", value: "2.0%" },
+              ],
+              [
+                { label: "Common Spell", value: "5%" },
+                { label: "Common Equipment", value: "2.5%" }
+              ]
+            ].map((column, idx) => (
+              <Box key={idx} width="25%" px={1}>
+                {column.map((item, i) => (
+                  <Box
+                    key={i}
+                    display="flex"
+                    justifyContent="space-between"
+                    style={{ minWidth: 160 }}
+                  >
+                    <span>{item.label}</span>
+                    <span>{item.value}</span>
+                  </Box>
+                ))}
+              </Box>
+            ))}
+          </Box>
+        </Box>
 
 
         <TableContainer component={Paper}>

@@ -122,8 +122,9 @@ const SidebarNav = props => {
       <div className={classes.menu}>
         <div className={classes.menuItem}>
           <MenuGroup item={career} />
-          <MenuGroup item={forgottenRuniverse} />
           <MenuGroup item={pixelsOnline} />
+          <MenuGroup item={forgottenRuniverse} />
+
 
 {/*           <MenuGroup item={helpCenter} />
           <MenuGroup item={company} /> */}
@@ -190,9 +191,9 @@ const SidebarNav = props => {
           variant="outlined"
           fullWidth
           component="a"
-          href="/runiverse"
+          href="/pixels/land/inventory"
         >
-          Runiverse
+          Pixels
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>

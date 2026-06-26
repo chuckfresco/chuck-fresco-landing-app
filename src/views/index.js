@@ -10,7 +10,10 @@ export { default as RuniverseEquipmentFresco } from './RuniverseEquipmentFresco'
 export { default as RuniverseResources } from './RuniverseResources';
 export { default as LevelUpGuide } from './LevelUpGuide';
 export { default as RuniverseSupport } from './RuniverseSupport';
+export { default as RuniverseAnimations } from './RuniverseAnimations';
 
+export { default as PixelsQuestAlinaRecipe } from './PixelsQuestAlinaRecipe';
+export { default as PixelsLandInventory } from './PixelsLandInventory';
 
 export { default as Agency } from './Agency';
 export { default as CareerListing } from './CareerListing';

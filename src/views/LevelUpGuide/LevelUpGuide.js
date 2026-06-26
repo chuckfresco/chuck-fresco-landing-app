@@ -10,6 +10,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { levelSections, sideQuests } from './LevelUpGuideData';
 import { guideSpells, guideEquipment } from './data/spellData';
 import { idDescriptors, idAffix } from './data/spellData';
+import DiscordIcon from '@material-ui/icons/Chat';
+
 
 import {
   Hero,
@@ -95,6 +97,61 @@ const useStyles = makeStyles(theme => ({
     marginRight: 6,
     verticalAlign: 'middle',
   },
+helpBox: {
+  backgroundColor: '#1e1e2f',
+  border: '1px solid #4fc3f7',
+  borderRadius: 10,
+  padding: '20px',
+  margin: '20px 0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start', // Change from space-between
+  flexWrap: 'wrap',
+  gap: '30px',
+  flexDirection: 'row', // Add this to control layout direction
+  [theme.breakpoints.down('xs')]: {
+    flexDirection: 'column', // Stack on mobile
+    alignItems: 'flex-start',
+  },
+},
+
+discordButton: {
+  backgroundColor: '#5865F2',
+  color: '#fff',
+  padding: '10px 16px',
+  borderRadius: 6,
+  textDecoration: 'none',
+  fontWeight: 500,
+  display: 'flex',
+  alignItems: 'center',
+  gap: 6,
+  '&:hover': {
+    backgroundColor: '#4752c4',
+  },
+  },
+
+  centeredHelpSection: {
+  paddingLeft: 20,
+  paddingRight: 20,
+  paddingTop: 10,
+  margin: '0 auto',
+  width: '100%',
+  maxWidth: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  [theme.breakpoints.down('sm')]: {
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 5,
+  },
+},
+
+
+noBottomPadding: {
+  paddingBottom: 0,
+  marginBottom: 0,
+},
 }));
 
 const regionLinks = {
@@ -105,10 +162,78 @@ const regionLinks = {
   "Moon Wood": "https://runiverse-map.vercel.app/?lat=-167.37109375&lng=105.32421875&zoom=8",
 };
 
-const CollapsibleQuest = ({ title, steps, reward, mapImage }) => {
+const HIGHLIGHT_TERMS = [
+  "Devouring Scythe",
+  "Halting Staff",
+  "Kirama Demon Armor",
+  "Volatile Gambit",
+  "Heat Wave",
+  "Firebolt II",
+  "Kirama Demon Helm"
+];
+
+const highlightText = (text) => {
+  if (!text || typeof text !== 'string') return text;
+  const regex = new RegExp(`(${HIGHLIGHT_TERMS.join('|')})`, 'gi');
+
+  const parts = text.split(regex);
+
+  return parts.map((part, index) => {
+    const match = HIGHLIGHT_TERMS.find(term => term.toLowerCase() === part.toLowerCase());
+    return match ? (
+      <span key={index} style={{ color: '#FFD700', fontWeight: 'bold' }}>{part}</span>
+    ) : (
+      part
+    );
+  });
+};
+
+const CollapsibleQuest = ({ quest }) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
+
+  if (!quest) return null;
+
+  const {
+    title,
+    steps = [],
+    reward,
+    mapImage,
+    youtube,
+  } = quest;
+
+  // Helper to get YouTube embed ID from either full or shortened links
+  const getYoutubeEmbedId = (url) => {
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname === 'youtu.be') return parsed.pathname.slice(1);
+      if (parsed.hostname.includes('youtube.com')) return new URLSearchParams(parsed.search).get('v');
+    } catch {
+      return null;
+    }
+    return null;
+  };
+
+  const embedId = youtube ? getYoutubeEmbedId(youtube) : null;
+
+  const flatEquipments = guideEquipment.flat();
+
+  const spellComponents = (quest.upgradeSpells || []).map((spell, i) => (
+    <Box key={`quest-spell-${i}`} mt={2}>
+      <UpgradeSpellsSection spellName={spell} />
+    </Box>
+  ));
+
+  const equipmentComponents = (quest.equipmentList || [])
+    .map(name => flatEquipments.find(eq => eq.name === name))
+    .filter(Boolean)
+    .map((eq, i) => (
+      <Box key={`quest-eq-${i}`} mt={2}>
+        <EquipmentSection equipment={eq} />
+      </Box>
+    ));
+
 
   return (
     <Box className={classes.questBox}>
@@ -118,21 +243,46 @@ const CollapsibleQuest = ({ title, steps, reward, mapImage }) => {
           <ExpandMoreIcon style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: '0.3s' }} />
         </IconButton>
       </Box>
+
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <Grid container spacing={2}>
+
+      {embedId && (
+        <Box mt={2} mb={2} display="flex" justifyContent="center">
+          <Box style={{ width: '100%', maxWidth: 500 }}>
+            <iframe
+              width="100%"
+              height="315"
+              src={`https://www.youtube.com/embed/${embedId}`}
+              title={`YouTube video for ${title}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{ display: 'block', borderRadius: 8 }}
+            ></iframe>
+          </Box>
+        </Box>
+      )}
+     
+
+        <Grid container spacing={2} mt={2}>
           <Grid item xs={12} sm={6} style={{ paddingLeft: 16 }}>
             <ol>
-            {steps.map((step, i) =>
-              step.trim() === "" ? (
-                <Box key={`break-${i}`} mt={2} />
-              ) : (
-                <li key={i}>
-                  <Typography variant="body2">{step}</Typography>
-                </li>
-              )
-            )}
+              {steps.map((step, i) =>
+                step.trim() === "" ? (
+                  <Box key={`break-${i}`} mt={2} />
+                ) : (
+                  <li key={i}>
+                     <Typography variant="body2">{highlightText(step)}</Typography>
+                  </li>
+                )
+              )}
             </ol>
-            <Typography variant="subtitle2" color="secondary">🎁 Reward: {reward}</Typography>
+
+          <Typography variant="subtitle2" color="secondary">
+            🎁 Reward: {highlightText(reward)}
+          </Typography>
+
           </Grid>
           <Grid item xs={12} sm={6}>
             <img
@@ -149,6 +299,7 @@ const CollapsibleQuest = ({ title, steps, reward, mapImage }) => {
             />
           </Grid>
         </Grid>
+
         <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)} maxWidth="md">
           <DialogContent style={{ padding: 0 }}>
             <img
@@ -158,10 +309,22 @@ const CollapsibleQuest = ({ title, steps, reward, mapImage }) => {
             />
           </DialogContent>
         </Dialog>
+
+        {(spellComponents.length > 0 || equipmentComponents.length > 0) && (
+        <Box mt={2}>
+          <Typography variant="subtitle1" gutterBottom style={{ color: '#FFD700' }}>
+            Craft Recipes from this Side Quest
+          </Typography>
+          {spellComponents}
+          {equipmentComponents}
+        </Box>
+      )}
+
       </Collapse>
     </Box>
   );
 };
+
 
 const UpgradeSpellsSection = ({ spellName }) => {
   const classes = useStyles();
@@ -180,6 +343,8 @@ const UpgradeSpellsSection = ({ spellName }) => {
     ? [materials.slice(0, 3), materials.slice(3)]
     : [materials];
 
+
+
   return (
     <Box mt={2} border="1px solid #444" borderRadius={6} p={2} bgcolor="#1a1a1a">
         <Grid container spacing={2} alignItems="flex-start">
@@ -188,28 +353,73 @@ const UpgradeSpellsSection = ({ spellName }) => {
           <img src={spell.properties_crystal?.ability_properties?.icon} alt={spell.name} className={classes.spellImage} />
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Typography variant="body1">{spell.name}</Typography>
-          <Typography variant="caption" color="textSecondary">
-            {spell.properties_crystal?.ability_properties?.description || "No description"}
-          </Typography>
+            <Box display="flex" flexDirection="column" gap={0.5}>
+            
+            {
+              /^[^a-zA-Z0-9]/.test(spell.name) ? (
+                <Typography variant="body1">{spell.name}</Typography>
+              ) : (
+                <Typography
+                  variant="body1"
+                  component="a"
+                  href={`/runiverse/monster-drops?search=${encodeURIComponent(spell.name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#4fc3f7", textDecoration: "underline", cursor: "pointer" }}
+                >
+                  {spell.name}
+                </Typography>
+              )
+            }
+
+
+            <Typography variant="caption" color="textSecondary">
+              {spell.properties_crystal?.ability_properties?.description || "No description"}
+            </Typography>
+          </Box>
         </Grid>
         <Grid item xs={12} sm={4}>
           <Typography variant="body2" color="textSecondary">💰 {spell.currencies.gold} Gold</Typography>
           <Grid container spacing={3}>
             {splitMaterials.map((matGroup, groupIdx) => (
               <Grid item xs={6} key={groupIdx}>
-                {matGroup.map((mat, idx) => (
-                  <Box display="flex" alignItems="center" key={idx} mb={0.5}>
-                    <img src={mat.icon} alt="material" className={classes.materialIcon} />
-                    <Typography variant="caption">
-                      {mat.amount}× {getMaterialNameById(mat.material)}
-                    </Typography>
-                  </Box>
-                ))}
+                {matGroup.map((mat, idx) => {
+                  const name = getMaterialNameById(mat.material);
+                  const isLinkable = /(shard|ember|essence)/i.test(name);
+
+                  return (
+                    <Box display="flex" alignItems="center" key={idx} mb={0.5}>
+                      <img src={mat.icon} alt="material" className={classes.materialIcon} />
+                      {(() => {
+                        const name = getMaterialNameById(mat.material);
+                        const isMonsterDrop = /(shard|ember|essence)/i.test(name);
+                        const encodedName = encodeURIComponent(name);
+                        const link = isMonsterDrop
+                          ? `/runiverse/monster-drops?search=${encodedName}`
+                          : `/runiverse/resources?search=${encodedName}`;
+
+                        return (
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#ffffff", textDecoration: "underline" }}
+                          >
+                            <Typography variant="caption" component="span">
+                              {mat.amount}× {name}
+                            </Typography>
+                          </a>
+                        );
+                      })()}
+                    </Box>
+
+                  );
+                })}
               </Grid>
             ))}
           </Grid>
         </Grid>
+
 
         <Grid item xs={12} sm={2}>
           <Typography variant="subtitle2">Where to Craft?</Typography>
@@ -254,7 +464,25 @@ const EquipmentSection = ({ equipment }) => {
         </Grid>
 
         <Grid item xs={12} sm={4}>
-          <Typography variant="body1" style={{ marginBottom: 4 }}>{equipment.name}</Typography>
+        {
+          /^[^a-zA-Z0-9]/.test(equipment.name) ? (
+            <Typography variant="body1" style={{ marginBottom: 4 }}>{equipment.name}</Typography>
+          ) : (
+            <Typography
+              variant="body1"
+              component="a"
+              href={`/runiverse/monster-drops?search=${encodeURIComponent(equipment.name)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#4fc3f7", textDecoration: "underline", cursor: "pointer", marginBottom: 4 }}
+            >
+              {equipment.name}
+            </Typography>
+          )
+        }
+
+
+
           {[...staticAffixes, ...randomAffixes].map((affix, idx) => (
             <Box display="flex" alignItems="center" key={idx} mb={0.5}>
               
@@ -271,23 +499,48 @@ const EquipmentSection = ({ equipment }) => {
 
 
 
-        <Grid item xs={12} sm={4}>
-          <Typography variant="body2" color="textSecondary">💰 {equipment.currencies.gold} Gold</Typography>
-          <Grid container spacing={3}>
-            {splitMaterials.map((matGroup, groupIdx) => (
-              <Grid item xs={6} key={groupIdx}>
-                {matGroup.map((mat, idx) => (
-                  <Box display="flex" alignItems="center" key={idx} mb={0.5}>
-                    <img src={mat.icon} alt="material" className={classes.materialIcon} />
-                    <Typography variant="caption">
-                      {mat.amount}× {getMaterialNameById(mat.material)}
-                    </Typography>
-                  </Box>
-                ))}
-              </Grid>
-            ))}
-          </Grid>
+      <Grid item xs={12} sm={4}>
+        <Typography variant="body2" color="textSecondary">💰 {equipment.currencies.gold} Gold</Typography>
+        <Grid container spacing={3}>
+          {splitMaterials.map((matGroup, groupIdx) => (
+            <Grid item xs={6} key={groupIdx}>
+              {matGroup.map((mat, idx) => {
+                const name = getMaterialNameById(mat.material);
+                const isLinkable = /(shard|ember|essence)/i.test(name);
+
+                return (
+                <Box display="flex" alignItems="center" key={idx} mb={0.5}>
+                  <img src={mat.icon} alt="material" className={classes.materialIcon} />
+                  {(() => {
+                    const name = getMaterialNameById(mat.material);
+                    const isMonsterDrop = /(shard|ember|essence)/i.test(name);
+                    const encodedName = encodeURIComponent(name);
+                    const link = isMonsterDrop
+                      ? `/runiverse/monster-drops?search=${encodedName}`
+                      : `/runiverse/resources?search=${encodedName}`;
+
+                    return (
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#ffffff', textDecoration: 'underline' }}
+                      >
+                        <Typography variant="caption" component="span">
+                          {mat.amount}× {name}
+                        </Typography>
+                      </a>
+                    );
+                  })()}
+                </Box>
+
+                );
+              })}
+            </Grid>
+          ))}
         </Grid>
+      </Grid>
+
         <Grid item xs={12} sm={2}>
           <Typography variant="subtitle2">Where to Craft?</Typography>
           <a
@@ -339,7 +592,9 @@ const LevelSection = ({ levelRange, description, monsters, upgradeSpells, equipm
   return (
     <Box mb={2} p={1} border="1px solid #444" borderRadius={6}>
       <Typography variant="subtitle1" gutterBottom>Level {levelRange}</Typography>
-      <Typography variant="body2">{description}</Typography>
+
+      <Typography variant="body2">{highlightText(description)}</Typography>
+
       <Grid container spacing={1} justifyContent="flex-start">
         {monsters.map(monster => (
           <Grid item xs={12} sm={4} md={4} key={monster.name}>
@@ -362,9 +617,10 @@ const LevelSection = ({ levelRange, description, monsters, upgradeSpells, equipm
       </Grid>
         {sideQuests.map((quest, idx) => (
           <Box key={idx} mt={2}>
-            <CollapsibleQuest {...quest} />
+            <CollapsibleQuest quest={quest} />
           </Box>
         ))}
+
 
         {upgradeSpells && upgradeSpells.map((spell, i) => (
           <Box key={i} mt={2}>
@@ -402,10 +658,28 @@ const LevelUpGuide = () => {
         <meta property="og:image" content="%PUBLIC_URL%/assets/social-runiverse.jpg" />
         <meta property="og:url" content="https://chuckfresco.com/runiverse/level-up-guide" />
       </Helmet>
-<Hero></Hero>
+      <Hero></Hero>
       <SectionAlternate className={classes.sectionBreadcrumb}>
         <Breadcrumb data={breadcrumb} />
       </SectionAlternate>
+
+      <Section className={`${classes.centeredHelpSection} ${classes.noBottomPadding}`}>
+        <Box className={classes.helpBox}>
+          <Typography variant="body1" style={{ color: '#ffffff' }}>
+            Need help with Runiverse? Join the Chuck Fresco Discord to ask questions, share tips, and get support!
+          </Typography>
+          <a
+            href="https://discord.gg/NH3Yu95YVV"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.discordButton}
+          >
+            <DiscordIcon style={{ fontSize: 20 }} />
+            Join Discord
+          </a>
+        </Box>
+      </Section>
+
 
       <Section className={classes.halfWidthSection}>
         {levelSections.map((section, index) => (
@@ -417,6 +691,7 @@ const LevelUpGuide = () => {
             sideQuests={questLevelMap[section.levelRange] || []}
             upgradeSpells={section.upgradeSpells}
             equipmentList={section.equipmentList}
+            youtube={section.youtube}
 
           />
         ))}

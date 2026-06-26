@@ -82,7 +82,7 @@ const RuniverseEquipment = () => {
   return (
     <div>
       <Helmet>
-        <title>Forgotten Runiverse | Best Equipment Guide</title>
+        <title>Full Equipment Guide | Forgotten Runiverse</title>
         <meta name="description" content="Explore top-tier equipment including relics, headgear, and suits found throughout the Forgotten Runiverse." />
         <meta property="og:title" content="Full Equipment List | Forgotten Runiverse" />
         <meta property="og:description" content="Master your journey with powerful gear – discover the best equipment, materials, and crafting workshops in the Runiverse!" />

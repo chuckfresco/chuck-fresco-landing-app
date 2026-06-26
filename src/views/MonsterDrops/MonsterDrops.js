@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { Helmet } from 'react-helmet'; // 👈 Add Helmet
+import { Helmet } from 'react-helmet'; 
 import { Section, SectionAlternate } from 'components/organisms';
 import { Breadcrumb } from 'components/molecules'
 import { breadcrumb } from 'components/molecules/Breadcrumb/data'
@@ -9,6 +9,8 @@ import {
   Hero,
   Products
 } from './components';
+
+
 
 import {
   featuredProducts,

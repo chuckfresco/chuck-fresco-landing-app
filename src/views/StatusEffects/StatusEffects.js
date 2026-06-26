@@ -81,7 +81,7 @@ const StatusEffects = () => {
   return (
     <div>
       <Helmet>
-        <title>Forgotten Runiverse | Status Effects Guide</title>
+        <title>Status Effects Guide | Forgotten Runiverse</title>
         <meta name="description" content="Explore every buff and debuff in the Forgotten Runiverse. Learn what they do and how long they last." />
         <meta property="og:title" content="Status Effects Guide | Forgotten Runiverse" />
         <meta property="og:description" content="Full guide to buffs and debuffs in the Forgotten Runiverse with visuals and searchable effects." />

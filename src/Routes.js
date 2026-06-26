@@ -42,6 +42,10 @@ import {
   RuniverseEquipmentFresco as RuniverseEquipmentFrescoView,
   LevelUpGuide as LevelUpGuideView,
   RuniverseSupport as RuniverseSupportView,
+  RuniverseAnimations as RuniverseAnimationsView,
+
+  PixelsQuestAlinaRecipe as PixelsQuestAlinaRecipeView,
+  PixelsLandInventory as PixelsLandInventoryView,
 
   Ecommerce as EcommerceView,
   Pricing as PricingView,
@@ -163,6 +167,17 @@ const Routes = () => {
           />
         )}
       />
+      <Route
+        exact
+        path="/runiverse/animations/"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={RuniverseAnimationsView}
+            layout={MainLayout}
+          />
+        )}
+      />
 
       <Route
         exact
@@ -170,7 +185,7 @@ const Routes = () => {
         render={matchProps => (
           <WithLayout
             {...matchProps}
-            component={RuniverseSupportView}
+            component={RuniverseEquipmentView}
             layout={MainLayout}
           />
         )}
@@ -206,6 +221,30 @@ const Routes = () => {
           <WithLayout
             {...matchProps}
             component={RuniverseSupportView}
+            layout={MainLayout}
+          />
+        )}
+      />
+
+      <Route
+        exact
+        path="/pixels/quest/alchemist-concoction"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={PixelsQuestAlinaRecipeView}
+            layout={MainLayout}
+          />
+        )}
+      />
+
+      <Route
+        exact
+        path="/pixels/land/inventory"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={PixelsLandInventoryView}
             layout={MainLayout}
           />
         )}

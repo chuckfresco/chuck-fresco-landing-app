@@ -86,7 +86,7 @@ const FrescoManorSpells = () => {
   return (
     <div>
       <Helmet>
-        <title>Forgotten Runiverse | Best Mage Spells</title>
+        <title>Best Mage Spells | Forgotten Runiverse</title>
         <meta name="description" content="Discover elite spells, monster drops, and magic workshops at Fresco Manor in Runiverse." />
         <meta property="og:title" content="Best Mage Spells | Forgotten Runiverse" />
         <meta property="og:description" content="Unlock powerful spells and explore our Mage Workshops in Runiverse!" />

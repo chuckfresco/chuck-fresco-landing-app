@@ -37,8 +37,8 @@ const Community = props => {
   return (
     <div className={className} {...rest}>
       <SectionHeader
-        title="Join the $FRESCO community"
-        subtitle="Join players discussing the world of Axie Infinity and earning scholarships by participating"
+        title="Join the Fresco community"
+        subtitle="Join players discussing the world of Axie Infinity and earning rewards by participating"
         ctaGroup={[
           <Button
             variant="contained"

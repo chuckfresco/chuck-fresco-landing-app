@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Image, DarkModeToggler } from 'components/atoms';
+import { Image } from 'components/atoms';
 
 import WbSunnyOutlinedIcon from '@material-ui/icons/WbSunnyOutlined';
 
@@ -116,7 +116,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...rest }) => {
+const Topbar = ({ themeMode, onSidebarOpen, pages, className, ...rest }) => {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -184,8 +184,8 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
   const SupportedPages = () => {
     const {
       career,
-      forgottenRuniverse,
       pixelsOnline,
+      forgottenRuniverse,
 /*       helpCenter,
       company,
       contact,
@@ -196,8 +196,9 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
       <div className={classes.menu}>
         <div className={classes.menuItem}>
           <MenuGroup item={career} />
-          <MenuGroup item={forgottenRuniverse} />
           <MenuGroup item={pixelsOnline} />
+          <MenuGroup item={forgottenRuniverse} />
+
      {/*     <MenuGroup item={helpCenter} /> */}
         </div>
 {/*         <div className={classes.menuItem}>
@@ -304,16 +305,13 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
               </Popover>
             </div>
           ))}
-{/*           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
-            <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} />
-          </ListItem> */}
           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
             <Button
               variant="outlined"
               component="a"
-              href="/runiverse"
+              href="/pixels/land/inventory"
             >
-              Runiverse <WbSunnyOutlinedIcon style={{ marginLeft: 4, fontSize: 20 }} />
+              Pixels <WbSunnyOutlinedIcon style={{ marginLeft: 4, fontSize: 20 }} />
             </Button>
           </ListItem>
           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>
@@ -331,7 +329,6 @@ const Topbar = ({ themeMode, themeToggler, onSidebarOpen, pages, className, ...r
         </List>
       </Hidden>
       <Hidden mdUp>
-        <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} />
         <IconButton
           className={classes.iconButton}
           onClick={onSidebarOpen}
@@ -348,7 +345,6 @@ Topbar.propTypes = {
   className: PropTypes.string,
   onSidebarOpen: PropTypes.func,
   pages: PropTypes.object.isRequired,
-  themeToggler: PropTypes.func.isRequired,
   themeMode: PropTypes.string.isRequired,
 };
 

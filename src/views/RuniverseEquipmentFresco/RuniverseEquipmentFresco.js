@@ -82,9 +82,9 @@ const RuniverseEquipmentFresco = () => {
   return (
     <div>
       <Helmet>
-        <title>Forgotten Runiverse | Best Equipment Guide</title>
+        <title>Best Equipment Guide | Forgotten Runiverse </title>
         <meta name="description" content="Explore top-tier equipment including relics, headgear, and suits found throughout the Forgotten Runiverse." />
-        <meta property="og:title" content="Fresco Equipment Guide | Forgotten Runiverse" />
+        <meta property="og:title" content="Equipment Guide | Forgotten Runiverse" />
         <meta property="og:description" content="Master your journey with powerful gear – discover the best equipment, materials, and crafting workshops in the Runiverse!" />
         <meta property="og:image" content="%PUBLIC_URL%/assets/social-runiverse.jpg" />
         <meta property="og:url" content="https://chuckfresco.com/runiverse/equipment" />

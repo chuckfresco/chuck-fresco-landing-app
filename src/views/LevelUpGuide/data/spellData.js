@@ -1065,7 +1065,7 @@ export const guideEquipment = [
             },
             {
                 "amount": 18,
-                "material": "65d75e970da2729615db07a1",
+                "material": "65d75e4b0da2729615db078f",
                 "rarity": 1,
                 "icon": "https://d3hv7cxq1p9foc.cloudfront.net/Dev/SingleFileAssets/Material/Image/SpiritualMaterial_Icon_Bandit_Shard_Uncommon.png",
                 "generic": false,

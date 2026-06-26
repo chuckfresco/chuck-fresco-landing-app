@@ -28,20 +28,41 @@ const Main = ({ children, themeToggler, themeMode }) => {
           groupTitle: 'Chuck\'s Picks',
           pages: [
             {
-              title: 'Card Explorer',
-              href: 'https://www.axieworld.com/en/tools/cards-explorer',
+              title: 'Axie Origins',
+              href: 'hhttps://app.axieinfinity.com/games/?slug=origins',
             },
             {
               title: 'PvP LeaderBoard (Live)',
-              href: 'https://axie.zone/leaderboard',
+              href: 'https://axie.top',
             },
             {
-              title: 'Axie Gene Reader',
-              href: 'https://freakitties.github.io/axie/jeans.html',
+              title: 'Axie Classic',
+              href: 'https://app.axieinfinity.com/games/?slug=classic',
+            },
+            {
+              title: 'Axie: Den of Mysteries',
+              href: 'https://app.axieinfinity.com/games/?slug=axie-dom',
             },
           ],
         },
-        forgottenRuniverse: {
+        pixelsOnline: {
+          groupTitle: 'Pixels Online',
+          pages: [
+            {
+              title: 'Land Inventory ',
+              href: '/pixels/land/inventory',
+            },
+            {
+              title: 'Industry Limits',
+              href: '/pixels/industry-limits',
+            },
+            {
+              title: 'Alchemist Concoction',
+              href: '/pixels/quest/alchemist-concoction',
+            },
+          ],
+        },
+          forgottenRuniverse: {
           groupTitle: 'Forgotten Runiverse',
           pages: [
             {
@@ -67,15 +88,7 @@ const Main = ({ children, themeToggler, themeMode }) => {
             },
           ],
         },
-        pixelsOnline: {
-          groupTitle: 'Pixels Online',
-          pages: [
-            {
-              title: 'Industry Limits',
-              href: '/pixels/industry-limits',
-            },
-          ],
-        },
+
         helpCenter: {
           groupTitle: 'Help center',
           pages: [

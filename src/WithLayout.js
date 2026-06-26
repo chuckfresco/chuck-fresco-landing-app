@@ -7,30 +7,15 @@ import getTheme from 'theme';
 import AOS from 'aos';
 
 export const useDarkMode = () => {
-  const [themeMode, setTheme] = useState('dark'); // Change 'light' to 'dark' here
   const [mountedComponent, setMountedComponent] = useState(false);
 
-  const setMode = mode => {
-    window.localStorage.setItem('themeMode', mode);
-    setTheme(mode);
-  };
-
-  const themeToggler = () => {
-    themeMode === 'light' ? setMode('dark') : setMode('light');
-  };
-
   useEffect(() => {
-    const localTheme = window.localStorage.getItem('themeMode');
-    localTheme ? setTheme(localTheme) : setMode('dark'); // Change 'light' to 'dark' here
+    window.localStorage.setItem('themeMode', 'dark');
     setMountedComponent(true);
     AOS.refresh();
   }, []);
 
-  useEffect(() => {
-    AOS.refresh();
-  }, [themeMode]);
-
-  return [themeMode, themeToggler, mountedComponent];
+  return ['dark', () => {}, mountedComponent];
 };
 
 
@@ -58,14 +43,13 @@ export default function WithLayout({ component: Component, layout: Layout, ...re
   if (!mountedComponent) return null;
 
   return (
-<ThemeProvider theme={getTheme('dark')}>
-  <CssBaseline />
-  <Paper elevation={0}>
-    <Layout themeMode="dark">
-      <Component themeMode="dark" {...rest} />
-    </Layout>
-  </Paper>
-</ThemeProvider>
-
+    <ThemeProvider theme={getTheme(themeMode)}>
+      <CssBaseline />
+      <Paper elevation={0}>
+        <Layout themeMode={themeMode} themeToggler={themeToggler}>
+          <Component themeMode={themeMode} {...rest} />
+        </Layout>
+      </Paper>
+    </ThemeProvider>
   );
 }

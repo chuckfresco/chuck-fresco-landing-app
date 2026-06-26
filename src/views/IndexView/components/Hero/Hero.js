@@ -88,7 +88,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
             'Axie Infinity',
             'Ronin',
             'Pixels Online',
-            'Ronin Streams',
+            'Sunflower Land',
             'NFTs',
             'and much more...',
           ],
@@ -102,7 +102,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
   const subtitle = 'Weekly Ronin Content and Giveaways'
 
   const docsButton = (
-    <Button size="large" variant="outlined" color="primary" component="a" href="/pixels/industry-limits" disabled={false} >
+    <Button size="large" variant="outlined" color="primary" component="a" href="/pixels/quest/alchemist-concoction" disabled={false} >
       Pixels Guide
     </Button>
   );
@@ -113,13 +113,12 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
       variant="contained"
       color="primary"
       component="a"
-      href="/runiverse"
-      smooth={true}
-      
+      href="https://app.axieinfinity.com/games/?slug=atiaslegacy"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-
-      Runiverse Guide <WbSunnyOutlinedIcon style={{ marginLeft: 4, fontSize: 20 }} />
-     
+      Atia's Legacy{" "}
+      <WbSunnyOutlinedIcon style={{ marginLeft: 4, fontSize: 20 }} />
     </Button>
   );
 
