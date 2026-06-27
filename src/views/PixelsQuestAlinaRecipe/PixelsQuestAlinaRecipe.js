@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from 'react-helmet';
 import { Section, SectionAlternate } from 'components/organisms';
-import { Breadcrumb } from 'components/molecules';
+import { Breadcrumb, PixelCode } from 'components/molecules';
 import { Hero } from './components';
 import { breadcrumb } from 'components/molecules/Breadcrumb/data';
 
@@ -182,6 +182,7 @@ const PixelsQuestAlinaRecipe = () => {
 </Helmet>
 
 <Hero />
+<PixelCode />
 
 <Section style={{ paddingTop: 0, paddingBottom: 0 }}>
   <div style={{ display: 'flex', justifyContent: 'center' }}>

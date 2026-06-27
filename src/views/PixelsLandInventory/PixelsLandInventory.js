@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from 'react-helmet'; 
 import { Section, SectionAlternate } from 'components/organisms';
-import { Breadcrumb } from 'components/molecules'
+import { Breadcrumb, PixelCode } from 'components/molecules'
 import { breadcrumb } from 'components/molecules/Breadcrumb/data'
 
 import {
@@ -17,7 +17,7 @@ import {
 } from './data';
 
 
-import MonsterDropsTable from './MonsterDropsTable';
+import LandInventoryTable from './LandInventoryTable';
 
 const useStyles = makeStyles(theme => ({
   sectionTrucking: {
@@ -107,10 +107,11 @@ const PixelsLandInventory = () => {
       </Helmet>
 
       <Hero />
+      <PixelCode />
 
-      <SectionAlternate className={classes.sectionBreadcrumb}>
+{/*       <SectionAlternate className={classes.sectionBreadcrumb}>
           <Breadcrumb data={breadcrumb} />
-      </SectionAlternate>
+      </SectionAlternate> */}
 {/* 
       <Section className={classes.imagesSection}>
           <Products data={featuredProducts} />
@@ -121,7 +122,7 @@ const PixelsLandInventory = () => {
       <Section className={classes.halfWidthSection}>
         <div style={{ width: '100%', overflowX: 'auto' }}>
 
-          <MonsterDropsTable />
+          <LandInventoryTable />
         </div>
       </Section>
 

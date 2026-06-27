@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Section, SectionAlternate } from 'components/organisms';
+import { PixelCode } from 'components/molecules';
 import { Helmet } from 'react-helmet';
 import {
   About,
@@ -70,6 +71,7 @@ const IndustryLimits = () => {
       </Helmet>
 
       <Hero />
+      <PixelCode />
       <IndustryTables />
       
 {/*       <Section className={classes.sectionTrucking}>

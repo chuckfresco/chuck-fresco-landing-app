@@ -5,7 +5,7 @@ export const rows = [
     nftTraits: "Large Land\nSmall House\nDense\nCoop",
     boosts: "2x Forestry Tiki",
     resources: "T3 Trees",
-    craftingStations: "10x T4 Metalworking",
+    craftingStations: "10x T4 Woodworking",
     animals: "5x Sluggery\nChicken",
     status: "Public"
   },
@@ -15,7 +15,7 @@ export const rows = [
     nftTraits: "Large Land\nSmall House\nDense\nCoop",
     boosts: "2x Forestry Tiki",
     resources: "T2 Trees",
-    craftingStations: "10x T4 Metalworking",
+    craftingStations: "10x T4 Woodworking",
     animals: "5x Sluggery\nChicken",
     status: "Public"
   },
