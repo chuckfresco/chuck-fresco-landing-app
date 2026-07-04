@@ -1,0 +1,2091 @@
+{
+  "data": {
+    "feed": [
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler",
+          "clothing": {
+            "hair": "Brown Long Hair",
+            "shirt": "Striped Blue Shirt",
+            "background": "Forest Background",
+            "body": "Pirate Potion",
+            "shoes": "Peg Leg",
+            "tool": "Sunflower Rod",
+            "hat": "Spa Hat",
+            "secondaryTool": "Bucket O' Worms",
+            "pants": "Angler Waders",
+            "coat": "Fruit Picker Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783089686128,
+        "type": "help",
+        "helpedThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783073977416,
+        "type": "help",
+        "helpedThemToday": true
+      },
+      {
+        "sender": {
+          "id": 322061856582958,
+          "username": "Topetadass",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Pirate Potion",
+            "shirt": "Brasil Jersey",
+            "shoes": "Black Farmer Boots",
+            "tool": "Trident",
+            "hat": "Non La Hat",
+            "hair": "Sun Spots"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783014895809,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782960396579,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5858164739510659,
+          "username": "Ineedw33d",
+          "clothing": {
+            "body": "Goblin Potion",
+            "hair": "Basic Hair",
+            "tool": "Sunflower Rod",
+            "hat": "Fishing Hat",
+            "background": "Sky Island Background",
+            "aura": "Diamond Snow Aura",
+            "pants": "Fish Hook Waders",
+            "shirt": "Fish Hook Vest",
+            "secondaryTool": "Saw Fish"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782808267766,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782726557281,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5877847754741933,
+          "username": "Randal",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Dark Brown Farmer Potion",
+            "hair": "Basic Hair",
+            "shirt": "Yellow Farmer Shirt",
+            "pants": "Angler Waders",
+            "shoes": "Brown Boots",
+            "tool": "Sunflower Rod",
+            "hat": "Clam Shell Hat",
+            "onesie": "Shrimp Onesie",
+            "secondaryTool": "Saw Fish"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782720666038,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782637432703,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 3480424200108501,
+          "username": "TriShulker",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Farmer Pitchfork",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Farmer Overalls",
+            "onesie": "Gingerbread Onesie",
+            "hat": "Spa Hat"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782632675893,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5877847754741933,
+          "username": "Randal",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Dark Brown Farmer Potion",
+            "hair": "Basic Hair",
+            "shirt": "Yellow Farmer Shirt",
+            "pants": "Angler Waders",
+            "shoes": "Brown Boots",
+            "tool": "Sunflower Rod",
+            "hat": "Clam Shell Hat",
+            "onesie": "Shrimp Onesie",
+            "secondaryTool": "Saw Fish"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782627974465,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782583750321,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 3480424200108501,
+          "username": "TriShulker",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Farmer Pitchfork",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Farmer Overalls",
+            "onesie": "Gingerbread Onesie",
+            "hat": "Spa Hat"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782558564018,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5877847754741933,
+          "username": "Randal",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Dark Brown Farmer Potion",
+            "hair": "Basic Hair",
+            "shirt": "Yellow Farmer Shirt",
+            "pants": "Angler Waders",
+            "shoes": "Brown Boots",
+            "tool": "Sunflower Rod",
+            "hat": "Clam Shell Hat",
+            "onesie": "Shrimp Onesie",
+            "secondaryTool": "Saw Fish"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782549726865,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 6695475358451159,
+          "username": "Larosagad",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Dark Brown Farmer Potion",
+            "hair": "Parlour Hair",
+            "shoes": "Brown Boots",
+            "tool": "Sword",
+            "shirt": "Yellow Farmer Shirt",
+            "pants": "Bunny Pants"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782522644324,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5925598366943423,
+          "username": "rickdivers",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Light Brown Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Axe",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Angler Waders",
+            "hat": "Gam3s Cap"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782452961503,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 3480424200108501,
+          "username": "TriShulker",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Farmer Pitchfork",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Farmer Overalls",
+            "onesie": "Gingerbread Onesie",
+            "hat": "Spa Hat"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782449654171,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782440576233,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5858164739510659,
+          "username": "Ineedw33d",
+          "clothing": {
+            "body": "Goblin Potion",
+            "hair": "Basic Hair",
+            "tool": "Sunflower Rod",
+            "hat": "Fishing Hat",
+            "background": "Sky Island Background",
+            "aura": "Diamond Snow Aura",
+            "pants": "Fish Hook Waders",
+            "shirt": "Fish Hook Vest",
+            "secondaryTool": "Saw Fish"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782425812502,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 169133,
+          "username": "JerryM",
+          "clothing": {
+            "hair": "White Long Hair",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Blue Suspenders",
+            "background": "Forest Background",
+            "body": "Dark Brown Farmer Potion",
+            "shoes": "Black Farmer Boots",
+            "tool": "Farmer Pitchfork",
+            "hat": "Companion Cap",
+            "onesie": "Red Pepper Onesie"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782368226660,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782356507369,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 6695475358451159,
+          "username": "Larosagad",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Dark Brown Farmer Potion",
+            "hair": "Parlour Hair",
+            "shoes": "Brown Boots",
+            "tool": "Sword",
+            "shirt": "Yellow Farmer Shirt",
+            "pants": "Bunny Pants"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782350189137,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG",
+          "clothing": {
+            "background": "Sky Island Background",
+            "body": "Moonseeker Potion",
+            "hair": "Paint Splattered Hair",
+            "necklace": "Banana Amulet",
+            "tool": "Paint Spray Can",
+            "hat": "Koi Fish Hat",
+            "secondaryTool": "Frozen Heart",
+            "wings": "Slime Wings",
+            "aura": "Wisp Aura",
+            "pants": "Pet Specialist Pants",
+            "shirt": "Wise Robes"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782343223522,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 31509,
+          "username": "AnderBarr",
+          "clothing": {
+            "coat": "Fruit Picker Apron",
+            "hair": "Basic Hair",
+            "shirt": "Cowboy Shirt",
+            "pants": "Angler Waders",
+            "beard": "Santa Beard",
+            "background": "China Town Background",
+            "body": "Pirate Potion",
+            "shoes": "Peg Leg",
+            "tool": "Trident",
+            "secondaryTool": "Crab Trap",
+            "hat": "Spa Hat",
+            "onesie": "Walrus Onesie"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782302319307,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5925598366943423,
+          "username": "rickdivers",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Light Brown Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Axe",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Angler Waders",
+            "hat": "Gam3s Cap"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782277891993,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5158377010208316,
+          "username": "BelanPkin",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Explorer Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Sunflower Rod",
+            "pants": "Fish Hook Waders",
+            "hat": "Fish Hook Hat",
+            "necklace": "Carrot Amulet",
+            "secondaryTool": "Saw Fish",
+            "onesie": "Banana Onesie",
+            "shirt": "Fish Hook Vest",
+            "coat": "Chef Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782267238974,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782265755257,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 6695475358451159,
+          "username": "Larosagad",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Dark Brown Farmer Potion",
+            "hair": "Parlour Hair",
+            "shoes": "Brown Boots",
+            "tool": "Sword",
+            "shirt": "Yellow Farmer Shirt",
+            "pants": "Bunny Pants"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782265679860,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8928367645232617,
+          "username": "Vineet1",
+          "clothing": {
+            "background": "Forest Background",
+            "body": "Pirate Potion",
+            "hair": "Basic Hair",
+            "shoes": "Yellow Boots",
+            "tool": "Farmer Pitchfork",
+            "shirt": "Red Farmer Shirt",
+            "pants": "Angler Waders",
+            "suit": "Amberfall Suit",
+            "coat": "Fruit Picker Apron",
+            "onesie": "Shrimp Onesie",
+            "hat": "Turd Topper",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782238982173,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 981314645048907,
+          "username": "NAOFU",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Pirate Potion",
+            "hair": "Basic Hair",
+            "shoes": "Peg Leg",
+            "tool": "Trident",
+            "shirt": "Crimstone Armor",
+            "pants": "Fish Hook Waders",
+            "hat": "Deep Sea Helm",
+            "wings": "Bionic Drill",
+            "onesie": "Walrus Onesie",
+            "secondaryTool": "Bucket O' Worms"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782237266676,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 6695475358451159,
+          "username": "Larosagad",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Dark Brown Farmer Potion",
+            "hair": "Parlour Hair",
+            "shoes": "Brown Boots",
+            "tool": "Sword",
+            "shirt": "Yellow Farmer Shirt",
+            "pants": "Bunny Pants"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782231634424,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8660455661476377,
+          "username": "Mamba24",
+          "clothing": {
+            "hair": "Buzz Cut",
+            "shirt": "Pixel Perfect Hoodie",
+            "pants": "Angler Waders",
+            "background": "Farm Background",
+            "body": "Pirate Potion",
+            "shoes": "Peg Leg",
+            "tool": "Axe",
+            "hat": "Turd Topper",
+            "onesie": "Walrus Onesie",
+            "coat": "Fruit Picker Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782229752251,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 1089579827387492,
+          "username": "juliocmatar",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Farmer Pitchfork",
+            "shirt": "Tattered Jacket",
+            "pants": "Farmer Overalls"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782211632708,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 4391898921419994,
+          "username": "Hormar",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Buzz Cut",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Blue Suspenders",
+            "shoes": "Yellow Boots",
+            "tool": "Farmer Pitchfork"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782194494380,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5925598366943423,
+          "username": "rickdivers",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Light Brown Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Axe",
+            "shirt": "Blue Farmer Shirt",
+            "pants": "Angler Waders",
+            "hat": "Gam3s Cap"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782192202697,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782179498302,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5158377010208316,
+          "username": "BelanPkin",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Explorer Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Sunflower Rod",
+            "pants": "Fish Hook Waders",
+            "hat": "Fish Hook Hat",
+            "necklace": "Carrot Amulet",
+            "secondaryTool": "Saw Fish",
+            "onesie": "Banana Onesie",
+            "shirt": "Fish Hook Vest",
+            "coat": "Chef Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782179206245,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ",
+          "clothing": {
+            "background": "Forest Background",
+            "body": "Pirate Potion",
+            "hair": "Explorer Hair",
+            "shoes": "Peg Leg",
+            "tool": "Trident",
+            "shirt": "Red Farmer Shirt",
+            "onesie": "Shrimp Onesie",
+            "pants": "Farmer Overalls",
+            "secondaryTool": "Bucket O' Worms",
+            "wings": "Bionic Drill",
+            "coat": "Fruit Picker Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782173420057,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ",
+          "clothing": {
+            "background": "Forest Background",
+            "body": "Pirate Potion",
+            "hair": "Explorer Hair",
+            "shoes": "Peg Leg",
+            "tool": "Trident",
+            "shirt": "Red Farmer Shirt",
+            "onesie": "Shrimp Onesie",
+            "pants": "Farmer Overalls",
+            "secondaryTool": "Bucket O' Worms",
+            "wings": "Bionic Drill",
+            "coat": "Fruit Picker Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782103064524,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782097287225,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5158377010208316,
+          "username": "BelanPkin",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Explorer Hair",
+            "shoes": "Black Farmer Boots",
+            "tool": "Sunflower Rod",
+            "pants": "Fish Hook Waders",
+            "hat": "Fish Hook Hat",
+            "necklace": "Carrot Amulet",
+            "secondaryTool": "Saw Fish",
+            "onesie": "Banana Onesie",
+            "shirt": "Fish Hook Vest",
+            "coat": "Chef Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782077477784,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ",
+          "clothing": {
+            "background": "Forest Background",
+            "body": "Pirate Potion",
+            "hair": "Explorer Hair",
+            "shoes": "Peg Leg",
+            "tool": "Trident",
+            "shirt": "Red Farmer Shirt",
+            "onesie": "Shrimp Onesie",
+            "pants": "Farmer Overalls",
+            "secondaryTool": "Bucket O' Worms",
+            "wings": "Bionic Drill",
+            "coat": "Fruit Picker Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782024457316,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 3306748169012830,
+          "username": "Leomale",
+          "clothing": {
+            "background": "Seashore Background",
+            "body": "Light Brown Farmer Potion",
+            "hair": "White Long Hair",
+            "shoes": "Yellow Boots",
+            "tool": "Sunflower Rod",
+            "shirt": "Red Farmer Shirt",
+            "pants": "Farmer Overalls",
+            "hat": "Spa Hat",
+            "secondaryTool": "Bucket O' Worms",
+            "suit": "Embersteel Suit",
+            "onesie": "Shrimp Onesie"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782011911408,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz",
+          "clothing": {
+            "background": "Deep Sea Salt Cave Background",
+            "body": "Pirate Potion",
+            "hair": "Blondie",
+            "shoes": "Black Farmer Boots",
+            "tool": "Halloween Deathscythe",
+            "necklace": "Crimstone Amulet",
+            "coat": "Milk Apron",
+            "wings": "Sol & Luna",
+            "secondaryTool": "Solflare Aegis",
+            "hat": "Gam3s Cap",
+            "shirt": "Yellow Farmer Shirt",
+            "suit": "Motley",
+            "aura": "Bubble Aura"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782009537087,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 5567166761578496,
+          "username": "monicabtry",
+          "clothing": {
+            "background": "Forest Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Pink Ponytail",
+            "shoes": "Black Farmer Boots",
+            "tool": "Axe",
+            "shirt": "Fruit Picker Shirt",
+            "pants": "Farmer Overalls",
+            "hat": "Fruit Bowl",
+            "onesie": "Red Pepper Onesie",
+            "suit": "Embersteel Suit"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782009334238,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8956280352567803,
+          "username": "Jenita",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Rancher Hair",
+            "shoes": "Peg Leg",
+            "tool": "Farmer Pitchfork",
+            "pants": "Lumberjack Overalls",
+            "suit": "Embersteel Suit",
+            "hat": "Clam Shell Hat",
+            "shirt": "Yellow Farmer Shirt"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782005337063,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 4609580869470132,
+          "username": "Happyleef",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Light Brown Farmer Potion",
+            "hair": "Corn Silk Hair",
+            "shoes": "Yellow Boots",
+            "tool": "Trident",
+            "shirt": "Striped Blue Shirt",
+            "pants": "Angler Waders",
+            "suit": "Bee Suit",
+            "onesie": "Camel Onesie",
+            "secondaryTool": "Bucket O' Worms",
+            "necklace": "Carrot Amulet",
+            "wings": "Bat Wings",
+            "hat": "Beekeeper Hat"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782002801787,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 31321,
+          "username": "j7gvieira",
+          "clothing": {
+            "hair": "Basic Hair",
+            "shirt": "Red Farmer Shirt",
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "shoes": "Black Farmer Boots",
+            "tool": "Farmer Pitchfork",
+            "hat": "Companion Cap",
+            "pants": "Farmer Overalls"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782002729193,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 28229,
+          "username": "SunnyDaze",
+          "clothing": {
+            "coat": "Fruit Picker Apron",
+            "hair": "Sun Spots",
+            "background": "China Town Background",
+            "hat": "Gam3s Cap",
+            "necklace": "Beetroot Amulet",
+            "suit": "Beekeeper Suit",
+            "body": "Infected Potion",
+            "shoes": "Peg Leg",
+            "tool": "Sunflower Rod",
+            "onesie": "Banana Onesie",
+            "wings": "Bat Wings",
+            "pants": "Farmer Overalls",
+            "shirt": "Reel Fishing Vest"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1782001391346,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 3590448115165244,
+          "username": "odinho",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Basic Hair",
+            "shoes": "Peg Leg",
+            "tool": "Farmer Pitchfork",
+            "shirt": "Brasil Jersey",
+            "pants": "Blue Suspenders"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1781995833811,
+        "type": "help"
+      },
+      {
+        "sender": {
+          "id": 8660455661476377,
+          "username": "Mamba24",
+          "clothing": {
+            "hair": "Buzz Cut",
+            "shirt": "Pixel Perfect Hoodie",
+            "pants": "Angler Waders",
+            "background": "Farm Background",
+            "body": "Pirate Potion",
+            "shoes": "Peg Leg",
+            "tool": "Axe",
+            "hat": "Turd Topper",
+            "onesie": "Walrus Onesie",
+            "coat": "Fruit Picker Apron"
+          }
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco",
+          "clothing": {
+            "background": "Farm Background",
+            "body": "Beige Farmer Potion",
+            "hair": "Sun Spots",
+            "shoes": "Black Farmer Boots",
+            "tool": "Infernal Bullwhip",
+            "secondaryTool": "Oil Gallon",
+            "shirt": "Olive Royalty Shirt",
+            "pants": "Angler Waders",
+            "necklace": "Green Amulet",
+            "coat": "Chef Apron",
+            "hat": "Gam3s Cap",
+            "wings": "Oracle Syringe",
+            "aura": "Paw Aura",
+            "onesie": "Squirrel Onesie"
+          }
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1781984918194,
+        "type": "help"
+      }
+    ],
+    "following": [
+      1200643110234699,
+      5845356377159265,
+      5733,
+      8081963356346386,
+      7568255385136988,
+      8633980507453436,
+      81270,
+      6585849928575330,
+      6628568281707078,
+      11525,
+      155794,
+      8329230747654942,
+      5925598366943423,
+      31509,
+      5877847754741933
+    ]
+  }
+}
