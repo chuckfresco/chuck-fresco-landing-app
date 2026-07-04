@@ -8,3 +8,11 @@ dist/
 .env.development.local
 .env.test.local
 .env.production.local
+src/.env.txt
+package.json
+package-lock.json
+apps/chuckfresco.com/src/.env.txt
+apps/chuckfresco.com/.env.example
+apps/api.chuckfreso.com/.env.example
+apps/admin.chuckfresco.com/.env.example
+src/.env.txt
