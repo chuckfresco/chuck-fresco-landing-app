@@ -1,6 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
@@ -20,6 +23,7 @@ const cheeringSound = "/assets/sunflower-land/sounds/fnaf-cheering.mp3";
 const farmVisitUrl = `https://sunflower-land.com/play/#/visit/${FARM_ID}`;
 const referralUrl = "https://sunflower-land.com/play/?ref=ChuckFresco";
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+const LEADERBOARD_PAGE_SIZE = 10;
 const WHEEL_SIZE = 12;
 const ROLL_DURATION_MS = 3600;
 const WHEEL_POINTER_OFFSET = -90;
@@ -187,7 +191,7 @@ const useStyles = makeStyles(theme => ({
   },
   referral: {
     width: "calc(100% + 24px)",
-    margin: "-5px -12px 18px",
+    margin: "-5px -12px 0",
     padding: "7px 16px 9px",
     backgroundColor: "#b95791",
     borderTop: "4px solid #1d1730",
@@ -267,6 +271,55 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       width: 15,
       height: 15
+    }
+  },
+  sunflowerNav: {
+    width: "calc(100% + 24px)",
+    margin: "0 -12px 18px",
+    padding: "6px 12px 8px",
+    background: "#27364c",
+    borderBottom: "4px solid #101018",
+    boxShadow: "inset 0 3px 0 rgba(255,255,255,0.08), inset 0 -2px 0 rgba(16,16,24,0.35)",
+    display: "flex",
+    justifyContent: "center",
+    gap: 8,
+    flexWrap: "wrap"
+  },
+  sunflowerNavLink: {
+    minHeight: 30,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#fff8d6",
+    background: "#1f5da8",
+    border: "3px solid #101018",
+    borderRadius: 8,
+    boxShadow: "inset 0 0 0 2px rgba(255,248,214,0.22)",
+    fontFamily: "SmallestPixel7, 'Courier New', monospace",
+    fontSize: 18,
+    fontWeight: 900,
+    lineHeight: 1,
+    padding: "4px 12px 5px",
+    textDecoration: "none",
+    whiteSpace: "nowrap",
+    "&:hover": {
+      color: "#fff8d6",
+      textDecoration: "none",
+      filter: "brightness(1.08)"
+    },
+    [theme.breakpoints.down("xs")]: {
+      flex: "1 1 132px",
+      fontSize: 16,
+      paddingLeft: 8,
+      paddingRight: 8
+    }
+  },
+  activeSunflowerNavLink: {
+    color: "#20192b",
+    background: "#f4c08a",
+    boxShadow: "inset 0 0 0 2px #fff8d6",
+    "&:hover": {
+      color: "#2d2739"
     }
   },
   layout: {
@@ -538,6 +591,52 @@ const useStyles = makeStyles(theme => ({
   },
   bronzeRankTotal: {
     color: "#fff2a8"
+  },
+  leaderboardPagination: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10,
+    marginTop: 12,
+    flexWrap: "wrap"
+  },
+  leaderboardPageButton: {
+    appearance: "none",
+    minWidth: 42,
+    height: 38,
+    border: "3px solid #101018",
+    borderRadius: 8,
+    background: "#2876d5",
+    color: "#fff",
+    cursor: "pointer",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    font: "inherit",
+    fontWeight: 900,
+    lineHeight: 1,
+    padding: 0,
+    boxShadow: "inset 0 0 0 3px #55b6ff",
+    "&:hover": {
+      filter: "brightness(1.05)"
+    },
+    "&:disabled": {
+      cursor: "not-allowed",
+      opacity: 0.45,
+      filter: "grayscale(0.25)"
+    }
+  },
+  leaderboardPageIcon: {
+    width: 28,
+    height: 28
+  },
+  leaderboardPageMeta: {
+    flex: "1 1 auto",
+    color: "#4a2b36",
+    fontSize: 13,
+    fontWeight: 900,
+    lineHeight: 1.25,
+    textAlign: "center"
   },
   giveawayPanel: {
     marginTop: 20,
@@ -1065,6 +1164,7 @@ const SunflowerLandHelpers = () => {
   const [wheelRotation, setWheelRotation] = useState(0);
   const [wheelEntries, setWheelEntries] = useState([]);
   const [rollWheelEntries, setRollWheelEntries] = useState([]);
+  const [leaderboardPage, setLeaderboardPage] = useState(0);
   const rollTimeoutRef = useRef(null);
   const rollFrameRef = useRef(null);
   const audioContextRef = useRef(null);
@@ -1182,9 +1282,21 @@ const SunflowerLandHelpers = () => {
         b.total - a.total ||
         a.reachedTotalAt - b.reachedTotalAt ||
         a.name.localeCompare(b.name)
-      ))
-      .slice(0, 10);
+      ));
   }, [weeklyFeed]);
+
+  const leaderboardPageCount = Math.max(1, Math.ceil(leaderboard.length / LEADERBOARD_PAGE_SIZE));
+  const safeLeaderboardPage = Math.min(leaderboardPage, leaderboardPageCount - 1);
+  const leaderboardPageStart = safeLeaderboardPage * LEADERBOARD_PAGE_SIZE;
+  const leaderboardPageEnd = Math.min(leaderboardPageStart + LEADERBOARD_PAGE_SIZE, leaderboard.length);
+  const pagedLeaderboard = leaderboard.slice(
+    leaderboardPageStart,
+    leaderboardPageEnd
+  );
+
+  useEffect(() => {
+    setLeaderboardPage(currentPage => Math.min(currentPage, leaderboardPageCount - 1));
+  }, [leaderboardPageCount]);
 
   const eligibleEntries = useMemo(() => (
     weeklyFeed.map(getEntryName)
@@ -1401,6 +1513,21 @@ const SunflowerLandHelpers = () => {
         </a>
       </div>
 
+      <nav className={classes.sunflowerNav} aria-label="Sunflower Land pages">
+        <Link
+          className={`${classes.sunflowerNavLink} ${classes.activeSunflowerNavLink}`}
+          to="/sunflower-land/helpers"
+        >
+          Leaderboard
+        </Link>
+        <Link
+          className={classes.sunflowerNavLink}
+          to="/sunflower-land/tools/fishing"
+        >
+          Fishing
+        </Link>
+      </nav>
+
       {isRollModalOpen && (
         <div
           className={classes.rollModalBackdrop}
@@ -1575,8 +1702,8 @@ const SunflowerLandHelpers = () => {
               Rankings use cheers + helps from the last 7 days. Ties go to whoever reached the total first.
             </p>
             <ol className={classes.leaderboardList}>
-              {leaderboard.map((player, index) => {
-                const rank = index + 1;
+              {pagedLeaderboard.map((player, index) => {
+                const rank = leaderboardPageStart + index + 1;
                 const rankClass = rank === 1
                   ? classes.goldRank
                   : rank === 2
@@ -1631,6 +1758,32 @@ const SunflowerLandHelpers = () => {
 
             {!leaderboard.length && (
               <div className={classes.empty}>No weekly helpers yet.</div>
+            )}
+
+            {leaderboard.length > LEADERBOARD_PAGE_SIZE && (
+              <div className={classes.leaderboardPagination}>
+                <button
+                  type="button"
+                  className={classes.leaderboardPageButton}
+                  onClick={() => setLeaderboardPage(page => Math.max(0, page - 1))}
+                  disabled={safeLeaderboardPage === 0}
+                  aria-label="Show previous leaderboard page"
+                >
+                  <ChevronLeftIcon className={classes.leaderboardPageIcon} aria-hidden="true" />
+                </button>
+                <div className={classes.leaderboardPageMeta}>
+                  Page {safeLeaderboardPage + 1} of {leaderboardPageCount} - showing {leaderboardPageStart + 1}-{leaderboardPageEnd} of {leaderboard.length}
+                </div>
+                <button
+                  type="button"
+                  className={classes.leaderboardPageButton}
+                  onClick={() => setLeaderboardPage(page => Math.min(leaderboardPageCount - 1, page + 1))}
+                  disabled={safeLeaderboardPage >= leaderboardPageCount - 1}
+                  aria-label="Show next leaderboard page"
+                >
+                  <ChevronRightIcon className={classes.leaderboardPageIcon} aria-hidden="true" />
+                </button>
+              </div>
             )}
           </aside>
         </div>
