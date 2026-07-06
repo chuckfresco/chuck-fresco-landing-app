@@ -49,6 +49,7 @@ import {
   PixelsLandInventory as PixelsLandInventoryView,
   PixelsAnimalDrops as PixelsAnimalDropsView,
   SunflowerLandHelpers as SunflowerLandHelpersView,
+  SunflowerLandFishing as SunflowerLandFishingView,
 
   Ecommerce as EcommerceView,
   Pricing as PricingView,
@@ -132,6 +133,17 @@ const Routes = () => {
           <WithLayout
             {...matchProps}
             component={SunflowerLandHelpersView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sunflower-land/tools/fishing"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={SunflowerLandFishingView}
             layout={MainLayout}
           />
         )}

@@ -99,6 +99,10 @@ const Main = ({ children, themeToggler, themeMode }) => {
               title: 'Sunflower Helpers',
               href: '/sunflower-land/helpers',
             },
+            {
+              title: 'Fishing Tools',
+              href: '/sunflower-land/tools/fishing',
+            },
           ],
         },
 
