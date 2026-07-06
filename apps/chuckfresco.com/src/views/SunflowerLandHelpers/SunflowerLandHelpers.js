@@ -22,6 +22,7 @@ const referralUrl = "https://sunflower-land.com/play/?ref=ChuckFresco";
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 const WHEEL_SIZE = 12;
 const ROLL_DURATION_MS = 3600;
+const WHEEL_POINTER_OFFSET = -90;
 const wheelColors = ["#c95839", "#2876d5", "#f4c08a", "#b95791", "#3d5c52", "#f08a55"];
 
 const getWheelEntries = (entries, winningIndex = -1) => {
@@ -62,8 +63,18 @@ const getWheelBackground = count => {
     return `${color} ${index * slice}% ${(index + 1) * slice}%`;
   });
 
-  return `conic-gradient(from -90deg, ${stops.join(", ")})`;
+  return `conic-gradient(from ${WHEEL_POINTER_OFFSET}deg, ${stops.join(", ")})`;
 };
+
+const getWheelSegmentCenter = (index, count) => {
+  if (!count) return 0;
+  const segmentAngle = 360 / count;
+  return (segmentAngle * index) + (segmentAngle / 2);
+};
+
+const getWheelLabelRotation = (index, count) => (
+  WHEEL_POINTER_OFFSET + getWheelSegmentCenter(index, count)
+);
 
 const getAudioContext = () => {
   if (typeof window === "undefined") return null;
@@ -416,6 +427,122 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 900,
     lineHeight: 1.35
   },
+  leaderboardList: {
+    display: "grid",
+    gap: 8,
+    margin: 0,
+    padding: 0,
+    listStyle: "none"
+  },
+  leaderboardRow: {
+    display: "grid",
+    gridTemplateColumns: "48px minmax(0, 1fr)",
+    gap: 10,
+    alignItems: "center",
+    background: "#2876d5",
+    border: "3px solid #111827",
+    borderRadius: 10,
+    boxShadow: "inset 0 0 0 2px #55b6ff",
+    color: "#fff",
+    padding: "8px 10px"
+  },
+  topRankRow: {
+    color: "#1f1721",
+    textShadow: "1px 1px 0 rgba(255,255,255,0.35)",
+    boxShadow: "inset 0 0 0 3px rgba(255,255,255,0.38), 4px 4px 0 rgba(0,0,0,0.2)"
+  },
+  goldRow: {
+    background: "linear-gradient(90deg, #f5b51b 0%, #ffe889 52%, #b76f13 100%)"
+  },
+  silverRow: {
+    background: "linear-gradient(90deg, #aeb9c6 0%, #f7fbff 52%, #7d8794 100%)"
+  },
+  bronzeRow: {
+    background: "linear-gradient(90deg, #a65f2e 0%, #e4a260 52%, #6d3820 100%)",
+    color: "#fff8e8",
+    textShadow: "2px 2px 0 rgba(47,23,13,0.42)"
+  },
+  rankBadge: {
+    width: 40,
+    height: 40,
+    border: "3px solid #101018",
+    borderRadius: "50%",
+    color: "#20192b",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "SmallestPixel7, 'Courier New', monospace",
+    fontSize: 18,
+    fontWeight: 900,
+    lineHeight: 1,
+    textShadow: "1px 1px 0 rgba(255,255,255,0.45)",
+    boxShadow: "inset 0 0 0 3px rgba(255,255,255,0.35), 3px 3px 0 rgba(0,0,0,0.24)"
+  },
+  goldRank: {
+    background: "linear-gradient(180deg, #fff2a8 0%, #f6c53d 54%, #b76f13 100%)"
+  },
+  silverRank: {
+    background: "linear-gradient(180deg, #ffffff 0%, #cfd8e3 54%, #7d8794 100%)"
+  },
+  bronzeRank: {
+    background: "linear-gradient(180deg, #ffd2a1 0%, #c9833f 54%, #7b3f22 100%)"
+  },
+  normalRank: {
+    background: "linear-gradient(180deg, #f7fbff 0%, #d8def2 62%, #9fb2d8 100%)"
+  },
+  leaderboardName: {
+    minWidth: 0,
+    fontSize: 16,
+    fontWeight: 900,
+    lineHeight: 1.1,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap"
+  },
+  leaderboardStats: {
+    display: "flex",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: 8,
+    marginTop: 5,
+    color: "#fff8d6",
+    fontSize: 13,
+    fontWeight: 900,
+    lineHeight: 1
+  },
+  topRankStats: {
+    color: "#2a1d24",
+    textShadow: "1px 1px 0 rgba(255,255,255,0.3)"
+  },
+  bronzeRankStats: {
+    color: "#fff8e8",
+    textShadow: "2px 2px 0 rgba(47,23,13,0.42)"
+  },
+  leaderboardStat: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 4,
+    whiteSpace: "nowrap"
+  },
+  leaderboardIcon: {
+    width: 20,
+    height: 20,
+    imageRendering: "pixelated"
+  },
+  leaderboardTotal: {
+    color: "#fff2a8",
+    fontSize: 15
+  },
+  topRankTotal: {
+    color: "#25151d"
+  },
+  bronzeRankTotal: {
+    color: "#fff2a8"
+  },
+  giveawayPanel: {
+    marginTop: 20,
+    padding: 16
+  },
   copyButton: {
     appearance: "none",
     border: "3px solid #101018",
@@ -659,15 +786,6 @@ const useStyles = makeStyles(theme => ({
   modalWheel: {
     boxShadow: "inset 0 0 0 7px rgba(255,248,214,0.42), 9px 9px 0 rgba(0,0,0,0.26)"
   },
-  modalWheelLabel: {
-    width: "49%",
-    height: 20,
-    top: "calc(50% - 10px)",
-    lineHeight: "20px",
-    paddingLeft: "20%",
-    paddingRight: 12,
-    color: "#fff8d6"
-  },
   modalWheelCenter: {
     width: "30%",
     minHeight: "24%",
@@ -906,6 +1024,12 @@ const relativeTime = timestamp => {
 const getInitial = username => (username || "?").trim().charAt(0).toUpperCase();
 const getEntryName = item => (item.sender && item.sender.username) || "Unknown";
 const getEntryActionLabel = type => (type === "cheer" ? "Cheered the farm" : "Helped the farm");
+const getOrdinal = rank => {
+  if (rank === 1) return "1st";
+  if (rank === 2) return "2nd";
+  if (rank === 3) return "3rd";
+  return `${rank}`;
+};
 const getSnapshotTime = payload => {
   if (payload && payload.snapshotAt) return payload.snapshotAt;
   return "";
@@ -1022,6 +1146,46 @@ const SunflowerLandHelpers = () => {
     activeFilter === "all" ? weeklyFeed : weeklyFeed.filter(item => item.type === activeFilter)
   ), [activeFilter, weeklyFeed]);
 
+  const leaderboard = useMemo(() => {
+    const players = new Map();
+
+    weeklyFeed
+      .slice()
+      .sort((a, b) => Number(a.createdAt) - Number(b.createdAt))
+      .forEach(item => {
+        const senderId = item.sender && item.sender.id
+          ? String(item.sender.id)
+          : getEntryName(item);
+        const current = players.get(senderId) || {
+          id: senderId,
+          name: getEntryName(item),
+          cheers: 0,
+          helps: 0,
+          total: 0,
+          reachedTotalAt: Number(item.createdAt)
+        };
+
+        if (item.type === "cheer") {
+          current.cheers += 1;
+        } else if (item.type === "help") {
+          current.helps += 1;
+        }
+
+        current.name = getEntryName(item);
+        current.total = current.cheers + current.helps;
+        current.reachedTotalAt = Number(item.createdAt);
+        players.set(senderId, current);
+      });
+
+    return Array.from(players.values())
+      .sort((a, b) => (
+        b.total - a.total ||
+        a.reachedTotalAt - b.reachedTotalAt ||
+        a.name.localeCompare(b.name)
+      ))
+      .slice(0, 10);
+  }, [weeklyFeed]);
+
   const eligibleEntries = useMemo(() => (
     weeklyFeed.map(getEntryName)
   ), [weeklyFeed]);
@@ -1132,11 +1296,7 @@ const SunflowerLandHelpers = () => {
     const winningIndex = Math.floor(Math.random() * eligibleEntries.length);
     const nextWheelEntries = getWheelEntries(eligibleEntries, winningIndex);
     const nextRollWheelEntries = getAllWheelEntries(eligibleEntries);
-    const segmentAngle = 360 / nextRollWheelEntries.length;
-    const winningSegmentCenter = (winningIndex * segmentAngle) + (segmentAngle / 2);
-    const currentRotation = wheelRotation % 360;
-    const settleDelta = (360 - ((currentRotation + winningSegmentCenter) % 360)) % 360;
-    const nextRotation = wheelRotation + (360 * 5) + settleDelta;
+    const nextRotation = wheelRotation + (360 * 5) + Math.random() * 360;
 
     if (rollTimeoutRef.current) {
       window.clearTimeout(rollTimeoutRef.current);
@@ -1290,31 +1450,7 @@ const SunflowerLandHelpers = () => {
                     background: rollWheelBackground,
                     transform: `rotate(${wheelRotation}deg)`
                   }}
-                >
-                  {visibleRollWheelEntries.map((entry, index) => {
-                    const segmentAngle = 360 / visibleRollWheelEntries.length;
-                    const labelFontSize = visibleRollWheelEntries.length > 36
-                      ? 10
-                      : visibleRollWheelEntries.length > 24
-                        ? 12
-                        : visibleRollWheelEntries.length > 16
-                          ? 14
-                          : 16;
-
-                    return (
-                      <span
-                        className={`${classes.wheelLabel} ${classes.modalWheelLabel}`}
-                        key={`modal-${entry.entry}-${entry.name}-${index}`}
-                        style={{
-                          fontSize: labelFontSize,
-                          transform: `rotate(${(segmentAngle * index) + (segmentAngle / 2) - 90}deg)`
-                        }}
-                      >
-                        #{entry.entry} {entry.name}
-                      </span>
-                    );
-                  })}
-                </div>
+                />
                 <button
                   type="button"
                   className={`${classes.wheelCenter} ${classes.modalWheelCenter}`}
@@ -1327,10 +1463,10 @@ const SunflowerLandHelpers = () => {
               </div>
               <p className={classes.modalRollHint}>
                 {isRolling
-                  ? "Spinning through every eligible entry..."
+                  ? "Spinning the wheel..."
                   : winner
-                    ? `${winner.name} landed on entry #${winner.entry}.`
-                    : "Ready to roll every eligible entry."}
+                    ? `${winner.name} is entry #${winner.entry}.`
+                    : "Ready to roll a random winner."}
               </p>
               {winner && !isRolling && (
                 <div className={classes.modalWinnerInfo}>
@@ -1433,94 +1569,159 @@ const SunflowerLandHelpers = () => {
 
           <aside className={`${classes.panel} ${classes.board}`}>
             <div className={classes.boardHeader}>
-              <h2 className={classes.panelTitle}>Eligible Winners</h2>
-              <button
-                type="button"
-                className={classes.copyButton}
-                onClick={copyEligibleList}
-                disabled={!eligibleEntries.length}
-              >
-                Copy
-              </button>
+              <h2 className={classes.panelTitle}>Top Helpers This Week</h2>
             </div>
             <p className={classes.boardMeta}>
-              Last 7 days: {eligibleEntries.length} entries from {uniqueEligibleCount} players.
+              Rankings use cheers + helps from the last 7 days. Ties go to whoever reached the total first.
             </p>
-            <textarea
-              className={classes.winnerList}
-              readOnly
-              value={eligibleList}
-              aria-label="Eligible winner entries"
-              placeholder="No eligible entries this week."
-            />
-            {copyStatus && <p className={classes.boardMeta}>{copyStatus}</p>}
+            <ol className={classes.leaderboardList}>
+              {leaderboard.map((player, index) => {
+                const rank = index + 1;
+                const rankClass = rank === 1
+                  ? classes.goldRank
+                  : rank === 2
+                    ? classes.silverRank
+                    : rank === 3
+                      ? classes.bronzeRank
+                      : classes.normalRank;
+                const rowClass = rank === 1
+                  ? classes.goldRow
+                  : rank === 2
+                    ? classes.silverRow
+                    : rank === 3
+                      ? classes.bronzeRow
+                      : "";
+                const statsClass = rank === 3
+                  ? classes.bronzeRankStats
+                  : rank <= 2
+                    ? classes.topRankStats
+                    : "";
+                const totalClass = rank === 3
+                  ? classes.bronzeRankTotal
+                  : rank <= 2
+                    ? classes.topRankTotal
+                    : "";
 
-            <div className={classes.rollSection}>
-              <div className={classes.wheelStage} aria-live="polite">
-                <div className={classes.wheelWrap}>
-                  <div className={classes.wheelPointer} aria-hidden="true" />
-                  <div
-                    className={`${classes.wheel} ${!isRolling ? classes.idleWheel : ""}`}
-                    style={{
-                      background: wheelBackground,
-                      transform: isRolling ? `rotate(${wheelRotation}deg)` : undefined
-                    }}
+                return (
+                  <li
+                    className={`${classes.leaderboardRow} ${rank <= 3 ? classes.topRankRow : ""} ${rowClass}`}
+                    key={player.id}
                   >
-                    {visibleWheelEntries.map((entry, index) => {
-                      const segmentAngle = 360 / visibleWheelEntries.length;
-
-                      return (
-                        <span
-                          className={classes.wheelLabel}
-                          key={`${entry.entry}-${entry.name}-${index}`}
-                          style={{
-                            transform: `rotate(${(segmentAngle * index) + (segmentAngle / 2)}deg)`
-                          }}
-                        >
-                          #{entry.entry} {entry.name}
-                        </span>
-                      );
-                    })}
-                  </div>
-                  <div className={classes.wheelCenter}>{wheelCenterText}</div>
-                </div>
-                <p className={classes.rollHint}>
-                  {isRolling
-                    ? "Picking a winner..."
-                    : winner
-                      ? `${winner.name} landed on the wheel.`
-                      : "Spin the wheel to roll a weekly winner."}
-                </p>
-              </div>
-              <button
-                type="button"
-                className={classes.rollButton}
-                onClick={rollWinner}
-                disabled={!eligibleEntries.length || isRolling}
-              >
-                {isRolling ? "Rolling..." : "Random Roll"}
-              </button>
-              {winner && (
-                <div className={classes.winnerCard}>
-                  Winner
-                  <span className={classes.winnerName}>{winner.name}</span>
-                  Entry {winner.entry} of {winner.total}
-                  <div className={classes.winnerMeta}>
-                    <span className={classes.winnerAction}>
-                      <img
-                        src={winner.type === "cheer" ? cheerIcon : helpIcon}
-                        alt=""
-                        className={classes.winnerActionIcon}
-                      />
-                      {winner.action}
+                    <span className={`${classes.rankBadge} ${rankClass}`}>
+                      {getOrdinal(rank)}
                     </span>
-                    <span>Entry time: {formatDateTime(winner.createdAt)}</span>
-                  </div>
-                </div>
-              )}
-            </div>
+                    <div>
+                      <div className={classes.leaderboardName}>{player.name}</div>
+                      <div className={`${classes.leaderboardStats} ${statsClass}`}>
+                        <span className={classes.leaderboardStat}>
+                          <img src={cheerIcon} alt="" className={classes.leaderboardIcon} />
+                          {player.cheers}
+                        </span>
+                        <span className={classes.leaderboardStat}>
+                          <img src={helpIcon} alt="" className={classes.leaderboardIcon} />
+                          {player.helps}
+                        </span>
+                        <span className={`${classes.leaderboardTotal} ${totalClass}`}>Total {player.total}</span>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+
+            {!leaderboard.length && (
+              <div className={classes.empty}>No weekly helpers yet.</div>
+            )}
           </aside>
         </div>
+
+        <section className={`${classes.panel} ${classes.giveawayPanel}`}>
+          <div className={classes.boardHeader}>
+            <h2 className={classes.panelTitle}>Eligible Winners</h2>
+            <button
+              type="button"
+              className={classes.copyButton}
+              onClick={copyEligibleList}
+              disabled={!eligibleEntries.length}
+            >
+              Copy
+            </button>
+          </div>
+          <p className={classes.boardMeta}>
+            Last 7 days: {eligibleEntries.length} entries from {uniqueEligibleCount} players.
+          </p>
+          <textarea
+            className={classes.winnerList}
+            readOnly
+            value={eligibleList}
+            aria-label="Eligible winner entries"
+            placeholder="No eligible entries this week."
+          />
+          {copyStatus && <p className={classes.boardMeta}>{copyStatus}</p>}
+
+          <div className={classes.rollSection}>
+            <div className={classes.wheelStage} aria-live="polite">
+              <div className={classes.wheelWrap}>
+                <div className={classes.wheelPointer} aria-hidden="true" />
+                <div
+                  className={`${classes.wheel} ${!isRolling ? classes.idleWheel : ""}`}
+                  style={{
+                    background: wheelBackground,
+                    transform: isRolling ? `rotate(${wheelRotation}deg)` : undefined
+                  }}
+                >
+                  {visibleWheelEntries.map((entry, index) => {
+                    return (
+                      <span
+                        className={classes.wheelLabel}
+                        key={`${entry.entry}-${entry.name}-${index}`}
+                        style={{
+                          transform: `rotate(${getWheelLabelRotation(index, visibleWheelEntries.length)}deg)`
+                        }}
+                      >
+                        #{entry.entry} {entry.name}
+                      </span>
+                    );
+                  })}
+                </div>
+                <div className={classes.wheelCenter}>{wheelCenterText}</div>
+              </div>
+              <p className={classes.rollHint}>
+                {isRolling
+                  ? "Picking a winner..."
+                  : winner
+                    ? `${winner.name} landed on the wheel.`
+                    : "Spin the wheel to roll a weekly winner."}
+              </p>
+            </div>
+            <button
+              type="button"
+              className={classes.rollButton}
+              onClick={rollWinner}
+              disabled={!eligibleEntries.length || isRolling}
+            >
+              {isRolling ? "Rolling..." : "Random Roll"}
+            </button>
+            {winner && (
+              <div className={classes.winnerCard}>
+                Winner
+                <span className={classes.winnerName}>{winner.name}</span>
+                Entry {winner.entry} of {winner.total}
+                <div className={classes.winnerMeta}>
+                  <span className={classes.winnerAction}>
+                    <img
+                      src={winner.type === "cheer" ? cheerIcon : helpIcon}
+                      alt=""
+                      className={classes.winnerActionIcon}
+                    />
+                    {winner.action}
+                  </span>
+                  <span>Entry time: {formatDateTime(winner.createdAt)}</span>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
       </main>
     </div>
   );

@@ -178,6 +178,16 @@ const compactMenuItemStyle = {
   minHeight: 48
 };
 
+const getRowBackgroundColor = (row, index) => {
+  const isPrivate = String((row && row.status) || "").toLowerCase() !== "public";
+
+  if (isPrivate) {
+    return index % 2 === 0 ? "rgba(120, 28, 28, 0.52)" : "rgba(94, 22, 22, 0.52)";
+  }
+
+  return index % 2 === 0 ? "#2b2b2b" : "#1f1f1f";
+};
+
 const listFields = [
   "nftTraits",
   "boosts",
@@ -848,10 +858,10 @@ const getInitialInventoryUrlState = () => {
   if (typeof window === "undefined") {
     return {
       searchTerm: "",
-      selectedCrafting: "",
-      selectedResource: "",
+      selectedCrafting: [],
+      selectedResources: [],
       selectedAnimals: [],
-      selectedLandType: "",
+      selectedLandTypes: [],
       selectedNftTraits: [],
       sortConfig: { key: null, direction: "asc" }
     };
@@ -863,13 +873,22 @@ const getInitialInventoryUrlState = () => {
 
   return {
     searchTerm: params.get("search") || "",
-    selectedCrafting: params.get("crafting") || "",
-    selectedResource: params.get("resource") || "",
+    selectedCrafting: (params.get("crafting") || "")
+      .split(",")
+      .map(crafting => crafting.trim())
+      .filter(Boolean),
+    selectedResources: (params.get("resource") || "")
+      .split(",")
+      .map(resource => resource.trim())
+      .filter(Boolean),
     selectedAnimals: (params.get("animals") || "")
       .split(",")
       .map(animal => animal.trim())
       .filter(Boolean),
-    selectedLandType: params.get("landType") || "",
+    selectedLandTypes: (params.get("landType") || "")
+      .split(",")
+      .map(landType => landType.trim())
+      .filter(Boolean),
     selectedNftTraits: traits
       .split(",")
       .map(trait => trait.trim())
@@ -983,9 +1002,9 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
   const [loadError, setLoadError] = useState("");
   const [searchTerm, setSearchTerm] = useState(initialUrlState.searchTerm);
   const [selectedCrafting, setSelectedCrafting] = useState(initialUrlState.selectedCrafting);
-  const [selectedResource, setSelectedResource] = useState(initialUrlState.selectedResource);
+  const [selectedResources, setSelectedResources] = useState(initialUrlState.selectedResources);
   const [selectedAnimals, setSelectedAnimals] = useState(initialUrlState.selectedAnimals);
-  const [selectedLandType, setSelectedLandType] = useState(initialUrlState.selectedLandType);
+  const [selectedLandTypes, setSelectedLandTypes] = useState(initialUrlState.selectedLandTypes);
   const [selectedNftTraits, setSelectedNftTraits] = useState(initialUrlState.selectedNftTraits);
   const [sortConfig, setSortConfig] = useState(initialUrlState.sortConfig);
 
@@ -1084,11 +1103,11 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
     };
 
     setOrDeleteParam("search", searchTerm.trim());
-    setOrDeleteParam("crafting", toFilterSlug(selectedCrafting));
-    setOrDeleteParam("resource", toFilterSlug(selectedResource));
+    setOrDeleteParam("crafting", selectedCrafting.map(toFilterSlug).join(","));
+    setOrDeleteParam("resource", selectedResources.map(toFilterSlug).join(","));
     setOrDeleteParam("animals", selectedAnimals.map(toFilterSlug).join(","));
     params.delete("boost");
-    setOrDeleteParam("landType", toFilterSlug(selectedLandType));
+    setOrDeleteParam("landType", selectedLandTypes.map(toFilterSlug).join(","));
     setOrDeleteParam("traits", selectedNftTraits.map(toFilterSlug).join(","));
     params.delete("nftTraits");
 
@@ -1110,9 +1129,9 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
   }, [
     searchTerm,
     selectedCrafting,
-    selectedResource,
+    selectedResources,
     selectedAnimals,
-    selectedLandType,
+    selectedLandTypes,
     selectedNftTraits,
     sortConfig
   ]);
@@ -1167,14 +1186,20 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
   );
 
   useEffect(() => {
-    if (selectedCrafting && craftingOptions.length) {
-      const nextValue = findOptionBySlugOrValue(selectedCrafting, craftingOptions);
-      if (nextValue !== selectedCrafting) setSelectedCrafting(nextValue);
+    if (selectedCrafting.length && craftingOptions.length) {
+      const nextCrafting = findOptionsBySlugOrValue(selectedCrafting, craftingOptions);
+
+      if (nextCrafting.join("|") !== selectedCrafting.join("|")) {
+        setSelectedCrafting(nextCrafting);
+      }
     }
 
-    if (selectedResource && resourceOptions.length) {
-      const nextValue = findOptionBySlugOrValue(selectedResource, resourceOptions);
-      if (nextValue !== selectedResource) setSelectedResource(nextValue);
+    if (selectedResources.length && resourceOptions.length) {
+      const nextResources = findOptionsBySlugOrValue(selectedResources, resourceOptions);
+
+      if (nextResources.join("|") !== selectedResources.join("|")) {
+        setSelectedResources(nextResources);
+      }
     }
 
     if (selectedAnimals.length && animalOptions.length) {
@@ -1185,9 +1210,12 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
       }
     }
 
-    if (selectedLandType && landTypeOptions.length) {
-      const nextValue = findOptionBySlugOrValue(selectedLandType, landTypeOptions);
-      if (nextValue !== selectedLandType) setSelectedLandType(nextValue);
+    if (selectedLandTypes.length && landTypeOptions.length) {
+      const nextLandTypes = findOptionsBySlugOrValue(selectedLandTypes, landTypeOptions);
+
+      if (nextLandTypes.join("|") !== selectedLandTypes.join("|")) {
+        setSelectedLandTypes(nextLandTypes);
+      }
     }
 
     if (selectedNftTraits.length && nftTraitOptions.length) {
@@ -1201,9 +1229,9 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
     }
   }, [
     selectedCrafting,
-    selectedResource,
+    selectedResources,
     selectedAnimals,
-    selectedLandType,
+    selectedLandTypes,
     selectedNftTraits,
     craftingOptions,
     resourceOptions,
@@ -1223,26 +1251,26 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
       );
 
       const matchesCrafting =
-        !selectedCrafting ||
+        selectedCrafting.length === 0 ||
         getCraftingIndustries(row)
           .map(item => cleanDropdownValue(item))
-          .includes(selectedCrafting);
+          .some(crafting => selectedCrafting.includes(crafting));
 
       const matchesResource =
-        !selectedResource ||
+        selectedResources.length === 0 ||
         toList(row.resources)
           .map(item => cleanDropdownValue(item))
-          .includes(selectedResource);
+          .some(resource => selectedResources.includes(resource));
 
       const rowAnimals = toList(row.animals)
         .map(item => cleanDropdownValue(item));
 
       const matchesAnimals =
         selectedAnimals.length === 0 ||
-        selectedAnimals.every(animal => rowAnimals.includes(animal));
+        selectedAnimals.some(animal => rowAnimals.includes(animal));
 
       const matchesLandType =
-        !selectedLandType || row.landType === selectedLandType;
+        selectedLandTypes.length === 0 || selectedLandTypes.includes(row.landType);
 
       const matchesNftTraits =
         selectedNftTraits.length === 0 ||
@@ -1260,9 +1288,9 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
   }, [
     searchTerm,
     selectedCrafting,
-    selectedResource,
+    selectedResources,
     selectedAnimals,
-    selectedLandType,
+    selectedLandTypes,
     selectedNftTraits,
     rows
   ]);
@@ -1307,10 +1335,10 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
 
   const clearFilters = () => {
     setSearchTerm("");
-    setSelectedCrafting("");
-    setSelectedResource("");
+    setSelectedCrafting([]);
+    setSelectedResources([]);
     setSelectedAnimals([]);
-    setSelectedLandType("");
+    setSelectedLandTypes([]);
     setSelectedNftTraits([]);
     setSortConfig({ key: null, direction: "asc" });
   };
@@ -1365,18 +1393,25 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
 
           <Box display="flex" flexWrap="wrap" style={{ gap: 12 }}>
             <Select
+              multiple
               displayEmpty
-              value={selectedLandType}
-              onChange={e => setSelectedLandType(e.target.value)}
-              renderValue={selected => selected || "Land Types"}
+              value={selectedLandTypes}
+              onChange={e => setSelectedLandTypes(e.target.value.filter(Boolean))}
+              renderValue={selected => (
+                selected.length ? selected.join(", ") : "Land Types"
+              )}
               variant="outlined"
               style={{ ...compactSelectStyle, width: 220 }}
             >
-              <MenuItem value="" style={compactMenuItemStyle}>
+              <MenuItem value="" style={compactMenuItemStyle} onClick={() => setSelectedLandTypes([])}>
                 Land Types
               </MenuItem>
               {landTypeOptions.map(option => (
                 <MenuItem key={option} value={option} style={compactMenuItemStyle}>
+                  <Checkbox
+                    checked={selectedLandTypes.indexOf(option) > -1}
+                    style={{ padding: 4, marginRight: 4 }}
+                  />
                   <Box display="flex" alignItems="center">
                     <img
                       src={landIcons[option] || defaultIcon}
@@ -1424,18 +1459,25 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
             </Select>
 
             <Select
+              multiple
               displayEmpty
-              value={selectedResource}
-              onChange={e => setSelectedResource(e.target.value)}
-              renderValue={selected => selected || "Resources"}
+              value={selectedResources}
+              onChange={e => setSelectedResources(e.target.value.filter(Boolean))}
+              renderValue={selected => (
+                selected.length ? selected.join(", ") : "Resources"
+              )}
               variant="outlined"
               style={{ ...compactSelectStyle, width: 260 }}
             >
-              <MenuItem value="" style={compactMenuItemStyle}>
+              <MenuItem value="" style={compactMenuItemStyle} onClick={() => setSelectedResources([])}>
                 Resources
               </MenuItem>
               {resourceOptions.map(option => (
                 <MenuItem key={option} value={option} style={compactMenuItemStyle}>
+                  <Checkbox
+                    checked={selectedResources.indexOf(option) > -1}
+                    style={{ padding: 4, marginRight: 4 }}
+                  />
                   <Box display="flex" alignItems="center">
                     {getInventoryIcon(option, "resources") && (
                       <img
@@ -1457,18 +1499,25 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
             </Select>
 
             <Select
+              multiple
               displayEmpty
               value={selectedCrafting}
-              onChange={e => setSelectedCrafting(e.target.value)}
-              renderValue={selected => selected || "Crafting"}
+              onChange={e => setSelectedCrafting(e.target.value.filter(Boolean))}
+              renderValue={selected => (
+                selected.length ? selected.join(", ") : "Crafting"
+              )}
               variant="outlined"
               style={{ ...compactSelectStyle, width: 260 }}
             >
-              <MenuItem value="" style={compactMenuItemStyle}>
+              <MenuItem value="" style={compactMenuItemStyle} onClick={() => setSelectedCrafting([])}>
                 Crafting
               </MenuItem>
               {craftingOptions.map(option => (
                 <MenuItem key={option} value={option} style={compactMenuItemStyle}>
+                  <Checkbox
+                    checked={selectedCrafting.indexOf(option) > -1}
+                    style={{ padding: 4, marginRight: 4 }}
+                  />
                   <Box display="flex" alignItems="center">
                     {getInventoryIcon(option, "crafting") && (
                       <img
@@ -1566,7 +1615,7 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
                 <TableRow
                   key={row.landNumber}
                   style={{
-                    backgroundColor: index % 2 === 0 ? "#2b2b2b" : "#1f1f1f"
+                    backgroundColor: getRowBackgroundColor(row, index)
                   }}
                 >
                   <TableCell style={typeColumnStyle}>

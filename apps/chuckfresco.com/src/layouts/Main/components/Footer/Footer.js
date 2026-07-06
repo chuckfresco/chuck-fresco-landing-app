@@ -67,13 +67,18 @@ const useStyles = makeStyles(theme => ({
     padding: '0 !important',
   },
   menu: {
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+    },
+    [theme.breakpoints.up('md')]: {
+      gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+    },
   },
   menuItem: {
-    margin: theme.spacing(2),
-    '&:last-child': {
-      marginBottom: 0,
-    },
+    padding: theme.spacing(0, 2, 3),
   },
   menuGroupItem: {
     paddingTop: 0,
@@ -101,7 +106,6 @@ const Footer = props => {
 
 //  const landings = pages.landings;
   const supportedPages = pages.pages;
-  const account = pages.account;
 
   const MenuGroup = props => {
     const { item } = props;
@@ -146,28 +150,23 @@ const Footer = props => {
   const SupportedPages = () => {
     const {
       career,
+      pixelsOnline,
+      sunflowerLand,
       contact,
-/*       helpCenter,
-      company,
-      contact,
-      blog,
-      portfolio, */
     } = supportedPages.children;
+
+    const footerGroups = [
+      career,
+      pixelsOnline,
+      sunflowerLand,
+      contact,
+    ];
+
     return (
       <div className={classes.menu}>
-        <div>
-          <MenuGroup item={career} />
-  {/*         <MenuGroup item={helpCenter} /> */}
-        </div>
-         <div>
-          <MenuGroup item={contact} />
-          </div>
-          { /*          <MenuGroup item={company} />
-        </div>
-       <div>
-          <MenuGroup item={blog} />
-          <MenuGroup item={portfolio} />
-        </div> */}
+        {footerGroups.map(item => (
+          <MenuGroup key={item.groupTitle} item={item} />
+        ))}
       </div>
     );
   };
