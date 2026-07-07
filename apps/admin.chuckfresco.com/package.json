@@ -4,8 +4,10 @@
   "private": true,
   "description": "Logged-in admin app for admin.chuckfresco.com.",
   "scripts": {
+    "dev": "npm --prefix src/starter run start -- --host 0.0.0.0",
     "start": "node src/server.js",
-    "build": "node --check src/server.js"
+    "build": "npm --prefix src/starter run build && node --check src/server.js",
+    "check": "node --check src/server.js && npm --prefix src/starter run lint"
   },
   "engines": {
     "node": ">=18"
