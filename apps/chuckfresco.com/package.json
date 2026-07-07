@@ -10,7 +10,7 @@
     "prettier": "prettier --write '**/*.{js,css,html}'",
     "clear-all": "rimraf ./build ./node_modules ../../node_modules",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build/ s3://chuckfresco --acl public-read --exclude 'assets/sunflower-land/helperCheers.json' --exclude 'assets/sunflower-land/helperHelps.json'",
+    "deploy": "aws s3 sync ./build/ s3://chuckfresco --acl public-read --exclude '.env*' --exclude '*/.env*' --exclude 'assets/sunflower-land/helperCheers.json' --exclude 'assets/sunflower-land/helperHelps.json'",
     "deploy:full": "scripts/deploy-full-site.command",
     "generate-sitemap": "node generate-sitemap.js",
     "update:sunflower-live": "scripts/run-sunflower-helper-updater.command",

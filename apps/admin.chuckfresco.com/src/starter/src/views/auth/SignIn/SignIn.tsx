@@ -4,8 +4,10 @@ const SignIn = () => {
     return (
         <>
             <div className="mb-8">
-                <h3 className="mb-1">Chuck Fresco Admin</h3>
-                <p>Authenticate with AWS, then exchange your admin key for an API token.</p>
+                <h3 className="mb-2 text-4xl font-bold">Welcome back!</h3>
+                <p className="text-xl">
+                    Continue with AWS Cognito to sign in.
+                </p>
             </div>
             <SignInForm disableSubmit={false} />
         </>

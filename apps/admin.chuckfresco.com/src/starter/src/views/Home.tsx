@@ -11,7 +11,7 @@ const Home = () => {
             <div>
                 <h2 className="mb-2">Admin Dashboard</h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                    AWS authentication and admin key exchange are active for admin API access.
+                    AWS Cognito authentication is active for admin API access.
                 </p>
             </div>
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">

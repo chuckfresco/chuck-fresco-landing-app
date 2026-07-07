@@ -29,6 +29,17 @@ fi
 
 npm run build
 
+ENV_FILES_FOUND="$(find "$BUILD_DIR" \( -name ".env" -o -name ".env.*" -o -name "*.env" -o -name "*.env.*" \) -print)"
+
+if [ -n "$ENV_FILES_FOUND" ]; then
+  echo
+  echo "ERROR: Refusing to upload because env files were found in the build folder:"
+  echo "$ENV_FILES_FOUND"
+  echo
+  read -k 1 "?Press any key to close..."
+  exit 1
+fi
+
 echo
 echo "Uploading only the public site build folder to $S3_TARGET..."
 echo "Source: $BUILD_DIR/"
@@ -37,6 +48,8 @@ echo
 
 aws s3 sync "$BUILD_DIR/" "$S3_TARGET" \
   --acl public-read \
+  --exclude ".env*" \
+  --exclude "*/.env*" \
   --exclude "assets/sunflower-land/helperCheers.json" \
   --exclude "assets/sunflower-land/helperHelps.json"
 

@@ -7,6 +7,7 @@
     "dev": "npm --prefix src/starter run start -- --host 0.0.0.0",
     "start": "node src/server.js",
     "build": "npm --prefix src/starter run build && node --check src/server.js",
+    "deploy": "scripts/deploy-admin-site.command",
     "check": "node --check src/server.js && npm --prefix src/starter run lint"
   },
   "engines": {

@@ -16,6 +16,7 @@
     "deploy:public:full": "apps/chuckfresco.com/scripts/deploy-full-site.command",
     "start:admin": "npm --prefix apps/admin.chuckfresco.com start",
     "build:admin": "npm --prefix apps/admin.chuckfresco.com run build",
+    "deploy:admin": "npm --prefix apps/admin.chuckfresco.com run deploy",
     "start:api": "npm --prefix apps/api.chuckfreso.com start",
     "dev:api": "npm --prefix apps/api.chuckfreso.com run dev",
     "build:api": "npm --prefix apps/api.chuckfreso.com run build",

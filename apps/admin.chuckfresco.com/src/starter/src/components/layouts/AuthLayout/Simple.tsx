@@ -11,16 +11,20 @@ interface SimpleProps extends CommonProps {
 
 const Simple = ({ children, content, ...rest }: SimpleProps) => {
     return (
-        <div className="h-full">
-            <Container className="flex flex-col flex-auto items-center justify-center min-w-0 h-full">
+        <div className="min-h-screen bg-gray-950">
+            <Container className="flex min-h-screen min-w-0 flex-col items-center justify-center px-6 py-10">
                 <Card
-                    className="min-w-[320px] md:min-w-[450px]"
-                    bodyClass="md:p-10"
+                    className="w-full max-w-[760px] rounded-2xl border-0 bg-gray-800 shadow-none"
+                    bodyClass="px-8 py-12 md:px-16 md:py-20"
+                    bordered={false}
                 >
-                    <div className="text-center">
-                        <Logo type="streamline" imgClass="mx-auto" />
+                    <div className="mx-auto mb-10 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-600 shadow-lg shadow-indigo-950/30">
+                        <Logo
+                            type="streamline"
+                            imgClass="mx-auto max-h-8 brightness-0 invert"
+                        />
                     </div>
-                    <div className="text-center">
+                    <div className="mx-auto w-full max-w-[600px] text-center">
                         {content}
                         {children
                             ? cloneElement(children as ReactElement, {

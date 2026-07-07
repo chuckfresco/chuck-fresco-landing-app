@@ -124,14 +124,6 @@ const signToken = (payload) => {
   return `${header}.${body}.${signature}`;
 };
 
-const getAdminKey = () => {
-  if (process.env.ADMIN_AUTH_KEY) {
-    return process.env.ADMIN_AUTH_KEY;
-  }
-
-  return nodeEnv === "production" ? null : "demo-admin-key";
-};
-
 const shouldRequireAwsLogin = () => {
   if (process.env.ADMIN_REQUIRE_AWS_LOGIN) {
     return process.env.ADMIN_REQUIRE_AWS_LOGIN === "true";
@@ -362,33 +354,7 @@ const handleSignIn = async (req, res, requestUrl) => {
     return;
   }
 
-  if (shouldRequireAwsLogin()) {
-    sendJson(res, 401, { message: "AWS login is required." });
-    return;
-  }
-
-  const expectedAdminKey = getAdminKey();
-  const submittedAdminKey = String(body.adminKey || body.password || "");
-  if (!expectedAdminKey) {
-    sendJson(res, 500, {
-      message: "ADMIN_AUTH_KEY is required before admin login can be used."
-    });
-    return;
-  }
-
-  const submittedKeyBuffer = Buffer.from(submittedAdminKey);
-  const expectedKeyBuffer = Buffer.from(expectedAdminKey);
-
-  if (
-    !submittedAdminKey ||
-    submittedKeyBuffer.length !== expectedKeyBuffer.length ||
-    !crypto.timingSafeEqual(submittedKeyBuffer, expectedKeyBuffer)
-  ) {
-    sendJson(res, 401, { message: "Invalid admin key." });
-    return;
-  }
-
-  sendAdminToken(res, { name: body.userName || "Chuck Fresco Admin" }, false);
+  sendJson(res, 401, { message: "AWS Cognito login is required." });
 };
 
 const serveStatic = (req, res, requestUrl) => {
