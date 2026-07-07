@@ -14,6 +14,7 @@ import {
   Home as HomeView,
   IndexView,
   Giveaways as GiveawaysView,
+  Videos as VideosView,
   Agency as AgencyView,
   CareerListing as CareerListingView,
   CareerListingMinimal as CareerListingMinimalView,
@@ -111,6 +112,17 @@ const Routes = () => {
           <WithLayout
             {...matchProps}
             component={GiveawaysView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/videos"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={VideosView}
             layout={MainLayout}
           />
         )}

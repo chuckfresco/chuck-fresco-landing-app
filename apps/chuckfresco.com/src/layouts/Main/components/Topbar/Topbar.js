@@ -17,8 +17,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Image } from 'components/atoms';
 
-import WbSunnyOutlinedIcon from '@material-ui/icons/WbSunnyOutlined';
-
 const useStyles = makeStyles(theme => ({
   flexGrow: {
     flexGrow: 1,
@@ -113,6 +111,12 @@ const useStyles = makeStyles(theme => ({
   },
   menuGroupTitle: {
     textTransform: 'uppercase',
+  },
+  buttonIcon: {
+    width: 20,
+    height: 20,
+    objectFit: 'contain',
+    marginLeft: theme.spacing(0.5),
   },
 }));
 
@@ -308,7 +312,13 @@ const Topbar = ({ themeMode, onSidebarOpen, pages, className, ...rest }) => {
               component="a"
               href="/pixels/land/inventory"
             >
-              Pixels <WbSunnyOutlinedIcon style={{ marginLeft: 4, fontSize: 20 }} />
+              Pixels
+              <img
+                src="/assets/pixels/land/icons/pixel.png"
+                alt=""
+                aria-hidden="true"
+                className={classes.buttonIcon}
+              />
             </Button>
           </ListItem>
           <ListItem className={clsx(classes.listItem, 'menu-item--no-dropdown')}>

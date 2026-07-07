@@ -5,6 +5,7 @@ const { Readable } = require('stream');
 
 const links = [
   { url: '/', changefreq: 'weekly', priority: 1.0 },
+  { url: '/videos', changefreq: 'daily', priority: 0.9 },
   { url: '/pixels/land/inventory', changefreq: 'weekly', priority: 0.9 },
   { url: '/pixels/industry-limits', changefreq: 'weekly', priority: 0.8 },
 ];

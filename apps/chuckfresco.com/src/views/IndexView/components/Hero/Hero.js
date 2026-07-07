@@ -61,6 +61,46 @@ const useStyles = makeStyles(theme => ({
   imageAnimationDark: {
     background: `url("/assets/axie-games.jpg")`,
   },
+  buttonIcon: {
+    width: 24,
+    height: 24,
+    objectFit: 'contain',
+    marginLeft: theme.spacing(0.5),
+    imageRendering: 'pixelated',
+    transition: 'transform 140ms ease',
+  },
+  sunflowerButton: {
+    border: '3px solid #101018',
+    borderRadius: 8,
+    background: '#f4c08a',
+    color: '#20192b',
+    boxShadow: 'inset 0 0 0 3px #fff8d6, 4px 4px 0 #101018',
+    fontFamily: "SmallestPixel7, 'Courier New', monospace",
+    fontSize: 22,
+    fontWeight: 900,
+    lineHeight: 1,
+    letterSpacing: 0,
+    minHeight: 48,
+    padding: theme.spacing(1.25, 2),
+    textTransform: 'none',
+    textShadow: '1px 1px 0 rgba(255, 255, 255, 0.45)',
+    transition: 'transform 120ms ease, box-shadow 120ms ease, filter 120ms ease',
+    '&:hover': {
+      background: '#ffd37b',
+      color: '#20192b',
+      filter: 'brightness(1.03)',
+      transform: 'translate(2px, 2px)',
+      boxShadow: 'inset 0 0 0 3px #fff8d6, 2px 2px 0 #101018',
+      textDecoration: 'none',
+      '& $buttonIcon': {
+        transform: 'rotate(8deg) scale(1.08)',
+      },
+    },
+    '&:active': {
+      transform: 'translate(4px, 4px)',
+      boxShadow: 'inset 0 0 0 3px #fff8d6, 0 0 0 #101018',
+    },
+  },
   '@keyframes slideshow': {
     '0%': {
       transform: 'rotate(-13deg) translateY(-25%)',
@@ -102,8 +142,20 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
   const subtitle = 'Weekly Ronin Content and Giveaways'
 
   const docsButton = (
-    <Button size="large" variant="outlined" color="primary" component="a" href="/pixels/land/inventory" disabled={false} >
-      Pixels Guide
+    <Button
+      size="large"
+      component="a"
+      href="/sunflower-land/helpers"
+      className={classes.sunflowerButton}
+      disabled={false}
+    >
+      Sunflower Land
+      <img
+        src="/assets/sunflower-land/fishing/imgi_45_Sunflower.png"
+        alt=""
+        aria-hidden="true"
+        className={classes.buttonIcon}
+      />
     </Button>
   );
 

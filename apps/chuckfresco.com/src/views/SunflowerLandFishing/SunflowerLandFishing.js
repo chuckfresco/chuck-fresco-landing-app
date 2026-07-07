@@ -1014,6 +1014,18 @@ const useStyles = makeStyles(theme => ({
     lineHeight: 1,
     fontWeight: 900
   },
+  marvelTitle: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 8,
+    minWidth: 0
+  },
+  marvelIcon: {
+    width: 34,
+    height: 34,
+    imageRendering: "pixelated",
+    flex: "0 0 auto"
+  },
   completedName: {
     color: "#cbd5e1",
     textDecoration: "line-through"
@@ -1200,14 +1212,22 @@ const useStyles = makeStyles(theme => ({
   },
   seasonPill: {
     display: "inline-flex",
+    alignItems: "center",
+    gap: 4,
     border: "2px solid rgba(16,16,24,0.45)",
     borderRadius: 999,
-    padding: "2px 7px",
+    padding: "2px 7px 2px 5px",
     background: "rgba(255,255,255,0.22)",
     color: "inherit",
     fontSize: 12,
     fontWeight: 900,
     lineHeight: 1
+  },
+  seasonPillIcon: {
+    width: 15,
+    height: 15,
+    imageRendering: "pixelated",
+    flex: "0 0 auto"
   },
   empty: {
     padding: "24px 16px",
@@ -1274,11 +1294,28 @@ const useStyles = makeStyles(theme => ({
     "&:hover $farmItemTooltipLabel, &:focus $farmItemTooltipLabel": {
       opacity: 1,
       transform: "translate(-50%, -6px)",
-      pointerEvents: "auto"
+      pointerEvents: "none"
     },
     "&:focus $itemIcon": {
       boxShadow: "0 0 0 2px #fff2a8",
       borderRadius: 4
+    }
+  },
+  farmItemButton: {
+    appearance: "none",
+    border: 0,
+    borderRadius: 6,
+    background: "transparent",
+    padding: 0,
+    cursor: "pointer",
+    font: "inherit",
+    lineHeight: 0,
+    "&:hover $itemIcon": {
+      filter: "brightness(1.12)",
+      transform: "translateY(-1px)"
+    },
+    "&:focus": {
+      boxShadow: "0 0 0 2px #fff2a8"
     }
   },
   farmItemTooltipLabel: {
@@ -1375,7 +1412,30 @@ const seasonLabel = seasonId => {
   return season ? season.label : seasonId;
 };
 
+const SeasonPillList = ({ seasonIds, classes }) => (
+  <div className={classes.seasonList}>
+    {seasonIds.map(seasonId => {
+      const season = seasons.find(item => item.id === seasonId);
+
+      return (
+        <span className={classes.seasonPill} key={seasonId}>
+          {season && (
+            <img
+              src={season.icon}
+              alt=""
+              className={classes.seasonPillIcon}
+              aria-hidden="true"
+            />
+          )}
+          {seasonLabel(seasonId)}
+        </span>
+      );
+    })}
+  </div>
+);
+
 const sourceIsActive = (source, activeSeason) => source.seasons.includes(activeSeason);
+const itemIsFish = itemName => Boolean(sourceFishSeasons[itemName]);
 
 const ItemChip = ({ itemName, classes }) => (
   <span className={classes.itemChip}>
@@ -1431,26 +1491,47 @@ const BaitRequirementRow = ({ bait, guaranteedCatchBaits, classes }) => (
   </div>
 );
 
-const FarmItemIcon = ({ itemName, type, classes }) => (
-  <span
-    className={classes.farmItemTooltip}
-    tabIndex={0}
-    aria-label={`${type}: ${itemName}`}
-  >
-    <img
-      src={itemImages[itemName]}
-      alt=""
-      className={classes.itemIcon}
-      aria-hidden="true"
-    />
-    <span className={classes.farmItemTooltipLabel}>
-      {type}: {itemName}
+const FarmItemIcon = ({ itemName, type, classes, onClick }) => {
+  const content = (
+    <>
+      <img
+        src={itemImages[itemName]}
+        alt=""
+        className={classes.itemIcon}
+        aria-hidden="true"
+      />
+      <span className={classes.farmItemTooltipLabel}>
+        {type}: {itemName}{onClick ? " - search fish" : ""}
+      </span>
+      {type === "Guaranteed" && (
+        <span className={classes.marketBadge}>M</span>
+      )}
+    </>
+  );
+
+  return onClick ? (
+    <button
+      className={`${classes.farmItemTooltip} ${classes.farmItemButton}`}
+      type="button"
+      onMouseDown={event => {
+        event.preventDefault();
+        onClick();
+      }}
+      onClick={onClick}
+      aria-label={`${type}: ${itemName}. Search this fish.`}
+    >
+      {content}
+    </button>
+  ) : (
+    <span
+      className={classes.farmItemTooltip}
+      tabIndex={0}
+      aria-label={`${type}: ${itemName}`}
+    >
+      {content}
     </span>
-    {type === "Guaranteed" && (
-      <span className={classes.marketBadge}>M</span>
-    )}
-  </span>
-);
+  );
+};
 
 const marvelSearchText = marvel => [
   marvel.name
@@ -1556,6 +1637,21 @@ const SunflowerLandFishing = () => {
     saveCaughtMarvels([]);
   };
 
+  const searchFish = fishName => {
+    const fish = fishCatalog.find(item => item.fish === fishName);
+
+    if (!fish) {
+      return;
+    }
+
+    setQuery(fish.fish);
+    setSelectedSearch({
+      name: fish.fish,
+      image: fish.image,
+      type: "Fish"
+    });
+  };
+
   const enrichedMarvels = useMemo(() => (
     marvels.map(marvel => {
       const activeSources = marvel.mapSources.filter(source => sourceIsActive(source, activeSeason));
@@ -1586,7 +1682,9 @@ const SunflowerLandFishing = () => {
 
   const visibleSeasonFish = useMemo(() => (
     fishCatalog.filter(fish => {
-      const matchesSeason = fish.seasons.includes(activeSeason);
+      const matchesSeason = selectedSearch
+        ? selectedSearch.type === "Fish"
+        : fish.seasons.includes(activeSeason);
       const matchesSearch = selectedSearch
         ? selectedSearch.type === "Fish" && fish.fish === selectedSearch.name
         : !normalizedQuery || fish.fish.toLowerCase().includes(normalizedQuery);
@@ -1596,7 +1694,7 @@ const SunflowerLandFishing = () => {
   ), [activeSeason, normalizedQuery, selectedSearch]);
 
   const searchSuggestions = useMemo(() => (
-    normalizedQuery
+    normalizedQuery && !selectedSearch
       ? [
         ...fishCatalog.map(fish => ({
           name: fish.fish,
@@ -1615,7 +1713,7 @@ const SunflowerLandFishing = () => {
         ))
         .slice(0, 8)
       : []
-  ), [normalizedQuery]);
+  ), [normalizedQuery, selectedSearch]);
 
   const selectedSearchSeasons = useMemo(() => {
     if (!selectedSearch) {
@@ -1649,6 +1747,7 @@ const SunflowerLandFishing = () => {
 
   const farmableMarvelCount = enrichedMarvels.filter(marvel => marvel.canFarmPieces).length;
   const caughtMarvelCount = caughtMarvels.length;
+  const showingFishSearch = selectedSearch && selectedSearch.type === "Fish";
 
   return (
     <div className={classes.page}>
@@ -1839,90 +1938,95 @@ const SunflowerLandFishing = () => {
                 </div>
               )}
 
-              <div className={classes.results}>
-                {visibleMarvels.map(marvel => (
-                  <article
-                    className={`${classes.marvelCard} ${!marvel.canFarmPieces ? classes.dimCard : ""} ${marvel.isCaught ? classes.completedCard : ""}`}
-                    key={marvel.name}
-                  >
-                    <div className={classes.marvelTopline}>
-                      <h3 className={`${classes.marvelName} ${marvel.isCaught ? classes.completedName : ""}`}>
-                        {marvel.name}
-                      </h3>
-                      <div className={classes.marvelControls}>
-                        <span className={classes.badge}>9 pieces</span>
-                        {marvel.requirement && (
-                          <span className={`${classes.badge} ${classes.saltBadge}`}>
-                            {marvel.requirement}
-                          </span>
-                        )}
-                        <label className={classes.caughtToggle}>
-                          <input
-                            className={classes.caughtCheckbox}
-                            type="checkbox"
-                            checked={marvel.isCaught}
-                            onChange={() => toggleCaughtMarvel(marvel.name)}
-                          />
-                          Caught
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className={classes.sourceGrid}>
-                      {marvel.mapSources.map(source => {
-                        const active = sourceIsActive(source, activeSeason);
-
-                        return (
-                          <div
-                            className={`${classes.source} ${active ? classes.activeSource : ""}`}
-                            key={`${marvel.name}-${source.fish}`}
-                          >
-                            <span className={classes.sourceName}>
-                              {source.image && (
-                                <img src={source.image} alt="" className={classes.fishIcon} />
-                              )}
-                              {active ? "Farm" : "Off season"} {source.fish}
+              {!showingFishSearch && (
+                <div className={classes.results}>
+                  {visibleMarvels.map(marvel => (
+                    <article
+                      className={`${classes.marvelCard} ${!marvel.canFarmPieces ? classes.dimCard : ""} ${marvel.isCaught ? classes.completedCard : ""}`}
+                      key={marvel.name}
+                    >
+                      <div className={classes.marvelTopline}>
+                        <div className={classes.marvelTitle}>
+                          {itemImages[marvel.name] && (
+                            <img src={itemImages[marvel.name]} alt="" className={classes.marvelIcon} />
+                          )}
+                          <h3 className={`${classes.marvelName} ${marvel.isCaught ? classes.completedName : ""}`}>
+                            {marvel.name}
+                          </h3>
+                        </div>
+                        <div className={classes.marvelControls}>
+                          <span className={classes.badge}>9 pieces</span>
+                          {marvel.requirement && (
+                            <span className={`${classes.badge} ${classes.saltBadge}`}>
+                              {marvel.requirement}
                             </span>
-                            <div className={classes.sourceMeta}>
-                              <span>Map chance {source.chance}</span>
-                              <span>For {marvel.name}</span>
-                            </div>
-                            <div className={classes.requirementBlock}>
-                              <BaitRequirementRow
-                                bait={source.requirements.bait}
-                                guaranteedCatchBaits={source.guaranteedCatchBaits}
-                                classes={classes}
-                              />
-                              <RequirementRow
-                                label="Likes"
-                                items={source.requirements.likes}
-                                classes={classes}
-                              />
-                            </div>
-                            <div className={classes.seasonList}>
-                              {source.seasons.map(season => (
-                                <span className={classes.seasonPill} key={season}>
-                                  {seasonLabel(season)}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </article>
-                ))}
+                          )}
+                          <label className={classes.caughtToggle}>
+                            <input
+                              className={classes.caughtCheckbox}
+                              type="checkbox"
+                              checked={marvel.isCaught}
+                              onChange={() => toggleCaughtMarvel(marvel.name)}
+                            />
+                            Caught
+                          </label>
+                        </div>
+                      </div>
 
-                {!visibleMarvels.length && (
-                  <div className={classes.empty}>No Marvel map pieces match this search.</div>
-                )}
-              </div>
+                      <div className={classes.sourceGrid}>
+                        {marvel.mapSources.map(source => {
+                          const active = sourceIsActive(source, activeSeason);
+
+                          return (
+                            <div
+                              className={`${classes.source} ${active ? classes.activeSource : ""}`}
+                              key={`${marvel.name}-${source.fish}`}
+                            >
+                              <span className={classes.sourceName}>
+                                {source.image && (
+                                  <img src={source.image} alt="" className={classes.fishIcon} />
+                                )}
+                                {active ? "Farm" : "Off season"} {source.fish}
+                              </span>
+                              <div className={classes.sourceMeta}>
+                                <span>Map chance {source.chance}</span>
+                                <span>For {marvel.name}</span>
+                              </div>
+                              <div className={classes.requirementBlock}>
+                                <BaitRequirementRow
+                                  bait={source.requirements.bait}
+                                  guaranteedCatchBaits={source.guaranteedCatchBaits}
+                                  classes={classes}
+                                />
+                                <RequirementRow
+                                  label="Likes"
+                                  items={source.requirements.likes}
+                                  classes={classes}
+                                />
+                              </div>
+                              <SeasonPillList seasonIds={source.seasons} classes={classes} />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </article>
+                  ))}
+
+                  {!visibleMarvels.length && (
+                    <div className={classes.empty}>No Marvel map pieces match this search.</div>
+                  )}
+                </div>
+              )}
 
               <section className={classes.fishResultsSection}>
                 <div className={classes.fishSectionTopline}>
-                  <h2 className={classes.panelTitle}>{selectedSeason.label} Fish</h2>
+                  <h2 className={classes.panelTitle}>
+                    {showingFishSearch ? `${selectedSearch.name} Details` : `${selectedSeason.label} Fish`}
+                  </h2>
                   <p className={classes.fishSectionMeta}>
-                    {visibleSeasonFish.length} fish shown below Marvel targets
+                    {showingFishSearch
+                      ? "Selected fish requirements and season window"
+                      : `${visibleSeasonFish.length} fish shown below Marvel targets`}
                   </p>
                 </div>
                 <div className={classes.fishGrid}>
@@ -1935,8 +2039,11 @@ const SunflowerLandFishing = () => {
                         {fish.fish}
                       </span>
                       <div className={classes.sourceMeta}>
-                        <span>{fish.marketOnlySeasonData ? "Fish Market catch" : "Seasonal catch"}</span>
-                        <span>{fish.seasons.map(seasonLabel).join(", ")}</span>
+                        <span>
+                          {fish.seasons.includes(activeSeason)
+                            ? fish.marketOnlySeasonData ? "Fish Market catch" : "Seasonal catch"
+                            : `Off season in ${selectedSeason.label}`}
+                        </span>
                       </div>
                       <div className={classes.requirementBlock}>
                         <BaitRequirementRow
@@ -1950,6 +2057,7 @@ const SunflowerLandFishing = () => {
                           classes={classes}
                         />
                       </div>
+                      <SeasonPillList seasonIds={fish.seasons} classes={classes} />
                     </article>
                   ))}
                 </div>
@@ -2002,6 +2110,7 @@ const SunflowerLandFishing = () => {
                             itemName={item}
                             type="Likes"
                             classes={classes}
+                            onClick={itemIsFish(item) ? () => searchFish(item) : undefined}
                             key={`likes-${item}`}
                           />
                         ))}

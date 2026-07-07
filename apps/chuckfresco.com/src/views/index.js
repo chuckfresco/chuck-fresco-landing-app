@@ -1,6 +1,7 @@
 export { default as Home } from './Home';
 export { default as IndexView } from './IndexView';
 export { default as Giveaways } from './Giveaways';
+export { default as Videos } from './Videos';
 export { default as IndustryLimits } from './IndustryLimits';
 export { default as MonsterDrops } from './MonsterDrops';
 export { default as FrescoManorSpells } from './FrescoManorSpells';

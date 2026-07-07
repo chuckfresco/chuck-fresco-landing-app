@@ -51,6 +51,12 @@ const useStyles = makeStyles(theme => ({
   divider: {
     width: '100%',
   },
+  buttonIcon: {
+    width: 20,
+    height: 20,
+    objectFit: 'contain',
+    marginLeft: theme.spacing(0.5),
+  },
 }));
 
 const SidebarNav = props => {
@@ -191,6 +197,12 @@ const SidebarNav = props => {
           href="/pixels/land/inventory"
         >
           Pixels
+          <img
+            src="/assets/pixels/land/icons/pixel.png"
+            alt=""
+            aria-hidden="true"
+            className={classes.buttonIcon}
+          />
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>

@@ -4,7 +4,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid , Button} from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
-import TwitterIcon from '@material-ui/icons/Twitter';
 
 const useStyles = makeStyles(theme => ({
   promoLogo: {
@@ -12,6 +11,19 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontWeight: 'bold',
+  },
+  xButton: {
+    background: '#000000',
+    color: '#FFFFFF',
+    '&:hover': {
+      background: '#1A1A1A',
+    },
+  },
+  xIcon: {
+    width: 20,
+    height: 20,
+    marginLeft: theme.spacing(0.75),
+    objectFit: 'contain',
   },
 }));
 
@@ -49,11 +61,17 @@ const Partners = props => {
                     variant="contained"
                     //color="FF0202" 9347FF
                    // color="secondary"
-                    style={{ background: '#1F9CEF', color: '#FFFFFF' }}
+                    className={classes.xButton}
                     size={isMd ? 'large' : 'medium'}
-                    href="https://twitter.com/ChuckFresco"
+                    href="https://x.com/ChuckFresco"
                   >
-                    Twitter     <TwitterIcon style={{ marginLeft: 5 }}></TwitterIcon>
+                    Follow On
+                    <img
+                      src="/assets/logo/logo-white.png"
+                      alt=""
+                      aria-hidden="true"
+                      className={classes.xIcon}
+                    />
                   </Button>
 
             ]}

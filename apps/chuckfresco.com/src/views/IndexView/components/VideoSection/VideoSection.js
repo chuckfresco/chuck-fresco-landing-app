@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Button } from '@material-ui/core';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 
 import { SectionHeader } from 'components/molecules';
 
@@ -12,8 +13,45 @@ const youtubeChannelHandle =
   process.env.REACT_APP_YOUTUBE_CHANNEL_HANDLE || '@chuckfresco';
 const youtubeChannelId =
   process.env.REACT_APP_YOUTUBE_CHANNEL_ID || 'UCW5Dxv1g4G3Zvgg9K4a0xOA';
+const youtubeApiBase =
+  process.env.NODE_ENV === 'development'
+    ? '/youtube-api/v3'
+    : 'https://www.googleapis.com/youtube/v3';
+const maxCandidateVideos = 25;
+const shortsMaxDurationSeconds = 60;
 
 const getEmbedUrl = videoId => `https://www.youtube.com/embed/${videoId}`;
+
+const parseYoutubeDuration = duration => {
+  const match = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/.exec(duration || '');
+
+  if (!match) {
+    return 0;
+  }
+
+  return (
+    Number(match[1] || 0) * 3600 +
+    Number(match[2] || 0) * 60 +
+    Number(match[3] || 0)
+  );
+};
+
+const isUploadedVideo = video => {
+  const snippet = video.snippet || {};
+  const contentDetails = video.contentDetails || {};
+  const title = (snippet.title || '').toLowerCase();
+  const description = (snippet.description || '').toLowerCase();
+  const durationSeconds = parseYoutubeDuration(contentDetails.duration);
+
+  return (
+    snippet.liveBroadcastContent === 'none' &&
+    !video.liveStreamingDetails &&
+    durationSeconds > shortsMaxDurationSeconds &&
+    !title.includes('#shorts') &&
+    !title.includes('shorts') &&
+    !description.includes('#shorts')
+  );
+};
 
 const getLatestVideoId = async () => {
   if (!youtubeApiKey) {
@@ -29,7 +67,7 @@ const getLatestVideoId = async () => {
       key: youtubeApiKey,
     });
     const channelResponse = await fetch(
-      `https://www.googleapis.com/youtube/v3/channels?${channelParams.toString()}`,
+      `${youtubeApiBase}/channels?${channelParams.toString()}`,
     );
 
     if (!channelResponse.ok) {
@@ -50,13 +88,13 @@ const getLatestVideoId = async () => {
   const videoParams = new URLSearchParams({
     part: 'snippet',
     channelId,
-    maxResults: '1',
+    maxResults: String(maxCandidateVideos),
     order: 'date',
     type: 'video',
     key: youtubeApiKey,
   });
   const videoResponse = await fetch(
-    `https://www.googleapis.com/youtube/v3/search?${videoParams.toString()}`,
+    `${youtubeApiBase}/search?${videoParams.toString()}`,
   );
 
   if (!videoResponse.ok) {
@@ -64,13 +102,31 @@ const getLatestVideoId = async () => {
   }
 
   const videoPayload = await videoResponse.json();
-  const videoId =
-    videoPayload.items &&
-    videoPayload.items[0] &&
-    videoPayload.items[0].id &&
-    videoPayload.items[0].id.videoId;
+  const videoIds = (videoPayload.items || [])
+    .map(item => item.id && item.id.videoId)
+    .filter(Boolean);
 
-  return videoId || fallbackVideoId;
+  if (!videoIds.length) {
+    return fallbackVideoId;
+  }
+
+  const detailsParams = new URLSearchParams({
+    part: 'snippet,contentDetails,liveStreamingDetails',
+    id: videoIds.join(','),
+    key: youtubeApiKey,
+  });
+  const detailsResponse = await fetch(
+    `${youtubeApiBase}/videos?${detailsParams.toString()}`,
+  );
+
+  if (!detailsResponse.ok) {
+    throw new Error('Unable to load latest YouTube video details');
+  }
+
+  const detailsPayload = await detailsResponse.json();
+  const latestUploadedVideo = (detailsPayload.items || []).find(isUploadedVideo);
+
+  return (latestUploadedVideo && latestUploadedVideo.id) || fallbackVideoId;
 };
 
 const useStyles = makeStyles(theme => ({
@@ -142,6 +198,14 @@ const VideoSection = props => {
                     href="https://www.youtube.com/chuckfresco"
                   >
                     YouTube  <YouTubeIcon style={{ marginLeft: 5 }}></YouTubeIcon>
+                  </Button>,
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    size={isMd ? 'large' : 'medium'}
+                    href="/videos"
+                  >
+                    Video Library <VideoLibraryIcon style={{ marginLeft: 5 }} />
                   </Button>,
 
                 ]}

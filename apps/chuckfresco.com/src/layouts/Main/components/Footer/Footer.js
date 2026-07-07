@@ -12,7 +12,6 @@ import {
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import PinterestIcon from '@material-ui/icons/Pinterest';
 
 import { Image } from 'components/atoms';
 
@@ -215,9 +214,6 @@ const Footer = props => {
                 </IconButton>
                 <IconButton className={classes.socialIcon}>
                   <TwitterIcon className={classes.icon} />
-                </IconButton>
-                <IconButton className={classes.socialIcon}>
-                  <PinterestIcon className={classes.icon} />
                 </IconButton>
               </ListItem>
             </List>

@@ -326,9 +326,10 @@ const useStyles = makeStyles(theme => ({
     display: "grid",
     gridTemplateColumns: "minmax(0, 740px) minmax(340px, 1fr)",
     gap: 20,
-    alignItems: "start",
+    alignItems: "stretch",
     [theme.breakpoints.down("sm")]: {
-      gridTemplateColumns: "1fr"
+      gridTemplateColumns: "1fr",
+      alignItems: "start"
     }
   },
   panel: {
@@ -1018,7 +1019,7 @@ const useStyles = makeStyles(theme => ({
   feed: {
     maxHeight: "68vh",
     overflowY: "auto",
-    padding: "0 12px 14px"
+    padding: "0 12px 8px"
   },
   row: {
     display: "grid",
@@ -1032,6 +1033,9 @@ const useStyles = makeStyles(theme => ({
     boxShadow: "inset 0 0 0 2px #55b6ff",
     padding: "8px 10px",
     marginBottom: 8,
+    "&:last-child": {
+      marginBottom: 0
+    },
     [theme.breakpoints.down("xs")]: {
       gridTemplateColumns: "34px 1fr",
       padding: "7px 8px"
