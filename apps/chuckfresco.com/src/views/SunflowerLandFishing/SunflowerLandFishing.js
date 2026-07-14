@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,6 +13,81 @@ const farmVisitUrl = `https://sunflower-land.com/play/#/visit/${FARM_ID}`;
 const fishingAssetPath = "/assets/sunflower-land/fishing";
 const seasonAssetPath = "/assets/sunflower-land/seasons";
 const caughtMarvelsStorageKey = "sunflower-land-fishing-caught-marvels";
+const seasonTimeZone = "America/Los_Angeles";
+const seasonResetHour = 17;
+const seasonAnchorLocalTime = Date.UTC(2026, 6, 13, seasonResetHour);
+const seasonWeekMs = 7 * 24 * 60 * 60 * 1000;
+const seasonRotation = ["autumn", "winter", "spring", "summer"];
+
+const pacificDateTimeFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: seasonTimeZone,
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  hourCycle: "h23"
+});
+
+const getPacificDateTimeParts = date => (
+  pacificDateTimeFormatter.formatToParts(date).reduce((parts, part) => {
+    if (part.type !== "literal") {
+      parts[part.type] = Number(part.value);
+    }
+    return parts;
+  }, {})
+);
+
+// Convert a Pacific wall-clock time to an instant without relying on the visitor's time zone.
+const pacificDateTimeToUtc = localTime => {
+  let utcTime = localTime;
+
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const parts = getPacificDateTimeParts(new Date(utcTime));
+    const representedLocalTime = Date.UTC(
+      parts.year,
+      parts.month - 1,
+      parts.day,
+      parts.hour,
+      parts.minute,
+      parts.second
+    );
+    utcTime += localTime - representedLocalTime;
+  }
+
+  return utcTime;
+};
+
+const getSeasonClock = (now = new Date()) => {
+  const parts = getPacificDateTimeParts(now);
+  const currentPacificWallTime = Date.UTC(
+    parts.year,
+    parts.month - 1,
+    parts.day,
+    parts.hour,
+    parts.minute,
+    parts.second
+  );
+  const resetIndex = Math.floor((currentPacificWallTime - seasonAnchorLocalTime) / seasonWeekMs);
+  const seasonIndex = ((resetIndex % seasonRotation.length) + seasonRotation.length) % seasonRotation.length;
+  const nextResetLocalTime = seasonAnchorLocalTime + ((resetIndex + 1) * seasonWeekMs);
+
+  return {
+    seasonId: seasonRotation[seasonIndex],
+    nextResetAt: pacificDateTimeToUtc(nextResetLocalTime)
+  };
+};
+
+const formatCountdown = milliseconds => {
+  const totalSeconds = Math.max(0, Math.floor(milliseconds / 1000));
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return `${days}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
+};
 
 const asset = fileName => encodeURI(`${fishingAssetPath}/${fileName}`);
 
@@ -54,6 +129,7 @@ const itemImages = {
   "Hammerhead shark": asset("imgi_98_Hammerhead shark.png"),
   "Horse Mackerel": asset("imgi_88_Horse Mackerel.png"),
   Honey: asset("imgi_69_Honey.png"),
+  Iron: asset("imgi_79_Iron.png"),
   Corn: asset("imgi_74_Corn.png"),
   Eggplant: asset("imgi_43_Eggplant.png"),
   Kale: asset("imgi_77_Kale.png"),
@@ -152,11 +228,11 @@ const sourceFishSeasons = {
 
 const fishRequirements = {
   Anchovy: {
-    bait: [],
+    bait: ["Earthworm"],
     likes: ["Carrot", "Egg"]
   },
   Angelfish: {
-    bait: [],
+    bait: ["Grub", "Fishing Lure"],
     likes: ["Banana"]
   },
   "Barred Knifejaw": {
@@ -164,15 +240,15 @@ const fishRequirements = {
     likes: ["Anchovy"]
   },
   "Blue Marlin": {
-    bait: [],
+    bait: ["Grub", "Red Wiggler", "Fishing Lure"],
     likes: ["Wheat"]
   },
   Blowfish: {
-    bait: [],
+    bait: ["Earthworm"],
     likes: ["Yam"]
   },
   Butterflyfish: {
-    bait: [],
+    bait: ["Earthworm"],
     likes: ["Sunflower"]
   },
   Clownfish: {
@@ -180,7 +256,7 @@ const fishRequirements = {
     likes: ["Cabbage"]
   },
   Cobia: {
-    bait: [],
+    bait: ["Red Wiggler"],
     likes: ["Broccoli"]
   },
   Coelacanth: {
@@ -188,7 +264,7 @@ const fishRequirements = {
     likes: ["Cabbage"]
   },
   "Football fish": {
-    bait: [],
+    bait: ["Red Wiggler", "Fishing Lure"],
     likes: ["Sunflower"]
   },
   Halibut: {
@@ -197,7 +273,7 @@ const fishRequirements = {
   },
   "Hammerhead shark": {
     bait: ["Grub", "Fishing Lure"],
-    likes: ["Stone"]
+    likes: ["Iron"]
   },
   "Horse Mackerel": {
     bait: ["Earthworm"],
@@ -208,23 +284,23 @@ const fishRequirements = {
     likes: ["Corn"]
   },
   "Moray Eel": {
-    bait: [],
+    bait: ["Earthworm", "Grub", "Fishing Lure"],
     likes: ["Gold"]
   },
   Muskellunge: {
-    bait: [],
+    bait: ["Earthworm"],
     likes: ["Turnip"]
   },
   Napoleanfish: {
-    bait: [],
+    bait: ["Grub", "Fishing Lure"],
     likes: ["Carrot"]
   },
   Oarfish: {
-    bait: [],
+    bait: ["Red Wiggler", "Fishing Lure"],
     likes: ["Kale"]
   },
   "Olive Flounder": {
-    bait: [],
+    bait: ["Earthworm", "Grub", "Fishing Lure"],
     likes: ["Rhubarb"]
   },
   Parrotfish: {
@@ -232,15 +308,15 @@ const fishRequirements = {
     likes: ["Seaweed"]
   },
   Porgy: {
-    bait: [],
+    bait: ["Earthworm"],
     likes: ["Yam"]
   },
   Ray: {
-    bait: [],
+    bait: ["Grub", "Fishing Lure"],
     likes: ["Squid"]
   },
   "Red Snapper": {
-    bait: [],
+    bait: ["Grub", "Red Wiggler", "Fishing Lure"],
     likes: ["Apple", "Honey"]
   },
   "Rock Blackfish": {
@@ -248,7 +324,7 @@ const fishRequirements = {
     likes: ["Onion"]
   },
   "Saw Shark": {
-    bait: [],
+    bait: ["Red Wiggler", "Fishing Lure"],
     likes: ["Red Snapper", "Speed Chicken"]
   },
   "Sea Bass": {
@@ -256,7 +332,7 @@ const fishRequirements = {
     likes: ["Anchovy"]
   },
   "Sea Horse": {
-    bait: [],
+    bait: ["Earthworm"],
     likes: ["Seaweed"]
   },
   Squid: {
@@ -264,7 +340,7 @@ const fishRequirements = {
     likes: ["Eggplant", "Onion"]
   },
   Sunfish: {
-    bait: ["Red Wiggler"],
+    bait: ["Red Wiggler", "Fishing Lure"],
     likes: ["Horse Mackerel"]
   },
   Surgeonfish: {
@@ -280,19 +356,19 @@ const fishRequirements = {
     likes: ["Orange", "Wild Mushroom"]
   },
   Tilapia: {
-    bait: [],
+    bait: ["Grub"],
     likes: ["Zucchini"]
   },
   Walleye: {
-    bait: [],
+    bait: ["Grub"],
     likes: ["Broccoli"]
   },
   Weakfish: {
-    bait: [],
+    bait: ["Red Wiggler"],
     likes: ["Artichoke"]
   },
   "Whale Shark": {
-    bait: [],
+    bait: ["Red Wiggler", "Fishing Lure"],
     likes: ["Crab", "Fat Chicken"]
   },
   "White Shark": {
@@ -300,7 +376,7 @@ const fishRequirements = {
     likes: ["Tuna"]
   },
   "Zebra Turkeyfish": {
-    bait: [],
+    bait: ["Grub", "Fishing Lure"],
     likes: ["Beetroot", "Rhubarb"]
   }
 };
@@ -749,6 +825,26 @@ const useStyles = makeStyles(theme => ({
     fontSize: 24,
     fontWeight: 900,
     lineHeight: 1.1
+  },
+  seasonHeading: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+    flexWrap: "wrap"
+  },
+  seasonCountdown: {
+    display: "inline-flex",
+    alignItems: "center",
+    border: "3px solid #2a2540",
+    borderRadius: 8,
+    background: "#eef2ff",
+    boxShadow: "inset 0 0 0 3px #c9d4f5",
+    color: "#2a2540",
+    fontSize: 14,
+    fontWeight: 900,
+    padding: "5px 9px",
+    whiteSpace: "nowrap"
   },
   boardMeta: {
     margin: "8px 0 14px",
@@ -1598,7 +1694,8 @@ const updateCaughtMarvelsUrl = caughtMarvels => {
 
 const SunflowerLandFishing = () => {
   const classes = useStyles();
-  const [activeSeason, setActiveSeason] = useState("summer");
+  const [seasonClock, setSeasonClock] = useState(() => getSeasonClock());
+  const [activeSeason, setActiveSeason] = useState(() => getSeasonClock().seasonId);
   const [query, setQuery] = useState("");
   const [selectedSearch, setSelectedSearch] = useState(null);
   const [caughtMarvels, setCaughtMarvels] = useState(getStoredCaughtMarvels);
@@ -1606,6 +1703,15 @@ const SunflowerLandFishing = () => {
   const selectedSeason = seasons.find(season => season.id === activeSeason) || seasons[0];
   const normalizedQuery = query.trim().toLowerCase();
   const caughtMarvelSet = useMemo(() => new Set(caughtMarvels), [caughtMarvels]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setSeasonClock(getSeasonClock()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    setActiveSeason(seasonClock.seasonId);
+  }, [seasonClock.seasonId]);
 
   const saveCaughtMarvels = nextCaughtMarvels => {
     const normalizedCaughtMarvels = normalizeCaughtMarvels(nextCaughtMarvels);
@@ -1673,9 +1779,10 @@ const SunflowerLandFishing = () => {
         const matchesSearch = selectedSearch
           ? selectedSearch.type === "Marvel" && marvel.name === selectedSearch.name
           : !normalizedQuery || marvelSearchText(marvel).includes(normalizedQuery);
-        const matchesSeason = marvel.isInSeason;
 
-        return matchesSearch && matchesSeason;
+        // Marvels can be captured in every season. The season only controls
+        // whether their source fish can currently be farmed for map pieces.
+        return matchesSearch;
       })
       .sort((a, b) => Number(a.isCaught) - Number(b.isCaught))
   ), [enrichedMarvels, normalizedQuery, selectedSearch]);
@@ -1732,6 +1839,7 @@ const SunflowerLandFishing = () => {
   }, [selectedSearch]);
 
   const selectedSearchIsOutOfSeason = selectedSearch &&
+    selectedSearch.type === "Fish" &&
     !selectedSearchSeasons.includes(activeSeason);
 
   const farmTargets = useMemo(() => (
@@ -1826,7 +1934,12 @@ const SunflowerLandFishing = () => {
             </div>
 
             <div className={classes.body}>
-              <h2 className={classes.panelTitle}>{selectedSeason.label} Marvel Pieces</h2>
+              <div className={classes.seasonHeading}>
+                <h2 className={classes.panelTitle}>{selectedSeason.label} Marvel Pieces</h2>
+                <span className={classes.seasonCountdown} title="Seasons reset Mondays at 5:00 PM Pacific Time">
+                  Next season in {formatCountdown(seasonClock.nextResetAt - Date.now())}
+                </span>
+              </div>
               <p className={classes.boardMeta}>
                 A Marvel needs 9 map pieces. Map pieces drop while catching specific fish, and each source fish has its own season window.
               </p>

@@ -22,7 +22,8 @@ const lightningIcon = "/assets/sunflower-land/icons/lightning.png";
 const cheeringSound = "/assets/sunflower-land/sounds/fnaf-cheering.mp3";
 const farmVisitUrl = `https://sunflower-land.com/play/#/visit/${FARM_ID}`;
 const referralUrl = "https://sunflower-land.com/play/?ref=ChuckFresco";
-const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+const DAY_MS = 24 * 60 * 60 * 1000;
+const LEADERBOARD_WINDOW_DAYS = 14;
 const LEADERBOARD_PAGE_SIZE = 10;
 const WHEEL_SIZE = 12;
 const ROLL_DURATION_MS = 3600;
@@ -1169,6 +1170,7 @@ const SunflowerLandHelpers = () => {
   const [wheelEntries, setWheelEntries] = useState([]);
   const [rollWheelEntries, setRollWheelEntries] = useState([]);
   const [leaderboardPage, setLeaderboardPage] = useState(0);
+  const [now, setNow] = useState(() => new Date());
   const rollTimeoutRef = useRef(null);
   const rollFrameRef = useRef(null);
   const audioContextRef = useRef(null);
@@ -1217,6 +1219,12 @@ const SunflowerLandHelpers = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(new Date()), 60000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   useEffect(() => () => {
     if (rollTimeoutRef.current) {
       window.clearTimeout(rollTimeoutRef.current);
@@ -1232,28 +1240,28 @@ const SunflowerLandHelpers = () => {
     }
   }, []);
 
-  const weeklyFeed = useMemo(() => {
-    const cutoff = Date.now() - WEEK_MS;
+  const recentFeed = useMemo(() => {
+    const cutoff = now.getTime() - (LEADERBOARD_WINDOW_DAYS * DAY_MS);
 
     return feed
       .filter(item => Number(item.createdAt) >= cutoff)
       .sort((a, b) => b.createdAt - a.createdAt);
-  }, [feed]);
+  }, [feed, now]);
 
   const stats = useMemo(() => ({
-    all: weeklyFeed.length,
-    help: weeklyFeed.filter(item => item.type === "help").length,
-    cheer: weeklyFeed.filter(item => item.type === "cheer").length
-  }), [weeklyFeed]);
+    all: recentFeed.length,
+    help: recentFeed.filter(item => item.type === "help").length,
+    cheer: recentFeed.filter(item => item.type === "cheer").length
+  }), [recentFeed]);
 
   const visibleFeed = useMemo(() => (
-    activeFilter === "all" ? weeklyFeed : weeklyFeed.filter(item => item.type === activeFilter)
-  ), [activeFilter, weeklyFeed]);
+    activeFilter === "all" ? recentFeed : recentFeed.filter(item => item.type === activeFilter)
+  ), [activeFilter, recentFeed]);
 
   const leaderboard = useMemo(() => {
     const players = new Map();
 
-    weeklyFeed
+    recentFeed
       .slice()
       .sort((a, b) => Number(a.createdAt) - Number(b.createdAt))
       .forEach(item => {
@@ -1287,7 +1295,7 @@ const SunflowerLandHelpers = () => {
         a.reachedTotalAt - b.reachedTotalAt ||
         a.name.localeCompare(b.name)
       ));
-  }, [weeklyFeed]);
+  }, [recentFeed]);
 
   const leaderboardPageCount = Math.max(1, Math.ceil(leaderboard.length / LEADERBOARD_PAGE_SIZE));
   const safeLeaderboardPage = Math.min(leaderboardPage, leaderboardPageCount - 1);
@@ -1303,8 +1311,8 @@ const SunflowerLandHelpers = () => {
   }, [leaderboardPageCount]);
 
   const eligibleEntries = useMemo(() => (
-    weeklyFeed.map(getEntryName)
-  ), [weeklyFeed]);
+    recentFeed.map(getEntryName)
+  ), [recentFeed]);
 
   const eligibleList = eligibleEntries.join("\n");
   const uniqueEligibleCount = useMemo(() => (
@@ -1435,7 +1443,7 @@ const SunflowerLandHelpers = () => {
     startRollSound();
 
     rollTimeoutRef.current = window.setTimeout(() => {
-      const winningEntry = weeklyFeed[winningIndex];
+      const winningEntry = recentFeed[winningIndex];
 
       setWinner({
         name: eligibleEntries[winningIndex],
@@ -1491,7 +1499,7 @@ const SunflowerLandHelpers = () => {
           <div className={classes.heroCopy}>
             <h1 className={classes.heroTitle}>Sunflower Land Helpers</h1>
             <p className={classes.heroSubtitle}>
-              Track helpers, cheerers, weekly entries, and random winner rolls for Chuck Fresco's farm.
+              Track helpers, cheerers, 14-day entries, and random winner rolls for Chuck Fresco's farm.
             </p>
           </div>
           <div className={classes.heroLogoPanel}>
@@ -1700,10 +1708,10 @@ const SunflowerLandHelpers = () => {
 
           <aside className={`${classes.panel} ${classes.board}`}>
             <div className={classes.boardHeader}>
-              <h2 className={classes.panelTitle}>Top Helpers This Week</h2>
+              <h2 className={classes.panelTitle}>Top Helpers</h2>
             </div>
             <p className={classes.boardMeta}>
-              Rankings use cheers + helps from the last 7 days. Ties go to whoever reached the total first.
+              Rankings use cheers + helps from the last 14 days. Ties go to whoever reached the total first.
             </p>
             <ol className={classes.leaderboardList}>
               {pagedLeaderboard.map((player, index) => {
@@ -1761,7 +1769,7 @@ const SunflowerLandHelpers = () => {
             </ol>
 
             {!leaderboard.length && (
-              <div className={classes.empty}>No weekly helpers yet.</div>
+              <div className={classes.empty}>No 14-day helpers yet.</div>
             )}
 
             {leaderboard.length > LEADERBOARD_PAGE_SIZE && (
@@ -1848,7 +1856,7 @@ const SunflowerLandHelpers = () => {
                   ? "Picking a winner..."
                   : winner
                     ? `${winner.name} landed on the wheel.`
-                    : "Spin the wheel to roll a weekly winner."}
+                    : "Spin the wheel to roll a 14-day winner."}
               </p>
             </div>
             <button

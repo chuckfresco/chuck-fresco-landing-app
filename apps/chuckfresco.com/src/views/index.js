@@ -19,6 +19,7 @@ export { default as PixelsLandInventory } from './PixelsLandInventory';
 export { default as PixelsAnimalDrops } from './PixelsAnimalDrops';
 export { default as SunflowerLandHelpers } from './SunflowerLandHelpers';
 export { default as SunflowerLandFishing } from './SunflowerLandFishing';
+export { default as AxieCollection } from './AxieCollection';
 
 export { default as Agency } from './Agency';
 export { default as CareerListing } from './CareerListing';

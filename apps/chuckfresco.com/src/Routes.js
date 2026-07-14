@@ -51,6 +51,7 @@ import {
   PixelsAnimalDrops as PixelsAnimalDropsView,
   SunflowerLandHelpers as SunflowerLandHelpersView,
   SunflowerLandFishing as SunflowerLandFishingView,
+  AxieCollection as AxieCollectionView,
 
   Ecommerce as EcommerceView,
   Pricing as PricingView,
@@ -156,6 +157,17 @@ const Routes = () => {
           <WithLayout
             {...matchProps}
             component={SunflowerLandFishingView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/axie/collection"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={AxieCollectionView}
             layout={MainLayout}
           />
         )}
