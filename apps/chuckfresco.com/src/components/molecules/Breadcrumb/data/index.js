@@ -38,13 +38,18 @@ export const breadcrumb = [
 
 export const pixelsBreadcrumb = [
     {
-      href: '/pixels/land/inventory',
+      href: '/pixels/land-inventory',
       title: 'Lands',
       isActive: false,
     },
     {
       href: '/pixels/animal/drops',
       title: 'Animal Drops',
+      isActive: false,
+    },
+    {
+      href: '/pixels/industry-limits',
+      title: 'Industry Limits',
       isActive: false,
     },
     {

@@ -6,6 +6,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 
 import { SectionHeader } from 'components/molecules';
+import { trackEvent } from 'utils/analytics';
 
 const fallbackVideoId = 'saCNw0C0iiQ';
 const youtubeApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
@@ -196,6 +197,7 @@ const VideoSection = props => {
                     style={{ background: '#FF0202', color: '#FFFFFF' }}
                     size={isMd ? 'large' : 'medium'}
                     href="https://www.youtube.com/chuckfresco"
+                    onClick={() => trackEvent('click_youtube_channel', { link_location: 'home' })}
                   >
                     YouTube  <YouTubeIcon style={{ marginLeft: 5 }}></YouTubeIcon>
                   </Button>,
@@ -204,6 +206,7 @@ const VideoSection = props => {
                     color="primary"
                     size={isMd ? 'large' : 'medium'}
                     href="/videos"
+                    onClick={() => trackEvent('view_video_library', { link_location: 'home' })}
                   >
                     Video Library <VideoLibraryIcon style={{ marginLeft: 5 }} />
                   </Button>,

@@ -5,6 +5,7 @@ import { SectionHeader } from 'components/molecules';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { Image } from 'components/atoms';
+import { trackEvent } from 'utils/analytics';
 
 const useStyles = makeStyles(theme => ({
   quickStartSection: {
@@ -46,7 +47,7 @@ const QuickStart = ({ className, ...rest }) => {
   });
 
   const docsButton = (
-    <Button size="large" variant="contained" color="primary" component="a" href="https://x.com/search?q=from%3A%40ChuckFresco%20%23FrescoGiveaways%20%20-filter%3Areplies&src=typed_query&f=live">
+    <Button size="large" variant="contained" color="primary" component="a" href="https://x.com/search?q=from%3A%40ChuckFresco%20%23FrescoGiveaways%20%20-filter%3Areplies&src=typed_query&f=live" onClick={() => trackEvent('view_giveaways', { link_location: 'home', platform: 'x' })}>
       Giveaways
     </Button>
 

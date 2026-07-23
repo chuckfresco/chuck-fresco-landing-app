@@ -3,10 +3,12 @@
  * 
  * You may delete this file and its occurrences from the project filesystem if you are using GatsbyJS or NextJS version
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Routes from './Routes';
+import { trackPageView } from 'utils/analytics';
+import RouteSeo from 'components/RouteSeo';
 
 import 'react-lazy-load-image-component/src/effects/opacity.css';
 import 'leaflet/dist/leaflet.css';
@@ -20,9 +22,12 @@ import 'aos/dist/aos.css';
 const browserHistory = createBrowserHistory();
 
 const App = () => {
+  useEffect(() => browserHistory.listen(trackPageView), []);
+
   return (
     <Router history={browserHistory}>
       <Routes />
+      <RouteSeo />
     </Router>
   );
 }

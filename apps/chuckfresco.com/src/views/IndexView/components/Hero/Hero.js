@@ -145,7 +145,7 @@ const Hero = ({ themeMode = 'light', className, ...rest }) => {
     <Button
       size="large"
       component="a"
-      href="/sunflower-land/helpers"
+      href="/sfl/helpers"
       className={classes.sunflowerButton}
       disabled={false}
     >

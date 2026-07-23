@@ -21,6 +21,7 @@ import {
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import { trackEvent } from "utils/analytics";
 
 const landInventoryUrl =
   process.env.REACT_APP_LAND_INVENTORY_URL ||
@@ -40,27 +41,56 @@ const boostIconPath = "/assets/pixels/land/boosts/";
 const defaultBoostIcon = "/assets/pixels/land/boosts/default-boost.png";
 
 const darkTheme = createTheme({
-  palette: { type: "dark" },
+  palette: {
+    type: "dark",
+    background: {
+      paper: "#29255d",
+      default: "#12112f"
+    }
+  },
   overrides: {
+    MuiPaper: {
+      root: {
+        backgroundColor: "#29255d",
+        backgroundImage: "linear-gradient(180deg, rgba(100, 44, 255, 0.08), transparent 180px)",
+        border: "2px solid #7770af",
+        boxShadow: "0 5px 0 #0b0a24"
+      }
+    },
+    MuiTableRow: {
+      root: {
+        backgroundColor: "#29255d",
+        "&:nth-of-type(even)": {
+          backgroundColor: "#211e50"
+        },
+        "&$hover:hover": {
+          backgroundColor: "#39317d"
+        }
+      }
+    },
     MuiTableCell: {
       root: {
         padding: "8px 10px",
         fontSize: "0.85rem",
         whiteSpace: "nowrap",
-        verticalAlign: "top"
+        verticalAlign: "top",
+        color: "#fffce8",
+        borderBottom: "1px solid rgba(155, 123, 255, 0.3)"
       },
       head: {
-        backgroundColor: "#333",
+        backgroundColor: "#642cff",
         color: "#fff",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        borderBottom: "3px solid #37159c",
+        textShadow: "2px 2px 0 #27106e"
       }
     }
   }
 });
 
 const iconBox = {
-  border: "1px solid #555",
-  backgroundColor: "#1a1a1a",
+  border: "1px solid #625ba0",
+  backgroundColor: "#17143d",
   borderRadius: 10,
   width: 42,
   height: 42,
@@ -94,9 +124,9 @@ const typeColumnStyle = {
 };
 
 const landNumberColumnStyle = {
-  width: 76,
-  minWidth: 76,
-  maxWidth: 76,
+  width: 110,
+  minWidth: 110,
+  maxWidth: 110,
   paddingLeft: 6,
   paddingRight: 6
 };
@@ -178,14 +208,31 @@ const compactMenuItemStyle = {
   minHeight: 48
 };
 
+const siloTrait = "Silo";
+const noSiloTrait = "No Silo";
+
+const babyPetLandNumbers = new Set([777, 778, 2311, 2905, 3196]);
+
+const babyPetMarkerStyle = {
+  display: "inline-flex",
+  marginLeft: 6,
+  width: 16,
+  height: 16,
+  backgroundColor: "#b9afff",
+  mask: 'url("/assets/axie/collection/download%20(14).svg") center / contain no-repeat',
+  WebkitMask: 'url("/assets/axie/collection/download%20(14).svg") center / contain no-repeat',
+  opacity: 0.78,
+  verticalAlign: "middle",
+};
+
 const getRowBackgroundColor = (row, index) => {
   const isPrivate = String((row && row.status) || "").toLowerCase() !== "public";
 
   if (isPrivate) {
-    return index % 2 === 0 ? "rgba(120, 28, 28, 0.52)" : "rgba(94, 22, 22, 0.52)";
+    return index % 2 === 0 ? "#57234f" : "#481d45";
   }
 
-  return index % 2 === 0 ? "#2b2b2b" : "#1f1f1f";
+  return index % 2 === 0 ? "#29255d" : "#211e50";
 };
 
 const listFields = [
@@ -815,6 +862,7 @@ const PublicStatusIcon = ({ status }) => {
 const PreviewLink = ({ landNumber }) => (
   <a
     href={`https://play.pixels.xyz/pixels/share/${landNumber}`}
+    onClick={() => trackEvent("preview_pixels_land", { land_number: String(landNumber) })}
     target="_blank"
     rel="noopener noreferrer"
     style={previewLinkStyle}
@@ -1181,7 +1229,20 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
   );
 
   const nftTraitOptions = useMemo(
-    () => getUniqueOptions(rows, "nftTraits"),
+    () => {
+      const options = getUniqueOptions(rows, "nftTraits");
+      const siloIndex = options.indexOf(siloTrait);
+
+      if (siloIndex === -1) {
+        return [...options, siloTrait, noSiloTrait];
+      }
+
+      return [
+        ...options.slice(0, siloIndex + 1),
+        noSiloTrait,
+        ...options.slice(siloIndex + 1)
+      ];
+    },
     [rows]
   );
 
@@ -1274,7 +1335,13 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
 
       const matchesNftTraits =
         selectedNftTraits.length === 0 ||
-        selectedNftTraits.every(trait => toList(row.nftTraits).includes(trait));
+        selectedNftTraits.every(trait => {
+          const rowTraits = toList(row.nftTraits);
+
+          return trait === noSiloTrait
+            ? !rowTraits.includes(siloTrait)
+            : rowTraits.includes(trait);
+        });
 
       return (
         matchesSearch &&
@@ -1333,6 +1400,23 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
     return sortConfig.direction === "asc" ? " ▲" : " ▼";
   };
 
+  const handleNftTraitsChange = event => {
+    const nextTraits = event.target.value.filter(Boolean);
+    const addedTrait = nextTraits.find(trait => !selectedNftTraits.includes(trait));
+
+    if (addedTrait === siloTrait) {
+      setSelectedNftTraits(nextTraits.filter(trait => trait !== noSiloTrait));
+      return;
+    }
+
+    if (addedTrait === noSiloTrait) {
+      setSelectedNftTraits(nextTraits.filter(trait => trait !== siloTrait));
+      return;
+    }
+
+    setSelectedNftTraits(nextTraits);
+  };
+
   const clearFilters = () => {
     setSearchTerm("");
     setSelectedCrafting([]);
@@ -1348,7 +1432,7 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
       <CssBaseline />
 
       <Box p={2}>
-        <Typography variant="h5" gutterBottom>
+        <Typography className="pixels-section-title" variant="h5" gutterBottom>
           Pixels Land Inventory
         </Typography>
 
@@ -1437,7 +1521,7 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
               multiple
               displayEmpty
               value={selectedNftTraits}
-              onChange={e => setSelectedNftTraits(e.target.value.filter(Boolean))}
+              onChange={handleNftTraitsChange}
               renderValue={selected => (
                 selected.length ? selected.join(", ") : "NFT Traits"
               )}
@@ -1635,7 +1719,18 @@ const LandInventoryTable = ({ dataSource = "api" }) => {
                     </div>
                   </TableCell>
 
-                  <TableCell style={landNumberColumnStyle}>{row.landNumber}</TableCell>
+                  <TableCell style={landNumberColumnStyle}>
+                    {row.landNumber}
+                    {babyPetLandNumbers.has(Number(row.landNumber)) && (
+                      <span
+                        style={babyPetMarkerStyle}
+                        title="Baby pets are kept on this land"
+                        aria-label="Baby pets"
+                        role="img"
+                      >
+                      </span>
+                    )}
+                  </TableCell>
                   <TableCell style={iconColumnStyle}>
                     <BoostIcons boosts={row.boosts} />
                   </TableCell>

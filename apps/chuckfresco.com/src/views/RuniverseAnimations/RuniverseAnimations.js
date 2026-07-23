@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, Select, MenuItem, Slider } from '@material-ui/core';
 import gifshot from 'gifshot';
+import { trackEvent } from 'utils/analytics';
 
 const CANVAS_SIZE = 400;
 
@@ -81,6 +82,11 @@ const RuniverseAnimations = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        trackEvent('download_runiverse_animation', {
+          animation_tag: selectedTag,
+          format: 'gif',
+          duration: 'extended'
+        });
       } else {
         alert('Extended GIF creation failed.');
         console.error(obj.errorMsg);
@@ -161,6 +167,11 @@ const RuniverseAnimations = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        trackEvent('download_runiverse_animation', {
+          animation_tag: selectedTag,
+          format: 'gif',
+          duration: 'standard'
+        });
       } else {
         alert('GIF creation failed.');
         console.error(obj.errorMsg);

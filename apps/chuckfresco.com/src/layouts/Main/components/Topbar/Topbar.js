@@ -85,16 +85,18 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.dark,
   },
   logoContainer: {
-    width: 100,
+    width: 170,
     height: 28,
     [theme.breakpoints.up('md')]: {
-      width: 120,
+      width: 195,
       height: 32,
     },
   },
   logoImage: {
     width: '100%',
     height: '100%',
+    objectFit: 'contain',
+    transform: 'scale(1.5)',
   },
   menu: {
     display: 'flex',
@@ -186,7 +188,7 @@ const Topbar = ({ themeMode, onSidebarOpen, pages, className, ...rest }) => {
 
   const SupportedPages = () => {
     const {
-      career,
+      axieInfinity,
       pixelsOnline,
       forgottenRuniverse,
       sunflowerLand,
@@ -194,7 +196,7 @@ const Topbar = ({ themeMode, onSidebarOpen, pages, className, ...rest }) => {
     return (
       <div className={classes.menu}>
         <div className={classes.menuItem}>
-          <MenuGroup item={career} />
+          <MenuGroup item={axieInfinity} />
           <MenuGroup item={pixelsOnline} />
           <MenuGroup item={sunflowerLand} />
         </div>
@@ -251,8 +253,8 @@ const Topbar = ({ themeMode, onSidebarOpen, pages, className, ...rest }) => {
         <a href="/" title="Chuck Fresco">
           <Image
             className={classes.logoImage}
-            src={themeMode === 'light' ? '/assets/chuck-fresco-logo-light.svg' : '/assets/chuck-fresco-logo-dark.svg'}
-            alt="ChuckFresco"
+            src="/assets/logo/chuck-fresco/chuck-fresco-logo-poke.webp"
+            alt="Chuck Fresco"
             lazy={false}
           />
         </a>
@@ -310,7 +312,7 @@ const Topbar = ({ themeMode, onSidebarOpen, pages, className, ...rest }) => {
             <Button
               variant="outlined"
               component="a"
-              href="/pixels/land/inventory"
+              href="/pixels/land-inventory"
             >
               Pixels
               <img

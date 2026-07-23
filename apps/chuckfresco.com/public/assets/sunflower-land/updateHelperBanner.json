@@ -1,0 +1,10 @@
+{
+  "title": "Cheer API Issue",
+  "message": "The in-game Cheer API is currently missing some Cheers, so leaderboard totals may be incomplete. A fix has been submitted but has not yet been released.",
+  "emphasizedMessages": [
+    "If the fix is released before the competition ends and missing Cheers are restored, the raffle will use both Helps and Cheers as originally planned.",
+    "If the issue is not resolved in time, the raffle will be based on verified Helper data only to ensure every participant is treated fairly."
+  ],
+  "linkText": "",
+  "linkUrl": ""
+}

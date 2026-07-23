@@ -9,3 +9,4 @@ export { default as TwitchSection } from './TwitchSection';
 export { default as Community } from './Community';
 export { default as Story } from './Story';
 export { default as Partners } from './Partners';
+export { default as GameTools } from './GameTools';

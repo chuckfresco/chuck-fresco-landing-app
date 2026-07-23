@@ -18,6 +18,7 @@ import {
 
 
 import LandInventoryTable from './LandInventoryTable';
+import '../pixels-theme.css';
 
 const landInventoryMetaUrl = "/assets/pixels/land/landInventoryMeta.json";
 
@@ -129,7 +130,7 @@ const PixelsLandInventory = ({ dataSource = "api" }) => {
   }, [dataSource]);
 
   return (
-    <div>
+    <div className="pixels-page">
       <Helmet>
         <title>Pixels Land Inventory | Pixels Online Guide</title>
         <meta
@@ -150,15 +151,15 @@ const PixelsLandInventory = ({ dataSource = "api" }) => {
         />
         <meta
           property="og:url"
-          content="https://chuckfresco.com/pixels/land/inventory"
+          content="https://chuckfresco.com/pixels/land-inventory"
         />
       </Helmet>
 
       <Hero compact />
       <PixelCode />
 
-      <SectionAlternate className={classes.sectionBreadcrumb}>
-          <Breadcrumb data={pixelsBreadcrumb} />
+      <SectionAlternate className={`${classes.sectionBreadcrumb} pixels-page__crumbs`}>
+          <Breadcrumb data={pixelsBreadcrumb} variant="pixels" />
       </SectionAlternate>
 {/* 
       <Section className={classes.imagesSection}>
@@ -167,7 +168,7 @@ const PixelsLandInventory = ({ dataSource = "api" }) => {
 
 
 
-      <Section className={classes.halfWidthSection}>
+      <Section className={`${classes.halfWidthSection} pixels-page__content`}>
         {dataSource !== "api" && snapshotLastUpdated && (
           <div className={classes.snapshotMetaRow}>
             Last updated: {snapshotLastUpdated}

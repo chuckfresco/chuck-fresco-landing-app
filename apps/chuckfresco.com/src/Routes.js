@@ -50,8 +50,14 @@ import {
   PixelsLandInventory as PixelsLandInventoryView,
   PixelsAnimalDrops as PixelsAnimalDropsView,
   SunflowerLandHelpers as SunflowerLandHelpersView,
+  SunflowerLandWinners as SunflowerLandWinnersView,
   SunflowerLandFishing as SunflowerLandFishingView,
+  SunflowerLandFishMarket as SunflowerLandFishMarketView,
+  SunflowerLandCrops as SunflowerLandCropsView,
   AxieCollection as AxieCollectionView,
+  AxieDom as AxieDomView,
+  AxieDomStrategy as AxieDomStrategyView,
+  Sudoku as SudokuView,
 
   Ecommerce as EcommerceView,
   Pricing as PricingView,
@@ -84,6 +90,7 @@ import {
 const Routes = () => {
   return (
     <Switch>
+      <Route exact path="/sudoku" component={SudokuView} />
       <Route
         exact
         path="/"
@@ -140,8 +147,31 @@ const Routes = () => {
         )}
       />
       <Route
+        path="/sunflower-land"
+        render={({ location }) => (
+          <Redirect
+            to={{
+              ...location,
+              pathname: location.pathname.replace(/^\/sunflower-land/, '/sfl'),
+            }}
+          />
+        )}
+      />
+      <Route
         exact
-        path={["/sunflower-land/helpers", "/sunflower-land/helps"]}
+        path="/sfl/tools/fishing"
+        render={({ location }) => (
+          <Redirect
+            to={{
+              ...location,
+              pathname: '/sfl/fishing',
+            }}
+          />
+        )}
+      />
+      <Route
+        exact
+        path={["/sfl/helpers", "/sfl/helps"]}
         render={matchProps => (
           <WithLayout
             {...matchProps}
@@ -152,13 +182,38 @@ const Routes = () => {
       />
       <Route
         exact
-        path="/sunflower-land/tools/fishing"
+        path="/sfl/helpers/winners"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={SunflowerLandWinnersView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/sfl/fishing"
         render={matchProps => (
           <WithLayout
             {...matchProps}
             component={SunflowerLandFishingView}
             layout={MainLayout}
           />
+        )}
+      />
+      <Route
+        exact
+        path="/sfl/fish-market"
+        render={matchProps => (
+          <WithLayout {...matchProps} component={SunflowerLandFishMarketView} layout={MainLayout} />
+        )}
+      />
+      <Route
+        exact
+        path="/sfl/crops"
+        render={matchProps => (
+          <WithLayout {...matchProps} component={SunflowerLandCropsView} layout={MainLayout} />
         )}
       />
       <Route
@@ -172,6 +227,30 @@ const Routes = () => {
           />
         )}
       />
+      <Route
+        exact
+        path="/axie-dom/power-ups"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={AxieDomView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/axie-dom/strategy"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={AxieDomStrategyView}
+            layout={MainLayout}
+          />
+        )}
+      />
+      <Redirect exact from="/axie/axie-dom" to="/axie-dom/power-ups" />
+      <Redirect exact from="/strategy" to="/axie-dom/strategy" />
       <Route
         exact
         path="/runiverse"
@@ -325,7 +404,7 @@ const Routes = () => {
 
       <Route
         exact
-        path="/pixels/land/inventory"
+        path="/pixels/land-inventory"
         render={matchProps => (
           <WithLayout
             {...matchProps}
@@ -335,6 +414,8 @@ const Routes = () => {
           />
         )}
       />
+      <Redirect exact from="/pixels/inventory" to="/pixels/land-inventory" />
+      <Redirect exact from="/pixels/land/inventory" to="/pixels/land-inventory" />
 
       <Route
         exact
@@ -351,7 +432,7 @@ const Routes = () => {
 
       <Route
         exact
-        path="/pixels/land/inventory/v1"
+        path="/pixels/land-inventory/v1"
         render={matchProps => (
           <WithLayout
             {...matchProps}
@@ -361,6 +442,7 @@ const Routes = () => {
           />
         )}
       />
+      <Redirect exact from="/pixels/land/inventory/v1" to="/pixels/land-inventory/v1" />
 
       <Route
         exact

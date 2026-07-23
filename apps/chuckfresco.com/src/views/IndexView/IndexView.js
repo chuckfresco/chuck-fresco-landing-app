@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
-import { GetStarted, Features, Reviews, QuickStart, Services, Hero, VideoSection, TwitchSection, Community, Story, Partners } from './components';
+import { GetStarted, Features, Reviews, QuickStart, Services, Hero, VideoSection, TwitchSection, Community, Story, Partners, GameTools } from './components';
 import { HashLink as Link } from 'react-router-hash-link';
 
 import {
@@ -20,6 +20,24 @@ const useStyles = makeStyles(() => ({
     paddingTop: 0,
     paddingBottom: 0,
   },
+  compactSection: {
+    paddingTop: 48,
+    paddingBottom: 48,
+    '@media (max-width: 599px)': {
+      paddingTop: 36,
+      paddingBottom: 36,
+    },
+  },
+  compactAlternate: {
+    '& .section-alternate__content': {
+      paddingTop: 48,
+      paddingBottom: 48,
+      '@media (max-width: 599px)': {
+        paddingTop: 36,
+        paddingBottom: 36,
+      },
+    },
+  },
 }));
 
 const IndexView = ({ themeMode }) => {
@@ -30,30 +48,36 @@ const IndexView = ({ themeMode }) => {
       <Hero themeMode={themeMode} />
    {/*    <Services /> */}
 
-      <Section>
+      <Section className={classes.compactSection}>
  {/*        <Story /> */}
 
         <Partners data={tournaments} />
    
       </Section>
 
-      <SectionAlternate>
-        <TwitchSection data={partners} />
+      <SectionAlternate className={classes.compactAlternate}>
+        <GameTools />
       </SectionAlternate>
 
-      <Section>
-        <VideoSection data={partners} />
+      <Section className={classes.compactSection}>
+        <TwitchSection data={partners} />
       </Section>
+
+      <SectionAlternate className={classes.compactAlternate}>
+        <VideoSection data={partners} />
+      </SectionAlternate>
 
  
 
-      <SectionAlternate>
+      <Section className={classes.compactSection}>
         <QuickStart />
-      </SectionAlternate>
-
-      <Section narrow>
-        <Community data={gallery} />
       </Section>
+
+      <SectionAlternate className={classes.compactAlternate}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+        <Community data={gallery} />
+        </div>
+      </SectionAlternate>
 
       
    

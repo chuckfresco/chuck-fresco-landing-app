@@ -3,26 +3,13 @@ import { Button } from '@material-ui/core';
 import './styles.css'; // Make sure to include this in your project
 
 const TableComponent = ({ title, headers, data, colWidths }) => (
-  <div style={{ marginBottom: "20px", overflowX: "auto" }}>
-    <h3>{title}</h3>
-    <div
-      style={{
-        maxWidth: "800px",
-        width: "100%",
-        marginLeft: "0",
-        marginRight: "auto",
-        display: "block",
-      }}
-    >
+  <div className="industry-table-block">
+    <h3 className="pixels-section-title">{title}</h3>
+    <div className="industry-table-scroll">
       <table
-        border="1"
         cellPadding="2"
         cellSpacing="0"
-        style={{
-          width: "100%",
-          maxWidth: "100%",
-          borderCollapse: "collapse",
-        }}
+        className="industry-table"
       >
         <colgroup>
           {colWidths.map((width, idx) => (
@@ -32,7 +19,7 @@ const TableComponent = ({ title, headers, data, colWidths }) => (
         <thead>
           <tr>
             {headers.map((header, idx) => (
-              <th key={idx} style={{ background: "#ddd", padding: "5px", color: "black", height: "20px" }}>
+              <th key={idx}>
                 {header}
               </th>
             ))}
@@ -42,7 +29,7 @@ const TableComponent = ({ title, headers, data, colWidths }) => (
           {data.map((row, index) => (
             <tr key={index}>
               {row.map((cell, idx) => (
-                <td key={idx} style={{ padding: "5px", height: "20px" }}>{cell}</td>
+                <td key={idx}>{cell}</td>
               ))}
             </tr>
           ))}
@@ -57,8 +44,8 @@ const IndustryTables = () => {
   const insideColWidths = ["30%", "20%", "25%", "25%"]; 
 
   return (
-    <div style={{ padding: "20px" }}>
-      <div style={{ marginBottom: "40px", display: "flex", gap: "20px" }}>
+    <div className="industry-tables pixels-page__content">
+      <div className="industry-jump-links">
         <Button color="primary" variant="contained" size="large" onClick={() => document.getElementById("outside-section").scrollIntoView({ behavior: "smooth" })}>
           Outside Industries
         </Button>
@@ -66,11 +53,11 @@ const IndustryTables = () => {
           Inside Industries
         </Button>
       </div>
-      <h2 id="outside-section" style={{ marginBottom: "40px" }}>Outside Industries</h2>
+      <h2 id="outside-section" className="pixels-section-title">Outside Industries</h2>
       {tables.outside.map((table, index) => (
         <TableComponent key={index} {...table} colWidths={outsideColWidths} />
       ))}
-      <h2 id="inside-section" style={{ marginTop: "60px", marginBottom: "40px" }}>Inside Industries</h2>
+      <h2 id="inside-section" className="pixels-section-title industry-section-title">Inside Industries</h2>
       {tables.inside.map((table, index) => (
         <TableComponent key={index} {...table} colWidths={insideColWidths} />
       ))}

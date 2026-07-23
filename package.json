@@ -13,7 +13,7 @@
     "start:public": "npm --prefix apps/chuckfresco.com start",
     "build:public": "npm --prefix apps/chuckfresco.com run build",
     "deploy:public": "npm --prefix apps/chuckfresco.com run deploy",
-    "deploy:public:full": "apps/chuckfresco.com/scripts/deploy-full-site.command",
+    "deploy:public:full": "apps/chuckfresco.com/scripts/deploy/deploy-full-site.command",
     "start:admin": "npm --prefix apps/admin.chuckfresco.com start",
     "build:admin": "npm --prefix apps/admin.chuckfresco.com run build",
     "deploy:admin": "npm --prefix apps/admin.chuckfresco.com run deploy",

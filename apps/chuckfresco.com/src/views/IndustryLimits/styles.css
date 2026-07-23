@@ -1,14 +1,12 @@
-.responsive-table {
-    max-width: 800px;
-    width: 100%;
-    margin-left: 0; /* Left-align on large screens */
-    margin-right: auto; /* Prevent shifting to center */
-  }
-  
-  @media (max-width: 768px) {
-    .responsive-table {
-      margin-left: auto;
-      margin-right: auto; /* Center on small screens */
-    }
-  }
+.industry-jump-links { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 36px; }
+.industry-tables > h2 { margin: 0 0 24px; scroll-margin-top: 100px; }
+.industry-section-title { padding-top: 28px; }
+.industry-table-block { margin-bottom: 28px; }
+.industry-table-block h3 { margin: 0 0 12px; font-size: 1.15rem; }
+.industry-table-scroll { width: min(100%, 900px); overflow-x: auto; border: 2px solid #9b7bff; border-radius: 8px; box-shadow: 0 5px 0 #0b0a24; }
+.industry-table { width: 100%; min-width: 620px; border-collapse: collapse; background: #29255d; color: #fffce8; }
+.industry-table th { padding: 12px 10px; background: #642cff; color: white; border-right: 1px solid #8f6eff; text-align: left; text-shadow: 2px 2px 0 #32117d; }
+.industry-table td { padding: 11px 10px; border-top: 1px solid rgba(155,123,255,.32); border-right: 1px solid rgba(155,123,255,.18); }
+.industry-table tbody tr:nth-child(even) { background: rgba(18,17,47,.32); }
+.industry-table tbody tr:hover { background: rgba(100,44,255,.2); }
   

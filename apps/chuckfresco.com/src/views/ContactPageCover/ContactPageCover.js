@@ -14,6 +14,7 @@ import { FaEnvelope, FaDiscord } from 'react-icons/fa';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
+import { trackEvent } from 'utils/analytics';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -130,6 +131,7 @@ const ContactPageCover = () => {
                       secondary={
                         <a
                           href="mailto:chuckfrescoofficial@gmail.com"
+                          onClick={() => trackEvent('click_contact_email', { link_location: 'contact' })}
                           className={classes.contactLink}
                         >
                           chuckfrescoofficial@gmail.com
@@ -157,6 +159,7 @@ const ContactPageCover = () => {
                       secondary={
                         <a
                           href="/discord"
+                          onClick={() => trackEvent('join_community', { platform: 'discord', link_location: 'contact' })}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={classes.contactLink}

@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
+import { formatSeasonCountdown, getSunflowerSeasonClock } from "../../utils/sunflowerSeason";
 
 const FARM_ID = "7089202106478272";
 const sunflowerLogo = "/assets/sunflower-land/logo/logo_v2.png";
@@ -13,82 +14,6 @@ const farmVisitUrl = `https://sunflower-land.com/play/#/visit/${FARM_ID}`;
 const fishingAssetPath = "/assets/sunflower-land/fishing";
 const seasonAssetPath = "/assets/sunflower-land/seasons";
 const caughtMarvelsStorageKey = "sunflower-land-fishing-caught-marvels";
-const seasonTimeZone = "America/Los_Angeles";
-const seasonResetHour = 17;
-const seasonAnchorLocalTime = Date.UTC(2026, 6, 13, seasonResetHour);
-const seasonWeekMs = 7 * 24 * 60 * 60 * 1000;
-const seasonRotation = ["autumn", "winter", "spring", "summer"];
-
-const pacificDateTimeFormatter = new Intl.DateTimeFormat("en-US", {
-  timeZone: seasonTimeZone,
-  year: "numeric",
-  month: "numeric",
-  day: "numeric",
-  hour: "numeric",
-  minute: "numeric",
-  second: "numeric",
-  hourCycle: "h23"
-});
-
-const getPacificDateTimeParts = date => (
-  pacificDateTimeFormatter.formatToParts(date).reduce((parts, part) => {
-    if (part.type !== "literal") {
-      parts[part.type] = Number(part.value);
-    }
-    return parts;
-  }, {})
-);
-
-// Convert a Pacific wall-clock time to an instant without relying on the visitor's time zone.
-const pacificDateTimeToUtc = localTime => {
-  let utcTime = localTime;
-
-  for (let attempt = 0; attempt < 3; attempt += 1) {
-    const parts = getPacificDateTimeParts(new Date(utcTime));
-    const representedLocalTime = Date.UTC(
-      parts.year,
-      parts.month - 1,
-      parts.day,
-      parts.hour,
-      parts.minute,
-      parts.second
-    );
-    utcTime += localTime - representedLocalTime;
-  }
-
-  return utcTime;
-};
-
-const getSeasonClock = (now = new Date()) => {
-  const parts = getPacificDateTimeParts(now);
-  const currentPacificWallTime = Date.UTC(
-    parts.year,
-    parts.month - 1,
-    parts.day,
-    parts.hour,
-    parts.minute,
-    parts.second
-  );
-  const resetIndex = Math.floor((currentPacificWallTime - seasonAnchorLocalTime) / seasonWeekMs);
-  const seasonIndex = ((resetIndex % seasonRotation.length) + seasonRotation.length) % seasonRotation.length;
-  const nextResetLocalTime = seasonAnchorLocalTime + ((resetIndex + 1) * seasonWeekMs);
-
-  return {
-    seasonId: seasonRotation[seasonIndex],
-    nextResetAt: pacificDateTimeToUtc(nextResetLocalTime)
-  };
-};
-
-const formatCountdown = milliseconds => {
-  const totalSeconds = Math.max(0, Math.floor(milliseconds / 1000));
-  const days = Math.floor(totalSeconds / 86400);
-  const hours = Math.floor((totalSeconds % 86400) / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-
-  return `${days}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m ${String(seconds).padStart(2, "0")}s`;
-};
-
 const asset = fileName => encodeURI(`${fishingAssetPath}/${fileName}`);
 
 const itemImages = {
@@ -456,6 +381,21 @@ const fishCatalog = fishCatalogNames.map(fish => ({
   marketOnlySeasonData: false
 }));
 
+const slugifyFishName = name => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+const getInitialFishSearch = () => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  const fishName = new URLSearchParams(window.location.search).get("fish");
+  const fish = fishName
+    ? fishCatalog.find(entry => slugifyFishName(entry.fish) === slugifyFishName(fishName))
+    : null;
+
+  return fish ? { type: "Fish", name: fish.fish } : null;
+};
+
 const marvels = [
   {
     name: "Starlight Tuna",
@@ -760,6 +700,9 @@ const useStyles = makeStyles(theme => ({
       gridTemplateColumns: "1fr"
     }
   },
+  focusedFishLayout: {
+    gridTemplateColumns: "minmax(0, 1fr)"
+  },
   panel: {
     background: "#e8ad76",
     border: "4px solid #101018",
@@ -894,6 +837,7 @@ const useStyles = makeStyles(theme => ({
     gridTemplateColumns: "minmax(0, 1fr) 120px",
     gap: 12,
     marginBottom: 14,
+    scrollMarginTop: 16,
     [theme.breakpoints.down("xs")]: {
       gridTemplateColumns: "1fr"
     }
@@ -1048,11 +992,43 @@ const useStyles = makeStyles(theme => ({
   },
   fishSectionTopline: {
     display: "flex",
-    alignItems: "flex-end",
+    alignItems: "center",
     justifyContent: "space-between",
     gap: 10,
     flexWrap: "wrap",
     marginBottom: 10
+  },
+  fishSectionActions: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    gap: 10,
+    flexWrap: "wrap"
+  },
+  singleSeasonToggle: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 7,
+    flex: "0 0 auto",
+    cursor: "pointer",
+    border: "3px solid #101018",
+    borderRadius: 8,
+    background: "#fff8d6",
+    color: "#332235",
+    padding: "5px 8px",
+    boxShadow: "inset 0 0 0 3px #f4c08a",
+    fontSize: 13,
+    fontWeight: 900,
+    lineHeight: 1.2,
+    whiteSpace: "nowrap"
+  },
+  singleSeasonCheckbox: {
+    width: 17,
+    height: 17,
+    margin: 0,
+    cursor: "pointer",
+    accentColor: "#2876d5"
   },
   fishSectionMeta: {
     margin: 0,
@@ -1261,6 +1237,18 @@ const useStyles = makeStyles(theme => ({
     background: "rgba(255,242,168,0.55)",
     borderColor: "rgba(16,16,24,0.65)"
   },
+  marketChipButton: {
+    appearance: "none",
+    font: "inherit",
+    cursor: "pointer",
+    transition: "filter 120ms ease, transform 120ms ease",
+    "&:hover, &:focus-visible": {
+      filter: "brightness(1.08)",
+      transform: "translateY(-1px)",
+      outline: "2px solid #fff2a8",
+      outlineOffset: 1
+    }
+  },
   marketBadge: {
     position: "absolute",
     top: -7,
@@ -1365,6 +1353,44 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap"
+  },
+  farmFishButton: {
+    appearance: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    border: 0,
+    borderRadius: 5,
+    background: "transparent",
+    padding: 0,
+    cursor: "pointer",
+    lineHeight: 0,
+    "&:hover, &:focus": {
+      filter: "brightness(1.14)",
+      outline: "2px solid #fff2a8"
+    }
+  },
+  farmNameButton: {
+    appearance: "none",
+    maxWidth: "100%",
+    border: 0,
+    borderRadius: 4,
+    background: "transparent",
+    color: "inherit",
+    padding: 0,
+    cursor: "pointer",
+    font: "inherit",
+    fontSize: "inherit",
+    fontWeight: "inherit",
+    lineHeight: "inherit",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    "&:hover, &:focus": {
+      color: "#fff2a8",
+      textDecoration: "underline",
+      outline: "none"
+    }
   },
   farmItems: {
     display: "flex",
@@ -1542,14 +1568,19 @@ const ItemChip = ({ itemName, classes }) => (
   </span>
 );
 
-const MarketItemChip = ({ itemName, classes }) => (
-  <span className={`${classes.itemChip} ${classes.marketChip}`}>
+const MarketItemChip = ({ itemName, classes, onClick }) => (
+  <button
+    type="button"
+    className={`${classes.itemChip} ${classes.marketChip} ${classes.marketChipButton}`}
+    onClick={onClick}
+    aria-label={`Open ${itemName} in Fish Market`}
+  >
     {itemImages[itemName] && (
       <img src={itemImages[itemName]} alt="" className={classes.itemIcon} />
     )}
     {itemName}
     <span className={classes.marketBadge}>M</span>
-  </span>
+  </button>
 );
 
 const RequirementRow = ({ label, items, classes }) => (
@@ -1567,7 +1598,12 @@ const RequirementRow = ({ label, items, classes }) => (
   </div>
 );
 
-const BaitRequirementRow = ({ bait, guaranteedCatchBaits, classes }) => (
+const BaitRequirementRow = ({
+  bait,
+  guaranteedCatchBaits,
+  classes,
+  onMarketBaitClick
+}) => (
   <div className={classes.requirementRow}>
     <span className={classes.requirementLabel}>Bait</span>
     <div className={classes.requirementItems}>
@@ -1580,7 +1616,12 @@ const BaitRequirementRow = ({ bait, guaranteedCatchBaits, classes }) => (
       ) : null}
       {!!guaranteedCatchBaits.length && (
         guaranteedCatchBaits.map(item => (
-          <MarketItemChip itemName={item} classes={classes} key={item} />
+          <MarketItemChip
+            itemName={item}
+            classes={classes}
+            key={item}
+            onClick={() => onMarketBaitClick(item)}
+          />
         ))
       )}
     </div>
@@ -1694,10 +1735,15 @@ const updateCaughtMarvelsUrl = caughtMarvels => {
 
 const SunflowerLandFishing = () => {
   const classes = useStyles();
-  const [seasonClock, setSeasonClock] = useState(() => getSeasonClock());
-  const [activeSeason, setActiveSeason] = useState(() => getSeasonClock().seasonId);
-  const [query, setQuery] = useState("");
-  const [selectedSearch, setSelectedSearch] = useState(null);
+  const history = useHistory();
+  const initialFishSearch = useMemo(getInitialFishSearch, []);
+  const finderAreaRef = useRef(null);
+  const searchAreaRef = useRef(null);
+  const [seasonClock, setSeasonClock] = useState(() => getSunflowerSeasonClock());
+  const [activeSeason, setActiveSeason] = useState(() => getSunflowerSeasonClock().seasonId);
+  const [query, setQuery] = useState(initialFishSearch ? initialFishSearch.name : "");
+  const [selectedSearch, setSelectedSearch] = useState(initialFishSearch);
+  const [showSingleSeasonFish, setShowSingleSeasonFish] = useState(false);
   const [caughtMarvels, setCaughtMarvels] = useState(getStoredCaughtMarvels);
 
   const selectedSeason = seasons.find(season => season.id === activeSeason) || seasons[0];
@@ -1705,13 +1751,31 @@ const SunflowerLandFishing = () => {
   const caughtMarvelSet = useMemo(() => new Set(caughtMarvels), [caughtMarvels]);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setSeasonClock(getSeasonClock()), 1000);
+    const timer = window.setInterval(() => setSeasonClock(getSunflowerSeasonClock()), 1000);
     return () => window.clearInterval(timer);
   }, []);
 
   useEffect(() => {
     setActiveSeason(seasonClock.seasonId);
   }, [seasonClock.seasonId]);
+
+  useEffect(() => {
+    const shouldFocusFinder = window.location.hash === "#fish-search";
+
+    if (!initialFishSearch && !shouldFocusFinder) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      return undefined;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      const target = shouldFocusFinder ? finderAreaRef.current : searchAreaRef.current;
+      if (target) {
+        target.scrollIntoView({ block: "start" });
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [initialFishSearch]);
 
   const saveCaughtMarvels = nextCaughtMarvels => {
     const normalizedCaughtMarvels = normalizeCaughtMarvels(nextCaughtMarvels);
@@ -1758,6 +1822,10 @@ const SunflowerLandFishing = () => {
     });
   };
 
+  const openFishMarketBait = baitName => {
+    history.push(`/sfl/fish-market?bait=${slugifyFishName(baitName)}`);
+  };
+
   const enrichedMarvels = useMemo(() => (
     marvels.map(marvel => {
       const activeSources = marvel.mapSources.filter(source => sourceIsActive(source, activeSeason));
@@ -1791,14 +1859,16 @@ const SunflowerLandFishing = () => {
     fishCatalog.filter(fish => {
       const matchesSeason = selectedSearch
         ? selectedSearch.type === "Fish"
-        : fish.seasons.includes(activeSeason);
+        : showSingleSeasonFish
+          ? fish.seasons.length === 1 && fish.seasons[0] === activeSeason
+          : fish.seasons.includes(activeSeason);
       const matchesSearch = selectedSearch
         ? selectedSearch.type === "Fish" && fish.fish === selectedSearch.name
         : !normalizedQuery || fish.fish.toLowerCase().includes(normalizedQuery);
 
       return matchesSeason && matchesSearch;
     })
-  ), [activeSeason, normalizedQuery, selectedSearch]);
+  ), [activeSeason, normalizedQuery, selectedSearch, showSingleSeasonFish]);
 
   const searchSuggestions = useMemo(() => (
     normalizedQuery && !selectedSearch
@@ -1808,11 +1878,11 @@ const SunflowerLandFishing = () => {
           image: fish.image,
           type: "Fish"
         })),
-        ...marvels.map(marvel => ({
+        ...(showSingleSeasonFish ? [] : marvels.map(marvel => ({
           name: marvel.name,
           image: itemImages[marvel.name],
           type: "Marvel"
-        }))
+        })))
       ]
         .filter((item, index, items) => (
           item.name.toLowerCase().includes(normalizedQuery) &&
@@ -1820,7 +1890,7 @@ const SunflowerLandFishing = () => {
         ))
         .slice(0, 8)
       : []
-  ), [normalizedQuery, selectedSearch]);
+  ), [normalizedQuery, selectedSearch, showSingleSeasonFish]);
 
   const selectedSearchSeasons = useMemo(() => {
     if (!selectedSearch) {
@@ -1901,20 +1971,29 @@ const SunflowerLandFishing = () => {
       <nav className={classes.sunflowerNav} aria-label="Sunflower Land pages">
         <Link
           className={classes.sunflowerNavLink}
-          to="/sunflower-land/helpers"
+          to="/sfl/helpers"
         >
           Leaderboard
         </Link>
         <Link
           className={`${classes.sunflowerNavLink} ${classes.activeSunflowerNavLink}`}
-          to="/sunflower-land/tools/fishing"
+          to="/sfl/fishing"
         >
           Fishing
+        </Link>
+        <Link
+          className={classes.sunflowerNavLink}
+          to="/sfl/fish-market"
+        >
+          Fish Market
+        </Link>
+        <Link className={classes.sunflowerNavLink} to="/sfl/crops">
+          Crops
         </Link>
       </nav>
 
       <main className={classes.shell}>
-        <div className={classes.layout}>
+        <div className={`${classes.layout} ${showSingleSeasonFish ? classes.focusedFishLayout : ""}`}>
           <section className={classes.panel}>
             <div className={classes.header}>
               <div className={classes.brand}>
@@ -1933,11 +2012,11 @@ const SunflowerLandFishing = () => {
               </a>
             </div>
 
-            <div className={classes.body}>
+            <div className={classes.body} id="fish-search" ref={finderAreaRef}>
               <div className={classes.seasonHeading}>
                 <h2 className={classes.panelTitle}>{selectedSeason.label} Marvel Pieces</h2>
-                <span className={classes.seasonCountdown} title="Seasons reset Mondays at 5:00 PM Pacific Time">
-                  Next season in {formatCountdown(seasonClock.nextResetAt - Date.now())}
+                <span className={classes.seasonCountdown} title="Seasons reset Sundays at 5:00 PM Pacific Time">
+                  Next season in {formatSeasonCountdown(seasonClock.nextResetAt - Date.now())}
                 </span>
               </div>
               <p className={classes.boardMeta}>
@@ -1965,9 +2044,25 @@ const SunflowerLandFishing = () => {
                     {season.label}
                   </button>
                 ))}
+                <label className={classes.singleSeasonToggle}>
+                  <input
+                    className={classes.singleSeasonCheckbox}
+                    type="checkbox"
+                    checked={showSingleSeasonFish}
+                    onChange={event => {
+                      const checked = event.target.checked;
+                      setShowSingleSeasonFish(checked);
+                      if (checked && selectedSearch && selectedSearch.type === "Marvel") {
+                        setQuery("");
+                        setSelectedSearch(null);
+                      }
+                    }}
+                  />
+                  Only {selectedSeason.label}-exclusive fish
+                </label>
               </nav>
 
-              <div className={classes.searchGrid}>
+              <div className={classes.searchGrid} ref={searchAreaRef}>
                 <label className={classes.field}>
                   Search Marvel or fish
                   <input
@@ -2015,11 +2110,13 @@ const SunflowerLandFishing = () => {
                 </button>
               </div>
 
-              <div className={classes.stats}>
-                <div className={classes.stat}>Farmable Marvels: {farmableMarvelCount}</div>
-                <div className={classes.stat}>Fish to farm: {farmTargets.length}</div>
-                <div className={classes.stat}>Caught Marvels: {caughtMarvelCount}</div>
-              </div>
+              {!showSingleSeasonFish && (
+                <div className={classes.stats}>
+                  <div className={classes.stat}>Farmable Marvels: {farmableMarvelCount}</div>
+                  <div className={classes.stat}>Fish to farm: {farmTargets.length}</div>
+                  <div className={classes.stat}>Caught Marvels: {caughtMarvelCount}</div>
+                </div>
+              )}
 
               {selectedSearchIsOutOfSeason && (
                 <div className={classes.seasonJump}>
@@ -2051,7 +2148,7 @@ const SunflowerLandFishing = () => {
                 </div>
               )}
 
-              {!showingFishSearch && (
+              {!showSingleSeasonFish && !showingFishSearch && (
                 <div className={classes.results}>
                   {visibleMarvels.map(marvel => (
                     <article
@@ -2110,6 +2207,7 @@ const SunflowerLandFishing = () => {
                                   bait={source.requirements.bait}
                                   guaranteedCatchBaits={source.guaranteedCatchBaits}
                                   classes={classes}
+                                  onMarketBaitClick={openFishMarketBait}
                                 />
                                 <RequirementRow
                                   label="Likes"
@@ -2134,13 +2232,19 @@ const SunflowerLandFishing = () => {
               <section className={classes.fishResultsSection}>
                 <div className={classes.fishSectionTopline}>
                   <h2 className={classes.panelTitle}>
-                    {showingFishSearch ? `${selectedSearch.name} Details` : `${selectedSeason.label} Fish`}
-                  </h2>
-                  <p className={classes.fishSectionMeta}>
                     {showingFishSearch
-                      ? "Selected fish requirements and season window"
-                      : `${visibleSeasonFish.length} fish shown below Marvel targets`}
-                  </p>
+                      ? `${selectedSearch.name} Details`
+                      : showSingleSeasonFish ? "Single-Season Fish" : `${selectedSeason.label} Fish`}
+                  </h2>
+                  <div className={classes.fishSectionActions}>
+                    <p className={classes.fishSectionMeta}>
+                      {showingFishSearch
+                        ? "Selected fish requirements and season window"
+                        : showSingleSeasonFish
+                          ? `${visibleSeasonFish.length} fish exclusive to ${selectedSeason.label}`
+                          : `${visibleSeasonFish.length} fish found in ${selectedSeason.label}`}
+                    </p>
+                  </div>
                 </div>
                 <div className={classes.fishGrid}>
                   {visibleSeasonFish.map(fish => (
@@ -2163,6 +2267,7 @@ const SunflowerLandFishing = () => {
                           bait={fish.requirements.bait}
                           guaranteedCatchBaits={fish.guaranteedCatchBaits}
                           classes={classes}
+                          onMarketBaitClick={openFishMarketBait}
                         />
                         <RequirementRow
                           label="Likes"
@@ -2175,13 +2280,17 @@ const SunflowerLandFishing = () => {
                   ))}
                 </div>
                 {!visibleSeasonFish.length && (
-                  <div className={classes.empty}>No fish match this search in {selectedSeason.label}.</div>
+                  <div className={classes.empty}>
+                    {showSingleSeasonFish
+                      ? `No fish exclusive to ${selectedSeason.label} match this search.`
+                      : `No fish match this search in ${selectedSeason.label}.`}
+                  </div>
                 )}
               </section>
             </div>
           </section>
 
-          <aside className={`${classes.panel} ${classes.board}`}>
+          {!showSingleSeasonFish && <aside className={`${classes.panel} ${classes.board}`}>
             <h2 className={classes.panelTitle}>Farm These In {selectedSeason.label}</h2>
             <p className={classes.boardMeta}>
               Sorted by map-piece drop chance. Caught Marvels are removed from this list.
@@ -2201,10 +2310,12 @@ const SunflowerLandFishing = () => {
               {farmTargets.map(target => (
                 <li className={classes.farmRow} key={`${target.marvel}-${target.fish}`}>
                   {target.image && (
-                    <img src={target.image} alt="" className={classes.fishIcon} />
+                    <button className={classes.farmFishButton} type="button" onClick={() => searchFish(target.fish)} aria-label={`Open ${target.fish} details`}>
+                      <img src={target.image} alt="" className={classes.fishIcon} />
+                    </button>
                   )}
                   <div>
-                    <div className={classes.farmName}>{target.fish}</div>
+                    <div className={classes.farmName}><button className={classes.farmNameButton} type="button" onClick={() => searchFish(target.fish)}>{target.fish}</button></div>
                     <div className={classes.farmMeta}>
                       {target.marvel}{target.requirement ? ` - ${target.requirement}` : ""}
                     </div>
@@ -2235,6 +2346,7 @@ const SunflowerLandFishing = () => {
                               itemName={item}
                               type="Guaranteed"
                               classes={classes}
+                              onClick={() => openFishMarketBait(item)}
                               key={`guaranteed-${item}`}
                             />
                           ))}
@@ -2249,7 +2361,7 @@ const SunflowerLandFishing = () => {
             {!farmTargets.length && (
               <div className={classes.empty}>No uncaught Marvel targets this season.</div>
             )}
-          </aside>
+          </aside>}
         </div>
 
         <section className={`${classes.panel} ${classes.tipPanel}`}>

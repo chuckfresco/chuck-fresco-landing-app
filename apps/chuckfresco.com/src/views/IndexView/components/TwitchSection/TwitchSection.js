@@ -6,6 +6,7 @@ import LiveTvIcon from '@material-ui/icons/LiveTv';
 
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
+import { trackEvent } from 'utils/analytics';
 
 const useStyles = makeStyles(theme => ({
   videoIframe: {
@@ -65,6 +66,7 @@ const TwitchSection = props => {
                     style={{ background: '#9347FF', color: '#FFFFFF' }}
                     size={isMd ? 'large' : 'medium'}
                     href="https://www.twitch.tv/chuckfresco"
+                    onClick={() => trackEvent('click_twitch_channel', { link_location: 'home' })}
                   >
                   Twitch  <LiveTvIcon style={{ marginLeft: 5 }}></LiveTvIcon>
                   </Button>,

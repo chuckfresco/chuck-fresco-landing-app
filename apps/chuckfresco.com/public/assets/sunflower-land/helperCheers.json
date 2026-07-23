@@ -1,2160 +1,3639 @@
 {
-  "snapshotAt": "2026-07-09T06:30:17.771Z",
+  "snapshotAt": "2026-07-23T16:36:40.432Z",
+  "cutoffAt": "2026-07-09T16:36:40.432Z",
   "farmId": "7089202106478272",
   "data": {
     "feed": [
       {
         "sender": {
-          "id": 4658669956176666,
-          "username": "XENKICKS",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Yellow Boots",
-            "shirt": "Yellow Farmer Shirt",
-            "pants": "Blue Suspenders",
-            "suit": "Bee Suit",
-            "hat": "Beekeeper Hat",
-            "necklace": "Green Amulet",
-            "wings": "Sweet Devil Wings",
-            "secondaryTool": "Bucket O' Worms",
-            "tool": "Golden Spatula"
-          }
+          "id": 8918336470197143,
+          "username": "kkuummaa"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783565047233,
+        "createdAt": 1784823740435,
         "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 953336145877245,
+          "username": "totomeg"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784822098138,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8528358265008102,
+          "username": "stark70"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784819426836,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5028784802774209,
+          "username": "Zzzel16"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784816062175,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7699350420915802,
+          "username": "Longer998"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784811878139,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784798735042,
+        "type": "cheer",
+        "helpedThemToday": false,
         "cheeredThemToday": true
       },
       {
         "sender": {
-          "id": 8789744907843808,
-          "username": "Kartoshkin",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Brown Boots",
-            "tool": "Trident",
-            "shirt": "Striped Blue Shirt",
-            "pants": "Farmer Overalls",
-            "hat": "Lucky Red Hat",
-            "coat": "Fruit Picker Apron",
-            "suit": "Lucky Red Suit",
-            "aura": "Bubble Aura"
-          }
+          "id": 162318,
+          "username": "sTyLz"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783560996993,
+        "createdAt": 1784795196228,
         "type": "cheer",
-        "cheeredThemToday": true
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 7916,
-          "username": "DeccoMx",
-          "clothing": {
-            "hair": "Pink Ponytail",
-            "shirt": "Fruit Picker Shirt",
-            "pants": "Brown Suspenders",
-            "beard": "Santa Beard",
-            "background": "Valentine's Field Background",
-            "body": "Pirate Potion",
-            "shoes": "Black Farmer Boots",
-            "tool": "Trident",
-            "hat": "Radiant Dumbo",
-            "onesie": "Shrimp Onesie",
-            "wings": "Bionic Drill"
-          }
+          "id": 6759139735185269,
+          "username": "Strigidae"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783557998012,
+        "createdAt": 1784792238947,
         "type": "cheer",
-        "cheeredThemToday": true
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "id": 360233372467312,
+          "username": "GensSan"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783556041504,
+        "createdAt": 1784789983288,
         "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1261481684895516,
+          "username": "KwazingLife"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784789339103,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4093295209305481,
+          "username": "Hossainn"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784781564851,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784780636996,
+        "type": "cheer",
+        "helpedThemToday": false,
         "cheeredThemToday": true
       },
       {
         "sender": {
           "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "username": "Deadsouz"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783502718872,
-        "type": "cheer"
+        "createdAt": 1784776909997,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": true
       },
       {
         "sender": {
-          "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "id": 963622366873365,
+          "username": "J1H23"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783501639267,
-        "type": "cheer"
+        "createdAt": 1784776370095,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8789744907843808,
-          "username": "Kartoshkin",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Brown Boots",
-            "tool": "Trident",
-            "shirt": "Striped Blue Shirt",
-            "pants": "Farmer Overalls",
-            "hat": "Lucky Red Hat",
-            "coat": "Fruit Picker Apron",
-            "suit": "Lucky Red Suit",
-            "aura": "Bubble Aura"
-          }
+          "id": 2338880577238443,
+          "username": "voidbringer1"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783489072647,
-        "type": "cheer"
+        "createdAt": 1784776009382,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 4658669956176666,
-          "username": "XENKICKS",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Yellow Boots",
-            "shirt": "Yellow Farmer Shirt",
-            "pants": "Blue Suspenders",
-            "suit": "Bee Suit",
-            "hat": "Beekeeper Hat",
-            "necklace": "Green Amulet",
-            "wings": "Sweet Devil Wings",
-            "secondaryTool": "Bucket O' Worms",
-            "tool": "Golden Spatula"
-          }
+          "id": 8257454033560179,
+          "username": "Yrras15"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783484332537,
-        "type": "cheer"
+        "createdAt": 1784772901242,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 7916,
-          "username": "DeccoMx",
-          "clothing": {
-            "hair": "Pink Ponytail",
-            "shirt": "Fruit Picker Shirt",
-            "pants": "Brown Suspenders",
-            "beard": "Santa Beard",
-            "background": "Valentine's Field Background",
-            "body": "Pirate Potion",
-            "shoes": "Black Farmer Boots",
-            "tool": "Trident",
-            "hat": "Radiant Dumbo",
-            "onesie": "Shrimp Onesie",
-            "wings": "Bionic Drill"
-          }
+          "id": 7950066368677649,
+          "username": "Swarden"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783479556008,
-        "type": "cheer"
+        "createdAt": 1784772076208,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 5924756021167522,
+          "username": "KyroMatthew"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783421567478,
-        "type": "cheer"
+        "createdAt": 1784771820313,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 7916,
-          "username": "DeccoMx",
-          "clothing": {
-            "hair": "Pink Ponytail",
-            "shirt": "Fruit Picker Shirt",
-            "pants": "Brown Suspenders",
-            "beard": "Santa Beard",
-            "background": "Valentine's Field Background",
-            "body": "Pirate Potion",
-            "shoes": "Black Farmer Boots",
-            "tool": "Trident",
-            "hat": "Radiant Dumbo",
-            "onesie": "Shrimp Onesie",
-            "wings": "Bionic Drill"
-          }
+          "id": 3594027126663809,
+          "username": "Barfad"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783399043039,
-        "type": "cheer"
+        "createdAt": 1784769189642,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 4658669956176666,
-          "username": "XENKICKS",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Yellow Boots",
-            "shirt": "Yellow Farmer Shirt",
-            "pants": "Blue Suspenders",
-            "suit": "Bee Suit",
-            "hat": "Beekeeper Hat",
-            "necklace": "Green Amulet",
-            "wings": "Sweet Devil Wings",
-            "secondaryTool": "Bucket O' Worms",
-            "tool": "Golden Spatula"
-          }
+          "id": 8262474607690709,
+          "username": "Dengmonyo"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783398148830,
-        "type": "cheer"
+        "createdAt": 1784769123618,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "id": 4449952455535262,
+          "username": "Daissy"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783395678976,
-        "type": "cheer"
+        "createdAt": 1784767603109,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4315637996448218,
+          "username": "AZelane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784767486421,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5535,
+          "username": "kEnX"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784766828060,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 8789744907843808,
-          "username": "Kartoshkin",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Brown Boots",
-            "tool": "Trident",
-            "shirt": "Striped Blue Shirt",
-            "pants": "Farmer Overalls",
-            "hat": "Lucky Red Hat",
-            "coat": "Fruit Picker Apron",
-            "suit": "Lucky Red Suit",
-            "aura": "Bubble Aura"
-          }
+          "username": "Kartoshkin"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783387931024,
-        "type": "cheer"
+        "createdAt": 1784766617030,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": true
       },
       {
         "sender": {
-          "id": 4658669956176666,
-          "username": "XENKICKS",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Yellow Boots",
-            "shirt": "Yellow Farmer Shirt",
-            "pants": "Blue Suspenders",
-            "suit": "Bee Suit",
-            "hat": "Beekeeper Hat",
-            "necklace": "Green Amulet",
-            "wings": "Sweet Devil Wings",
-            "secondaryTool": "Bucket O' Worms",
-            "tool": "Golden Spatula"
-          }
+          "id": 501,
+          "username": "S01"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783320667584,
-        "type": "cheer"
+        "createdAt": 1784766391190,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "id": 6368874181631564,
+          "username": "Dann22k"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783316908315,
-        "type": "cheer"
-      },
-      {
-        "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
-        },
-        "message": "Cheered your farm!",
-        "createdAt": 1783303697920,
-        "type": "cheer"
+        "createdAt": 1784766319782,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 7916,
-          "username": "DeccoMx",
-          "clothing": {
-            "hair": "Pink Ponytail",
-            "shirt": "Fruit Picker Shirt",
-            "pants": "Brown Suspenders",
-            "beard": "Santa Beard",
-            "background": "Valentine's Field Background",
-            "body": "Pirate Potion",
-            "shoes": "Black Farmer Boots",
-            "tool": "Trident",
-            "hat": "Radiant Dumbo",
-            "onesie": "Shrimp Onesie",
-            "wings": "Bionic Drill"
-          }
+          "username": "DeccoMx"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783303191394,
-        "type": "cheer"
+        "createdAt": 1784766081098,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": true
       },
       {
         "sender": {
-          "id": 8789744907843808,
-          "username": "Kartoshkin",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Brown Boots",
-            "tool": "Trident",
-            "shirt": "Striped Blue Shirt",
-            "pants": "Farmer Overalls",
-            "hat": "Lucky Red Hat",
-            "coat": "Fruit Picker Apron",
-            "suit": "Lucky Red Suit",
-            "aura": "Bubble Aura"
-          }
+          "id": 11416929743053,
+          "username": "TrshClr"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783302643545,
-        "type": "cheer"
-      },
-      {
-        "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
-        },
-        "message": "Cheered your farm!",
-        "createdAt": 1783256652980,
-        "type": "cheer"
-      },
-      {
-        "sender": {
-          "id": 7916,
-          "username": "DeccoMx",
-          "clothing": {
-            "hair": "Pink Ponytail",
-            "shirt": "Fruit Picker Shirt",
-            "pants": "Brown Suspenders",
-            "beard": "Santa Beard",
-            "background": "Valentine's Field Background",
-            "body": "Pirate Potion",
-            "shoes": "Black Farmer Boots",
-            "tool": "Trident",
-            "hat": "Radiant Dumbo",
-            "onesie": "Shrimp Onesie",
-            "wings": "Bionic Drill"
-          }
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
-        },
-        "message": "Cheered your farm!",
-        "createdAt": 1783229125924,
-        "type": "cheer"
-      },
-      {
-        "sender": {
-          "id": 4658669956176666,
-          "username": "XENKICKS",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Yellow Boots",
-            "shirt": "Yellow Farmer Shirt",
-            "pants": "Blue Suspenders",
-            "suit": "Bee Suit",
-            "hat": "Beekeeper Hat",
-            "necklace": "Green Amulet",
-            "wings": "Sweet Devil Wings",
-            "secondaryTool": "Bucket O' Worms",
-            "tool": "Golden Spatula"
-          }
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
-        },
-        "message": "Cheered your farm!",
-        "createdAt": 1783228393123,
-        "type": "cheer"
-      },
-      {
-        "sender": {
-          "id": 8789744907843808,
-          "username": "Kartoshkin",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Brown Boots",
-            "tool": "Trident",
-            "shirt": "Striped Blue Shirt",
-            "pants": "Farmer Overalls",
-            "hat": "Lucky Red Hat",
-            "coat": "Fruit Picker Apron",
-            "suit": "Lucky Red Suit",
-            "aura": "Bubble Aura"
-          }
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
-        },
-        "message": "Cheered your farm!",
-        "createdAt": 1783222204505,
-        "type": "cheer"
+        "createdAt": 1784765329113,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "username": "ZamaZ"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783212911839,
-        "type": "cheer"
+        "createdAt": 1784765022925,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": true
       },
       {
         "sender": {
-          "id": 4658669956176666,
-          "username": "XENKICKS",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Yellow Boots",
-            "shirt": "Yellow Farmer Shirt",
-            "pants": "Blue Suspenders",
-            "suit": "Bee Suit",
-            "hat": "Beekeeper Hat",
-            "necklace": "Green Amulet",
-            "wings": "Sweet Devil Wings",
-            "secondaryTool": "Bucket O' Worms",
-            "tool": "Golden Spatula"
-          }
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783148344375,
-        "type": "cheer"
+        "createdAt": 1784764844709,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": true
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 7038932958773016,
+          "username": "Fleura"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783136148389,
-        "type": "cheer"
+        "createdAt": 1784760941996,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 8176901532524302,
+          "username": "LordRamsay"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1783073966485,
-        "type": "cheer"
+        "createdAt": 1784751619131,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 7950066368677649,
+          "username": "Swarden"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782960382585,
-        "type": "cheer"
+        "createdAt": 1784748765528,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 67190,
+          "username": "Niffler"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782726544026,
-        "type": "cheer"
+        "createdAt": 1784736749793,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 6762600878166043,
+          "username": "Dicots"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782637411502,
-        "type": "cheer"
+        "createdAt": 1784728145109,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 161993,
+          "username": "Doutrinador"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782583735920,
-        "type": "cheer"
+        "createdAt": 1784724782941,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 3594027126663809,
+          "username": "Barfad"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784724542671,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 5925598366943423,
-          "username": "rickdivers",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Light Brown Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Black Farmer Boots",
-            "tool": "Axe",
-            "shirt": "Blue Farmer Shirt",
-            "pants": "Angler Waders",
-            "hat": "Gam3s Cap"
-          }
+          "username": "rickdivers"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782452941607,
-        "type": "cheer"
+        "createdAt": 1784716563726,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7699350420915802,
+          "username": "Longer998"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784710769000,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "username": "Deadsouz"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782440561445,
-        "type": "cheer"
+        "createdAt": 1784705364998,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 360233372467312,
+          "username": "GensSan"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782356495432,
-        "type": "cheer"
+        "createdAt": 1784704697183,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 5925598366943423,
-          "username": "rickdivers",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Light Brown Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Black Farmer Boots",
-            "tool": "Axe",
-            "shirt": "Blue Farmer Shirt",
-            "pants": "Angler Waders",
-            "hat": "Gam3s Cap"
-          }
+          "id": 4093295209305481,
+          "username": "Hossainn"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782277870751,
-        "type": "cheer"
+        "createdAt": 1784698347558,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 5028784802774209,
+          "username": "Zzzel16"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782265738723,
-        "type": "cheer"
+        "createdAt": 1784697647915,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 5925598366943423,
-          "username": "rickdivers",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Light Brown Farmer Potion",
-            "hair": "Basic Hair",
-            "shoes": "Black Farmer Boots",
-            "tool": "Axe",
-            "shirt": "Blue Farmer Shirt",
-            "pants": "Angler Waders",
-            "hat": "Gam3s Cap"
-          }
+          "id": 4658669956176666,
+          "username": "XENKICKS"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782192184526,
-        "type": "cheer"
+        "createdAt": 1784696701438,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 6759139735185269,
+          "username": "Strigidae"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782179484393,
-        "type": "cheer"
+        "createdAt": 1784696381274,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8262474607690709,
+          "username": "Dengmonyo"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784696029918,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 3994582828475266,
+          "username": "DownWordPro"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784695748888,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 162318,
+          "username": "sTyLz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784691626432,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 501,
+          "username": "S01"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784688552444,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 963622366873365,
+          "username": "J1H23"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784687418072,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784686471909,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4449952455535262,
+          "username": "Daissy"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784686414731,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 759107768074437,
+          "username": "rubyjane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784686265434,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784684398864,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784684239129,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4315637996448218,
+          "username": "AZelane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784683603741,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "username": "ZamaZ"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782173405616,
-        "type": "cheer"
+        "createdAt": 1784682804834,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5535,
+          "username": "kEnX"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784681337965,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 11416929743053,
+          "username": "TrshClr"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784681051959,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8257454033560179,
+          "username": "Yrras15"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784680848471,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6368874181631564,
+          "username": "Dann22k"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784680550724,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 2338880577238443,
+          "username": "voidbringer1"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784679248429,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7038932958773016,
+          "username": "Fleura"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784674784392,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6762600878166043,
+          "username": "Dicots"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784674460709,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 197333,
+          "username": "Freako"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784662349787,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6759139735185269,
+          "username": "Strigidae"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784652824886,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8528358265008102,
+          "username": "stark70"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784652380773,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784651692054,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7699350420915802,
+          "username": "Longer998"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784649595151,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8176901532524302,
+          "username": "LordRamsay"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784644085734,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 162318,
+          "username": "sTyLz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784631981965,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 3594027126663809,
+          "username": "Barfad"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784618016730,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "username": "ZamaZ"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782103048835,
-        "type": "cheer"
+        "createdAt": 1784612711931,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784611526247,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "username": "Deadsouz"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782097273637,
-        "type": "cheer"
+        "createdAt": 1784611496015,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5924756021167522,
+          "username": "KyroMatthew"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784609711304,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4093295209305481,
+          "username": "Hossainn"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784606715361,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 3994582828475266,
+          "username": "DownWordPro"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784606232315,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5535,
+          "username": "kEnX"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784601537651,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784600865720,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8262474607690709,
+          "username": "Dengmonyo"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784600852323,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 759107768074437,
+          "username": "rubyjane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784600833537,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 953336145877245,
+          "username": "totomeg"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784599475633,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 2338880577238443,
+          "username": "voidbringer1"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784598596154,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4449952455535262,
+          "username": "Daissy"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784598376687,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784598059837,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784597648513,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8257454033560179,
+          "username": "Yrras15"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784596085091,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 501,
+          "username": "S01"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784595556510,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4315637996448218,
+          "username": "AZelane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784595101721,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 11416929743053,
+          "username": "TrshClr"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784594305274,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5028784802774209,
+          "username": "Zzzel16"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784593164138,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6762600878166043,
+          "username": "Dicots"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784589323480,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7699350420915802,
+          "username": "Longer998"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784588130859,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7038932958773016,
+          "username": "Fleura"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784582109758,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8528358265008102,
+          "username": "stark70"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784566746399,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8176901532524302,
+          "username": "LordRamsay"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784558050310,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784556680809,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784555529328,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 759107768074437,
+          "username": "rubyjane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784552747185,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 197333,
+          "username": "Freako"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784551966757,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1261481684895516,
+          "username": "KwazingLife"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784551658931,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 963622366873365,
+          "username": "J1H23"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784551649480,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8263373224272361,
+          "username": "JAYP02"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784551333823,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8262474607690709,
+          "username": "Dengmonyo"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784548216268,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6275357900555178,
+          "username": "Weehaa"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784547981564,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 161993,
+          "username": "Doutrinador"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784547601812,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4093295209305481,
+          "username": "Hossainn"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784545954358,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5397106622823524,
+          "username": "Kayyla"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784535285122,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8918336470197143,
+          "username": "kkuummaa"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784529464058,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 2338880577238443,
+          "username": "voidbringer1"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784522773660,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5924756021167522,
+          "username": "KyroMatthew"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784520504258,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "username": "ZamaZ"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782024438612,
-        "type": "cheer"
+        "createdAt": 1784518548925,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5641701262005419,
+          "username": "PolyDexYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784518354129,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5028784802774209,
+          "username": "Zzzel16"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784514178676,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 3594027126663809,
+          "username": "Barfad"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784514036996,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 953336145877245,
+          "username": "totomeg"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784512676367,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4449952455535262,
+          "username": "Daissy"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784511276369,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 162318,
+          "username": "sTyLz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784511265585,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4315637996448218,
+          "username": "AZelane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784510794051,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784510423901,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8257454033560179,
+          "username": "Yrras15"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784510289090,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 11416929743053,
+          "username": "TrshClr"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784509185282,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5535,
+          "username": "kEnX"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784509015911,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6368874181631564,
+          "username": "Dann22k"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784508985948,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 501,
+          "username": "S01"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784508690101,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784508672098,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784508096311,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 3994582828475266,
+          "username": "DownWordPro"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784507729426,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7038932958773016,
+          "username": "Fleura"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784491017135,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8176901532524302,
+          "username": "LordRamsay"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784482888204,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784472229584,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6275357900555178,
+          "username": "Weehaa"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784469349872,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8262474607690709,
+          "username": "Dengmonyo"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784468681870,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5924756021167522,
+          "username": "KyroMatthew"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784464485749,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "username": "Deadsouz"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1782009520337,
-        "type": "cheer"
+        "createdAt": 1784463504215,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5397106622823524,
+          "username": "Kayyla"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784457457126,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 759107768074437,
+          "username": "rubyjane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784452624119,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8263373224272361,
+          "username": "JAYP02"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784452323159,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1535751335847024,
+          "username": "shynice"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784449870716,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8528358265008102,
+          "username": "stark70"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784448672692,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7699350420915802,
+          "username": "Longer998"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784447323249,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4449952455535262,
+          "username": "Daissy"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784445623543,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784439699119,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1261481684895516,
+          "username": "KwazingLife"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784439172701,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8918336470197143,
+          "username": "kkuummaa"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784437021881,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 162318,
+          "username": "sTyLz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784434833072,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784434717092,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 3863900154075909,
+          "username": "Avijitdas"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784434122405,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5028784802774209,
+          "username": "Zzzel16"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784433768017,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4093295209305481,
+          "username": "Hossainn"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784433673009,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 360233372467312,
+          "username": "GensSan"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784432901866,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4315637996448218,
+          "username": "AZelane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784432147338,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 953336145877245,
+          "username": "totomeg"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784427553777,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 2338880577238443,
+          "username": "voidbringer1"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784425519993,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8257454033560179,
+          "username": "Yrras15"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784425347920,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "username": "ZamaZ"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1781926745208,
-        "type": "cheer"
+        "createdAt": 1784424292513,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 11416929743053,
+          "username": "TrshClr"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784424079180,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784423006472,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6368874181631564,
+          "username": "Dann22k"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784422556236,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6759139735185269,
+          "username": "Strigidae"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784421012920,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784419497869,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 162318,
+          "username": "sTyLz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784418413806,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5028784802774209,
+          "username": "Zzzel16"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784418056498,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 360233372467312,
+          "username": "GensSan"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784412260768,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 6759139735185269,
+          "username": "Strigidae"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784411888289,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8257454033560179,
+          "username": "Yrras15"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784399198023,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 2338880577238443,
+          "username": "voidbringer1"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784399196455,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784395372328,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1535751335847024,
+          "username": "shynice"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784385456516,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "username": "Deadsouz"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1781925305405,
-        "type": "cheer"
+        "createdAt": 1784361243707,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz",
-          "clothing": {
-            "background": "Deep Sea Salt Cave Background",
-            "body": "Pirate Potion",
-            "hair": "Blondie",
-            "shoes": "Black Farmer Boots",
-            "tool": "Halloween Deathscythe",
-            "necklace": "Crimstone Amulet",
-            "coat": "Milk Apron",
-            "wings": "Sol & Luna",
-            "secondaryTool": "Solflare Aegis",
-            "hat": "Gam3s Cap",
-            "shirt": "Yellow Farmer Shirt",
-            "suit": "Motley",
-            "aura": "Bubble Aura"
-          }
+          "id": 4658669956176666,
+          "username": "XENKICKS"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1781855074184,
-        "type": "cheer"
+        "createdAt": 1784353643135,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4093295209305481,
+          "username": "Hossainn"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784346366570,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
           "id": 5845356377159265,
-          "username": "ZamaZ",
-          "clothing": {
-            "background": "Forest Background",
-            "body": "Pirate Potion",
-            "hair": "Explorer Hair",
-            "shoes": "Peg Leg",
-            "tool": "Trident",
-            "shirt": "Red Farmer Shirt",
-            "onesie": "Shrimp Onesie",
-            "pants": "Farmer Overalls",
-            "secondaryTool": "Bucket O' Worms",
-            "wings": "Bionic Drill",
-            "coat": "Fruit Picker Apron"
-          }
+          "username": "ZamaZ"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1781832056047,
-        "type": "cheer"
+        "createdAt": 1784342842712,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 6585849928575330,
-          "username": "Pleun",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Brown Long Hair",
-            "shoes": "Peg Leg",
-            "tool": "Axe",
-            "shirt": "Striped Blue Shirt",
-            "pants": "Angler Waders",
-            "hat": "Spa Hat",
-            "secondaryTool": "Bucket O' Worms"
-          }
+          "id": 7916,
+          "username": "DeccoMx"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1781726581848,
-        "type": "cheer"
+        "createdAt": 1784342708738,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 5877847754741933,
-          "username": "Randal",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Dark Brown Farmer Potion",
-            "hair": "Basic Hair",
-            "shirt": "Yellow Farmer Shirt",
-            "pants": "Angler Waders",
-            "shoes": "Brown Boots",
-            "tool": "Sunflower Rod",
-            "hat": "Radiant Dumbo",
-            "onesie": "Shrimp Onesie",
-            "secondaryTool": "Saw Fish"
-          }
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1779477837386,
-        "type": "cheer"
+        "createdAt": 1784338026097,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       },
       {
         "sender": {
-          "id": 6585849928575330,
-          "username": "Pleun",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Brown Long Hair",
-            "shoes": "Peg Leg",
-            "tool": "Axe",
-            "shirt": "Striped Blue Shirt",
-            "pants": "Angler Waders",
-            "hat": "Spa Hat",
-            "secondaryTool": "Bucket O' Worms"
-          }
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
         },
         "recipient": {
           "id": 7089202106478272,
-          "username": "ChuckFresco",
-          "clothing": {
-            "background": "Farm Background",
-            "body": "Beige Farmer Potion",
-            "hair": "Sun Spots",
-            "shoes": "Black Farmer Boots",
-            "tool": "Infernal Bullwhip",
-            "secondaryTool": "Oil Gallon",
-            "shirt": "Olive Royalty Shirt",
-            "pants": "Angler Waders",
-            "necklace": "Green Amulet",
-            "coat": "Chef Apron",
-            "hat": "Gam3s Cap",
-            "wings": "Oracle Syringe",
-            "aura": "Paw Aura",
-            "onesie": "Squirrel Onesie"
-          }
+          "username": "ChuckFresco"
         },
         "message": "Cheered your farm!",
-        "createdAt": 1778100980237,
-        "type": "cheer"
+        "createdAt": 1784336790463,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 161993,
+          "username": "Doutrinador"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784308367175,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4093295209305481,
+          "username": "Hossainn"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784302390324,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784296575088,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1535751335847024,
+          "username": "shynice"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784292056718,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784274746168,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 759107768074437,
+          "username": "rubyjane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784274127349,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4315637996448218,
+          "username": "AZelane"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784269064397,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784260438304,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784257368075,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784251536803,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784251250604,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784246726713,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784212700882,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784186567335,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784177404133,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784168723981,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784161403397,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784160463733,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784143739120,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784091330744,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1535751335847024,
+          "username": "shynice"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784087928402,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784086596431,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784085640718,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784083561002,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784080222346,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5028784802774209,
+          "username": "Zzzel16"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784079592768,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784074133059,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784025476460,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784009470112,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1784007605471,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783997655706,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783991280821,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783990427704,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783968256542,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783943208917,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783918629504,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783915225751,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783914158045,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783912635233,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783906713449,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5924756021167522,
+          "username": "KyroMatthew"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783900491846,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783839096400,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783839062211,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783834713579,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783832988382,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783827070025,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783819977357,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783817651621,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783793470740,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783764065384,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1535751335847024,
+          "username": "shynice"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783759574364,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5924756021167522,
+          "username": "KyroMatthew"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783750939001,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783743144643,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783738000468,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783737875513,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783729231426,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783728286798,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 67190,
+          "username": "Niffler"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783708432741,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8329230747654942,
+          "username": "Deadsouz"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783697708274,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783671498672,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783668569646,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783650915013,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783648089224,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1535751335847024,
+          "username": "shynice"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783646597501,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Cheered your farm!",
+        "createdAt": 1783642798609,
+        "type": "cheer",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
       }
-    ],
-    "following": [
-      1200643110234699,
-      5845356377159265,
-      5733,
-      8081963356346386,
-      7568255385136988,
-      8633980507453436,
-      81270,
-      6585849928575330,
-      6628568281707078,
-      11525,
-      155794,
-      8329230747654942,
-      5925598366943423,
-      31509,
-      5877847754741933,
-      4658669956176666,
-      7916,
-      8789744907843808
     ]
   }
 }

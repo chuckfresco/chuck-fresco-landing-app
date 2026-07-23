@@ -6,6 +6,7 @@ import FilterListIcon from "@material-ui/icons/FilterList";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import SearchIcon from "@material-ui/icons/Search";
 import SortIcon from "@material-ui/icons/Sort";
+import { trackEvent } from "utils/analytics";
 
 const AXIE_COLLECTION_SNAPSHOT_URL = "/assets/axie/collection/axieCollection.json";
 const DEFAULT_X_REQUEST_POST_URL = "https://x.com/ChuckFresco/status/2076234287314247819?s=20";
@@ -1844,6 +1845,7 @@ const AxieCard = React.memo(({ axie, classes, requestPostUrl }) => {
         <a
           className={classes.requestOverlay}
           href={getRequestUrl(axie, requestPostUrl)}
+          onClick={() => trackEvent("request_axie", { axie_id: String(axie.id) })}
           target="_blank"
           rel="noopener noreferrer"
           title={`Request Axie #${axie.id} on X`}
@@ -1859,6 +1861,7 @@ const AxieCard = React.memo(({ axie, classes, requestPostUrl }) => {
           <a
             className={classes.idPill}
             href={getAxieMarketplaceUrl(axie)}
+            onClick={() => trackEvent("view_axie_marketplace", { axie_id: String(axie.id) })}
             target="_blank"
             rel="noopener noreferrer"
             title={`Open Axie #${axie.id} on Axie Infinity`}
@@ -1922,6 +1925,7 @@ const AxieCollection = () => {
       }
 
       setTemplateCopied(true);
+      trackEvent("copy_axie_request_template");
       window.setTimeout(() => setTemplateCopied(false), 1800);
     } catch {
       setTemplateCopied(false);

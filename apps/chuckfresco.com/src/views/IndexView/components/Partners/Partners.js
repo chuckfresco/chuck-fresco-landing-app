@@ -7,7 +7,17 @@ import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({
   promoLogo: {
-    maxWidth: 120,
+    maxWidth: 88,
+    maxHeight: 88,
+    objectFit: 'contain',
+  },
+  image: {
+    width: '100%',
+    maxWidth: 410,
+    maxHeight: 340,
+    objectFit: 'cover',
+    objectPosition: 'center 28%',
+    borderRadius: 8,
   },
   title: {
     fontWeight: 'bold',
@@ -24,6 +34,57 @@ const useStyles = makeStyles(theme => ({
     height: 20,
     marginLeft: theme.spacing(0.75),
     objectFit: 'contain',
+  },
+  toolsSection: {
+    marginTop: theme.spacing(3),
+  },
+  toolsTitle: {
+    margin: theme.spacing(0, 0, 1.5),
+    fontSize: 15,
+    fontWeight: 800,
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+  },
+  toolsGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+    gap: theme.spacing(1),
+    [theme.breakpoints.down('xs')]: {
+      gridTemplateColumns: '1fr',
+    },
+  },
+  toolButton: {
+    minHeight: 62,
+    display: 'flex',
+    alignItems: 'center',
+    gap: theme.spacing(1.25),
+    padding: theme.spacing(1, 1.5),
+    border: `1px solid ${theme.palette.divider}`,
+    borderRadius: 8,
+    color: 'inherit',
+    background: theme.palette.background.paper,
+    textDecoration: 'none',
+    fontSize: 13,
+    fontWeight: 800,
+    transition: 'transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease',
+    '&:hover': {
+      color: theme.palette.primary.dark,
+      borderColor: theme.palette.primary.main,
+      boxShadow: '0 8px 20px rgba(0,0,0,.1)',
+      textDecoration: 'none',
+      transform: 'translateY(-2px)',
+    },
+  },
+  toolLogo: {
+    width: 42,
+    height: 42,
+    flex: '0 0 42px',
+    objectFit: 'contain',
+  },
+  externalMark: {
+    marginLeft: 'auto',
+    fontSize: 15,
+    opacity: .55,
   },
 }));
 
@@ -81,7 +142,7 @@ const Partners = props => {
               className: classes.title,
             }}
           />
-         <Grid container item xs={12} spacing={2} style={{ marginTop: 20 }} >
+         <Grid container item xs={12} spacing={2} style={{ marginTop: 12 }} >
         {data.map((partner, index) => (
             <Grid
               item

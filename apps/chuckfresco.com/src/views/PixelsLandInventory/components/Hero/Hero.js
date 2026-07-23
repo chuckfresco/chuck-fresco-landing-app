@@ -12,8 +12,8 @@ const useStyles = makeStyles(theme => ({
     minHeight: 300,
     position: 'relative',
     overflow: 'hidden',
-    backgroundColor: '#070817',
-    borderBottom: '4px solid #30205f',
+    backgroundColor: '#211f48',
+    borderBottom: '4px solid #642cff',
     [theme.breakpoints.down('sm')]: {
       minHeight: 250,
     },
@@ -108,8 +108,7 @@ const Hero = props => {
   return (
     <div className={clsx(classes.root, className)} {...rest}>
       <Image
-        src="/assets/hero-pixels-3.png"
-        srcSet="/assets/hero-pixels-3.png 2x"
+        src="/assets/pixels/pixels-ui/imgi_6_68acbf23c09f65f2283b5b39_66958a0f24351aef552ceaf1_hero-speck-image-sized-nocharacter%20(1)-min.png"
         alt="Pixels Online"
         className={clsx(classes.image, compact && classes.compactImage)}
         lazyProps={{
@@ -125,7 +124,6 @@ const Hero = props => {
           title={title}
           subtitle={subtitle}
           align="left"
-          data-aos="fade-up"
           disableGutter
           titleProps={{
             className: clsx(classes.title, classes.textWhite),

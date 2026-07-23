@@ -18,8 +18,14 @@ export { default as PixelsQuestAlinaRecipe } from './PixelsQuestAlinaRecipe';
 export { default as PixelsLandInventory } from './PixelsLandInventory';
 export { default as PixelsAnimalDrops } from './PixelsAnimalDrops';
 export { default as SunflowerLandHelpers } from './SunflowerLandHelpers';
+export { default as SunflowerLandWinners } from './SunflowerLandWinners';
 export { default as SunflowerLandFishing } from './SunflowerLandFishing';
+export { default as SunflowerLandFishMarket } from './SunflowerLandFishMarket';
+export { default as SunflowerLandCrops } from './SunflowerLandCrops';
 export { default as AxieCollection } from './AxieCollection';
+export { default as AxieDom } from './AxieDom';
+export { default as AxieDomStrategy } from './AxieDom/Strategy';
+export { default as Sudoku } from './Sudoku';
 
 export { default as Agency } from './Agency';
 export { default as CareerListing } from './CareerListing';

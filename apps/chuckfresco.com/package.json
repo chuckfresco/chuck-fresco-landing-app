@@ -5,19 +5,21 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run generate-sitemap && react-scripts build",
+    "build": "npm run generate-sitemap && react-scripts build && node scripts/seo/generate-social-pages.js",
     "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "prettier": "prettier --write '**/*.{js,css,html}'",
     "clear-all": "rimraf ./build ./node_modules ../../node_modules",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build/ s3://chuckfresco --acl public-read --exclude '.env*' --exclude '*/.env*' --exclude 'assets/sunflower-land/helperCheers.json' --exclude 'assets/sunflower-land/helperHelps.json'",
-    "deploy:full": "scripts/deploy-full-site.command",
+    "deploy": "aws s3 sync ./build/ s3://chuckfresco --acl public-read --exclude '.env*' --exclude '*/.env*' --exclude '.social-pages/*' --exclude 'assets/sunflower-land/helperCheers.json' --exclude 'assets/sunflower-land/helperHelps.json' --exclude 'assets/sunflower-land/contestStart.json' --exclude 'assets/sunflower-land/winners.json' && node scripts/seo/upload-social-pages.js",
+    "deploy:full": "scripts/deploy/deploy-full-site.command",
     "generate-sitemap": "node generate-sitemap.js",
-    "update:sunflower-live": "scripts/run-sunflower-helper-updater.command",
-    "update:sunflower-token": "scripts/update-sunflower-bearer-token.command",
-    "update:sunflower-helpers": "node scripts/update-sunflower-helpers.js",
-    "update:sunflower-cheers": "node scripts/update-sunflower-helpers.js cheer",
-    "update:sunflower-helps": "node scripts/update-sunflower-helpers.js help"
+    "update:sunflower-live": "scripts/sunflower-land/run-sunflower-helper-updater.command",
+    "update:sunflower-token": "scripts/sunflower-land/update-sunflower-bearer-token.command",
+    "update:contest-start": "scripts/sunflower-land/update-contest-start.command",
+    "add:raffle-winners": "scripts/sunflower-land/add-raffle-winners.command",
+    "update:sunflower-helpers": "node scripts/sunflower-land/update-sunflower-helpers.js",
+    "update:sunflower-cheers": "node scripts/sunflower-land/update-sunflower-helpers.js cheer",
+    "update:sunflower-helps": "node scripts/sunflower-land/update-sunflower-helpers.js help"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +51,7 @@
     "gif.js": "^0.2.0",
     "gif.js.optimized": "^1.0.1",
     "gifshot": "^0.4.5",
+    "gsap": "^3.15.0",
     "history": "^4.9.0",
     "jarallax": "^1.12.1",
     "leaflet": "^1.6.0",

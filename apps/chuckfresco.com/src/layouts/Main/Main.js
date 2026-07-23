@@ -24,12 +24,20 @@ const Main = ({ children, themeToggler, themeMode }) => {
       title: 'Tools',
       id: 'supported-pages',
       children: {
-        career: {
-          groupTitle: 'Chuck\'s Picks',
+        axieInfinity: {
+          groupTitle: 'Axie Infinity',
           pages: [
             {
+              title: 'Axie DOM Strategy',
+              href: '/axie-dom/strategy',
+            },
+            {
+              title: 'Axie DOM Power Ups',
+              href: '/axie-dom/power-ups',
+            },
+            {
               title: 'Axie Origins',
-              href: 'hhttps://app.axieinfinity.com/games/?slug=origins',
+              href: 'https://app.axieinfinity.com/games/?slug=origins',
             },
             {
               title: 'PvP LeaderBoard (Live)',
@@ -39,10 +47,6 @@ const Main = ({ children, themeToggler, themeMode }) => {
               title: 'Axie Classic',
               href: 'https://app.axieinfinity.com/games/?slug=classic',
             },
-            {
-              title: 'Axie: Den of Mysteries',
-              href: 'https://app.axieinfinity.com/games/?slug=axie-dom',
-            },
           ],
         },
         pixelsOnline: {
@@ -50,7 +54,7 @@ const Main = ({ children, themeToggler, themeMode }) => {
           pages: [
             {
               title: 'Land Inventory ',
-              href: '/pixels/land/inventory',
+              href: '/pixels/land-inventory',
             },
             {
               title: 'Animal Drops',
@@ -97,11 +101,15 @@ const Main = ({ children, themeToggler, themeMode }) => {
           pages: [
             {
               title: 'Sunflower Helpers',
-              href: '/sunflower-land/helpers',
+              href: '/sfl/helpers',
             },
             {
               title: 'Fishing Tools',
-              href: '/sunflower-land/tools/fishing',
+              href: '/sfl/fishing',
+            },
+            {
+              title: 'Fish Market',
+              href: '/sfl/fish-market',
             },
           ],
         },

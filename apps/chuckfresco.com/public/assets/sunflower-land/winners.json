@@ -1,0 +1,68 @@
+{
+  "raffles": [
+    {
+      "contestStart": "2026-07-02T19:00:00-07:00",
+      "contestEnd": "2026-07-16T19:00:00-07:00",
+      "drawnAt": "2026-07-16T19:15:00-07:00",
+      "totalPrize": 160,
+      "winners": [
+        {
+          "farmId": "1000000000000001",
+          "username": "SunnySprout",
+          "tickets": 28,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:01:00-07:00"
+        },
+        {
+          "farmId": "1000000000000002",
+          "username": "PetalPilot",
+          "tickets": 24,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:03:00-07:00"
+        },
+        {
+          "farmId": "1000000000000003",
+          "username": "HarvestHero",
+          "tickets": 19,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:05:00-07:00"
+        },
+        {
+          "farmId": "1000000000000004",
+          "username": "CheerfulClover",
+          "tickets": 14,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:07:00-07:00"
+        },
+        {
+          "farmId": "1000000000000005",
+          "username": "FarmFriend",
+          "tickets": 27,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:09:00-07:00"
+        },
+        {
+          "farmId": "1000000000000006",
+          "username": "GoldenGarden",
+          "tickets": 21,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:11:00-07:00"
+        },
+        {
+          "farmId": "1000000000000007",
+          "username": "HelpfulHoneybee",
+          "tickets": 16,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:13:00-07:00"
+        },
+        {
+          "farmId": "1000000000000008",
+          "username": "BloomBuddy",
+          "tickets": 25,
+          "prize": 20,
+          "pickedAt": "2026-07-16T19:15:00-07:00"
+        }
+      ]
+    }
+  ]
+}

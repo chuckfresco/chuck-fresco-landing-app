@@ -32,6 +32,7 @@ import {
 } from './data';
 
 import IndustryTables from './IndustryTables';
+import '../pixels-theme.css';
 
 const useStyles = makeStyles(theme => ({
   sectionTrucking: {
@@ -68,7 +69,7 @@ const IndustryLimits = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className="pixels-page">
         <Helmet>
         <title>Industry Limits | Pixels Online Guide</title>
         <meta name="description" content="Check your daily output limits for farming, crafting, and cooking industries in Runiverse based on building size." />
@@ -80,8 +81,8 @@ const IndustryLimits = () => {
 
       <Hero />
       <PixelCode />
-      <SectionAlternate className={classes.sectionBreadcrumb}>
-        <Breadcrumb data={pixelsBreadcrumb} />
+      <SectionAlternate className={`${classes.sectionBreadcrumb} pixels-page__crumbs`}>
+        <Breadcrumb data={pixelsBreadcrumb} variant="pixels" />
       </SectionAlternate>
       <IndustryTables />
       

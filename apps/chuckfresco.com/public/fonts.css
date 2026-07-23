@@ -4,3 +4,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Pixels Kemco';
+  src: url('/assets/fonts/pixels-online/62bedf285c6792cf84fc58a9_Kemco%20Pixel%20Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pixels UI';
+  src: url('/assets/fonts/pixels-online/62bedf479cefeba50dacf0ce_DePixelKlein.ttf') format('truetype');
+  font-display: swap;
+}

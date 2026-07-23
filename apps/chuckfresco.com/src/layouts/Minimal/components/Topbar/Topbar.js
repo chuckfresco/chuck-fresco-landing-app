@@ -16,16 +16,18 @@ const useStyles = makeStyles(theme => ({
     },
   },
   logoContainer: {
-    width: 100,
+    width: 170,
     height: 28,
     [theme.breakpoints.up('md')]: {
-      width: 120,
+      width: 195,
       height: 32,
     },
   },
   logoImage: {
     width: '100%',
     height: '100%',
+    objectFit: 'contain',
+    transform: 'scale(1.5)',
   },
 }));
 
@@ -35,11 +37,11 @@ const Topbar = ({ themeMode, className, ...rest }) => {
   return (
     <Toolbar className={clsx(classes.toolbar, className)} {...rest}>
       <div className={classes.logoContainer}>
-        <a href="/" title="thefront">
+        <a href="/" title="Chuck Fresco">
           <Image
             className={classes.logoImage}
-            src={themeMode === 'light' ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg' : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'}
-            alt="thefront"
+            src="/assets/logo/chuck-fresco/chuck-fresco-logo-poke.webp"
+            alt="Chuck Fresco"
             lazy={false}
           />
         </a>

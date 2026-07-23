@@ -22,6 +22,7 @@ import { Breadcrumb, PixelCode } from "components/molecules";
 import { Section, SectionAlternate } from "components/organisms";
 import { pixelsBreadcrumb } from "components/molecules/Breadcrumb/data";
 import Hero from "views/PixelsLandInventory/components/Hero";
+import "../pixels-theme.css";
 
 const animalAssetPath = "/assets/pixels/land/animals/";
 
@@ -387,19 +388,46 @@ const animalGroups = [
 ];
 
 const darkTheme = createTheme({
-  palette: { type: "dark" },
+  palette: {
+    type: "dark",
+    background: {
+      paper: "#29255d",
+      default: "#12112f"
+    }
+  },
   overrides: {
+    MuiPaper: {
+      root: {
+        backgroundColor: "#29255d",
+        borderColor: "#7770af"
+      }
+    },
+    MuiTableRow: {
+      root: {
+        backgroundColor: "#29255d",
+        "&:nth-of-type(even)": {
+          backgroundColor: "#211e50"
+        },
+        "&$hover:hover": {
+          backgroundColor: "#39317d"
+        }
+      }
+    },
     MuiTableCell: {
       root: {
         padding: "8px 10px",
         fontSize: "0.82rem",
-        verticalAlign: "top"
+        verticalAlign: "top",
+        color: "#fffce8",
+        borderBottom: "1px solid rgba(155, 123, 255, 0.3)"
       },
       head: {
-        backgroundColor: "#333",
+        backgroundColor: "#642cff",
         color: "#fff",
         fontWeight: "bold",
-        whiteSpace: "nowrap"
+        whiteSpace: "nowrap",
+        borderBottom: "3px solid #37159c",
+        textShadow: "2px 2px 0 #27106e"
       }
     }
   }
@@ -469,8 +497,8 @@ const useStyles = makeStyles(theme => ({
   },
   tableContainer: {
     width: "100%",
-    background: "#1f2937",
-    border: "1px solid #374151",
+    background: "#29255d",
+    border: "2px solid #7770af",
     borderRadius: 8,
     overflowX: "auto"
   },
@@ -539,16 +567,18 @@ const useStyles = makeStyles(theme => ({
     alignItems: "start"
   },
   dropItem: {
-    border: "1px solid #3f4a6b",
+    border: "1px solid #625ba0",
     borderRadius: 6,
-    background: "#172033",
+    background: "#17143d",
     padding: "5px 7px"
   },
   dropName: {
     color: "#aebfff",
-    fontSize: 12,
+    fontFamily: 'Lato, Arial, sans-serif !important',
+    fontSize: 13,
     fontWeight: 800,
-    lineHeight: 1.2,
+    letterSpacing: "0.01em",
+    lineHeight: 1.3,
     whiteSpace: "normal"
   },
   dropMeta: {
@@ -556,8 +586,11 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexWrap: "wrap",
     gap: 5,
-    fontSize: 11,
-    lineHeight: 1.25,
+    fontFamily: 'Lato, Arial, sans-serif !important',
+    fontSize: 12,
+    fontWeight: 700,
+    letterSpacing: "0.01em",
+    lineHeight: 1.35,
     marginTop: 2
   },
   dot: {
@@ -687,7 +720,7 @@ const PixelsAnimalDrops = () => {
   }, [filteredRows, searchTerm]);
 
   return (
-    <div>
+    <div className="pixels-page">
       <Helmet>
         <title>Pixels Animal Drops | Pixels Online Guide</title>
         <meta
@@ -707,17 +740,17 @@ const PixelsAnimalDrops = () => {
       />
       <PixelCode />
 
-      <SectionAlternate className={classes.sectionBreadcrumb}>
-        <Breadcrumb data={pixelsBreadcrumb} />
+      <SectionAlternate className={`${classes.sectionBreadcrumb} pixels-page__crumbs`}>
+        <Breadcrumb data={pixelsBreadcrumb} variant="pixels" />
       </SectionAlternate>
 
-      <Section className={classes.halfWidthSection}>
+      <Section className={`${classes.halfWidthSection} pixels-page__content`}>
         <div style={{ width: "100%", overflowX: "auto" }}>
           <ThemeProvider theme={darkTheme}>
             <CssBaseline />
 
             <Box p={2}>
-              <Typography variant="h5" gutterBottom>
+              <Typography className="pixels-section-title" variant="h5" gutterBottom>
                 Pixels Animal Drops
               </Typography>
 

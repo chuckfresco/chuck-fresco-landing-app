@@ -4,6 +4,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import { useMediaQuery, Grid, Button, Avatar } from '@material-ui/core';
 import { SectionHeader } from 'components/molecules';
+import { trackEvent } from 'utils/analytics';
 
 const useStyles = makeStyles(theme => ({
   galleryMedia: {
@@ -46,6 +47,7 @@ const Community = props => {
             color="primary"
             onClick={(e) => {
               e.preventDefault();
+              trackEvent('join_community', { platform: 'discord', link_location: 'home' });
               window.open("https://discord.gg/6Fry8jcTPk", "_blank");
               }}
           >

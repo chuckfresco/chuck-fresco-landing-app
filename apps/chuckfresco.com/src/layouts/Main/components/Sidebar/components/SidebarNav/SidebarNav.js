@@ -13,6 +13,7 @@ import {
   Button,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import { Image } from 'components/atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,8 +30,16 @@ const useStyles = makeStyles(theme => ({
   listItemIcon: {
     minWidth: 'auto',
   },
+  drawerHeader: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  drawerLogo: {
+    width: 180,
+    height: 52,
+    objectFit: 'contain',
+  },
   closeIcon: {
-    justifyContent: 'flex-end',
     cursor: 'pointer',
   },
   menu: {
@@ -115,7 +124,7 @@ const SidebarNav = props => {
 
   const SupportedPages = () => {
     const {
-      career,
+      axieInfinity,
       forgottenRuniverse,
       pixelsOnline,
       sunflowerLand,
@@ -123,7 +132,7 @@ const SidebarNav = props => {
     return (
       <div className={classes.menu}>
         <div className={classes.menuItem}>
-          <MenuGroup item={career} />
+          <MenuGroup item={axieInfinity} />
           <MenuGroup item={pixelsOnline} />
           <MenuGroup item={sunflowerLand} />
         </div>
@@ -160,8 +169,20 @@ const SidebarNav = props => {
 
   return (
     <List {...rest} className={clsx(classes.root, className)}>
-      <ListItem className={classes.closeIcon} onClick={() => onClose()}>
-        <ListItemIcon className={classes.listItemIcon}>
+      <ListItem className={classes.drawerHeader}>
+        <a href="/" title="Chuck Fresco" onClick={() => onClose()}>
+          <Image
+            className={classes.drawerLogo}
+            src="/assets/logo/chuck-fresco/chuck-fresco-logo-poke.webp"
+            alt="Chuck Fresco"
+            lazy={false}
+          />
+        </a>
+        <ListItemIcon
+          className={clsx(classes.listItemIcon, classes.closeIcon)}
+          onClick={() => onClose()}
+          aria-label="Close menu"
+        >
           <CloseIcon fontSize="small" />
         </ListItemIcon>
       </ListItem>
@@ -194,7 +215,7 @@ const SidebarNav = props => {
           variant="outlined"
           fullWidth
           component="a"
-          href="/pixels/land/inventory"
+          href="/pixels/land-inventory"
         >
           Pixels
           <img

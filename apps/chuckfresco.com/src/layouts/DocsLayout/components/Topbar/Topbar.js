@@ -20,16 +20,18 @@ const useStyles = makeStyles(theme => ({
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   logoContainer: {
-    width: 100,
+    width: 170,
     height: 28,
     [theme.breakpoints.up('md')]: {
-      width: 120,
+      width: 195,
       height: 32,
     },
   },
   logoImage: {
     width: '100%',
     height: '100%',
+    objectFit: 'contain',
+    transform: 'scale(1.5)',
   },
   navigationContainer: {
     display: 'flex',
@@ -75,7 +77,7 @@ const TopBar = ({
           <a href="/" title="Chuck Fresco">
             <Image
               className={classes.logoImage}
-              src={themeMode === 'light' ? '/assets/chuck-fresco-logo-light.svg' : '/assets/chuck-fresco-logo-dark.svg'}
+              src="/assets/logo/chuck-fresco/chuck-fresco-logo-poke.webp"
               alt="Chuck Fresco"
               lazy={false}
             />

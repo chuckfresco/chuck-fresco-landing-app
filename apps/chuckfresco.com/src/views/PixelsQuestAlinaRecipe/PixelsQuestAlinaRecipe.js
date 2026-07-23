@@ -5,6 +5,7 @@ import { Section, SectionAlternate } from 'components/organisms';
 import { Breadcrumb, PixelCode } from 'components/molecules';
 import { Hero } from './components';
 import { pixelsBreadcrumb } from 'components/molecules/Breadcrumb/data';
+import '../pixels-theme.css';
 
 const useStyles = makeStyles(theme => ({
 sectionBreadcrumb: {
@@ -16,7 +17,7 @@ sectionBreadcrumb: {
 },
 riddleSection: {
   padding: '40px 20px 0px 20px', // top/right/bottom/left
-  background: '#0c133e',
+  background: 'transparent',
   color: '#ffffff',
   fontFamily: 'monospace',
 
@@ -31,10 +32,11 @@ riddleSection: {
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     marginBottom: 20,
-    border: '1px solid #555',
-    borderRadius: 12,
+    border: '2px solid #9b7bff',
+    borderRadius: 8,
     padding: 20,
-    backgroundColor: '#1b2349',
+    backgroundColor: '#29255d',
+    boxShadow: '0 5px 0 #0b0a24, inset 0 0 0 2px rgba(255,255,255,.06)',
   },
   riddleTextBlock: {
     flex: '1 1 60%',
@@ -42,34 +44,35 @@ riddleSection: {
   },
   solutionBlock: {
     flex: '1 1 35%',
-    backgroundColor: '#111933',
+    backgroundColor: '#17143d',
     padding: 15,
     borderRadius: 8,
-    border: '1px solid #333',
+    border: '1px solid #7770af',
   },
   riddleHeader: {
     fontSize: 22,
     marginBottom: 10,
-    color: '#FFD700',
+    color: '#dfff19',
+    fontFamily: '"Pixels Kemco", monospace',
   },
   riddleText: {
     fontSize: 16,
     marginBottom: 8,
   },
   solution: {
-    color: '#90ee90',
+    color: '#8ef0b7',
     fontWeight: 'bold',
     fontSize: 16,
   },
   why: {
     fontSize: 14,
-    color: '#add8e6',
+    color: '#c9c7e8',
     marginTop: 5,
   },
   rewardSection: {
   padding: '0 !important',
   margin: '0 !important',
-  background: '#0c133e !important',
+  background: 'transparent !important',
 },
 }));
 
@@ -180,7 +183,7 @@ const PixelsQuestAlinaRecipe = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className="pixels-page">
       <Helmet>
   <title> The Alchemist’s Concoction Quest | Pixels</title>
   <meta name="description" content="Solve the riddles of Alina's lost recipe in Pixels Online. Discover each clue, its solution, and the reason behind it." />
@@ -191,8 +194,8 @@ const PixelsQuestAlinaRecipe = () => {
 <Hero />
 <PixelCode />
 
-<SectionAlternate className={classes.sectionBreadcrumb}>
-  <Breadcrumb data={pixelsBreadcrumb} />
+<SectionAlternate className={`${classes.sectionBreadcrumb} pixels-page__crumbs`}>
+  <Breadcrumb data={pixelsBreadcrumb} variant="pixels" />
 </SectionAlternate>
 
 <Section style={{ paddingTop: 0, paddingBottom: 0 }}>

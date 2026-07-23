@@ -7,27 +7,38 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+import { FaTwitch } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { gsap } from "gsap";
+import { trackEvent } from "utils/analytics";
 
 const FARM_ID = "7089202106478272";
 const snapshotUrls = [
   { type: "cheer", url: "/assets/sunflower-land/helperCheers.json" },
   { type: "help", url: "/assets/sunflower-land/helperHelps.json" }
 ];
+const contestUrl = "/assets/sunflower-land/contestStart.json";
+const updateUrl = "/assets/sunflower-land/updateHelperBanner.json";
 
 const sunflowerLogo = "/assets/sunflower-land/logo/logo_v2.png";
 const helpIcon = "/assets/sunflower-land/icons/help.png";
 const cheerIcon = "/assets/sunflower-land/icons/cheer.png";
 const searchIcon = "/assets/sunflower-land/icons/search.png";
 const lightningIcon = "/assets/sunflower-land/icons/lightning.png";
+const flowerIcon = "/assets/sunflower-land/fishing/imgi_10_Flower.png";
 const cheeringSound = "/assets/sunflower-land/sounds/fnaf-cheering.mp3";
 const farmVisitUrl = `https://sunflower-land.com/play/#/visit/${FARM_ID}`;
 const referralUrl = "https://sunflower-land.com/play/?ref=ChuckFresco";
 const DAY_MS = 24 * 60 * 60 * 1000;
 const LEADERBOARD_WINDOW_DAYS = 14;
+const DEFAULT_MINIMUM_TICKETS = 14;
+const MAXIMUM_TICKETS = 28;
 const LEADERBOARD_PAGE_SIZE = 10;
 const WHEEL_SIZE = 12;
-const ROLL_DURATION_MS = 3600;
+const ROLL_DURATION_MS = 6200;
 const WHEEL_POINTER_OFFSET = -90;
+const RANDOM_WINNER_FLOWER_REWARD = 20;
+const RANDOM_WINNER_REWARD_COUNT = 8;
 const wheelColors = ["#c95839", "#2876d5", "#f4c08a", "#b95791", "#3d5c52", "#f08a55"];
 
 const getWheelEntries = (entries, winningIndex = -1) => {
@@ -323,6 +334,58 @@ const useStyles = makeStyles(theme => ({
       color: "#2d2739"
     }
   },
+  updateBanner: {
+    width: "100%",
+    maxWidth: 1180,
+    margin: "0 auto 18px",
+    padding: "14px 16px",
+    color: "#2d2739",
+    background: "#fff0a8",
+    border: "4px solid #101018",
+    borderRadius: 12,
+    boxShadow: "inset 0 0 0 3px #ffd45c, 6px 6px 0 rgba(0,0,0,0.22)",
+    fontFamily: "'Courier New', monospace",
+    fontSize: 15,
+    fontWeight: 700,
+    lineHeight: 1.5,
+    boxSizing: "border-box",
+    [theme.breakpoints.down("xs")]: {
+      padding: "12px 13px",
+      fontSize: 14
+    }
+  },
+  updateBannerHeading: {
+    display: "flex",
+    alignItems: "center",
+    gap: 9,
+    margin: "0 0 6px",
+    fontFamily: "SmallestPixel7, 'Courier New', monospace",
+    fontSize: 23,
+    lineHeight: 1,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 20
+    }
+  },
+  updateBannerIcon: {
+    fontSize: 22,
+    lineHeight: 1
+  },
+  updateBannerText: {
+    margin: 0
+  },
+  updateBannerEmphasis: {
+    margin: "10px 0 0",
+    fontWeight: 900
+  },
+  updateBannerLink: {
+    color: "#174f96",
+    fontWeight: 900,
+    textDecoration: "underline",
+    textUnderlineOffset: 2,
+    "&:hover": {
+      color: "#0d356c"
+    }
+  },
   layout: {
     display: "grid",
     gridTemplateColumns: "minmax(0, 740px) minmax(340px, 1fr)",
@@ -482,6 +545,151 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 900,
     lineHeight: 1.35
   },
+  boardParticipantCount: {
+    margin: "-4px 0 14px",
+    fontWeight: 900,
+    lineHeight: 1.35
+  },
+  boardParticipantNumber: {
+    color: "#1f5da8",
+    marginRight: 6
+  },
+  leaderboardSearch: {
+    width: "100%",
+    height: 40,
+    margin: "0 0 12px",
+    padding: "7px 10px 7px 38px",
+    boxSizing: "border-box",
+    background: `#fff8d6 url(${searchIcon}) no-repeat 9px center / 24px 24px`,
+    border: "3px solid #101018",
+    borderRadius: 8,
+    boxShadow: "inset 0 0 0 2px #f4c08a",
+    color: "#332235",
+    font: "inherit",
+    fontSize: 15,
+    fontWeight: 900,
+    outline: 0,
+    "&::placeholder": {
+      color: "#765568",
+      opacity: 1
+    },
+    "&:focus": {
+      borderColor: "#1f5da8",
+      boxShadow: "inset 0 0 0 2px #55b6ff, 0 0 0 2px #101018"
+    }
+  },
+  rulesList: {
+    display: "grid",
+    gap: 8,
+    margin: "0 0 14px",
+    paddingLeft: 24,
+    fontWeight: 900,
+    lineHeight: 1.35
+  },
+  poolSummary: {
+    margin: "0 0 12px",
+    padding: "10px 12px",
+    background: "#fff8d6",
+    border: "3px solid #101018",
+    borderRadius: 8,
+    boxShadow: "inset 0 0 0 2px #f4c08a",
+    fontWeight: 900,
+    lineHeight: 1.35
+  },
+  contestStatus: {
+    width: "100%",
+    maxWidth: 1180,
+    margin: "0 auto 20px",
+    padding: 16,
+    background: "#fff8d6",
+    border: "4px solid #101018",
+    borderRadius: 12,
+    boxShadow: "inset 0 0 0 3px #f4c08a, 6px 6px 0 rgba(0,0,0,0.22)",
+    color: "#332235",
+    fontFamily: "'Courier New', monospace",
+    fontWeight: 900,
+    boxSizing: "border-box"
+  },
+  contestStatusTitle: {
+    display: "flex",
+    alignItems: "center",
+    gap: 7,
+    flexWrap: "wrap",
+    margin: "0 0 8px",
+    fontSize: 24,
+    lineHeight: 1.1
+  },
+  raffleFlowerIcon: {
+    width: 32,
+    height: 32,
+    imageRendering: "pixelated"
+  },
+  liveIndicator: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 6,
+    marginLeft: 8,
+    color: "#b42318",
+    fontSize: 16,
+    letterSpacing: 1
+  },
+  liveDot: {
+    width: 12,
+    height: 12,
+    background: "#e1261c",
+    border: "2px solid #7a1010",
+    borderRadius: "50%",
+    boxShadow: "0 0 0 3px rgba(225,38,28,0.18)",
+    animation: "$livePulse 1.5s ease-in-out infinite"
+  },
+  "@keyframes livePulse": {
+    "0%, 100%": { opacity: 1 },
+    "50%": { opacity: 0.45 }
+  },
+  contestCountdown: {
+    margin: "8px 0",
+    color: "#1f5da8",
+    fontSize: 22,
+    lineHeight: 1.2
+  },
+  socialButtons: {
+    display: "flex",
+    gap: 10,
+    marginTop: 12,
+    flexWrap: "wrap"
+  },
+  socialButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: 40,
+    padding: "7px 14px",
+    background: "#2876d5",
+    border: "3px solid #101018",
+    borderRadius: 8,
+    boxShadow: "inset 0 0 0 3px #55b6ff",
+    color: "#fff",
+    textDecoration: "none",
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "none",
+      filter: "brightness(1.08)"
+    }
+  },
+  socialButtonIcon: {
+    width: 20,
+    height: 20,
+    marginRight: 8,
+    flex: "0 0 auto"
+  },
+  twitchButton: {
+    background: "#9146ff",
+    boxShadow: "inset 0 0 0 3px #b889ff"
+  },
+  xButton: {
+    background: "#000",
+    boxShadow: "inset 0 0 0 3px #4a4a4a"
+  },
   leaderboardList: {
     display: "grid",
     gap: 8,
@@ -552,6 +760,62 @@ const useStyles = makeStyles(theme => ({
     lineHeight: 1.1,
     overflow: "hidden",
     textOverflow: "ellipsis",
+    whiteSpace: "nowrap"
+  },
+  leaderboardNameLink: {
+    display: "block",
+    color: "inherit",
+    textDecoration: "underline",
+    textDecorationThickness: "2px",
+    textUnderlineOffset: "2px",
+    cursor: "pointer",
+    "&:hover": {
+      color: "inherit",
+      opacity: 0.82
+    },
+    "&:focus-visible": {
+      outline: "3px solid currentColor",
+      outlineOffset: 2,
+      borderRadius: 2
+    }
+  },
+  leaderboardNameRow: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 8
+  },
+  flowerReward: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 4,
+    flex: "0 0 auto",
+    padding: "3px 7px",
+    background: "rgba(255,248,214,0.86)",
+    border: "2px solid #101018",
+    borderRadius: 7,
+    color: "#332235",
+    fontSize: 13,
+    fontWeight: 900,
+    lineHeight: 1,
+    textShadow: "none"
+  },
+  flowerRewardIcon: {
+    width: 22,
+    height: 22,
+    imageRendering: "pixelated"
+  },
+  inlineFlowerIcon: {
+    width: 20,
+    height: 20,
+    margin: "0 3px",
+    verticalAlign: "middle",
+    imageRendering: "pixelated"
+  },
+  compactFlowerReward: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 3,
     whiteSpace: "nowrap"
   },
   leaderboardStats: {
@@ -659,6 +923,11 @@ const useStyles = makeStyles(theme => ({
     whiteSpace: "nowrap",
     "&:hover": {
       filter: "brightness(1.05)"
+    },
+    "&:disabled": {
+      cursor: "not-allowed",
+      filter: "grayscale(0.45)",
+      opacity: 0.55
     }
   },
   winnerList: {
@@ -803,8 +1072,9 @@ const useStyles = makeStyles(theme => ({
     padding: 18
   },
   rollModal: {
-    width: "min(920px, 96vw)",
-    maxHeight: "94vh",
+    width: "min(1180px, 94vw)",
+    height: "min(720px, 92vh)",
+    maxHeight: "92vh",
     overflowY: "auto",
     background: "#e8ad76",
     border: "5px solid #101018",
@@ -814,11 +1084,21 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "'Courier New', monospace",
     padding: 18,
     boxSizing: "border-box",
+    display: "grid",
+    gridTemplateColumns: "minmax(420px, 0.85fr) minmax(560px, 1.15fr)",
+    columnGap: 18,
+    alignItems: "start",
+    [theme.breakpoints.down("md")]: {
+      width: "min(920px, 96vw)",
+      height: "auto",
+      display: "block"
+    },
     [theme.breakpoints.down("xs")]: {
       padding: 12
     }
   },
   rollModalHeader: {
+    gridColumn: "1 / -1",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -858,6 +1138,11 @@ const useStyles = makeStyles(theme => ({
     whiteSpace: "nowrap",
     "&:hover": {
       filter: "brightness(1.05)"
+    },
+    "&:disabled": {
+      cursor: "not-allowed",
+      filter: "grayscale(0.45)",
+      opacity: 0.55
     }
   },
   modalIconButton: {
@@ -879,13 +1164,25 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden"
   },
   modalWheelWrap: {
-    width: "min(620px, 82vw, 70vh)",
-    height: "min(620px, 82vw, 70vh)",
+    width: "min(440px, 70vw, 48vh)",
+    height: "min(440px, 70vw, 48vh)",
     margin: "0 auto",
     position: "relative"
   },
   modalWheel: {
-    boxShadow: "inset 0 0 0 7px rgba(255,248,214,0.42), 9px 9px 0 rgba(0,0,0,0.26)"
+    boxShadow: "inset 0 0 0 7px rgba(255,248,214,0.42), 9px 9px 0 rgba(0,0,0,0.26)",
+    transition: "none"
+  },
+  spinningPointer: {
+    animation: "$pointerTick 170ms ease-in-out infinite alternate"
+  },
+  "@keyframes pointerTick": {
+    from: {
+      transform: "translateX(-50%) rotate(-5deg)"
+    },
+    to: {
+      transform: "translateX(-50%) rotate(5deg)"
+    }
   },
   modalWheelCenter: {
     width: "30%",
@@ -923,6 +1220,7 @@ const useStyles = makeStyles(theme => ({
   },
   modalWinnerInfo: {
     width: "fit-content",
+    minHeight: 54,
     maxWidth: "100%",
     margin: "12px auto 0",
     padding: "9px 12px",
@@ -941,6 +1239,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 900,
     lineHeight: 1,
     textAlign: "center",
+    boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
       fontSize: 15
     }
@@ -950,6 +1249,98 @@ const useStyles = makeStyles(theme => ({
     height: 28,
     imageRendering: "pixelated",
     flex: "0 0 auto"
+  },
+  winnerHistory: {
+    marginTop: 14,
+    padding: 14,
+    background: "#fff8d6",
+    border: "4px solid #101018",
+    borderRadius: 12,
+    boxShadow: "inset 0 0 0 3px #f4c08a"
+  },
+  modalWinnerHistory: {
+    minWidth: 0,
+    maxHeight: "calc(92vh - 96px)",
+    marginTop: 0,
+    overflowY: "auto",
+    [theme.breakpoints.down("md")]: {
+      maxHeight: "none",
+      marginTop: 14,
+      overflowY: "visible"
+    }
+  },
+  winnerHistoryHeader: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+    marginBottom: 12,
+    flexWrap: "wrap"
+  },
+  winnerHistoryTitle: {
+    margin: 0,
+    color: "#332235",
+    fontFamily: "SmallestPixel7, 'Courier New', monospace",
+    fontSize: 24,
+    fontWeight: 900,
+    lineHeight: 1
+  },
+  winnerHistoryMeta: {
+    margin: "5px 0 0",
+    color: "#4a2b36",
+    fontSize: 13,
+    fontWeight: 900
+  },
+  winnerHistoryActions: {
+    display: "flex",
+    gap: 8,
+    flexWrap: "wrap"
+  },
+  clearHistoryButton: {
+    background: "#c95839",
+    boxShadow: "inset 0 0 0 3px #f08a55"
+  },
+  winnerHistoryTableWrap: {
+    overflowX: "auto",
+    border: "3px solid #101018",
+    borderRadius: 8
+  },
+  winnerHistoryTable: {
+    width: "100%",
+    minWidth: 620,
+    borderCollapse: "collapse",
+    background: "#fffdf0",
+    color: "#332235",
+    fontSize: 14,
+    fontWeight: 900,
+    "& th": {
+      padding: "9px 10px",
+      background: "#2876d5",
+      color: "#fff",
+      textAlign: "left",
+      borderBottom: "3px solid #101018"
+    },
+    "& td": {
+      padding: "9px 10px",
+      borderBottom: "2px solid #e8ad76"
+    },
+    "& tbody tr:last-child td": {
+      borderBottom: 0
+    },
+    "& tbody tr:nth-child(even)": {
+      background: "#fff2c7"
+    }
+  },
+  winnerHistoryEmpty: {
+    textAlign: "center",
+    color: "#6d5261"
+  },
+  winnerHistoryStatus: {
+    margin: "9px 0 0",
+    color: "#4a2b36",
+    fontSize: 13,
+    fontWeight: 900,
+    textAlign: "right"
   },
   rollHint: {
     margin: "10px 0 0",
@@ -1110,6 +1501,32 @@ const normalizeFeed = data => {
   ));
 };
 
+const getContestStart = payload => {
+  const value = typeof payload === "string"
+    ? payload
+    : payload && (payload.contestStart || payload.startDate || payload.start);
+  const timestamp = new Date(value).getTime();
+
+  return Number.isFinite(timestamp) ? timestamp : null;
+};
+const getContestMinimumTickets = payload => {
+  const value = Number(payload && payload.minimumTickets);
+
+  return Number.isInteger(value) && value > 0 && value <= MAXIMUM_TICKETS
+    ? value
+    : DEFAULT_MINIMUM_TICKETS;
+};
+
+const formatCountdown = milliseconds => {
+  const remainingSeconds = Math.max(0, Math.floor(milliseconds / 1000));
+  const days = Math.floor(remainingSeconds / 86400);
+  const hours = Math.floor((remainingSeconds % 86400) / 3600);
+  const minutes = Math.floor((remainingSeconds % 3600) / 60);
+  const seconds = remainingSeconds % 60;
+
+  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+};
+
 const relativeTime = timestamp => {
   const diff = Date.now() - timestamp;
   const absDiff = Math.abs(diff);
@@ -1154,11 +1571,32 @@ const formatDateTime = value => {
     timeZoneName: "short"
   });
 };
+const formatPickDateTime = value => {
+  if (!value) return "unknown";
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "unknown";
+
+  return date.toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZone: "America/Los_Angeles",
+    timeZoneName: "short"
+  });
+};
 
 const SunflowerLandHelpers = () => {
   const classes = useStyles();
   const [feed, setFeed] = useState([]);
   const [snapshotMeta, setSnapshotMeta] = useState([]);
+  const [contestStart, setContestStart] = useState(null);
+  const [minimumTickets, setMinimumTickets] = useState(DEFAULT_MINIMUM_TICKETS);
+  const [contestLoaded, setContestLoaded] = useState(false);
+  const [pageUpdate, setPageUpdate] = useState(null);
   const [activeFilter, setActiveFilter] = useState("all");
   const [loadError, setLoadError] = useState("");
   const [copyStatus, setCopyStatus] = useState("");
@@ -1169,10 +1607,17 @@ const SunflowerLandHelpers = () => {
   const [wheelRotation, setWheelRotation] = useState(0);
   const [wheelEntries, setWheelEntries] = useState([]);
   const [rollWheelEntries, setRollWheelEntries] = useState([]);
+  const [winnerHistory, setWinnerHistory] = useState([]);
+  const [winnerHistoryStatus, setWinnerHistoryStatus] = useState("");
+  const [drawnEntryIndexes, setDrawnEntryIndexes] = useState([]);
   const [leaderboardPage, setLeaderboardPage] = useState(0);
+  const [leaderboardSearch, setLeaderboardSearch] = useState("");
   const [now, setNow] = useState(() => new Date());
   const rollTimeoutRef = useRef(null);
   const rollFrameRef = useRef(null);
+  const spinTimelineRef = useRef(null);
+  const modalWheelRef = useRef(null);
+  const modalWinnerInfoRef = useRef(null);
   const audioContextRef = useRef(null);
   const cheeringAudioRef = useRef(null);
   const tickIntervalRef = useRef(null);
@@ -1182,7 +1627,8 @@ const SunflowerLandHelpers = () => {
 
     const loadFeed = async () => {
       try {
-        const snapshots = await Promise.all(snapshotUrls.map(async snapshot => {
+        const [snapshots, contestResponse] = await Promise.all([
+          Promise.all(snapshotUrls.map(async snapshot => {
           const response = await fetch(snapshot.url, { cache: "no-cache" });
           if (!response.ok) throw new Error(`Feed request failed: ${response.status}`);
 
@@ -1192,7 +1638,16 @@ const SunflowerLandHelpers = () => {
             ...snapshot,
             payload
           };
-        }));
+          })),
+          fetch(contestUrl, { cache: "no-cache" })
+        ]);
+
+        let nextContestStart = null;
+        if (contestResponse.ok) {
+          const contest = await contestResponse.json();
+          nextContestStart = getContestStart(contest);
+          if (isMounted) setMinimumTickets(getContestMinimumTickets(contest));
+        }
 
         const nextFeed = snapshots
           .flatMap(snapshot => normalizeFeed(snapshot.payload))
@@ -1203,10 +1658,13 @@ const SunflowerLandHelpers = () => {
             type: snapshot.type,
             updatedAt: getSnapshotTime(snapshot.payload)
           })));
+          setContestStart(nextContestStart);
+          setContestLoaded(true);
           setLoadError("");
         }
       } catch (error) {
         if (isMounted) {
+          setContestLoaded(true);
           setLoadError("Saved helper snapshots are unavailable. Check the public Sunflower Land JSON files.");
         }
       }
@@ -1220,10 +1678,52 @@ const SunflowerLandHelpers = () => {
   }, []);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setNow(new Date()), 60000);
+    let isMounted = true;
+
+    const loadPageUpdate = async () => {
+      try {
+        const response = await fetch(updateUrl, { cache: "no-cache" });
+        if (!response.ok) throw new Error(`Update request failed: ${response.status}`);
+
+        const update = await response.json();
+        if (isMounted && update && update.title && update.message) {
+          setPageUpdate(update);
+        }
+      } catch (error) {
+        if (isMounted) setPageUpdate(null);
+      }
+    };
+
+    loadPageUpdate();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(new Date()), 1000);
 
     return () => window.clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    if (!isRollModalOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
+    };
+  }, [isRollModalOpen]);
 
   useEffect(() => () => {
     if (rollTimeoutRef.current) {
@@ -1231,6 +1731,9 @@ const SunflowerLandHelpers = () => {
     }
     if (rollFrameRef.current) {
       window.cancelAnimationFrame(rollFrameRef.current);
+    }
+    if (spinTimelineRef.current) {
+      spinTimelineRef.current.kill();
     }
     if (tickIntervalRef.current) {
       window.clearInterval(tickIntervalRef.current);
@@ -1241,12 +1744,23 @@ const SunflowerLandHelpers = () => {
   }, []);
 
   const recentFeed = useMemo(() => {
-    const cutoff = now.getTime() - (LEADERBOARD_WINDOW_DAYS * DAY_MS);
+    if (!contestStart) return [];
+
+    const contestEnd = contestStart + (LEADERBOARD_WINDOW_DAYS * DAY_MS);
 
     return feed
-      .filter(item => Number(item.createdAt) >= cutoff)
+      .filter(item => (
+        Number(item.createdAt) >= contestStart &&
+        Number(item.createdAt) < contestEnd
+      ))
       .sort((a, b) => b.createdAt - a.createdAt);
-  }, [feed, now]);
+  }, [contestStart, feed]);
+
+  const contestEnd = contestStart
+    ? contestStart + (LEADERBOARD_WINDOW_DAYS * DAY_MS)
+    : null;
+  const contestIsUpcoming = Boolean(contestStart && now.getTime() < contestStart);
+  const contestIsActive = Boolean(contestStart && now.getTime() >= contestStart && now.getTime() < contestEnd);
 
   const stats = useMemo(() => ({
     all: recentFeed.length,
@@ -1265,11 +1779,13 @@ const SunflowerLandHelpers = () => {
       .slice()
       .sort((a, b) => Number(a.createdAt) - Number(b.createdAt))
       .forEach(item => {
-        const senderId = item.sender && item.sender.id
+        const farmId = item.sender && item.sender.id
           ? String(item.sender.id)
-          : getEntryName(item);
-        const current = players.get(senderId) || {
-          id: senderId,
+          : "";
+        const playerId = farmId || getEntryName(item);
+        const current = players.get(playerId) || {
+          id: playerId,
+          farmId,
           name: getEntryName(item),
           cheers: 0,
           helps: 0,
@@ -1286,7 +1802,7 @@ const SunflowerLandHelpers = () => {
         current.name = getEntryName(item);
         current.total = current.cheers + current.helps;
         current.reachedTotalAt = Number(item.createdAt);
-        players.set(senderId, current);
+        players.set(playerId, current);
       });
 
     return Array.from(players.values())
@@ -1305,22 +1821,83 @@ const SunflowerLandHelpers = () => {
     leaderboardPageStart,
     leaderboardPageEnd
   );
+  const normalizedLeaderboardSearch = leaderboardSearch.trim().toLocaleLowerCase();
+  const searchedLeaderboard = useMemo(() => {
+    if (!normalizedLeaderboardSearch) return [];
 
+    return leaderboard
+      .map((player, index) => ({ player, rank: index + 1 }))
+      .filter(({ player }) => player.name.toLocaleLowerCase().includes(normalizedLeaderboardSearch));
+  }, [leaderboard, normalizedLeaderboardSearch]);
+  const displayedLeaderboard = normalizedLeaderboardSearch
+    ? searchedLeaderboard
+    : pagedLeaderboard.map((player, index) => ({
+      player,
+      rank: leaderboardPageStart + index + 1
+    }));
   useEffect(() => {
     setLeaderboardPage(currentPage => Math.min(currentPage, leaderboardPageCount - 1));
   }, [leaderboardPageCount]);
 
-  const eligibleEntries = useMemo(() => (
-    recentFeed.map(getEntryName)
-  ), [recentFeed]);
+  const eligibleTicketEntries = useMemo(() => {
+    const playerEntries = new Map();
 
-  const eligibleList = eligibleEntries.join("\n");
-  const uniqueEligibleCount = useMemo(() => (
-    new Set(eligibleEntries).size
-  ), [eligibleEntries]);
-  const visibleWheelEntries = wheelEntries.length ? wheelEntries : getWheelEntries(eligibleEntries);
+    recentFeed
+      .slice()
+      .sort((a, b) => Number(a.createdAt) - Number(b.createdAt))
+      .forEach((item, originalIndex) => {
+        const senderId = item.sender && item.sender.id
+          ? String(item.sender.id)
+          : getEntryName(item);
+        const entries = playerEntries.get(senderId) || [];
+
+        if (entries.length < MAXIMUM_TICKETS) {
+          entries.push({
+            item,
+            originalIndex,
+            name: getEntryName(item),
+            senderId
+          });
+          playerEntries.set(senderId, entries);
+        }
+      });
+
+    return Array.from(playerEntries.values())
+      .filter(entries => entries.length >= minimumTickets)
+      .flat();
+  }, [minimumTickets, recentFeed]);
+
+  const eligibleEntries = useMemo(() => (
+    eligibleTicketEntries.map(entry => entry.name)
+  ), [eligibleTicketEntries]);
+
+  const remainingRollEntries = useMemo(() => {
+    const drawnPlayerIds = new Set(drawnEntryIndexes);
+
+    return eligibleTicketEntries.filter(entry => !drawnPlayerIds.has(entry.senderId));
+  }, [drawnEntryIndexes, eligibleTicketEntries]);
+  const remainingRollNames = useMemo(() => (
+    remainingRollEntries.map(entry => entry.name)
+  ), [remainingRollEntries]);
+  const eligibleList = remainingRollNames.join("\n");
+  const uniqueRemainingCount = useMemo(() => (
+    new Set(remainingRollNames).size
+  ), [remainingRollNames]);
+  const groupedEligibleList = useMemo(() => {
+    const ticketCounts = new Map();
+
+    remainingRollNames.forEach(name => {
+      ticketCounts.set(name, (ticketCounts.get(name) || 0) + 1);
+    });
+
+    return Array.from(ticketCounts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .map(([name, count]) => `${name} × ${count} ${count === 1 ? "entry" : "entries"}`)
+      .join("\n");
+  }, [remainingRollNames]);
+  const visibleWheelEntries = wheelEntries.length ? wheelEntries : getWheelEntries(remainingRollNames);
   const wheelBackground = getWheelBackground(visibleWheelEntries.length);
-  const visibleRollWheelEntries = rollWheelEntries.length ? rollWheelEntries : getAllWheelEntries(eligibleEntries);
+  const visibleRollWheelEntries = rollWheelEntries.length ? rollWheelEntries : getAllWheelEntries(remainingRollNames);
   const rollWheelBackground = getWheelBackground(visibleRollWheelEntries.length);
 
   const copyEligibleList = async () => {
@@ -1328,7 +1905,11 @@ const SunflowerLandHelpers = () => {
 
     try {
       await navigator.clipboard.writeText(eligibleList);
-      setCopyStatus("Copied");
+      trackEvent("copy_eligible_list", {
+        tool_name: "sunflower_land_helpers",
+        entry_count: remainingRollEntries.length
+      });
+      setCopyStatus(`Copied all ${remainingRollEntries.length} eligible tickets`);
     } catch (error) {
       setCopyStatus("Select the list to copy");
     }
@@ -1366,8 +1947,8 @@ const SunflowerLandHelpers = () => {
     });
   };
 
-  const startRollSound = () => {
-    if (!audioContextRef.current) {
+  const startRollSound = async () => {
+    if (!audioContextRef.current || audioContextRef.current.state === "closed") {
       audioContextRef.current = getAudioContext();
     }
 
@@ -1375,8 +1956,14 @@ const SunflowerLandHelpers = () => {
     if (!audioContext) return;
 
     if (audioContext.state === "suspended") {
-      audioContext.resume();
+      try {
+        await audioContext.resume();
+      } catch (error) {
+        return;
+      }
     }
+
+    if (audioContext.state !== "running") return;
 
     stopRollSound();
     if (cheeringAudioRef.current) {
@@ -1385,11 +1972,11 @@ const SunflowerLandHelpers = () => {
     }
 
     let tick = 0;
-    playTone(audioContext, 420, 0.045, 0.055);
+    playTone(audioContext, 420, 0.055, 0.19);
     tickIntervalRef.current = window.setInterval(() => {
       const progress = tick / 18;
       const frequency = 520 + (tick % 4) * 55 - progress * 120;
-      playTone(audioContext, Math.max(260, frequency), 0.035, 0.045);
+      playTone(audioContext, Math.max(260, frequency), 0.045, 0.17);
       tick += 1;
     }, 170);
   };
@@ -1414,19 +2001,96 @@ const SunflowerLandHelpers = () => {
     }, 360);
   };
 
-  const rollWinner = () => {
-    if (!eligibleEntries.length || isRolling) return;
+  const launchWinnerFlowers = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const winningIndex = Math.floor(Math.random() * eligibleEntries.length);
-    const nextWheelEntries = getWheelEntries(eligibleEntries, winningIndex);
-    const nextRollWheelEntries = getAllWheelEntries(eligibleEntries);
-    const nextRotation = wheelRotation + (360 * 5) + Math.random() * 360;
+    const flowerBurst = document.createElement("div");
+    flowerBurst.setAttribute("aria-hidden", "true");
+    Object.assign(flowerBurst.style, {
+      position: "fixed",
+      inset: "0",
+      zIndex: "1600",
+      pointerEvents: "none",
+      overflow: "hidden"
+    });
+    document.body.appendChild(flowerBurst);
+
+    Array.from({ length: 52 }).forEach((_, index) => {
+      const flower = document.createElement("img");
+      const size = gsap.utils.random(18, 38, 1);
+      flower.src = flowerIcon;
+      flower.alt = "";
+      Object.assign(flower.style, {
+        position: "absolute",
+        left: "50%",
+        top: "42%",
+        width: `${size}px`,
+        height: `${size}px`,
+        imageRendering: "pixelated",
+        willChange: "transform, opacity"
+      });
+      flowerBurst.appendChild(flower);
+
+      const delay = gsap.utils.random(0, 0.28);
+      const burstX = gsap.utils.random(-560, 560);
+      const burstY = gsap.utils.random(-330, 180);
+      const rotation = gsap.utils.random(-540, 540);
+
+      gsap.fromTo(
+        flower,
+        { x: 0, y: 0, scale: 0, rotation: index % 2 ? -45 : 45, opacity: 1 },
+        {
+          x: burstX,
+          y: burstY,
+          scale: gsap.utils.random(0.8, 1.45),
+          rotation,
+          duration: gsap.utils.random(0.85, 1.25),
+          delay,
+          ease: "power3.out"
+        }
+      );
+      gsap.to(flower, {
+        y: burstY + gsap.utils.random(420, 720),
+        rotation: rotation + gsap.utils.random(-360, 360),
+        opacity: 0,
+        duration: gsap.utils.random(1.5, 2.2),
+        delay: delay + 0.9,
+        ease: "power1.in"
+      });
+    });
+
+    window.setTimeout(() => {
+      flowerBurst.remove();
+    }, 3500);
+  };
+
+  const rollWinner = () => {
+    if (!remainingRollEntries.length || isRolling || winnerHistory.length >= RANDOM_WINNER_REWARD_COUNT) return;
+    trackEvent("roll_giveaway_winner", {
+      tool_name: "sunflower_land_helpers",
+      entry_count: remainingRollEntries.length,
+      unique_entry_count: new Set(remainingRollNames).size
+    });
+
+    const winningIndex = Math.floor(Math.random() * remainingRollEntries.length);
+    const winningPoolEntry = remainingRollEntries[winningIndex];
+    const nextWheelEntries = getWheelEntries(remainingRollNames, winningIndex);
+    const nextRollWheelEntries = getAllWheelEntries(remainingRollNames);
+    const segmentAngle = 360 / remainingRollEntries.length;
+    const targetAngle = -((winningIndex + 0.5) * segmentAngle);
+    const currentNormalizedRotation = ((wheelRotation % 360) + 360) % 360;
+    const targetNormalizedRotation = ((targetAngle % 360) + 360) % 360;
+    const landingDelta = (targetNormalizedRotation - currentNormalizedRotation + 360) % 360;
+    const nextRotation = wheelRotation + (360 * 8) + landingDelta;
 
     if (rollTimeoutRef.current) {
       window.clearTimeout(rollTimeoutRef.current);
     }
     if (rollFrameRef.current) {
       window.cancelAnimationFrame(rollFrameRef.current);
+    }
+    if (spinTimelineRef.current) {
+      spinTimelineRef.current.kill();
     }
 
     setWheelEntries(nextWheelEntries);
@@ -1436,26 +2100,122 @@ const SunflowerLandHelpers = () => {
     setIsRollModalOpen(true);
     rollFrameRef.current = window.requestAnimationFrame(() => {
       rollFrameRef.current = window.requestAnimationFrame(() => {
-        setWheelRotation(nextRotation);
+        if (modalWheelRef.current) {
+          gsap.set(modalWheelRef.current, { rotation: wheelRotation });
+          spinTimelineRef.current = gsap.timeline({
+            onComplete: () => {
+              setWheelRotation(nextRotation);
+              spinTimelineRef.current = null;
+            }
+          });
+          spinTimelineRef.current
+            .to(modalWheelRef.current, {
+              rotation: wheelRotation - 12,
+              duration: 0.22,
+              ease: "power2.out"
+            })
+            .to(modalWheelRef.current, {
+              rotation: wheelRotation + 38,
+              duration: 0.18,
+              ease: "power2.in"
+            })
+            .to(modalWheelRef.current, {
+              rotation: nextRotation,
+              duration: (ROLL_DURATION_MS - 400) / 1000,
+              ease: "power4.out"
+            });
+        } else {
+          setWheelRotation(nextRotation);
+        }
         rollFrameRef.current = null;
       });
     });
     startRollSound();
 
     rollTimeoutRef.current = window.setTimeout(() => {
-      const winningEntry = recentFeed[winningIndex];
+      const winningEntry = winningPoolEntry.item;
+      const winnerName = winningPoolEntry.name;
+      const winnerTicketCount = remainingRollEntries.filter(entry => (
+        entry.senderId === winningPoolEntry.senderId
+      )).length;
+      const pickedAt = new Date().toISOString();
 
       setWinner({
-        name: eligibleEntries[winningIndex],
-        entry: winningIndex + 1,
-        total: eligibleEntries.length,
+        name: winnerName,
+        entry: winningPoolEntry.originalIndex + 1,
+        total: eligibleTicketEntries.length,
         type: winningEntry && winningEntry.type,
         action: getEntryActionLabel(winningEntry && winningEntry.type),
         createdAt: winningEntry && winningEntry.createdAt
       });
+      setWinnerHistory(history => {
+        const reward = history.length < RANDOM_WINNER_REWARD_COUNT
+          ? RANDOM_WINNER_FLOWER_REWARD
+          : 0;
+
+        return [
+          ...history,
+          {
+            id: `${pickedAt}-${winningIndex}`,
+            name: winnerName,
+            farmId: winningPoolEntry.senderId,
+            pickedAt,
+            ticketCount: winnerTicketCount,
+            totalTickets: remainingRollEntries.length,
+            reward
+          }
+        ];
+      });
+      setDrawnEntryIndexes(playerIds => [...playerIds, winningPoolEntry.senderId]);
+      setWinnerHistoryStatus("");
       setIsRolling(false);
       playWinnerSound();
+      launchWinnerFlowers();
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          if (modalWinnerInfoRef.current) {
+            gsap.fromTo(
+              modalWinnerInfoRef.current,
+              { scale: 0.68, opacity: 0, y: 12 },
+              { scale: 1, opacity: 1, y: 0, duration: 0.65, ease: "back.out(1.9)" }
+            );
+          }
+        });
+      });
     }, ROLL_DURATION_MS + 180);
+  };
+
+  const copyWinnerHistory = async () => {
+    if (!winnerHistory.length) return;
+
+    const historyText = JSON.stringify({
+      contestStart: new Date(contestStart).toISOString(),
+      contestEnd: new Date(contestEnd).toISOString(),
+      drawnAt: new Date().toISOString(),
+      winners: winnerHistory.map(result => ({
+        farmId: result.farmId,
+        username: result.name,
+        tickets: result.ticketCount,
+        prize: result.reward,
+        pickedAt: result.pickedAt
+      }))
+    });
+
+    try {
+      await navigator.clipboard.writeText(historyText);
+      setWinnerHistoryStatus(`Copied ${winnerHistory.length} ${winnerHistory.length === 1 ? "winner" : "winners"} — paste into scripts/sunflower-land/add-raffle-winners.command`);
+    } catch (error) {
+      setWinnerHistoryStatus("Unable to copy winner history");
+    }
+  };
+
+  const clearWinnerHistory = () => {
+    setWinnerHistory([]);
+    setDrawnEntryIndexes([]);
+    setWheelEntries([]);
+    setRollWheelEntries([]);
+    setWinner(null);
+    setWinnerHistoryStatus("Winner history cleared and all tickets restored");
   };
 
   const wheelCenterText = isRolling
@@ -1499,7 +2259,7 @@ const SunflowerLandHelpers = () => {
           <div className={classes.heroCopy}>
             <h1 className={classes.heroTitle}>Sunflower Land Helpers</h1>
             <p className={classes.heroSubtitle}>
-              Track helpers, cheerers, 14-day entries, and random winner rolls for Chuck Fresco's farm.
+              Every cheer and help can earn a ticket in Chuck Fresco's two-week community raffle.
             </p>
           </div>
           <div className={classes.heroLogoPanel}>
@@ -1528,17 +2288,106 @@ const SunflowerLandHelpers = () => {
       <nav className={classes.sunflowerNav} aria-label="Sunflower Land pages">
         <Link
           className={`${classes.sunflowerNavLink} ${classes.activeSunflowerNavLink}`}
-          to="/sunflower-land/helpers"
+          to="/sfl/helpers"
         >
           Leaderboard
         </Link>
+        <Link className={classes.sunflowerNavLink} to="/sfl/helpers/winners">
+          Winners
+        </Link>
         <Link
           className={classes.sunflowerNavLink}
-          to="/sunflower-land/tools/fishing"
+          to="/sfl/fishing"
         >
           Fishing
         </Link>
+        <Link className={classes.sunflowerNavLink} to="/sfl/fish-market">
+          Fish Market
+        </Link>
+        <Link className={classes.sunflowerNavLink} to="/sfl/crops">
+          Crops
+        </Link>
       </nav>
+
+      {pageUpdate && (
+        <aside
+          className={classes.updateBanner}
+          aria-labelledby="helpers-page-update-title"
+        >
+          <h2 id="helpers-page-update-title" className={classes.updateBannerHeading}>
+            <span className={classes.updateBannerIcon} aria-hidden="true">⚠</span>
+            {pageUpdate.title}
+          </h2>
+          <p className={classes.updateBannerText}>
+            {pageUpdate.message}
+            {pageUpdate.linkUrl && pageUpdate.linkText && (
+              <>
+                {" "}
+                <a
+                  className={classes.updateBannerLink}
+                  href={pageUpdate.linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {pageUpdate.linkText}
+                </a>
+              </>
+            )}
+          </p>
+          {Array.isArray(pageUpdate.emphasizedMessages) && pageUpdate.emphasizedMessages.map(message => (
+            <p className={classes.updateBannerEmphasis} key={message}>
+              <strong>{message}</strong>
+            </p>
+          ))}
+        </aside>
+      )}
+
+      <section className={classes.contestStatus} aria-live="polite">
+        <h2 className={classes.contestStatusTitle}>
+          160
+          <img src={flowerIcon} alt="Flower" className={classes.raffleFlowerIcon} />
+          FLOWER Raffle
+          {contestIsActive && (
+            <span className={classes.liveIndicator}>
+              <span className={classes.liveDot} aria-hidden="true" />
+              LIVE
+            </span>
+          )}
+        </h2>
+        {!contestIsActive && (
+          <p className={classes.boardMeta}>
+            {contestIsUpcoming ? "Next raffle starts soon." : "Contest is on break — stay tuned!"}
+          </p>
+        )}
+        {!contestLoaded && <p>Checking the contest schedule...</p>}
+        {contestStart && (
+          <p>
+            Contest window: {formatDateTime(contestStart)} through {formatDateTime(contestEnd)}.
+          </p>
+        )}
+        {contestIsActive && (
+          <p className={classes.contestCountdown}>Drawing in {formatCountdown(contestEnd - now.getTime())}</p>
+        )}
+        {contestIsUpcoming && (
+          <p className={classes.contestCountdown}>Starts in {formatCountdown(contestStart - now.getTime())}</p>
+        )}
+        <p>
+          Reward drawings are announced every Thursday at 7:00 PM Pacific. Tune in to see the winners.
+        </p>
+        <div className={classes.socialButtons}>
+          <a className={`${classes.socialButton} ${classes.twitchButton}`} href="https://twitch.tv/chuckfresco" target="_blank" rel="noopener noreferrer">
+            <FaTwitch className={classes.socialButtonIcon} aria-hidden="true" />
+            Follow on Twitch
+          </a>
+          <a className={`${classes.socialButton} ${classes.xButton}`} href="https://twitter.com/intent/follow?screen_name=chuckfresco" target="_blank" rel="noopener noreferrer">
+            <FaXTwitter className={classes.socialButtonIcon} aria-hidden="true" />
+            Follow on X
+          </a>
+          <Link className={classes.socialButton} to="/sfl/helpers/winners">
+            View Past Winners
+          </Link>
+        </div>
+      </section>
 
       {isRollModalOpen && (
         <div
@@ -1582,8 +2431,12 @@ const SunflowerLandHelpers = () => {
 
             <div className={classes.modalWheelStage} aria-live="polite">
               <div className={classes.modalWheelWrap}>
-                <div className={classes.wheelPointer} aria-hidden="true" />
                 <div
+                  className={`${classes.wheelPointer} ${isRolling ? classes.spinningPointer : ""}`}
+                  aria-hidden="true"
+                />
+                <div
+                  ref={modalWheelRef}
                   className={`${classes.wheel} ${classes.modalWheel}`}
                   style={{
                     background: rollWheelBackground,
@@ -1594,7 +2447,7 @@ const SunflowerLandHelpers = () => {
                   type="button"
                   className={`${classes.wheelCenter} ${classes.modalWheelCenter}`}
                   onClick={rollWinner}
-                  disabled={!eligibleEntries.length || isRolling}
+                  disabled={!remainingRollEntries.length || isRolling || winnerHistory.length >= RANDOM_WINNER_REWARD_COUNT}
                   aria-label={winner ? "Reroll winner" : "Roll winner"}
                 >
                   {wheelCenterText}
@@ -1607,19 +2460,105 @@ const SunflowerLandHelpers = () => {
                     ? `${winner.name} is entry #${winner.entry}.`
                     : "Ready to roll a random winner."}
               </p>
-              {winner && !isRolling && (
-                <div className={classes.modalWinnerInfo}>
-                  <img
-                    src={winner.type === "cheer" ? cheerIcon : helpIcon}
-                    alt=""
-                    className={classes.modalWinnerIcon}
-                  />
-                  <span>Entry #{winner.entry}</span>
-                  <span>{winner.action}</span>
-                  <span>{formatDateTime(winner.createdAt)}</span>
-                </div>
-              )}
+              <div
+                ref={modalWinnerInfoRef}
+                className={classes.modalWinnerInfo}
+                style={{ visibility: winner && !isRolling ? "visible" : "hidden" }}
+                aria-hidden={!winner || isRolling}
+              >
+                {winner && !isRolling ? (
+                  <>
+                    <img
+                      src={winner.type === "cheer" ? cheerIcon : helpIcon}
+                      alt=""
+                      className={classes.modalWinnerIcon}
+                    />
+                    <span>Entry #{winner.entry}</span>
+                    <span>{winner.action}</span>
+                    <span>{formatDateTime(winner.createdAt)}</span>
+                  </>
+                ) : (
+                  <span>Winner pending</span>
+                )}
+              </div>
             </div>
+
+            <section className={`${classes.winnerHistory} ${classes.modalWinnerHistory}`} aria-label="Winner history">
+              <div className={classes.winnerHistoryHeader}>
+                <div>
+                  <h3 className={classes.winnerHistoryTitle}>Winners Picked</h3>
+                  <p className={classes.winnerHistoryMeta}>
+                    {winnerHistory.length} of 8 winners picked • {remainingRollEntries.length} eligible tickets remaining • Every winner receives 20
+                    <img src={flowerIcon} alt="Flower" className={classes.inlineFlowerIcon} />
+                    FLOWER
+                  </p>
+                </div>
+                <div className={classes.winnerHistoryActions}>
+                  <button
+                    type="button"
+                    className={classes.modalCloseButton}
+                    onClick={copyWinnerHistory}
+                    disabled={winnerHistory.length !== RANDOM_WINNER_REWARD_COUNT}
+                  >
+                    Copy 8 winners
+                  </button>
+                  <button
+                    type="button"
+                    className={`${classes.modalCloseButton} ${classes.clearHistoryButton}`}
+                    onClick={clearWinnerHistory}
+                    disabled={!winnerHistory.length}
+                  >
+                    Refresh / Clear
+                  </button>
+                </div>
+              </div>
+
+              <div className={classes.winnerHistoryTableWrap}>
+                <table className={classes.winnerHistoryTable}>
+                  <thead>
+                    <tr>
+                      <th>Pick</th>
+                      <th>Winner</th>
+                      <th>Reward</th>
+                      <th>Picked at</th>
+                      <th>Odds</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {winnerHistory.map((result, index) => {
+                      const oddsPercent = ((result.ticketCount / result.totalTickets) * 100).toFixed(2);
+
+                      return (
+                        <tr key={result.id}>
+                          <td>#{index + 1}</td>
+                          <td>{result.name}</td>
+                          <td>
+                            {result.reward ? (
+                              <span className={classes.compactFlowerReward}>
+                                {result.reward}
+                                <img src={flowerIcon} alt="Flower" className={classes.inlineFlowerIcon} />
+                              </span>
+                            ) : "—"}
+                          </td>
+                          <td>{formatPickDateTime(result.pickedAt)}</td>
+                          <td>{result.ticketCount}/{result.totalTickets} ({oddsPercent}%)</td>
+                        </tr>
+                      );
+                    })}
+                    {!winnerHistory.length && (
+                      <tr>
+                        <td colSpan={5} className={classes.winnerHistoryEmpty}>
+                          Roll the wheel to begin the winner list.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+              {winnerHistoryStatus && (
+                <p className={classes.winnerHistoryStatus}>{winnerHistoryStatus}</p>
+              )}
+            </section>
           </div>
         </div>
       )}
@@ -1711,11 +2650,22 @@ const SunflowerLandHelpers = () => {
               <h2 className={classes.panelTitle}>Top Helpers</h2>
             </div>
             <p className={classes.boardMeta}>
-              Rankings use cheers + helps from the last 14 days. Ties go to whoever reached the total first.
+              <strong>Cheers + helps earn you a ticket into the raffle. Prizes are drawn randomly.</strong>
             </p>
+            <p className={classes.boardParticipantCount}>
+              <span className={classes.boardParticipantNumber}>{leaderboard.length.toLocaleString()}</span>
+              {leaderboard.length === 1 ? "Participant" : "Participants"}
+            </p>
+            <input
+              type="search"
+              className={classes.leaderboardSearch}
+              value={leaderboardSearch}
+              onChange={event => setLeaderboardSearch(event.target.value)}
+              placeholder="Find your player name"
+              aria-label="Search Top Helpers by player name"
+            />
             <ol className={classes.leaderboardList}>
-              {pagedLeaderboard.map((player, index) => {
-                const rank = leaderboardPageStart + index + 1;
+              {displayedLeaderboard.map(({ player, rank }) => {
                 const rankClass = rank === 1
                   ? classes.goldRank
                   : rank === 2
@@ -1750,7 +2700,21 @@ const SunflowerLandHelpers = () => {
                       {getOrdinal(rank)}
                     </span>
                     <div>
-                      <div className={classes.leaderboardName}>{player.name}</div>
+                      <div className={classes.leaderboardNameRow}>
+                        {player.farmId ? (
+                          <a
+                            className={`${classes.leaderboardName} ${classes.leaderboardNameLink}`}
+                            href={`https://sunflower-land.com/play/#/visit/${encodeURIComponent(player.farmId)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`Visit ${player.name}'s farm`}
+                          >
+                            {player.name}
+                          </a>
+                        ) : (
+                          <div className={classes.leaderboardName}>{player.name}</div>
+                        )}
+                      </div>
                       <div className={`${classes.leaderboardStats} ${statsClass}`}>
                         <span className={classes.leaderboardStat}>
                           <img src={cheerIcon} alt="" className={classes.leaderboardIcon} />
@@ -1769,28 +2733,34 @@ const SunflowerLandHelpers = () => {
             </ol>
 
             {!leaderboard.length && (
-              <div className={classes.empty}>No 14-day helpers yet.</div>
+              <div className={classes.empty}>No contest activity yet.</div>
             )}
 
-            {leaderboard.length > LEADERBOARD_PAGE_SIZE && (
+            {normalizedLeaderboardSearch && leaderboard.length > 0 && !searchedLeaderboard.length && (
+              <div className={classes.empty} role="status">No player found for “{leaderboardSearch.trim()}”.</div>
+            )}
+
+            {leaderboard.length > 0 && (
               <div className={classes.leaderboardPagination}>
                 <button
                   type="button"
                   className={classes.leaderboardPageButton}
                   onClick={() => setLeaderboardPage(page => Math.max(0, page - 1))}
-                  disabled={safeLeaderboardPage === 0}
+                  disabled={Boolean(normalizedLeaderboardSearch) || safeLeaderboardPage === 0}
                   aria-label="Show previous leaderboard page"
                 >
                   <ChevronLeftIcon className={classes.leaderboardPageIcon} aria-hidden="true" />
                 </button>
                 <div className={classes.leaderboardPageMeta}>
-                  Page {safeLeaderboardPage + 1} of {leaderboardPageCount} - showing {leaderboardPageStart + 1}-{leaderboardPageEnd} of {leaderboard.length}
+                  {normalizedLeaderboardSearch
+                    ? `${searchedLeaderboard.length} ${searchedLeaderboard.length === 1 ? "match" : "matches"} - overall ranks shown`
+                    : `Page ${safeLeaderboardPage + 1} of ${leaderboardPageCount} - showing ${leaderboardPageStart + 1}-${leaderboardPageEnd} of ${leaderboard.length}`}
                 </div>
                 <button
                   type="button"
                   className={classes.leaderboardPageButton}
                   onClick={() => setLeaderboardPage(page => Math.min(leaderboardPageCount - 1, page + 1))}
-                  disabled={safeLeaderboardPage >= leaderboardPageCount - 1}
+                  disabled={Boolean(normalizedLeaderboardSearch) || safeLeaderboardPage >= leaderboardPageCount - 1}
                   aria-label="Show next leaderboard page"
                 >
                   <ChevronRightIcon className={classes.leaderboardPageIcon} aria-hidden="true" />
@@ -1809,18 +2779,30 @@ const SunflowerLandHelpers = () => {
               onClick={copyEligibleList}
               disabled={!eligibleEntries.length}
             >
-              Copy
+              Copy all {remainingRollEntries.length}
             </button>
           </div>
-          <p className={classes.boardMeta}>
-            Last 7 days: {eligibleEntries.length} entries from {uniqueEligibleCount} players.
-          </p>
+          <div className={classes.poolSummary}>
+            Current pool: {remainingRollEntries.length} eligible tickets from {uniqueRemainingCount} players.
+          </div>
+          <ul className={classes.rulesList}>
+            <li>Every cheer and help earns one raffle ticket.</li>
+            <li>Each player can earn up to 28 tickets.</li>
+            <li>You need at least {minimumTickets} tickets to qualify.</li>
+            <li>
+              Eight random winners receive 20
+              <img src={flowerIcon} alt="Flower" className={classes.inlineFlowerIcon} />
+              FLOWER each (160 total).
+            </li>
+            <li>After a player wins, all of their remaining tickets are removed—they can only win once per drawing.</li>
+            <li>More tickets improve your odds, but even a perfect 28 never guarantees a prize.</li>
+          </ul>
           <textarea
             className={classes.winnerList}
             readOnly
-            value={eligibleList}
-            aria-label="Eligible winner entries"
-            placeholder="No eligible entries this week."
+            value={groupedEligibleList}
+            aria-label={`${uniqueRemainingCount} random-roll players grouped by eligible ticket count`}
+            placeholder={`No players have reached ${minimumTickets} contest tickets yet.`}
           />
           {copyStatus && <p className={classes.boardMeta}>{copyStatus}</p>}
 
@@ -1863,9 +2845,9 @@ const SunflowerLandHelpers = () => {
               type="button"
               className={classes.rollButton}
               onClick={rollWinner}
-              disabled={!eligibleEntries.length || isRolling}
+              disabled={!remainingRollEntries.length || isRolling || winnerHistory.length >= RANDOM_WINNER_REWARD_COUNT}
             >
-              {isRolling ? "Rolling..." : "Random Roll"}
+              {isRolling ? "Rolling..." : winnerHistory.length >= RANDOM_WINNER_REWARD_COUNT ? "All 8 winners picked" : remainingRollEntries.length ? "Random Roll" : "No tickets remaining"}
             </button>
             {winner && (
               <div className={classes.winnerCard}>
@@ -1884,6 +2866,73 @@ const SunflowerLandHelpers = () => {
                   <span>Entry time: {formatDateTime(winner.createdAt)}</span>
                 </div>
               </div>
+            )}
+            {winnerHistory.length > 0 && !isRollModalOpen && (
+              <section className={classes.winnerHistory} aria-label="Winner history outside roll modal">
+                <div className={classes.winnerHistoryHeader}>
+                  <div>
+                    <h3 className={classes.winnerHistoryTitle}>Winners Picked</h3>
+                    <p className={classes.winnerHistoryMeta}>
+                      Saved after closing the roll window • {winnerHistory.length} {winnerHistory.length === 1 ? "winner" : "winners"} • {remainingRollEntries.length} eligible tickets remaining
+                    </p>
+                  </div>
+                  <div className={classes.winnerHistoryActions}>
+                    <button
+                      type="button"
+                      className={classes.copyButton}
+                      onClick={copyWinnerHistory}
+                      disabled={winnerHistory.length !== RANDOM_WINNER_REWARD_COUNT}
+                    >
+                      Copy 8 winners
+                    </button>
+                    <button
+                      type="button"
+                      className={`${classes.copyButton} ${classes.clearHistoryButton}`}
+                      onClick={clearWinnerHistory}
+                    >
+                      Refresh / Clear
+                    </button>
+                  </div>
+                </div>
+                <div className={classes.winnerHistoryTableWrap}>
+                  <table className={classes.winnerHistoryTable}>
+                    <thead>
+                      <tr>
+                        <th>Pick</th>
+                        <th>Winner</th>
+                        <th>Reward</th>
+                        <th>Picked at</th>
+                        <th>Odds</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {winnerHistory.map((result, index) => {
+                        const oddsPercent = ((result.ticketCount / result.totalTickets) * 100).toFixed(2);
+
+                        return (
+                          <tr key={`summary-${result.id}`}>
+                            <td>#{index + 1}</td>
+                            <td>{result.name}</td>
+                            <td>
+                              {result.reward ? (
+                                <span className={classes.compactFlowerReward}>
+                                  {result.reward}
+                                  <img src={flowerIcon} alt="Flower" className={classes.inlineFlowerIcon} />
+                                </span>
+                              ) : "—"}
+                            </td>
+                            <td>{formatPickDateTime(result.pickedAt)}</td>
+                            <td>{result.ticketCount}/{result.totalTickets} ({oddsPercent}%)</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+                {winnerHistoryStatus && (
+                  <p className={classes.winnerHistoryStatus}>{winnerHistoryStatus}</p>
+                )}
+              </section>
             )}
           </div>
         </section>

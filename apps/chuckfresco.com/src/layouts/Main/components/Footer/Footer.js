@@ -36,12 +36,13 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 0,
   },
   logoContainer: {
-    width: 120,
-    height: 32,
+    width: 195,
+    height: 52,
   },
   logoImage: {
     width: '100%',
     height: '100%',
+    objectFit: 'contain',
   },
   groupTitle: {
     textTransform: 'uppercase',
@@ -148,14 +149,14 @@ const Footer = props => {
 */
   const SupportedPages = () => {
     const {
-      career,
+      axieInfinity,
       pixelsOnline,
       sunflowerLand,
       contact,
     } = supportedPages.children;
 
     const footerGroups = [
-      career,
+      axieInfinity,
       pixelsOnline,
       sunflowerLand,
       contact,
@@ -198,7 +199,7 @@ const Footer = props => {
                   <a href="/" title="Chuck Fresco">
                     <Image
                       className={classes.logoImage}
-                      src="/assets/chuck-fresco-logo-dark.svg"
+                      src="/assets/logo/chuck-fresco/chuck-fresco-logo-poke.webp"
                       alt="Chuck Fresco"
                       lazy={false}
                     />
@@ -206,13 +207,34 @@ const Footer = props => {
                 </div>
               </ListItem>
               <ListItem disableGutters>
-                <IconButton className={classes.socialIcon}>
+                <IconButton
+                  className={classes.socialIcon}
+                  component="a"
+                  href="https://www.facebook.com/chuckfrescoofficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chuck Fresco on Facebook"
+                >
                   <FacebookIcon className={classes.icon} />
                 </IconButton>
-                <IconButton className={classes.socialIcon}>
+                <IconButton
+                  className={classes.socialIcon}
+                  component="a"
+                  href="https://www.instagram.com/chuckfresco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chuck Fresco on Instagram"
+                >
                   <InstagramIcon className={classes.icon} />
                 </IconButton>
-                <IconButton className={classes.socialIcon}>
+                <IconButton
+                  className={classes.socialIcon}
+                  component="a"
+                  href="https://x.com/chuckfresco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chuck Fresco on X"
+                >
                   <TwitterIcon className={classes.icon} />
                 </IconButton>
               </ListItem>
