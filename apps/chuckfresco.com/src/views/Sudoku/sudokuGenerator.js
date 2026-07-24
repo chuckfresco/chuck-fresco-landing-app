@@ -1,6 +1,12 @@
 const SIZE = 9;
 const BOX_SIZE = 3;
 
+const CLUES_BY_DIFFICULTY = {
+  easy: 45,
+  medium: 37,
+  hard: 30,
+};
+
 const shuffled = values => {
   const result = [...values];
   for (let index = result.length - 1; index > 0; index -= 1) {
@@ -70,13 +76,13 @@ const countSolutions = (board, limit = 2) => {
   return solutions;
 };
 
-export const generateEasySudoku = () => {
+export const generateSudoku = (difficulty = 'easy') => {
   const solution = Array.from({ length: SIZE }, () => Array(SIZE).fill(0));
   fillBoard(solution);
 
   const puzzle = solution.map(row => [...row]);
   const cells = shuffled(Array.from({ length: SIZE * SIZE }, (_, index) => index));
-  const targetClues = 45;
+  const targetClues = CLUES_BY_DIFFICULTY[difficulty] || CLUES_BY_DIFFICULTY.easy;
   let clues = SIZE * SIZE;
 
   for (const cell of cells) {
@@ -93,5 +99,7 @@ export const generateEasySudoku = () => {
     }
   }
 
-  return { puzzle, solution };
+  return { puzzle, solution, difficulty };
 };
+
+export const generateEasySudoku = () => generateSudoku('easy');

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { generateEasySudoku } from './sudokuGenerator';
+import { generateSudoku } from './sudokuGenerator';
 import './styles.css';
 
 const SudokuGrid = ({ board, answer = false, puzzle = null, reveal = false }) => (
@@ -29,13 +29,19 @@ const SudokuGrid = ({ board, answer = false, puzzle = null, reveal = false }) =>
 );
 
 const Sudoku = () => {
-  const [game, setGame] = useState(() => generateEasySudoku());
+  const [difficulty, setDifficulty] = useState('easy');
+  const [game, setGame] = useState(() => generateSudoku('easy'));
   const [showAnswer, setShowAnswer] = useState(false);
 
-  const generatePuzzle = () => {
-    setGame(generateEasySudoku());
+  const generatePuzzle = (nextDifficulty = difficulty) => {
+    setGame(generateSudoku(nextDifficulty));
     setShowAnswer(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const chooseDifficulty = nextDifficulty => {
+    setDifficulty(nextDifficulty);
+    generatePuzzle(nextDifficulty);
   };
 
   return (
@@ -57,8 +63,25 @@ const Sudoku = () => {
           reveal={showAnswer}
         />
 
+        <div className="sudoku-difficulty" aria-label="Choose puzzle difficulty">
+          <p className="sudoku-difficulty__label">Choose difficulty</p>
+          <div className="sudoku-difficulty__buttons">
+            {['easy', 'medium', 'hard'].map(level => (
+              <button
+                className={`sudoku-button sudoku-difficulty__button${difficulty === level ? ' is-selected' : ''}`}
+                type="button"
+                aria-pressed={difficulty === level}
+                onClick={() => chooseDifficulty(level)}
+                key={level}
+              >
+                {level === 'medium' ? 'Medium' : `${level.charAt(0).toUpperCase()}${level.slice(1)}`}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="sudoku-actions" aria-label="Puzzle controls">
-          <button className="sudoku-button sudoku-button--primary" type="button" onClick={generatePuzzle}>
+          <button className="sudoku-button sudoku-button--primary" type="button" onClick={() => generatePuzzle()}>
             Generate a new puzzle
           </button>
           <button className="sudoku-button" type="button" onClick={() => setShowAnswer(value => !value)} aria-expanded={showAnswer}>

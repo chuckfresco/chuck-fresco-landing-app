@@ -1,579 +1,9 @@
 {
-  "snapshotAt": "2026-07-24T14:17:06.729Z",
-  "cutoffAt": "2026-07-10T14:17:06.729Z",
+  "snapshotAt": "2026-07-23T16:36:40.432Z",
+  "cutoffAt": "2026-07-09T16:36:40.432Z",
   "farmId": "7089202106478272",
   "data": {
     "feed": [
-      {
-        "sender": {
-          "id": 161993,
-          "username": "Doutrinador"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784901411637,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 7916,
-          "username": "DeccoMx"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784888119167,
-        "type": "help",
-        "helpedThemToday": true,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 360233372467312,
-          "username": "GensSan"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784883559212,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 4449952455535262,
-          "username": "Daissy"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784879517078,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 4658669956176666,
-          "username": "XENKICKS"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784874854369,
-        "type": "help",
-        "helpedThemToday": true,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 6759139735185269,
-          "username": "Strigidae"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784872441313,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 8262474607690709,
-          "username": "Dengmonyo"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784871832483,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 8176901532524302,
-          "username": "LordRamsay"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784868663893,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 963622366873365,
-          "username": "J1H23"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784867865118,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 2338880577238443,
-          "username": "voidbringer1"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784867007556,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 4093295209305481,
-          "username": "Hossainn"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784865942880,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 31448819785882,
-          "username": "JimJohnson"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784865119854,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 197333,
-          "username": "Freako"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784865078938,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 5028784802774209,
-          "username": "Zzzel16"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784863986109,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 6826774918530594,
-          "username": "Sumac"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784860799658,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 8257454033560179,
-          "username": "Yrras15"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784860668882,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 162318,
-          "username": "sTyLz"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784860647708,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 8329230747654942,
-          "username": "Deadsouz"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784860543233,
-        "type": "help",
-        "helpedThemToday": true,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 1173345032152403,
-          "username": "wisp"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784859137022,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 501,
-          "username": "S01"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784858150722,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 3594027126663809,
-          "username": "Barfad"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784857567248,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 8789744907843808,
-          "username": "Kartoshkin"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784857411962,
-        "type": "help",
-        "helpedThemToday": true,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 4275065523435590,
-          "username": "KaizerpedYGG"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784856925613,
-        "type": "help",
-        "helpedThemToday": true,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 4315637996448218,
-          "username": "AZelane"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784855810707,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 5845356377159265,
-          "username": "ZamaZ"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784855243974,
-        "type": "help",
-        "helpedThemToday": true,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 6368874181631564,
-          "username": "Dann22k"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784854726880,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 7950066368677649,
-          "username": "Swarden"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784853287651,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 5535,
-          "username": "kEnX"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784852948634,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 11416929743053,
-          "username": "TrshClr"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784852476909,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 953336145877245,
-          "username": "totomeg"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784852389722,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 4816385058511524,
-          "username": "Jassifarm"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784851996633,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 7038932958773016,
-          "username": "Fleura"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784848203181,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 759107768074437,
-          "username": "rubyjane"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784847386981,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 197333,
-          "username": "Freako"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784845211130,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 8176901532524302,
-          "username": "LordRamsay"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784844390459,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 14355,
-          "username": "mineko"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784836594661,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 6762600878166043,
-          "username": "Dicots"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784829955984,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
-      {
-        "sender": {
-          "id": 161993,
-          "username": "Doutrinador"
-        },
-        "recipient": {
-          "id": 7089202106478272,
-          "username": "ChuckFresco"
-        },
-        "message": "Helped your farm!",
-        "createdAt": 1784828141332,
-        "type": "help",
-        "helpedThemToday": false,
-        "cheeredThemToday": false
-      },
       {
         "sender": {
           "id": 8918336470197143,
@@ -676,7 +106,7 @@
         "message": "Helped your farm!",
         "createdAt": 1784798748452,
         "type": "help",
-        "helpedThemToday": false,
+        "helpedThemToday": true,
         "cheeredThemToday": false
       },
       {
@@ -796,7 +226,7 @@
         "message": "Helped your farm!",
         "createdAt": 1784780646567,
         "type": "help",
-        "helpedThemToday": false,
+        "helpedThemToday": true,
         "cheeredThemToday": false
       },
       {
@@ -811,7 +241,7 @@
         "message": "Helped your farm!",
         "createdAt": 1784776964553,
         "type": "help",
-        "helpedThemToday": false,
+        "helpedThemToday": true,
         "cheeredThemToday": false
       },
       {
@@ -1036,7 +466,7 @@
         "message": "Helped your farm!",
         "createdAt": 1784766633106,
         "type": "help",
-        "helpedThemToday": false,
+        "helpedThemToday": true,
         "cheeredThemToday": false
       },
       {
@@ -1066,7 +496,7 @@
         "message": "Helped your farm!",
         "createdAt": 1784766095697,
         "type": "help",
-        "helpedThemToday": false,
+        "helpedThemToday": true,
         "cheeredThemToday": false
       },
       {
@@ -1126,7 +556,7 @@
         "message": "Helped your farm!",
         "createdAt": 1784765031165,
         "type": "help",
-        "helpedThemToday": false,
+        "helpedThemToday": true,
         "cheeredThemToday": false
       },
       {
@@ -1141,7 +571,7 @@
         "message": "Helped your farm!",
         "createdAt": 1784764865852,
         "type": "help",
-        "helpedThemToday": false,
+        "helpedThemToday": true,
         "cheeredThemToday": false
       },
       {
@@ -4785,6 +4215,96 @@
         },
         "message": "Helped your farm!",
         "createdAt": 1783697718398,
+        "type": "help",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4658669956176666,
+          "username": "XENKICKS"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783671516111,
+        "type": "help",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 7916,
+          "username": "DeccoMx"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783668593651,
+        "type": "help",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 8789744907843808,
+          "username": "Kartoshkin"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783650936238,
+        "type": "help",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 4275065523435590,
+          "username": "KaizerpedYGG"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783648100690,
+        "type": "help",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 1535751335847024,
+          "username": "shynice"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783646613426,
+        "type": "help",
+        "helpedThemToday": false,
+        "cheeredThemToday": false
+      },
+      {
+        "sender": {
+          "id": 5845356377159265,
+          "username": "ZamaZ"
+        },
+        "recipient": {
+          "id": 7089202106478272,
+          "username": "ChuckFresco"
+        },
+        "message": "Helped your farm!",
+        "createdAt": 1783642812083,
         "type": "help",
         "helpedThemToday": false,
         "cheeredThemToday": false
