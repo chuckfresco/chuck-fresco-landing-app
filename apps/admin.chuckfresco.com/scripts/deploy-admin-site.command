@@ -8,6 +8,16 @@ S3_TARGET="s3://admin.chuckfresco.com"
 CLOUDFRONT_DISTRIBUTION_ID="E133IZNQQ1EXLJ"
 CLOUDFRONT_PATH="/*"
 
+pause_on_error() {
+  local exit_status=$?
+  if (( exit_status != 0 )); then
+    echo
+    echo "The admin deployment stopped because of the error shown above."
+    read -k 1 "?Press any key to close..."
+  fi
+}
+trap pause_on_error EXIT
+
 echo "Building the admin.chuckfresco.com UI..."
 echo
 
@@ -15,15 +25,11 @@ cd "$ADMIN_SITE_DIR"
 
 if ! command -v npm >/dev/null 2>&1; then
   echo "ERROR: npm was not found. Install Node/npm first, then try again."
-  echo
-  read -k 1 "?Press any key to close..."
   exit 1
 fi
 
 if ! command -v aws >/dev/null 2>&1; then
   echo "ERROR: AWS CLI was not found. Install it first, then try again."
-  echo
-  read -k 1 "?Press any key to close..."
   exit 1
 fi
 
@@ -35,8 +41,6 @@ if [ -n "$ENV_FILES_FOUND" ]; then
   echo
   echo "ERROR: Refusing to upload because env files were found in the build folder:"
   echo "$ENV_FILES_FOUND"
-  echo
-  read -k 1 "?Press any key to close..."
   exit 1
 fi
 

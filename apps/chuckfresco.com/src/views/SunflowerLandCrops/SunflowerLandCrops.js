@@ -1,20 +1,16 @@
+import SunflowerPageHeader from "../../components/SunflowerPageHeader";
 import React, { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import { getSunflowerSeasonClock } from "../../utils/sunflowerSeason";
 
 const asset = name => encodeURI(`/assets/sunflower-land/fishing/${name}`);
 const seasonAssetPath = "/assets/sunflower-land/seasons";
-const sunflowerLogo = "/assets/sunflower-land/logo/logo_v2.png";
-const lightningIcon = "/assets/sunflower-land/icons/lightning.png";
 const cropMachineIcon = "/assets/sunflower-land/crops/crop-machine.webp";
 const lavaPitIcon = "/assets/sunflower-land/crops/lava-pit.webp";
 const animalFeedIcon = "/assets/sunflower-land/crops/cow-sfl.webp";
 const composterAsset = name => `/assets/sunflower-land/crops/${name}`;
 const cropAsset = name => encodeURI(`/assets/sunflower-land/crops/${name}`);
-const referralUrl = "https://sunflower-land.com/play/?ref=ChuckFresco";
 
 const images = {
   Sunflower: asset("imgi_45_Sunflower.png"), Potato: asset("imgi_55_Potato.png"), Rhubarb: asset("imgi_48_Rhubarb.png"),
@@ -134,10 +130,10 @@ const useStyles = makeStyles(theme => ({
   heroSubtitle: { color: "#fff8d6", maxWidth: 710, font: "900 18px/1.35 'Courier New',monospace", margin: "12px 0 0" },
   logoPanel: { flex: "0 0 auto", background: "#e8ad76", border: "5px solid #101018", borderRadius: 14, boxShadow: "inset 0 0 0 4px #f8d29b,8px 8px 0 rgba(0,0,0,.24)", padding: "18px 22px", transform: "rotate(1.5deg)", [theme.breakpoints.down("sm")]: { transform: "none" } },
   logo: { width: 280, maxWidth: "62vw", display: "block", imageRendering: "pixelated" },
-  referral: { width: "calc(100% + 24px)", margin: "-5px -12px 0", padding: "7px 16px 9px", backgroundColor: "#b95791", borderTop: "4px solid #1d1730", borderRight: "5px solid #4c2b67", borderBottom: "5px solid #4c2b67", borderLeft: "4px solid #fb6f8c", boxShadow: "inset 0 4px 0 #f78ab2,inset 0 -4px 0 #f16383", display: "flex", alignItems: "center", justifyContent: "center", gap: 10, flexWrap: "wrap" },
+  referral: { width: "calc(100% + 24px)", margin: "-5px -12px 0", padding: "3px 16px 5px", backgroundColor: "#b95791", borderTop: "3px solid #1d1730", borderRight: "4px solid #4c2b67", borderBottom: "4px solid #4c2b67", borderLeft: "3px solid #fb6f8c", boxShadow: "inset 0 2px 0 #f78ab2,inset 0 -2px 0 #f16383", display: "flex", alignItems: "center", justifyContent: "center", gap: 10, flexWrap: "wrap" },
   referralIcon: { width: 16, height: 22, imageRendering: "pixelated" },
   referralText: { color: "#fff4ff", fontFamily: "SmallestPixel7,monospace", fontSize: 18, fontWeight: 900, textShadow: "2px 2px 0 rgba(43,28,64,.65)" },
-  referralLink: { display: "inline-flex", alignItems: "center", gap: 7, padding: "4px 12px", color: "#2d2739", background: "#d8def2", border: "3px solid #12162a", boxShadow: "4px 4px 0 #f5f3ef,0 5px 0 #12162a", fontFamily: "SmallestPixel7,monospace", fontSize: 22, textDecoration: "none", "&:hover": { color: "#2d2739", textDecoration: "none", transform: "translate(2px,2px)" } },
+  referralLink: { display: "inline-flex", alignItems: "center", gap: 7, minHeight: 25, padding: "2px 10px", color: "#2d2739", background: "#d8def2", border: "3px solid #12162a", boxShadow: "4px 4px 0 #f5f3ef,0 5px 0 #12162a", fontFamily: "SmallestPixel7,monospace", fontSize: 22, textDecoration: "none", "&:hover": { color: "#2d2739", textDecoration: "none", transform: "translate(2px,2px)" } },
   referralLinkIcon: { width: 17, height: 17 },
   nav: { width: "calc(100% + 24px)", margin: "0 -12px 18px", padding: "8px 12px", borderBottom: "4px solid #101018", display: "flex", justifyContent: "center", gap: 8, flexWrap: "wrap" },
   navLink: { minHeight: 32, display: "inline-flex", alignItems: "center", color: "#fff8d6", background: "#1f5da8", border: "3px solid #101018", borderRadius: 8, font: "900 18px/1 SmallestPixel7,'Courier New',monospace", padding: "4px 12px", textDecoration: "none", "&:hover": { color: "#fff8d6", textDecoration: "none", filter: "brightness(1.08)" } },
@@ -260,9 +256,7 @@ const SunflowerLandCrops = () => {
       <link rel="canonical" href="https://chuckfresco.com/sfl/crops" />
       <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", name: "Sunflower Land Crops by Season & Lava Pit Guide", url: "https://chuckfresco.com/sfl/crops", description: "Seasonal crop availability, regular crop timers, animal feed priorities, and Lava Pit requirements for Sunflower Land.", about: { "@type": "VideoGame", name: "Sunflower Land" } })}</script>
     </Helmet>
-    <header className={classes.hero}><div className={classes.heroInner}><div><h1 className={classes.heroTitle}>Sunflower Land Crops</h1><p className={classes.heroSubtitle}>Know what to plant each season, protect your animal feed, and finish the Lava Pit stockpile before the season changes.</p></div><div className={classes.logoPanel}><img src={sunflowerLogo} alt="Sunflower Land" className={classes.logo} /></div></div></header>
-    <div className={classes.referral}><img src={lightningIcon} alt="" className={classes.referralIcon} /><span className={classes.referralText}>If you'd like to support me, use my referral code:</span><a className={classes.referralLink} href={referralUrl} target="_blank" rel="noopener noreferrer">ChuckFresco<OpenInNewIcon className={classes.referralLinkIcon} aria-hidden="true" /></a></div>
-    <nav className={classes.nav} aria-label="Sunflower Land pages"><Link className={classes.navLink} to="/sfl/helpers">Leaderboard</Link><Link className={classes.navLink} to="/sfl/fishing">Fishing</Link><Link className={classes.navLink} to="/sfl/fish-market">Fish Market</Link><Link className={`${classes.navLink} ${classes.activeNav}`} to="/sfl/crops">Crops</Link></nav>
+    <SunflowerPageHeader title="Sunflower Land Crops" description="Know what to plant each season, protect your animal feed, and finish the Lava Pit stockpile before the season changes." active="crops" />
     <main className={classes.shell}>
       <section className={classes.panel} aria-labelledby="season-plan-title"><div className={classes.panelHeader}><h2 className={classes.title} id="season-plan-title">What to craft this season</h2><p className={classes.intro}>Lava Pit Priority comes first, followed by grouped animal feed, then Advanced, Medium, and Basic crops. Within each tier, Lava Pit crops come first. Stopwatch values are the regular crop timers.</p></div>
         <nav className={classes.tabs} aria-label="Crop season">{seasons.map(season => <button type="button" key={season.id} className={`${classes.tab} ${activeSeason === season.id ? classes.activeTab : ""}`} style={activeSeason === season.id ? { background: season.color, boxShadow: `inset 0 0 0 3px ${season.shadow}` } : undefined} onClick={() => setActiveSeason(season.id)} aria-pressed={activeSeason === season.id}><img src={season.icon} alt="" className={classes.seasonIcon} />{season.label}</button>)}<label className={classes.seasonFilter}><input className={classes.seasonCheckbox} type="checkbox" checked={singleSeasonOnly} onChange={event => setSingleSeasonOnly(event.target.checked)} />Single-season crops only</label></nav>

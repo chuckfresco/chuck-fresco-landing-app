@@ -169,7 +169,8 @@
     "nftTraits": [
       "Large Land",
       "Small House",
-      "Coop"
+      "Coop",
+      "Windmill"
     ],
     "boosts": [],
     "resources": [
@@ -472,7 +473,8 @@
     "nftTraits": [
       "Large Land",
       "Large House",
-      "Silo"
+      "Silo",
+      "Windmill"
     ],
     "boosts": [],
     "resources": [

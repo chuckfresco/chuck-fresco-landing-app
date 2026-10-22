@@ -1,3 +1,4 @@
+import SunflowerLandHelpersLegacy from "./views/SunflowerLandHelpers/SunflowerLandHelpersLegacy";
 /**
  * Caution: Consider this file when using react-scripts
  * 
@@ -52,8 +53,10 @@ import {
   SunflowerLandHelpers as SunflowerLandHelpersView,
   SunflowerLandWinners as SunflowerLandWinnersView,
   SunflowerLandFishing as SunflowerLandFishingView,
+  SunflowerLandFlowers as SunflowerLandFlowersView,
   SunflowerLandFishMarket as SunflowerLandFishMarketView,
   SunflowerLandCrops as SunflowerLandCropsView,
+  SunflowerLandSkills as SunflowerLandSkillsView,
   AxieCollection as AxieCollectionView,
   AxieDom as AxieDomView,
   AxieDomStrategy as AxieDomStrategyView,
@@ -90,6 +93,7 @@ import {
 const Routes = () => {
   return (
     <Switch>
+      <Redirect exact from="/soduku" to="/sudoku" />
       <Route exact path="/sudoku" component={SudokuView} />
       <Route
         exact
@@ -180,6 +184,9 @@ const Routes = () => {
           />
         )}
       />
+      <Route exact path="/sfl/helpers/legacy" render={matchProps => (
+        <WithLayout {...matchProps} component={SunflowerLandHelpersLegacy} layout={MainLayout} />
+      )} />
       <Route
         exact
         path="/sfl/helpers/winners"
@@ -189,6 +196,13 @@ const Routes = () => {
             component={SunflowerLandWinnersView}
             layout={MainLayout}
           />
+        )}
+      />
+      <Route
+        exact
+        path="/sfl/flowers"
+        render={matchProps => (
+          <WithLayout {...matchProps} component={SunflowerLandFlowersView} layout={MainLayout} />
         )}
       />
       <Route
@@ -214,6 +228,13 @@ const Routes = () => {
         path="/sfl/crops"
         render={matchProps => (
           <WithLayout {...matchProps} component={SunflowerLandCropsView} layout={MainLayout} />
+        )}
+      />
+      <Route
+        exact
+        path="/sfl/skills"
+        render={matchProps => (
+          <WithLayout {...matchProps} component={SunflowerLandSkillsView} layout={MainLayout} />
         )}
       />
       <Route

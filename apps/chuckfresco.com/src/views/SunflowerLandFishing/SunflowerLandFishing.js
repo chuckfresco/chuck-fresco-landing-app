@@ -1,15 +1,13 @@
+import SunflowerPageHeader from "../../components/SunflowerPageHeader";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import { formatSeasonCountdown, getSunflowerSeasonClock } from "../../utils/sunflowerSeason";
 
 const FARM_ID = "7089202106478272";
 const sunflowerLogo = "/assets/sunflower-land/logo/logo_v2.png";
 const searchIcon = "/assets/sunflower-land/icons/search.png";
-const lightningIcon = "/assets/sunflower-land/icons/lightning.png";
-const referralUrl = "https://sunflower-land.com/play/?ref=ChuckFresco";
 const farmVisitUrl = `https://sunflower-land.com/play/#/visit/${FARM_ID}`;
 const fishingAssetPath = "/assets/sunflower-land/fishing";
 const seasonAssetPath = "/assets/sunflower-land/seasons";
@@ -34,10 +32,9 @@ const itemImages = {
   Clownfish: asset("imgi_86_Clownfish.png"),
   Cobia: asset("imgi_113_Cobia.png"),
   Coelacanth: asset("imgi_131_Coelacanth.png"),
+  Crocodile: asset("crocodile.webp"),
   Crab: asset("imgi_54_Crab.png"),
-  "Crystal Shrimp": asset("imgi_119_Crystal Shrimp.png"),
-  "Deep Sea Pig": asset("imgi_121_Deep Sea Pig.png"),
-  "Deep Sea Slug": asset("imgi_120_Deep Sea Slug.png"),
+  "Dumbo Octopus": asset("dumbo-octopus.webp"),
   Earthworm: asset("imgi_37_Earthworm.png"),
   Egg: asset("imgi_39_Egg.png"),
   "Crab Stick": asset("imgi_102_Crab Stick.png"),
@@ -78,6 +75,7 @@ const itemImages = {
   "Rock Blackfish": asset("imgi_126_Rock Blackfish.png"),
   "Sea Bass": asset("imgi_122_Sea Bass.png"),
   "Sea Horse": asset("imgi_87_Sea Horse.png"),
+  "Seahorse Dad": asset("seahorse-dad.webp"),
   Seaweed: asset("imgi_52_Seaweed.png"),
   "Saw Shark": asset("imgi_109_Saw Shark.png"),
   "Speed Chicken": asset("imgi_110_Speed Chicken.png"),
@@ -433,27 +431,27 @@ const marvels = [
     ]
   },
   {
-    name: "Deep Sea Pig",
-    requirement: "Salt Awakening",
+    name: "Crocodile",
+    requirement: "Ascension Age",
     mapSources: [
-      { fish: "Sunfish", chance: "0.5%" },
-      { fish: "Coelacanth", chance: "0.5%" }
+      { fish: "Red Snapper", chance: "0.5%" },
+      { fish: "Moray Eel", chance: "1.5%" }
     ]
   },
   {
-    name: "Deep Sea Slug",
-    requirement: "Salt Awakening",
+    name: "Dumbo Octopus",
+    requirement: "Ascension Age",
     mapSources: [
-      { fish: "Surgeonfish", chance: "0.1%" },
-      { fish: "Barred Knifejaw", chance: "1%" }
+      { fish: "Olive Flounder", chance: "0.5%" },
+      { fish: "Napoleanfish", chance: "0.5%" }
     ]
   },
   {
-    name: "Crystal Shrimp",
-    requirement: "Salt Awakening",
+    name: "Seahorse Dad",
+    requirement: "Ascension Age",
     mapSources: [
-      { fish: "Tuna", chance: "0.8%" },
-      { fish: "Sea Bass", chance: "3%" }
+      { fish: "Angelfish", chance: "0.1%" },
+      { fish: "Porgy", chance: "1.0%" }
     ]
   }
 ].map(marvel => ({
@@ -561,13 +559,13 @@ const useStyles = makeStyles(theme => ({
   referral: {
     width: "calc(100% + 24px)",
     margin: "-5px -12px 0",
-    padding: "7px 16px 9px",
+    padding: "3px 16px 5px",
     backgroundColor: "#b95791",
-    borderTop: "4px solid #1d1730",
-    borderRight: "5px solid #4c2b67",
-    borderBottom: "5px solid #4c2b67",
-    borderLeft: "4px solid #fb6f8c",
-    boxShadow: "inset 0 4px 0 #f78ab2, inset 0 -4px 0 #f16383",
+    borderTop: "3px solid #1d1730",
+    borderRight: "4px solid #4c2b67",
+    borderBottom: "4px solid #4c2b67",
+    borderLeft: "3px solid #fb6f8c",
+    boxShadow: "inset 0 2px 0 #f78ab2, inset 0 -2px 0 #f16383",
     position: "relative",
     zIndex: 1,
     display: "flex",
@@ -577,7 +575,7 @@ const useStyles = makeStyles(theme => ({
     flexWrap: "wrap",
     [theme.breakpoints.down("xs")]: {
       justifyContent: "flex-start",
-      padding: "7px 12px 9px",
+      padding: "3px 12px 5px",
       gap: 8
     }
   },
@@ -606,8 +604,8 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     justifyContent: "center",
     gap: 7,
-    minHeight: 28,
-    padding: "4px 12px",
+    minHeight: 25,
+    padding: "2px 10px",
     color: "#2d2739",
     backgroundColor: "#d8def2",
     border: "3px solid #12162a",
@@ -1147,9 +1145,10 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 900,
     boxShadow: "inset 0 0 0 3px rgba(255,255,255,0.35)"
   },
-  saltBadge: {
-    background: "#e93652",
-    color: "#fff8d6"
+  ascensionBadge: {
+    background: "#7148bd",
+    color: "#fff8d6",
+    boxShadow: "inset 0 0 0 3px #a98be0"
   },
   sourceGrid: {
     display: "grid",
@@ -1168,6 +1167,12 @@ const useStyles = makeStyles(theme => ({
     boxShadow: "inset 0 0 0 3px #f4c08a",
     padding: "9px 10px"
   },
+  sourceHeader: {
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    gap: 10
+  },
   activeSource: {
     background: "#178f5a",
     color: "#fff",
@@ -1180,6 +1185,18 @@ const useStyles = makeStyles(theme => ({
     fontSize: 18,
     fontWeight: 900,
     lineHeight: 1.1
+  },
+  sourceChance: {
+    flex: "0 0 auto",
+    fontFamily: "SmallestPixel7, 'Courier New', monospace",
+    fontSize: 30,
+    fontWeight: 900,
+    lineHeight: 1,
+    letterSpacing: 1,
+    textShadow: "2px 2px 0 rgba(16,16,24,0.2)",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 26
+    }
   },
   fishIcon: {
     width: 28,
@@ -1937,60 +1954,7 @@ const SunflowerLandFishing = () => {
         />
       </Helmet>
 
-      <header className={classes.hero}>
-        <div className={classes.heroInner}>
-          <div className={classes.heroCopy}>
-            <h1 className={classes.heroTitle}>Sunflower Land Fishing</h1>
-            <p className={classes.heroSubtitle}>
-              Search a season to see which Marvel map pieces are farmable, which fish drop them, and how many pieces you need.
-            </p>
-          </div>
-          <div className={classes.heroLogoPanel}>
-            <img src={sunflowerLogo} alt="Sunflower Land" className={classes.heroLogo} />
-          </div>
-        </div>
-      </header>
-
-      <div className={classes.referral}>
-        <img src={lightningIcon} alt="" className={classes.referralIcon} />
-        <span className={classes.referralText}>
-          If you'd like to support me, use my referral code:
-        </span>
-        <a
-          className={classes.referralLink}
-          href={referralUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Use referral code ChuckFresco"
-        >
-          ChuckFresco
-          <OpenInNewIcon className={classes.referralLinkIcon} aria-hidden="true" />
-        </a>
-      </div>
-
-      <nav className={classes.sunflowerNav} aria-label="Sunflower Land pages">
-        <Link
-          className={classes.sunflowerNavLink}
-          to="/sfl/helpers"
-        >
-          Leaderboard
-        </Link>
-        <Link
-          className={`${classes.sunflowerNavLink} ${classes.activeSunflowerNavLink}`}
-          to="/sfl/fishing"
-        >
-          Fishing
-        </Link>
-        <Link
-          className={classes.sunflowerNavLink}
-          to="/sfl/fish-market"
-        >
-          Fish Market
-        </Link>
-        <Link className={classes.sunflowerNavLink} to="/sfl/crops">
-          Crops
-        </Link>
-      </nav>
+      <SunflowerPageHeader title="Sunflower Land Fishing" description="Search a season to see which Marvel map pieces are farmable, which fish drop them, and how many pieces you need." active="fishing" />
 
       <main className={classes.shell}>
         <div className={`${classes.layout} ${showSingleSeasonFish ? classes.focusedFishLayout : ""}`}>
@@ -2167,7 +2131,7 @@ const SunflowerLandFishing = () => {
                         <div className={classes.marvelControls}>
                           <span className={classes.badge}>9 pieces</span>
                           {marvel.requirement && (
-                            <span className={`${classes.badge} ${classes.saltBadge}`}>
+                            <span className={`${classes.badge} ${classes.ascensionBadge}`}>
                               {marvel.requirement}
                             </span>
                           )}
@@ -2192,12 +2156,17 @@ const SunflowerLandFishing = () => {
                               className={`${classes.source} ${active ? classes.activeSource : ""}`}
                               key={`${marvel.name}-${source.fish}`}
                             >
-                              <span className={classes.sourceName}>
-                                {source.image && (
-                                  <img src={source.image} alt="" className={classes.fishIcon} />
-                                )}
-                                {active ? "Farm" : "Off season"} {source.fish}
-                              </span>
+                              <div className={classes.sourceHeader}>
+                                <span className={classes.sourceName}>
+                                  {source.image && (
+                                    <img src={source.image} alt="" className={classes.fishIcon} />
+                                  )}
+                                  {active ? "Farm" : "Off season"} {source.fish}
+                                </span>
+                                <span className={classes.sourceChance} aria-label={`Map chance ${source.chance}`}>
+                                  {source.chance}
+                                </span>
+                              </div>
                               <div className={classes.sourceMeta}>
                                 <span>Map chance {source.chance}</span>
                                 <span>For {marvel.name}</span>

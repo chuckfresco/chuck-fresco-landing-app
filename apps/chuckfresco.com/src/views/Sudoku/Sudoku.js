@@ -47,13 +47,13 @@ const Sudoku = () => {
   return (
     <main className="sudoku-page">
       <Helmet>
-        <title>Angie Soduku</title>
+        <title>Angie Sudoku</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <section className="sudoku-sheet sudoku-sheet--puzzle" aria-labelledby="sudoku-title">
         <header className="sudoku-header">
-          <h1 id="sudoku-title">Angie Soduku</h1>
+          <h1 id="sudoku-title">Angie Sudoku</h1>
           <p className="sudoku-instructions">Fill each row, column, and outlined box with the numbers 1 through 9.</p>
         </header>
 
@@ -66,7 +66,7 @@ const Sudoku = () => {
         <div className="sudoku-difficulty" aria-label="Choose puzzle difficulty">
           <p className="sudoku-difficulty__label">Choose difficulty</p>
           <div className="sudoku-difficulty__buttons">
-            {['easy', 'medium', 'hard'].map(level => (
+            {['easy', 'medium', 'hard', 'expert'].map(level => (
               <button
                 className={`sudoku-button sudoku-difficulty__button${difficulty === level ? ' is-selected' : ''}`}
                 type="button"
@@ -95,7 +95,7 @@ const Sudoku = () => {
 
       <section className={`sudoku-sheet sudoku-sheet--answer${showAnswer ? ' is-visible' : ''}`} aria-labelledby="answer-title">
         <header className="sudoku-header">
-          <p className="sudoku-kicker">Angie Soduku</p>
+          <p className="sudoku-kicker">Angie Sudoku</p>
           <h2 id="answer-title">Answer Key</h2>
           <p className="sudoku-instructions">Bold, underlined numbers are the answers that fill the blank squares.</p>
         </header>

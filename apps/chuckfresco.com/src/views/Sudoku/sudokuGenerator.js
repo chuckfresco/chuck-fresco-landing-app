@@ -5,6 +5,7 @@ const CLUES_BY_DIFFICULTY = {
   easy: 45,
   medium: 37,
   hard: 30,
+  expert: 24,
 };
 
 const shuffled = values => {

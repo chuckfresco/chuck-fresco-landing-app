@@ -8,9 +8,10 @@
   "/pixels/land/inventory": ["Pixels Land Inventory", "Search and review land inventory, resources, animals, and stations in Pixels Online.", "pixels-land-inventory.jpg", "/pixels/land-inventory"],
   "/pixels/land-inventory/v1": ["Pixels Land Inventory", "Search and review land inventory, resources, animals, and stations in Pixels Online.", "pixels-land-inventory.jpg", "/pixels/land-inventory"],
   "/pixels/land/inventory/v1": ["Pixels Land Inventory", "Search and review land inventory, resources, animals, and stations in Pixels Online.", "pixels-land-inventory.jpg", "/pixels/land-inventory"],
-  "/sfl/helpers": ["Sunflower Land Helpers", "Find active helpers and connect with the Sunflower Land community.", "sunflower-helpers.jpg"],
+  "/sfl/helpers": ["Monthly Sunflower Land Helpers", "Track monthly helps and daily helping streaks for ChuckFresco’s farm. Join #sflgiveaway on X.", "sunflower-helpers.jpg"],
   "/sfl/helpers/winners": ["Sunflower Land Raffle Winners", "See current and past winners of the Sunflower Land FLOWER raffle.", "sunflower-helpers.jpg"],
-  "/sfl/helps": ["Sunflower Land Helpers", "Find active helpers and connect with the Sunflower Land community.", "sunflower-helpers.jpg", "/sfl/helpers"],
+  "/sfl/helps": ["Monthly Sunflower Land Helpers", "Track monthly helps and daily helping streaks for ChuckFresco’s farm. Join #sflgiveaway on X.", "sunflower-helpers.jpg", "/sfl/helpers"],
+  "/sfl/flowers": ["Sunflower Land Flowers & Gifting", "Find flower seeds, growing recipes, favorite Bumpkins, and gifting rewards in Sunflower Land.", "sunflower-helpers.jpg"],
   "/sfl/fishing": ["Sunflower Land Fishing Tools", "Plan fishing resources, catches, and rewards in Sunflower Land.", "sunflower-fishing.jpg"],
   "/sfl/tools/fishing": ["Sunflower Land Fishing Tools", "Plan fishing resources, catches, and rewards in Sunflower Land.", "sunflower-fishing.jpg", "/sfl/fishing"],
   "/sfl/fish-market": ["Sunflower Land Fish Market Recipes & Bait Guide", "Compare seasonal Fish Market recipes, guaranteed bait catches, Marine Marvel map-piece strategies, fish aging, and Bumpkin XP boosts.", "sunflower-fish-market.png"],
@@ -30,5 +31,6 @@
   "/runiverse/animations/": ["Forgotten Runiverse Animations", "Explore character and creature animations from Forgotten Runiverse.", "runiverse-animations.jpg", "/runiverse/animations"],
   "/runiverse/resources": ["Forgotten Runiverse Resources", "Search resources, materials, and items in Forgotten Runiverse.", "runiverse-resources.jpg"],
   "/runiverse/level-up-guide": ["Forgotten Runiverse Level Up Guide", "Plan quests, monsters, and progression with the Forgotten Runiverse level up guide.", "runiverse-level-up-guide.jpg"],
-  "/runiverse/support": ["Forgotten Runiverse Support", "Find community support and helpful resources for Forgotten Runiverse.", "runiverse-support.jpg"]
+  "/runiverse/support": ["Forgotten Runiverse Support", "Find community support and helpful resources for Forgotten Runiverse.", "runiverse-support.jpg"],
+  "/sfl/helpers/legacy": ["Sunflower Land Helpers Legacy Archive", "Archived Sunflower Land helpers, cheers, and community raffle.", "sunflower-helpers.jpg"]
 }

@@ -111,6 +111,10 @@ const Main = ({ children, themeToggler, themeMode }) => {
               title: 'Fish Market',
               href: '/sfl/fish-market',
             },
+            {
+              title: 'Flowers',
+              href: '/sfl/flowers',
+            },
           ],
         },
 

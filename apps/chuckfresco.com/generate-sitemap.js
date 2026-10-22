@@ -16,7 +16,9 @@ const links = [
 
   // Sunflower Land
   { url: '/sfl/helpers', changefreq: 'daily', priority: 0.9 },
+  { url: '/sfl/helpers/legacy', changefreq: 'yearly', priority: 0.4 },
   { url: '/sfl/helpers/winners', changefreq: 'weekly', priority: 0.8 },
+  { url: '/sfl/flowers', changefreq: 'weekly', priority: 0.9 },
   { url: '/sfl/fishing', changefreq: 'weekly', priority: 0.9 },
   { url: '/sfl/fish-market', changefreq: 'weekly', priority: 0.9 },
   { url: '/sfl/crops', changefreq: 'weekly', priority: 0.9 },

@@ -1,0 +1,140 @@
+{
+  "raffles": [
+    {
+      "contestStart": "2026-08-14T00:00:00.000Z",
+      "contestEnd": "2026-08-28T00:00:00.000Z",
+      "drawnAt": "2026-08-28T01:57:03.136Z",
+      "totalPrize": 80,
+      "winners": [
+        {
+          "farmId": "8257454033560179",
+          "username": "Yrras15",
+          "tickets": 28,
+          "prize": 10,
+          "pool": "perfect",
+          "pickedAt": "2026-08-28T01:48:56.649Z"
+        },
+        {
+          "farmId": "4099639099534812",
+          "username": "KANKANONA",
+          "tickets": 28,
+          "prize": 10,
+          "pool": "perfect",
+          "pickedAt": "2026-08-28T01:49:25.751Z"
+        },
+        {
+          "farmId": "3269451578953746",
+          "username": "Imiel",
+          "tickets": 28,
+          "prize": 10,
+          "pool": "perfect",
+          "pickedAt": "2026-08-28T01:49:58.938Z"
+        },
+        {
+          "farmId": "8408490950512843",
+          "username": "Shals",
+          "tickets": 26,
+          "prize": 10,
+          "pool": "general",
+          "pickedAt": "2026-08-28T01:50:37.058Z"
+        },
+        {
+          "farmId": "7916",
+          "username": "DeccoMx",
+          "tickets": 21,
+          "prize": 10,
+          "pool": "general",
+          "pickedAt": "2026-08-28T01:51:02.881Z"
+        },
+        {
+          "farmId": "6759139735185269",
+          "username": "Strigidae",
+          "tickets": 28,
+          "prize": 10,
+          "pool": "general",
+          "pickedAt": "2026-08-28T01:51:41.321Z"
+        },
+        {
+          "farmId": "4575067383685233",
+          "username": "EibrahamOla",
+          "tickets": 28,
+          "prize": 10,
+          "pool": "general",
+          "pickedAt": "2026-08-28T01:52:30.543Z"
+        },
+        {
+          "farmId": "162318",
+          "username": "sTyLz",
+          "tickets": 28,
+          "prize": 10,
+          "pool": "general",
+          "pickedAt": "2026-08-28T01:53:40.161Z"
+        }
+      ]
+    },
+    {
+      "contestStart": "2026-07-17T00:00:00.000Z",
+      "contestEnd": "2026-07-31T00:00:00.000Z",
+      "drawnAt": "2026-07-31T01:46:11.629Z",
+      "totalPrize": 160,
+      "winners": [
+        {
+          "farmId": "6762600878166043",
+          "username": "Dicots",
+          "tickets": 20,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:41:55.647Z"
+        },
+        {
+          "farmId": "197333",
+          "username": "Freako",
+          "tickets": 18,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:42:22.761Z"
+        },
+        {
+          "farmId": "963622366873365",
+          "username": "J1H23",
+          "tickets": 20,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:42:49.485Z"
+        },
+        {
+          "farmId": "5845356377159265",
+          "username": "ZamaZ",
+          "tickets": 28,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:43:28.605Z"
+        },
+        {
+          "farmId": "759107768074437",
+          "username": "rubyjane",
+          "tickets": 20,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:44:00.254Z"
+        },
+        {
+          "farmId": "4093295209305481",
+          "username": "Hossainn",
+          "tickets": 26,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:44:21.612Z"
+        },
+        {
+          "farmId": "4449952455535262",
+          "username": "Daissy",
+          "tickets": 24,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:44:49.663Z"
+        },
+        {
+          "farmId": "6759139735185269",
+          "username": "Strigidae",
+          "tickets": 24,
+          "prize": 20,
+          "pickedAt": "2026-07-31T01:45:21.001Z"
+        }
+      ]
+    }
+  ]
+}

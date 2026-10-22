@@ -62,7 +62,7 @@ export const rows = [
   {
     landNumber: 1792,
     landType: "Grass",
-    nftTraits: "Large Land\nSmall House\nCoop",
+    nftTraits: "Large Land\nSmall House\nCoop\nWindmill",
     boosts: "",
     resources: "T4 Soils",
     craftingStations: "10x T4 Metalworking\n5x Elite Sushi Kit",
@@ -172,7 +172,7 @@ export const rows = [
   {
     landNumber: 3338,
     landType: "Grass",
-    nftTraits: "Large Land\nLarge House",
+    nftTraits: "Large Land\nLarge House\nWindmill",
     boosts: "2x Farming Tiki",
     resources: "T4 Soils\n3x Ponds",
     craftingStations: "10x T4 Woodworking",

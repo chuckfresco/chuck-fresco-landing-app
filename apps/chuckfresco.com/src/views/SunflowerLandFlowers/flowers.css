@@ -1,0 +1,1065 @@
+.fl-page {
+  min-height: 100vh;
+  background: #27364c;
+  color: #332235;
+  font-family: "Courier New", monospace;
+  padding-bottom: 40px;
+}
+.fl-page * {
+  box-sizing: border-box;
+}
+.fl-page .fl-shell a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+.fl-page button,
+.fl-page input {
+  font: inherit;
+}
+.fl-page button,
+.fl-page summary {
+  cursor: pointer;
+}
+.fl-page :focus-visible {
+  outline: 3px solid #2876d5;
+  outline-offset: 4px;
+}
+.fl-hero {
+  padding: 34px 24px;
+  border-bottom: 5px solid #101018;
+  background: linear-gradient(100deg, #27364c, #3d5c52 60%, #636947);
+  color: #fff8d6;
+}
+.fl-hero-inner {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.fl-hero h1 {
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 10px 0;
+  text-shadow: 3px 3px #10101866;
+}
+.fl-hero p:not(.fl-eyebrow) {
+  max-width: 650px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.fl-eyebrow {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+.fl-logo {
+  padding: 20px;
+  background: #e8ad76;
+  border: 5px solid #101018;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 4px #f8d29b, 8px 8px #0004;
+  transform: rotate(1.5deg);
+}
+.fl-logo > img {
+  width: 260px;
+  max-width: 60vw;
+  image-rendering: pixelated;
+}
+.fl-bouquet {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 18px;
+}
+.fl-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px;
+  border-bottom: 4px solid #101018;
+}
+.fl-nav a,
+.fl-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f5da8;
+  color: #fff8d6 !important;
+  border: 3px solid #101018;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 2px #fff8d633;
+  min-height: 42px;
+}
+.fl-nav a[aria-current],
+.fl-button {
+  background: #f4c08a;
+  color: #332235 !important;
+}
+.fl-shell {
+  width: calc(100% - 24px);
+  max-width: 1380px;
+  margin: 0 auto;
+}
+.fl-panel {
+  background: #e8ad76;
+  border: 4px solid #101018;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 4px #f8d29b, 6px 6px #0003;
+  padding: 24px;
+}
+.fl-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.fl-section-heading h2 {
+  font-size: 28px;
+  margin: 0;
+}
+.fl-tag {
+  background: #f4dfac;
+  border: 1px solid #ae8058;
+  padding: 6px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.fl-finder label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.fl-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  gap: 12px;
+}
+.fl-finder label[for="flower-search"] {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+.fl-search-row input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  box-sizing: border-box;
+  background: #fff8d6;
+  border: 4px solid #101018;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 3px #f4c08a;
+  color: #332235;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 7px 10px;
+}
+.fl-search-clear {
+  align-self: end;
+  min-height: 44px;
+  appearance: none;
+  cursor: pointer;
+  background: #d8def2;
+  border: 4px solid #101018;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.35);
+  color: #2d2739;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 7px 10px;
+}
+.fl-search-clear:hover:not(:disabled) {
+  filter: brightness(1.04);
+}
+.fl-search-clear:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+@media (max-width: 599.95px) {
+  .fl-search-row {
+    grid-template-columns: 1fr;
+  }
+}
+.fl-filters {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fl-filters label {
+  margin: 0;
+  flex-shrink: 0;
+}
+.fl-filters select {
+  width: 310px;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  padding: 7px 10px;
+  background: #f4dfac;
+  border: 2px solid #926d50;
+  border-radius: 6px;
+  color: #332235;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.fl-category {
+  margin: 30px 0 38px;
+}
+.fl-category-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff8d6;
+  margin-bottom: 16px;
+}
+.fl-category-heading h2 {
+  font-size: 24px;
+  margin: 0;
+}
+.fl-category-heading p {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff8d6;
+  margin: 5px 0 0;
+}
+.fl-category-heading > span {
+  margin-left: auto;
+  font-size: 12px;
+}
+.fl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+.fl-grid > .fl-card {
+  display: flex;
+  flex-direction: column;
+}
+.fl-grid > .fl-card > header {
+  min-height: 74px;
+}
+.fl-grid > .fl-card > .fl-card-body {
+  flex: 1;
+}
+.fl-card {
+  background: #f1dfaf;
+  border: 3px solid #5b3d3f;
+  border-radius: 9px;
+  box-shadow: 4px 4px #10101855;
+  overflow: hidden;
+  font-size: 12px;
+}
+.fl-card header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 12px 10px;
+  background: #ead6a2;
+}
+.fl-card h3 {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 900;
+  margin: 0;
+}
+.fl-card small {
+  font-size: 10px;
+}
+.fl-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+.fl-icon-large {
+  width: 36px;
+  height: 40px;
+}
+.fl-badges {
+  display: flex;
+  gap: 5px;
+  padding: 0 12px 12px;
+  background: #ead6a2;
+  border-bottom: 1px solid #b28b62;
+  flex-wrap: wrap;
+}
+.fl-badges span {
+  font-size: 10px;
+  border: 1px solid #b28b62;
+  padding: 3px 5px;
+  background: #f8e8ba;
+}
+.fl-badges span + span {
+  background: #f7d77e;
+}
+.fl-card-body {
+  padding: 14px 12px;
+}
+.fl-card h4 {
+  font-size: 12px;
+  margin: 0 0 12px;
+  font-weight: 900;
+}
+.fl-seed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fl-hint {
+  font-size: 10px;
+  margin: 14px 0 10px;
+  color: #745847;
+}
+.fl-ingredients,
+.fl-gift-flowers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 9px;
+}
+.fl-ingredients li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+  line-height: 1.4;
+}
+.fl-favorites {
+  border-top: 1px solid #b28b62;
+  padding: 14px 12px;
+  background: #ead6a266;
+}
+.fl-favorites summary {
+  font-size: 12px;
+  font-weight: 900;
+}
+.fl-favorites[open] summary {
+  margin-bottom: 12px;
+}
+.fl-favorites > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  margin-top: 10px;
+  line-height: 1.5;
+  flex-wrap: wrap;
+}
+.fl-favorites p {
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+}
+.fl-gifting {
+  margin-top: 48px;
+  scroll-margin-top: 90px;
+  color: #fff8d6;
+  border-top: 2px solid #fff8d644;
+  padding-top: 30px;
+}
+.fl-gifting .fl-section-heading p:not(.fl-eyebrow) {
+  font-size: 14px;
+  max-width: 760px;
+  line-height: 1.6;
+}
+.fl-gift-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.fl-gift {
+  color: #332235;
+  scroll-margin-top: 90px;
+}
+.fl-gift header {
+  min-height: 52px;
+  padding: 8px 10px;
+  gap: 8px;
+}
+.fl-gift header h3 {
+  font-size: 13px;
+}
+.fl-gift .fl-card-body {
+  padding: 10px;
+}
+.fl-gift h4 {
+  margin-bottom: 8px;
+}
+.fl-gift-flowers {
+  gap: 4px;
+}
+.fl-gift-flowers .fl-icon {
+  width: 20px;
+  height: 20px;
+}
+.fl-gift header .fl-icon {
+  height: 36px;
+  width: 36px;
+}
+.fl-gift-flowers li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+.fl-gift-flowers li > a {
+  flex: 1;
+}
+.fl-gift-flowers li > span {
+  white-space: nowrap;
+  font-weight: bold;
+}
+.fl-gift details {
+  margin-top: 10px;
+  border-top: 1px solid #b28b62;
+  padding-top: 6px;
+}
+.fl-gift summary {
+  font-weight: bold;
+  padding: 4px 0;
+}
+.fl-gift table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 11px;
+}
+.fl-gift caption {
+  text-align: left;
+  padding: 8px 0;
+  color: #745847;
+}
+.fl-gift th,
+.fl-gift td {
+  border-bottom: 1px solid #b28b6266;
+  padding: 7px 4px;
+  vertical-align: top;
+}
+.fl-gift th {
+  padding-right: 12px;
+}
+.fl-footer {
+  color: #fff8d6b3;
+  font-size: 12px;
+  line-height: 2;
+  text-align: center;
+  margin-top: 32px;
+}
+.fl-empty {
+  margin-top: 24px;
+}
+.fl-page button:hover,
+.fl-button:hover,
+.fl-nav a:hover {
+  filter: brightness(1.08);
+}
+@media (max-width: 1050px) {
+  .fl-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .fl-gift-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .fl-hero h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 760px) {
+  .fl-hero-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .fl-logo {
+    transform: none;
+  }
+  .fl-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .fl-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .fl-panel {
+    padding: 18px;
+  }
+  .fl-gift-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .fl-grid {
+    grid-template-columns: 1fr;
+  }
+  .fl-hero {
+    padding: 26px 16px;
+  }
+  .fl-hero h1 {
+    font-size: 32px;
+  }
+  .fl-nav a {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+  .fl-search-row {
+    flex-wrap: wrap;
+  }
+  .fl-search-row input {
+    flex-basis: 100%;
+  }
+  .fl-category-heading h2 {
+    font-size: 20px;
+  }
+  .fl-category-heading > span {
+    font-size: 10px;
+  }
+  .fl-card {
+    font-size: 13px;
+  }
+  .fl-card h3 {
+    font-size: 16px;
+  }
+  .fl-favorites > div {
+    font-size: 11px;
+  }
+}
+.fl-ingredients a,
+.fl-gift-flowers a,
+.fl-favorites a {
+  text-decoration: underline;
+}
+.fl-ingredients a:hover,
+.fl-gift-flowers a:hover {
+  color: #1f5da8;
+}
+.fl-autocomplete {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+.fl-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 280px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: #fff8df;
+  border: 2px solid #493344;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #10101844;
+}
+.fl-suggestions li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.fl-suggestions li:hover,
+.fl-suggestions li[aria-selected="true"] {
+  background: #ead6a2;
+}
+@media (max-width: 480px) {
+  .fl-autocomplete {
+    flex-basis: 100%;
+  }
+}
+.fl-chart-action {
+  padding: 0 12px 14px;
+}
+.fl-chart-action .fl-button {
+  gap: 8px;
+  min-height: 34px;
+  font-size: 12px;
+  padding: 6px 10px;
+}
+.fl-lineage.MuiPaper-root {
+  background: #f1dfaf;
+  color: #332235;
+  border: 3px solid #5b3d3f;
+  border-radius: 12px;
+  font-family: "Courier New", monospace;
+}
+.fl-lineage .MuiTypography-root,
+.fl-lineage button {
+  font-family: inherit;
+}
+.fl-lineage .MuiDialogTitle-root,
+.fl-lineage .MuiDialogActions-root {
+  background: #ead6a2;
+}
+.fl-tree-help {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+.fl-tree-branch {
+  min-width: 0;
+}
+.fl-tree-branch > summary,
+.fl-tree-node {
+  padding: 10px;
+  border: 2px solid #b28b62;
+  border-radius: 6px;
+  background: #fff8df;
+  font-size: 13px;
+}
+.fl-tree-branch > summary {
+  cursor: pointer;
+}
+.fl-tree-branch > summary > span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.fl-tree-branch img,
+.fl-tree-node img,
+.fl-tree-seed img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.fl-tree-branch small,
+.fl-tree-node small {
+  display: block;
+  font-size: 11px;
+  margin-top: 4px;
+  font-weight: normal;
+}
+.fl-tree-expand {
+  margin-left: 12px;
+  font-size: 10px;
+  text-decoration: underline;
+}
+.fl-tree-recipe {
+  padding: 12px 0 6px 12px;
+}
+.fl-tree-seed {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.fl-tree-recipe p {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.fl-tree-recipe p span {
+  font-size: 11px;
+}
+.fl-tree-recipe ul {
+  padding: 0 0 0 20px;
+  list-style: none;
+  margin: 0;
+  border-left: 2px solid #b28b62;
+}
+.fl-tree-recipe li {
+  position: relative;
+  margin: 12px 0;
+}
+.fl-tree-recipe li::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 24px;
+  width: 20px;
+  border-top: 2px solid #b28b62;
+}
+.fl-tree-node {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.fl-tree-loop {
+  border-style: dashed;
+  background: #ead6a2;
+}
+.fl-lineage button:not(.MuiButton-root) {
+  border: 1px solid #926d50;
+  background: #f4dfac;
+  color: #332235;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 11px;
+  margin-left: auto;
+}
+.fl-lineage :focus-visible {
+  outline: 3px solid #2876d5;
+  outline-offset: 2px;
+}
+.fl-lineage .MuiDialogContent-root {
+  overflow: auto;
+}
+@media (max-width: 480px) {
+  .fl-lineage.MuiPaper-root {
+    margin: 12px;
+    width: calc(100% - 24px);
+  }
+  .fl-lineage .MuiDialogContent-root {
+    padding: 14px 10px;
+  }
+  .fl-tree-recipe {
+    padding-left: 4px;
+  }
+  .fl-tree-recipe ul {
+    padding-left: 10px;
+  }
+  .fl-tree-recipe li::before {
+    left: -10px;
+    width: 10px;
+  }
+}
+.fl-lineage .MuiDialogActions-root .MuiButton-root {
+  color: #332235;
+  border: 2px solid #926d50;
+  background: #f4dfac;
+  font-weight: bold;
+}
+.fl-lineage-graph .MuiDialogContent-root {
+  padding: 16px;
+}
+.fl-graph-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+.fl-graph-toolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fl-graph-note {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.fl-graph-scroll {
+  background: #15182d;
+  border: 2px solid #5b3d3f;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 58vh;
+}
+.fl-graph-scroll svg {
+  display: block;
+  margin: 0 auto;
+}
+.fl-lineage button.fl-graph-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 156px;
+  height: 125px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: #fff8df;
+  font-size: 12px;
+}
+.fl-graph-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 3px solid #8ac381;
+  background: #385e46;
+  flex-shrink: 0;
+  margin-bottom: 6px;
+}
+.fl-graph-circle img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.fl-graph-circle b {
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+  background: #ead6a2;
+  color: #332235;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+}
+.fl-graph-node strong {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.fl-graph-node small {
+  font-size: 10px;
+  color: #c7cbd9;
+  margin-top: 4px;
+}
+.fl-graph-cycle .fl-graph-circle {
+  border-style: dashed;
+  border-color: #d8ad74;
+  background: #65513a;
+}
+.fl-graph-selected .fl-graph-circle,
+.fl-graph-node:hover .fl-graph-circle {
+  box-shadow: 0 0 0 3px #f4d58b;
+}
+.fl-graph-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  font-size: 13px;
+}
+.fl-graph-selection img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.fl-graph-selection small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+}
+/* Growing paths use the same peach and parchment palette as the flower cards. */
+.fl-lineage-graph.MuiPaper-root {
+  background: #e8ad76;
+  border: 4px solid #101018;
+  box-shadow: inset 0 0 0 4px #f8d29b, 8px 8px 0 #0004;
+}
+.fl-lineage-graph .MuiDialogTitle-root,
+.fl-lineage-graph .MuiDialogActions-root {
+  background: #e8ad76;
+}
+.fl-graph-scroll {
+  background: #f1dfaf;
+  border: 2px solid #b28b62;
+}
+.fl-lineage button.fl-graph-node {
+  color: #332235;
+}
+.fl-graph-circle {
+  background: #ead6a2;
+  border: 2px solid #926d50;
+  border-radius: 9px;
+}
+.fl-graph-node small {
+  color: #745847;
+}
+.fl-graph-selected .fl-graph-circle,
+.fl-graph-node:hover .fl-graph-circle {
+  box-shadow: 0 0 0 3px #1f5da8;
+}
+.fl-lineage-graph.MuiPaper-root {
+  width: calc(100% - 32px);
+  max-width: 1440px;
+  height: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  margin: 16px;
+}
+.fl-lineage-graph .MuiDialogContent-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 8px 12px;
+}
+.fl-lineage-graph .MuiDialogTitle-root {
+  padding: 12px 20px;
+}
+.fl-graph-toolbar {
+  justify-content: flex-end;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+.fl-graph-scroll {
+  flex: 1;
+  min-height: 0;
+  max-height: none;
+}
+.fl-graph-selection {
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+.fl-graph-circle {
+  width: 64px;
+  height: 64px;
+}
+.fl-graph-circle img {
+  width: 48px;
+  height: 48px;
+}
+.fl-lineage button.fl-graph-node {
+  width: 200px;
+}
+.fl-graph-node small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #493344;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+.fl-graph-seed-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+.fl-shared-header {
+  padding: 0 12px;
+}
+.fl-lineage-graph .fl-lineage-title {
+  position: relative;
+  padding-right: 64px;
+}
+.fl-lineage button.fl-lineage-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 8px;
+  color: #332235;
+  background: #f4dfac;
+  border: 2px solid #926d50;
+  border-radius: 6px;
+}
+.fl-lineage button.fl-lineage-close:hover {
+  background: #fff8df;
+}
+/* Compact recipe cards; the seed section already provides the base grow time. */
+.fl-grid > .fl-card > header {
+  min-height: 64px;
+  padding: 10px;
+  gap: 8px;
+  border-bottom: 1px solid #b28b62;
+}
+.fl-grid > .fl-card > header > div {
+  flex: 1;
+  min-width: 0;
+}
+.fl-grid > .fl-card > header h3 {
+  font-size: 14px;
+}
+.fl-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 10px;
+}
+.fl-card-meta > span {
+  background: #f7d77e;
+  border: 1px solid #b28b62;
+  padding: 2px 4px;
+}
+.fl-lineage-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 5px;
+  color: #332235;
+  background: #f4c08a;
+  border: 2px solid #5b3d3f;
+  border-radius: 6px;
+}
+.fl-grid > .fl-card > .fl-card-body {
+  padding: 10px;
+}
+.fl-grid .fl-hint {
+  margin: 8px 0 6px;
+}
+.fl-grid .fl-ingredients {
+  gap: 4px;
+}
+.fl-grid .fl-ingredients li {
+  min-height: 22px;
+}
+.fl-grid .fl-ingredients .fl-icon {
+  width: 22px;
+  height: 22px;
+}
+.fl-grid .fl-favorites {
+  padding: 10px;
+}
+
+.fl-gift {
+  display: flex;
+  flex-direction: column;
+}
+.fl-gift .fl-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.fl-gift-flowers {
+  margin-bottom: 10px;
+}
+.fl-gift details {
+  margin-top: auto;
+}
+.fl-suggestion-kind {
+  margin-left: auto;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #745847;
+}
+.fl-season-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  vertical-align: middle;
+}
+.fl-card-meta small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.fl-season-label { display: inline-flex; align-items: center; gap: 5px; vertical-align: middle; }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 const winnersUrl = "/assets/sunflower-land/winners.json";
 const flowerIcon = "/assets/sunflower-land/fishing/imgi_10_Flower.png";
@@ -60,6 +61,30 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 14,
     boxShadow: "inset 0 0 0 4px #f4c08a, 8px 8px 0 rgba(0,0,0,0.22)"
   },
+  backButton: {
+    minHeight: 38,
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 6,
+    marginBottom: 14,
+    padding: "6px 12px",
+    color: "#fff8d6",
+    background: "#2876d5",
+    border: "3px solid #101018",
+    borderRadius: 8,
+    boxShadow: "inset 0 0 0 2px #55b6ff, 4px 4px 0 rgba(0,0,0,.2)",
+    fontFamily: "SmallestPixel7,'Courier New',monospace",
+    fontSize: 17,
+    fontWeight: 900,
+    lineHeight: 1,
+    textDecoration: "none",
+    "&:hover": {
+      color: "#fff8d6",
+      textDecoration: "none",
+      filter: "brightness(1.08)"
+    }
+  },
+  backIcon: { fontSize: 21 },
   title: { display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap", margin: 0, fontSize: 36, lineHeight: 1.1, fontWeight: 900 },
   subtitle: { margin: "8px 0 0", fontWeight: 900, lineHeight: 1.5 },
   raffleList: { display: "grid", gap: 20 },
@@ -115,6 +140,23 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "underline",
     "&:hover": { color: "#fff2a8" }
   },
+  perfectSparkle: {
+    display: "inline-block",
+    marginLeft: 5,
+    color: "#fff2a8",
+    textDecoration: "none",
+    filter: "drop-shadow(1px 1px 0 #7a4b00)"
+  },
+  winnerPool: {
+    display: "inline-block",
+    marginTop: 6,
+    padding: "2px 6px",
+    background: "rgba(16,16,24,.3)",
+    border: "1px solid rgba(255,248,214,.7)",
+    borderRadius: 5,
+    fontSize: 12,
+    lineHeight: 1.2
+  },
   winnerMeta: { marginTop: 6, fontSize: 13, lineHeight: 1.35 },
   empty: {
     padding: 30,
@@ -136,6 +178,14 @@ const formatDate = value => new Date(value).toLocaleString(undefined, {
   minute: "2-digit",
   timeZoneName: "short"
 });
+
+const orderWinners = winners => (Array.isArray(winners) ? winners : [])
+  .map((winner, index) => ({ winner, index }))
+  .sort((a, b) => {
+    const poolRank = winner => winner.pool === "perfect" ? 0 : winner.pool === "general" ? 1 : 2;
+    return poolRank(a.winner) - poolRank(b.winner) || a.index - b.index;
+  })
+  .map(({ winner }) => winner);
 
 const SunflowerLandWinners = () => {
   const classes = useStyles();
@@ -177,15 +227,18 @@ const SunflowerLandWinners = () => {
         <Link className={classes.sunflowerNavLink} to="/sfl/crops">Crops</Link>
       </nav>
       <main className={classes.shell}>
+        <Link className={classes.backButton} to="/sfl/helpers" aria-label="Back to the raffle leaderboard">
+          <ArrowBackIcon className={classes.backIcon} aria-hidden="true" />
+          Back to Leaderboard
+        </Link>
         <header className={classes.header}>
           <h1 className={classes.title}>
             <img src={flowerIcon} alt="Flower" className={classes.flower} />
             FLOWER Raffle Winners
           </h1>
           <p className={classes.subtitle}>
-            Eight community supporters win 20
-            <img src={flowerIcon} alt="Flower" className={classes.inlineFlower} />
-            FLOWER in every completed drawing.
+            Future drawings list the three Perfect Helper winners first, followed by the five
+            winners selected from the remaining qualifying players and tickets.
           </p>
         </header>
 
@@ -210,7 +263,7 @@ const SunflowerLandWinners = () => {
                 </div>
               </div>
               <div className={classes.winners}>
-                {(raffle.winners || []).map((winner, index) => (
+                {orderWinners(raffle.winners).map((winner, index) => (
                   <article className={classes.winner} key={`${raffle.contestStart}-${winner.farmId}`}>
                     <a
                       className={classes.winnerName}
@@ -219,7 +272,15 @@ const SunflowerLandWinners = () => {
                       rel="noopener noreferrer"
                     >
                       #{index + 1} {winner.username}
+                      {winner.pool === "perfect" && (
+                        <span className={classes.perfectSparkle} title="Perfect Helper winner" aria-label="Perfect Helper winner">✨</span>
+                      )}
                     </a>
+                    {winner.pool && (
+                      <div className={classes.winnerPool}>
+                        {winner.pool === "perfect" ? "Perfect Helper" : "General Draw"}
+                      </div>
+                    )}
                     <div className={classes.winnerMeta}>{winner.tickets} raffle tickets</div>
                     <div className={classes.prize}>
                       {winner.prize}

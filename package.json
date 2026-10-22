@@ -13,13 +13,14 @@
     "start:public": "npm --prefix apps/chuckfresco.com start",
     "build:public": "npm --prefix apps/chuckfresco.com run build",
     "deploy:public": "npm --prefix apps/chuckfresco.com run deploy",
-    "deploy:public:full": "apps/chuckfresco.com/scripts/deploy/deploy-full-site.command",
+    "deploy:public:full": "scripts/deploy/deploy-full-site.command",
     "start:admin": "npm --prefix apps/admin.chuckfresco.com start",
     "build:admin": "npm --prefix apps/admin.chuckfresco.com run build",
     "deploy:admin": "npm --prefix apps/admin.chuckfresco.com run deploy",
     "start:api": "npm --prefix apps/api.chuckfreso.com start",
     "dev:api": "npm --prefix apps/api.chuckfreso.com run dev",
     "build:api": "npm --prefix apps/api.chuckfreso.com run build",
-    "test": "npm run build:api"
+    "test": "npm run build:api",
+    "updateXGiveaway": "scripts/sunflower-land/updateXGiveaway.command"
   }
 }

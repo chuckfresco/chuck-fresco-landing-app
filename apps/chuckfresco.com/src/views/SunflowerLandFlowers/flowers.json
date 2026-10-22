@@ -1,0 +1,2742 @@
+{
+  "source": "https://sfl.world/info/flowers",
+  "updated": "2026-10-15",
+  "categories": [
+    {
+      "name": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/sunpetal-seed.webp"
+    },
+    {
+      "name": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/bloom-seed.webp"
+    },
+    {
+      "name": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/lily-seed.webp"
+    },
+    {
+      "name": "Edelweiss Seed",
+      "days": 3,
+      "season": "Winter",
+      "image": "/assets/sunflower-land/flowers/edelweiss-seed.webp"
+    },
+    {
+      "name": "Gladiolus Seed",
+      "days": 3,
+      "season": "Summer",
+      "image": "/assets/sunflower-land/flowers/gladiolus-seed.webp"
+    },
+    {
+      "name": "Lavender Seed",
+      "days": 3,
+      "season": "Spring",
+      "image": "/assets/sunflower-land/flowers/lavender-seed.webp"
+    },
+    {
+      "name": "Clover Seed",
+      "days": 3,
+      "season": "Autumn",
+      "image": "/assets/sunflower-land/flowers/clover-seed.webp"
+    }
+  ],
+  "flowers": [
+    {
+      "name": "Red Pansy",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/red-pansy.png",
+      "ingredients": [
+        {
+          "name": "Radish",
+          "image": "/assets/sunflower-land/flowers/radish.png"
+        },
+        {
+          "name": "Banana",
+          "image": "/assets/sunflower-land/flowers/banana.png"
+        },
+        {
+          "name": "Red Cosmos",
+          "image": "/assets/sunflower-land/flowers/red-cosmos.png"
+        },
+        {
+          "name": "Purple Daffodil",
+          "image": "/assets/sunflower-land/flowers/purple-daffodil.png"
+        },
+        {
+          "name": "Red Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/red-balloon-flower.png"
+        },
+        {
+          "name": "Red Lotus",
+          "image": "/assets/sunflower-land/flowers/red-lotus.png"
+        },
+        {
+          "name": "Primula Enigma",
+          "image": "/assets/sunflower-land/flowers/primula-enigma.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BETTY",
+          "bonus": 5,
+          "total": 8
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "Yellow Pansy",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/yellow-pansy.png",
+      "ingredients": [
+        {
+          "name": "Sunflower",
+          "image": "/assets/sunflower-land/flowers/sunflower.png"
+        },
+        {
+          "name": "Apple",
+          "image": "/assets/sunflower-land/flowers/apple.png"
+        },
+        {
+          "name": "Red Pansy",
+          "image": "/assets/sunflower-land/flowers/red-pansy.png"
+        },
+        {
+          "name": "Red Daffodil",
+          "image": "/assets/sunflower-land/flowers/red-daffodil.png"
+        },
+        {
+          "name": "Yellow Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/yellow-balloon-flower.png"
+        },
+        {
+          "name": "Yellow Carnation",
+          "image": "/assets/sunflower-land/flowers/yellow-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BETTY",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 4,
+          "total": 7
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "Purple Pansy",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/purple-pansy.png",
+      "ingredients": [
+        {
+          "name": "Blue Pansy",
+          "image": "/assets/sunflower-land/flowers/blue-pansy.png"
+        },
+        {
+          "name": "Purple Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/purple-balloon-flower.png"
+        },
+        {
+          "name": "Purple Carnation",
+          "image": "/assets/sunflower-land/flowers/purple-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BETTY",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 4,
+          "total": 7
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "White Pansy",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/white-pansy.png",
+      "ingredients": [
+        {
+          "name": "Yellow Cosmos",
+          "image": "/assets/sunflower-land/flowers/yellow-cosmos.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BETTY",
+          "bonus": 5,
+          "total": 8
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "Blue Pansy",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/blue-pansy.png",
+      "ingredients": [
+        {
+          "name": "Purple Cosmos",
+          "image": "/assets/sunflower-land/flowers/purple-cosmos.png"
+        },
+        {
+          "name": "White Pansy",
+          "image": "/assets/sunflower-land/flowers/white-pansy.png"
+        },
+        {
+          "name": "White Cosmos",
+          "image": "/assets/sunflower-land/flowers/white-cosmos.png"
+        },
+        {
+          "name": "White Daffodil",
+          "image": "/assets/sunflower-land/flowers/white-daffodil.png"
+        },
+        {
+          "name": "Blue Daffodil",
+          "image": "/assets/sunflower-land/flowers/blue-daffodil.png"
+        },
+        {
+          "name": "White Carnation",
+          "image": "/assets/sunflower-land/flowers/white-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BETTY",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 4,
+          "total": 7
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "Red Cosmos",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/red-cosmos.png",
+      "ingredients": [
+        {
+          "name": "Yellow Daffodil",
+          "image": "/assets/sunflower-land/flowers/yellow-daffodil.png"
+        },
+        {
+          "name": "Purple Lotus",
+          "image": "/assets/sunflower-land/flowers/purple-lotus.png"
+        }
+      ],
+      "favorites": [],
+      "points": 3
+    },
+    {
+      "name": "Yellow Cosmos",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/yellow-cosmos.png",
+      "ingredients": [
+        {
+          "name": "Yellow Pansy",
+          "image": "/assets/sunflower-land/flowers/yellow-pansy.png"
+        },
+        {
+          "name": "White Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/white-balloon-flower.png"
+        },
+        {
+          "name": "Red Carnation",
+          "image": "/assets/sunflower-land/flowers/red-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "PUMPKIN' PETE",
+          "bonus": 6,
+          "total": 9
+        },
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 4,
+          "total": 7
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "Purple Cosmos",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/purple-cosmos.png",
+      "ingredients": [
+        {
+          "name": "Beetroot",
+          "image": "/assets/sunflower-land/flowers/beetroot.png"
+        },
+        {
+          "name": "Eggplant",
+          "image": "/assets/sunflower-land/flowers/eggplant.png"
+        },
+        {
+          "name": "Kale",
+          "image": "/assets/sunflower-land/flowers/kale.png"
+        },
+        {
+          "name": "Blue Cosmos",
+          "image": "/assets/sunflower-land/flowers/blue-cosmos.png"
+        },
+        {
+          "name": "Blue Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/blue-balloon-flower.png"
+        },
+        {
+          "name": "Celestial Frostbloom",
+          "image": "/assets/sunflower-land/flowers/celestial-frostbloom.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 4,
+          "total": 7
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "White Cosmos",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/white-cosmos.png",
+      "ingredients": [
+        {
+          "name": "Prism Petal",
+          "image": "/assets/sunflower-land/flowers/prism-petal.png"
+        },
+        {
+          "name": "Yellow Lotus",
+          "image": "/assets/sunflower-land/flowers/yellow-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "FINN",
+          "bonus": 5,
+          "total": 8
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "Blue Cosmos",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/blue-cosmos.png",
+      "ingredients": [
+        {
+          "name": "Cauliflower",
+          "image": "/assets/sunflower-land/flowers/cauliflower.png"
+        },
+        {
+          "name": "Parsnip",
+          "image": "/assets/sunflower-land/flowers/parsnip.png"
+        },
+        {
+          "name": "Blueberry",
+          "image": "/assets/sunflower-land/flowers/blueberry.png"
+        },
+        {
+          "name": "Purple Pansy",
+          "image": "/assets/sunflower-land/flowers/purple-pansy.png"
+        },
+        {
+          "name": "White Lotus",
+          "image": "/assets/sunflower-land/flowers/white-lotus.png"
+        },
+        {
+          "name": "Blue Carnation",
+          "image": "/assets/sunflower-land/flowers/blue-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 4,
+          "total": 7
+        },
+        {
+          "bumpkin": "FINN",
+          "bonus": 5,
+          "total": 8
+        }
+      ],
+      "points": 3
+    },
+    {
+      "name": "Prism Petal",
+      "seed": "Sunpetal Seed",
+      "days": 1,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/prism-petal.png",
+      "ingredients": [
+        {
+          "name": "Blue Lotus",
+          "image": "/assets/sunflower-land/flowers/blue-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "CORALE",
+          "bonus": 6,
+          "total": 18
+        }
+      ],
+      "points": 12
+    },
+    {
+      "name": "Red Balloon Flower",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/red-balloon-flower.png",
+      "ingredients": [
+        {
+          "name": "Sunflower",
+          "image": "/assets/sunflower-land/flowers/sunflower.png"
+        },
+        {
+          "name": "Beetroot",
+          "image": "/assets/sunflower-land/flowers/beetroot.png"
+        },
+        {
+          "name": "Apple",
+          "image": "/assets/sunflower-land/flowers/apple.png"
+        },
+        {
+          "name": "Banana",
+          "image": "/assets/sunflower-land/flowers/banana.png"
+        },
+        {
+          "name": "Purple Pansy",
+          "image": "/assets/sunflower-land/flowers/purple-pansy.png"
+        },
+        {
+          "name": "Red Pansy",
+          "image": "/assets/sunflower-land/flowers/red-pansy.png"
+        },
+        {
+          "name": "Red Daffodil",
+          "image": "/assets/sunflower-land/flowers/red-daffodil.png"
+        },
+        {
+          "name": "Yellow Daffodil",
+          "image": "/assets/sunflower-land/flowers/yellow-daffodil.png"
+        },
+        {
+          "name": "Purple Daffodil",
+          "image": "/assets/sunflower-land/flowers/purple-daffodil.png"
+        },
+        {
+          "name": "Yellow Carnation",
+          "image": "/assets/sunflower-land/flowers/yellow-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "CORNWELL",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "bumpkin": "JESTER",
+          "bonus": 6,
+          "total": 11
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "Yellow Balloon Flower",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/yellow-balloon-flower.png",
+      "ingredients": [
+        {
+          "name": "Yellow Lotus",
+          "image": "/assets/sunflower-land/flowers/yellow-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "bumpkin": "CORNWELL",
+          "bonus": 5,
+          "total": 10
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "Purple Balloon Flower",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/purple-balloon-flower.png",
+      "ingredients": [
+        {
+          "name": "Blue Carnation",
+          "image": "/assets/sunflower-land/flowers/blue-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 4,
+          "total": 9
+        },
+        {
+          "bumpkin": "CORNWELL",
+          "bonus": 5,
+          "total": 10
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "White Balloon Flower",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/white-balloon-flower.png",
+      "ingredients": [
+        {
+          "name": "White Cosmos",
+          "image": "/assets/sunflower-land/flowers/white-cosmos.png"
+        },
+        {
+          "name": "Blue Daffodil",
+          "image": "/assets/sunflower-land/flowers/blue-daffodil.png"
+        },
+        {
+          "name": "White Daffodil",
+          "image": "/assets/sunflower-land/flowers/white-daffodil.png"
+        },
+        {
+          "name": "White Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/white-balloon-flower.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "CORNWELL",
+          "bonus": 5,
+          "total": 10
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "Blue Balloon Flower",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/blue-balloon-flower.png",
+      "ingredients": [
+        {
+          "name": "Cauliflower",
+          "image": "/assets/sunflower-land/flowers/cauliflower.png"
+        },
+        {
+          "name": "Parsnip",
+          "image": "/assets/sunflower-land/flowers/parsnip.png"
+        },
+        {
+          "name": "Eggplant",
+          "image": "/assets/sunflower-land/flowers/eggplant.png"
+        },
+        {
+          "name": "Kale",
+          "image": "/assets/sunflower-land/flowers/kale.png"
+        },
+        {
+          "name": "Blue Pansy",
+          "image": "/assets/sunflower-land/flowers/blue-pansy.png"
+        },
+        {
+          "name": "Blue Cosmos",
+          "image": "/assets/sunflower-land/flowers/blue-cosmos.png"
+        },
+        {
+          "name": "Purple Cosmos",
+          "image": "/assets/sunflower-land/flowers/purple-cosmos.png"
+        },
+        {
+          "name": "Blue Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/blue-balloon-flower.png"
+        },
+        {
+          "name": "Celestial Frostbloom",
+          "image": "/assets/sunflower-land/flowers/celestial-frostbloom.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "bumpkin": "CORNWELL",
+          "bonus": 5,
+          "total": 10
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "Red Daffodil",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/red-daffodil.png",
+      "ingredients": [
+        {
+          "name": "Yellow Pansy",
+          "image": "/assets/sunflower-land/flowers/yellow-pansy.png"
+        },
+        {
+          "name": "Yellow Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/yellow-balloon-flower.png"
+        },
+        {
+          "name": "Red Carnation",
+          "image": "/assets/sunflower-land/flowers/red-carnation.png"
+        },
+        {
+          "name": "Primula Enigma",
+          "image": "/assets/sunflower-land/flowers/primula-enigma.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "FINLEY",
+          "bonus": 5,
+          "total": 12
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Yellow Daffodil",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/yellow-daffodil.png",
+      "ingredients": [
+        {
+          "name": "Red Cosmos",
+          "image": "/assets/sunflower-land/flowers/red-cosmos.png"
+        },
+        {
+          "name": "White Carnation",
+          "image": "/assets/sunflower-land/flowers/white-carnation.png"
+        },
+        {
+          "name": "White Lotus",
+          "image": "/assets/sunflower-land/flowers/white-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "FINLEY",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 4,
+          "total": 11
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Purple Daffodil",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/purple-daffodil.png",
+      "ingredients": [
+        {
+          "name": "Radish",
+          "image": "/assets/sunflower-land/flowers/radish.png"
+        },
+        {
+          "name": "Blueberry",
+          "image": "/assets/sunflower-land/flowers/blueberry.png"
+        },
+        {
+          "name": "Red Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/red-balloon-flower.png"
+        },
+        {
+          "name": "Red Lotus",
+          "image": "/assets/sunflower-land/flowers/red-lotus.png"
+        },
+        {
+          "name": "Blue Lotus",
+          "image": "/assets/sunflower-land/flowers/blue-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "FINLEY",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 4,
+          "total": 11
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "White Daffodil",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/white-daffodil.png",
+      "ingredients": [
+        {
+          "name": "Yellow Cosmos",
+          "image": "/assets/sunflower-land/flowers/yellow-cosmos.png"
+        },
+        {
+          "name": "Prism Petal",
+          "image": "/assets/sunflower-land/flowers/prism-petal.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "FINLEY",
+          "bonus": 5,
+          "total": 12
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Blue Daffodil",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/blue-daffodil.png",
+      "ingredients": [
+        {
+          "name": "Purple Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/purple-balloon-flower.png"
+        },
+        {
+          "name": "Purple Carnation",
+          "image": "/assets/sunflower-land/flowers/purple-carnation.png"
+        },
+        {
+          "name": "Purple Lotus",
+          "image": "/assets/sunflower-land/flowers/purple-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "FINLEY",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 4,
+          "total": 11
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Celestial Frostbloom",
+      "seed": "Bloom Seed",
+      "days": 2,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/celestial-frostbloom.png",
+      "ingredients": [
+        {
+          "name": "White Pansy",
+          "image": "/assets/sunflower-land/flowers/white-pansy.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "TYWIN",
+          "bonus": 6,
+          "total": 18
+        }
+      ],
+      "points": 12
+    },
+    {
+      "name": "Red Carnation",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/red-carnation.png",
+      "ingredients": [
+        {
+          "name": "Purple Pansy",
+          "image": "/assets/sunflower-land/flowers/purple-pansy.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BLACKSMITH",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "bumpkin": "JESTER",
+          "bonus": 6,
+          "total": 11
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "Yellow Carnation",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/yellow-carnation.png",
+      "ingredients": [
+        {
+          "name": "Sunflower",
+          "image": "/assets/sunflower-land/flowers/sunflower.png"
+        },
+        {
+          "name": "Yellow Cosmos",
+          "image": "/assets/sunflower-land/flowers/yellow-cosmos.png"
+        },
+        {
+          "name": "Red Lotus",
+          "image": "/assets/sunflower-land/flowers/red-lotus.png"
+        },
+        {
+          "name": "White Carnation",
+          "image": "/assets/sunflower-land/flowers/white-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 6,
+          "total": 11
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "Purple Carnation",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/purple-carnation.png",
+      "ingredients": [
+        {
+          "name": "Eggplant",
+          "image": "/assets/sunflower-land/flowers/eggplant.png"
+        },
+        {
+          "name": "Blueberry",
+          "image": "/assets/sunflower-land/flowers/blueberry.png"
+        },
+        {
+          "name": "Apple",
+          "image": "/assets/sunflower-land/flowers/apple.png"
+        },
+        {
+          "name": "Blue Cosmos",
+          "image": "/assets/sunflower-land/flowers/blue-cosmos.png"
+        },
+        {
+          "name": "Blue Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/blue-balloon-flower.png"
+        },
+        {
+          "name": "Purple Lotus",
+          "image": "/assets/sunflower-land/flowers/purple-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 6,
+          "total": 11
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "White Carnation",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/white-carnation.png",
+      "ingredients": [
+        {
+          "name": "Yellow Pansy",
+          "image": "/assets/sunflower-land/flowers/yellow-pansy.png"
+        },
+        {
+          "name": "White Cosmos",
+          "image": "/assets/sunflower-land/flowers/white-cosmos.png"
+        },
+        {
+          "name": "Prism Petal",
+          "image": "/assets/sunflower-land/flowers/prism-petal.png"
+        },
+        {
+          "name": "Yellow Daffodil",
+          "image": "/assets/sunflower-land/flowers/yellow-daffodil.png"
+        },
+        {
+          "name": "Celestial Frostbloom",
+          "image": "/assets/sunflower-land/flowers/celestial-frostbloom.png"
+        }
+      ],
+      "favorites": [],
+      "points": 5
+    },
+    {
+      "name": "Blue Carnation",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/blue-carnation.png",
+      "ingredients": [
+        {
+          "name": "Purple Daffodil",
+          "image": "/assets/sunflower-land/flowers/purple-daffodil.png"
+        },
+        {
+          "name": "White Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/white-balloon-flower.png"
+        },
+        {
+          "name": "Primula Enigma",
+          "image": "/assets/sunflower-land/flowers/primula-enigma.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 6,
+          "total": 11
+        }
+      ],
+      "points": 5
+    },
+    {
+      "name": "Red Lotus",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/red-lotus.png",
+      "ingredients": [
+        {
+          "name": "Beetroot",
+          "image": "/assets/sunflower-land/flowers/beetroot.png"
+        },
+        {
+          "name": "Radish",
+          "image": "/assets/sunflower-land/flowers/radish.png"
+        },
+        {
+          "name": "Purple Cosmos",
+          "image": "/assets/sunflower-land/flowers/purple-cosmos.png"
+        },
+        {
+          "name": "Red Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/red-balloon-flower.png"
+        },
+        {
+          "name": "Yellow Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/yellow-balloon-flower.png"
+        },
+        {
+          "name": "Purple Carnation",
+          "image": "/assets/sunflower-land/flowers/purple-carnation.png"
+        },
+        {
+          "name": "Yellow Carnation",
+          "image": "/assets/sunflower-land/flowers/yellow-carnation.png"
+        },
+        {
+          "name": "Red Carnation",
+          "image": "/assets/sunflower-land/flowers/red-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BERT",
+          "bonus": 6,
+          "total": 13
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Yellow Lotus",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/yellow-lotus.png",
+      "ingredients": [
+        {
+          "name": "Red Pansy",
+          "image": "/assets/sunflower-land/flowers/red-pansy.png"
+        },
+        {
+          "name": "Red Cosmos",
+          "image": "/assets/sunflower-land/flowers/red-cosmos.png"
+        },
+        {
+          "name": "Red Daffodil",
+          "image": "/assets/sunflower-land/flowers/red-daffodil.png"
+        },
+        {
+          "name": "Yellow Lotus",
+          "image": "/assets/sunflower-land/flowers/yellow-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BERT",
+          "bonus": 6,
+          "total": 13
+        },
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 5,
+          "total": 12
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Purple Lotus",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/purple-lotus.png",
+      "ingredients": [
+        {
+          "name": "Blue Carnation",
+          "image": "/assets/sunflower-land/flowers/blue-carnation.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BERT",
+          "bonus": 6,
+          "total": 13
+        },
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 5,
+          "total": 12
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "White Lotus",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/white-lotus.png",
+      "ingredients": [
+        {
+          "name": "Cauliflower",
+          "image": "/assets/sunflower-land/flowers/cauliflower.png"
+        },
+        {
+          "name": "Parsnip",
+          "image": "/assets/sunflower-land/flowers/parsnip.png"
+        },
+        {
+          "name": "Kale",
+          "image": "/assets/sunflower-land/flowers/kale.png"
+        },
+        {
+          "name": "Banana",
+          "image": "/assets/sunflower-land/flowers/banana.png"
+        },
+        {
+          "name": "White Pansy",
+          "image": "/assets/sunflower-land/flowers/white-pansy.png"
+        },
+        {
+          "name": "Blue Daffodil",
+          "image": "/assets/sunflower-land/flowers/blue-daffodil.png"
+        },
+        {
+          "name": "Blue Lotus",
+          "image": "/assets/sunflower-land/flowers/blue-lotus.png"
+        },
+        {
+          "name": "White Lotus",
+          "image": "/assets/sunflower-land/flowers/white-lotus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BERT",
+          "bonus": 6,
+          "total": 13
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Blue Lotus",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/blue-lotus.png",
+      "ingredients": [
+        {
+          "name": "Blue Pansy",
+          "image": "/assets/sunflower-land/flowers/blue-pansy.png"
+        },
+        {
+          "name": "White Daffodil",
+          "image": "/assets/sunflower-land/flowers/white-daffodil.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "BERT",
+          "bonus": 6,
+          "total": 13
+        },
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 5,
+          "total": 12
+        }
+      ],
+      "points": 7
+    },
+    {
+      "name": "Primula Enigma",
+      "seed": "Lily Seed",
+      "days": 5,
+      "season": "All seasons",
+      "image": "/assets/sunflower-land/flowers/primula-enigma.png",
+      "ingredients": [
+        {
+          "name": "Purple Balloon Flower",
+          "image": "/assets/sunflower-land/flowers/purple-balloon-flower.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "TYWIN",
+          "bonus": 7,
+          "total": 19
+        },
+        {
+          "bumpkin": "VICTORIA",
+          "bonus": 8,
+          "total": 20
+        }
+      ],
+      "points": 12
+    },
+    {
+      "name": "Red Edelweiss",
+      "seed": "Edelweiss Seed",
+      "days": 3,
+      "season": "Winter",
+      "image": "/assets/sunflower-land/flowers/red-edelweiss.png",
+      "ingredients": [
+        {
+          "name": "Artichoke",
+          "image": "/assets/sunflower-land/flowers/artichoke.png"
+        },
+        {
+          "name": "Barley",
+          "image": "/assets/sunflower-land/flowers/barley.png"
+        },
+        {
+          "name": "Yellow Edelweiss",
+          "image": "/assets/sunflower-land/flowers/yellow-edelweiss.png"
+        },
+        {
+          "name": "Yellow Lavender",
+          "image": "/assets/sunflower-land/flowers/yellow-lavender.png"
+        },
+        {
+          "name": "Purple Lavender",
+          "image": "/assets/sunflower-land/flowers/purple-lavender.png"
+        },
+        {
+          "name": "Red Clover",
+          "image": "/assets/sunflower-land/flowers/red-clover.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Yellow Edelweiss",
+      "seed": "Edelweiss Seed",
+      "days": 3,
+      "season": "Winter",
+      "image": "/assets/sunflower-land/flowers/yellow-edelweiss.png",
+      "ingredients": [
+        {
+          "name": "Onion",
+          "image": "/assets/sunflower-land/flowers/onion.png"
+        },
+        {
+          "name": "Red Edelweiss",
+          "image": "/assets/sunflower-land/flowers/red-edelweiss.png"
+        },
+        {
+          "name": "Yellow Gladiolus",
+          "image": "/assets/sunflower-land/flowers/yellow-gladiolus.png"
+        },
+        {
+          "name": "Red Lavender",
+          "image": "/assets/sunflower-land/flowers/red-lavender.png"
+        },
+        {
+          "name": "White Lavender",
+          "image": "/assets/sunflower-land/flowers/white-lavender.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "Purple Edelweiss",
+      "seed": "Edelweiss Seed",
+      "days": 3,
+      "season": "Winter",
+      "image": "/assets/sunflower-land/flowers/purple-edelweiss.png",
+      "ingredients": [
+        {
+          "name": "Rhubarb",
+          "image": "/assets/sunflower-land/flowers/rhubarb.png"
+        },
+        {
+          "name": "Pepper",
+          "image": "/assets/sunflower-land/flowers/pepper.png"
+        },
+        {
+          "name": "Red Gladiolus",
+          "image": "/assets/sunflower-land/flowers/red-gladiolus.png"
+        },
+        {
+          "name": "Purple Gladiolus",
+          "image": "/assets/sunflower-land/flowers/purple-gladiolus.png"
+        },
+        {
+          "name": "Blue Gladiolus",
+          "image": "/assets/sunflower-land/flowers/blue-gladiolus.png"
+        },
+        {
+          "name": "Blue Lavender",
+          "image": "/assets/sunflower-land/flowers/blue-lavender.png"
+        },
+        {
+          "name": "Blue Clover",
+          "image": "/assets/sunflower-land/flowers/blue-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "White Edelweiss",
+      "seed": "Edelweiss Seed",
+      "days": 3,
+      "season": "Winter",
+      "image": "/assets/sunflower-land/flowers/white-edelweiss.png",
+      "ingredients": [
+        {
+          "name": "Blue Edelweiss",
+          "image": "/assets/sunflower-land/flowers/blue-edelweiss.png"
+        },
+        {
+          "name": "Yellow Clover",
+          "image": "/assets/sunflower-land/flowers/yellow-clover.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Blue Edelweiss",
+      "seed": "Edelweiss Seed",
+      "days": 3,
+      "season": "Winter",
+      "image": "/assets/sunflower-land/flowers/blue-edelweiss.png",
+      "ingredients": [
+        {
+          "name": "Purple Edelweiss",
+          "image": "/assets/sunflower-land/flowers/purple-edelweiss.png"
+        },
+        {
+          "name": "White Edelweiss",
+          "image": "/assets/sunflower-land/flowers/white-edelweiss.png"
+        },
+        {
+          "name": "White Gladiolus",
+          "image": "/assets/sunflower-land/flowers/white-gladiolus.png"
+        },
+        {
+          "name": "Purple Clover",
+          "image": "/assets/sunflower-land/flowers/purple-clover.png"
+        },
+        {
+          "name": "White Clover",
+          "image": "/assets/sunflower-land/flowers/white-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 3,
+          "total": 7
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "Red Gladiolus",
+      "seed": "Gladiolus Seed",
+      "days": 3,
+      "season": "Summer",
+      "image": "/assets/sunflower-land/flowers/red-gladiolus.png",
+      "ingredients": [
+        {
+          "name": "Yellow Edelweiss",
+          "image": "/assets/sunflower-land/flowers/yellow-edelweiss.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Yellow Gladiolus",
+      "seed": "Gladiolus Seed",
+      "days": 3,
+      "season": "Summer",
+      "image": "/assets/sunflower-land/flowers/yellow-gladiolus.png",
+      "ingredients": [
+        {
+          "name": "Pepper",
+          "image": "/assets/sunflower-land/flowers/pepper.png"
+        },
+        {
+          "name": "Onion",
+          "image": "/assets/sunflower-land/flowers/onion.png"
+        },
+        {
+          "name": "Barley",
+          "image": "/assets/sunflower-land/flowers/barley.png"
+        },
+        {
+          "name": "Yellow Gladiolus",
+          "image": "/assets/sunflower-land/flowers/yellow-gladiolus.png"
+        },
+        {
+          "name": "White Gladiolus",
+          "image": "/assets/sunflower-land/flowers/white-gladiolus.png"
+        },
+        {
+          "name": "Red Lavender",
+          "image": "/assets/sunflower-land/flowers/red-lavender.png"
+        },
+        {
+          "name": "Yellow Lavender",
+          "image": "/assets/sunflower-land/flowers/yellow-lavender.png"
+        },
+        {
+          "name": "White Lavender",
+          "image": "/assets/sunflower-land/flowers/white-lavender.png"
+        },
+        {
+          "name": "Yellow Clover",
+          "image": "/assets/sunflower-land/flowers/yellow-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "Purple Gladiolus",
+      "seed": "Gladiolus Seed",
+      "days": 3,
+      "season": "Summer",
+      "image": "/assets/sunflower-land/flowers/purple-gladiolus.png",
+      "ingredients": [
+        {
+          "name": "Artichoke",
+          "image": "/assets/sunflower-land/flowers/artichoke.png"
+        },
+        {
+          "name": "Red Edelweiss",
+          "image": "/assets/sunflower-land/flowers/red-edelweiss.png"
+        },
+        {
+          "name": "Red Gladiolus",
+          "image": "/assets/sunflower-land/flowers/red-gladiolus.png"
+        },
+        {
+          "name": "Purple Gladiolus",
+          "image": "/assets/sunflower-land/flowers/purple-gladiolus.png"
+        },
+        {
+          "name": "Red Clover",
+          "image": "/assets/sunflower-land/flowers/red-clover.png"
+        },
+        {
+          "name": "Purple Clover",
+          "image": "/assets/sunflower-land/flowers/purple-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 3,
+          "total": 7
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "White Gladiolus",
+      "seed": "Gladiolus Seed",
+      "days": 3,
+      "season": "Summer",
+      "image": "/assets/sunflower-land/flowers/white-gladiolus.png",
+      "ingredients": [
+        {
+          "name": "White Edelweiss",
+          "image": "/assets/sunflower-land/flowers/white-edelweiss.png"
+        },
+        {
+          "name": "Blue Edelweiss",
+          "image": "/assets/sunflower-land/flowers/blue-edelweiss.png"
+        },
+        {
+          "name": "Blue Gladiolus",
+          "image": "/assets/sunflower-land/flowers/blue-gladiolus.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Blue Gladiolus",
+      "seed": "Gladiolus Seed",
+      "days": 3,
+      "season": "Summer",
+      "image": "/assets/sunflower-land/flowers/blue-gladiolus.png",
+      "ingredients": [
+        {
+          "name": "Rhubarb",
+          "image": "/assets/sunflower-land/flowers/rhubarb.png"
+        },
+        {
+          "name": "Purple Edelweiss",
+          "image": "/assets/sunflower-land/flowers/purple-edelweiss.png"
+        },
+        {
+          "name": "Purple Lavender",
+          "image": "/assets/sunflower-land/flowers/purple-lavender.png"
+        },
+        {
+          "name": "Blue Lavender",
+          "image": "/assets/sunflower-land/flowers/blue-lavender.png"
+        },
+        {
+          "name": "White Clover",
+          "image": "/assets/sunflower-land/flowers/white-clover.png"
+        },
+        {
+          "name": "Blue Clover",
+          "image": "/assets/sunflower-land/flowers/blue-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "Red Lavender",
+      "seed": "Lavender Seed",
+      "days": 3,
+      "season": "Spring",
+      "image": "/assets/sunflower-land/flowers/red-lavender.png",
+      "ingredients": [
+        {
+          "name": "Pepper",
+          "image": "/assets/sunflower-land/flowers/pepper.png"
+        },
+        {
+          "name": "Artichoke",
+          "image": "/assets/sunflower-land/flowers/artichoke.png"
+        },
+        {
+          "name": "Red Edelweiss",
+          "image": "/assets/sunflower-land/flowers/red-edelweiss.png"
+        },
+        {
+          "name": "Purple Edelweiss",
+          "image": "/assets/sunflower-land/flowers/purple-edelweiss.png"
+        },
+        {
+          "name": "Red Lavender",
+          "image": "/assets/sunflower-land/flowers/red-lavender.png"
+        },
+        {
+          "name": "Purple Lavender",
+          "image": "/assets/sunflower-land/flowers/purple-lavender.png"
+        },
+        {
+          "name": "Yellow Clover",
+          "image": "/assets/sunflower-land/flowers/yellow-clover.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Yellow Lavender",
+      "seed": "Lavender Seed",
+      "days": 3,
+      "season": "Spring",
+      "image": "/assets/sunflower-land/flowers/yellow-lavender.png",
+      "ingredients": [
+        {
+          "name": "Red Gladiolus",
+          "image": "/assets/sunflower-land/flowers/red-gladiolus.png"
+        },
+        {
+          "name": "Yellow Gladiolus",
+          "image": "/assets/sunflower-land/flowers/yellow-gladiolus.png"
+        },
+        {
+          "name": "White Gladiolus",
+          "image": "/assets/sunflower-land/flowers/white-gladiolus.png"
+        },
+        {
+          "name": "Yellow Lavender",
+          "image": "/assets/sunflower-land/flowers/yellow-lavender.png"
+        },
+        {
+          "name": "Red Clover",
+          "image": "/assets/sunflower-land/flowers/red-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "Purple Lavender",
+      "seed": "Lavender Seed",
+      "days": 3,
+      "season": "Spring",
+      "image": "/assets/sunflower-land/flowers/purple-lavender.png",
+      "ingredients": [
+        {
+          "name": "Blue Lavender",
+          "image": "/assets/sunflower-land/flowers/blue-lavender.png"
+        },
+        {
+          "name": "Purple Gladiolus",
+          "image": "/assets/sunflower-land/flowers/purple-gladiolus.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "White Lavender",
+      "seed": "Lavender Seed",
+      "days": 3,
+      "season": "Spring",
+      "image": "/assets/sunflower-land/flowers/white-lavender.png",
+      "ingredients": [
+        {
+          "name": "Rhubarb",
+          "image": "/assets/sunflower-land/flowers/rhubarb.png"
+        },
+        {
+          "name": "Onion",
+          "image": "/assets/sunflower-land/flowers/onion.png"
+        },
+        {
+          "name": "Barley",
+          "image": "/assets/sunflower-land/flowers/barley.png"
+        },
+        {
+          "name": "Yellow Edelweiss",
+          "image": "/assets/sunflower-land/flowers/yellow-edelweiss.png"
+        },
+        {
+          "name": "Blue Gladiolus",
+          "image": "/assets/sunflower-land/flowers/blue-gladiolus.png"
+        },
+        {
+          "name": "White Lavender",
+          "image": "/assets/sunflower-land/flowers/white-lavender.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Blue Lavender",
+      "seed": "Lavender Seed",
+      "days": 3,
+      "season": "Spring",
+      "image": "/assets/sunflower-land/flowers/blue-lavender.png",
+      "ingredients": [
+        {
+          "name": "White Edelweiss",
+          "image": "/assets/sunflower-land/flowers/white-edelweiss.png"
+        },
+        {
+          "name": "Blue Edelweiss",
+          "image": "/assets/sunflower-land/flowers/blue-edelweiss.png"
+        },
+        {
+          "name": "Purple Clover",
+          "image": "/assets/sunflower-land/flowers/purple-clover.png"
+        },
+        {
+          "name": "White Clover",
+          "image": "/assets/sunflower-land/flowers/white-clover.png"
+        },
+        {
+          "name": "Blue Clover",
+          "image": "/assets/sunflower-land/flowers/blue-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 3,
+          "total": 7
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "Red Clover",
+      "seed": "Clover Seed",
+      "days": 3,
+      "season": "Autumn",
+      "image": "/assets/sunflower-land/flowers/red-clover.png",
+      "ingredients": [
+        {
+          "name": "Red Edelweiss",
+          "image": "/assets/sunflower-land/flowers/red-edelweiss.png"
+        },
+        {
+          "name": "Purple Clover",
+          "image": "/assets/sunflower-land/flowers/purple-clover.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Yellow Clover",
+      "seed": "Clover Seed",
+      "days": 3,
+      "season": "Autumn",
+      "image": "/assets/sunflower-land/flowers/yellow-clover.png",
+      "ingredients": [
+        {
+          "name": "Pepper",
+          "image": "/assets/sunflower-land/flowers/pepper.png"
+        },
+        {
+          "name": "Onion",
+          "image": "/assets/sunflower-land/flowers/onion.png"
+        },
+        {
+          "name": "Barley",
+          "image": "/assets/sunflower-land/flowers/barley.png"
+        },
+        {
+          "name": "Yellow Edelweiss",
+          "image": "/assets/sunflower-land/flowers/yellow-edelweiss.png"
+        },
+        {
+          "name": "Red Gladiolus",
+          "image": "/assets/sunflower-land/flowers/red-gladiolus.png"
+        },
+        {
+          "name": "Yellow Lavender",
+          "image": "/assets/sunflower-land/flowers/yellow-lavender.png"
+        },
+        {
+          "name": "White Lavender",
+          "image": "/assets/sunflower-land/flowers/white-lavender.png"
+        },
+        {
+          "name": "Yellow Clover",
+          "image": "/assets/sunflower-land/flowers/yellow-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "MIRANDA",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "Purple Clover",
+      "seed": "Clover Seed",
+      "days": 3,
+      "season": "Autumn",
+      "image": "/assets/sunflower-land/flowers/purple-clover.png",
+      "ingredients": [
+        {
+          "name": "Red Lavender",
+          "image": "/assets/sunflower-land/flowers/red-lavender.png"
+        },
+        {
+          "name": "Red Clover",
+          "image": "/assets/sunflower-land/flowers/red-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "RAVEN",
+          "bonus": 3,
+          "total": 7
+        }
+      ],
+      "points": 4
+    },
+    {
+      "name": "White Clover",
+      "seed": "Clover Seed",
+      "days": 3,
+      "season": "Autumn",
+      "image": "/assets/sunflower-land/flowers/white-clover.png",
+      "ingredients": [
+        {
+          "name": "Blue Edelweiss",
+          "image": "/assets/sunflower-land/flowers/blue-edelweiss.png"
+        },
+        {
+          "name": "Yellow Gladiolus",
+          "image": "/assets/sunflower-land/flowers/yellow-gladiolus.png"
+        },
+        {
+          "name": "Blue Lavender",
+          "image": "/assets/sunflower-land/flowers/blue-lavender.png"
+        }
+      ],
+      "favorites": [],
+      "points": 4
+    },
+    {
+      "name": "Blue Clover",
+      "seed": "Clover Seed",
+      "days": 3,
+      "season": "Autumn",
+      "image": "/assets/sunflower-land/flowers/blue-clover.png",
+      "ingredients": [
+        {
+          "name": "Rhubarb",
+          "image": "/assets/sunflower-land/flowers/rhubarb.png"
+        },
+        {
+          "name": "Artichoke",
+          "image": "/assets/sunflower-land/flowers/artichoke.png"
+        },
+        {
+          "name": "Purple Edelweiss",
+          "image": "/assets/sunflower-land/flowers/purple-edelweiss.png"
+        },
+        {
+          "name": "White Edelweiss",
+          "image": "/assets/sunflower-land/flowers/white-edelweiss.png"
+        },
+        {
+          "name": "Purple Gladiolus",
+          "image": "/assets/sunflower-land/flowers/purple-gladiolus.png"
+        },
+        {
+          "name": "White Gladiolus",
+          "image": "/assets/sunflower-land/flowers/white-gladiolus.png"
+        },
+        {
+          "name": "Blue Gladiolus",
+          "image": "/assets/sunflower-land/flowers/blue-gladiolus.png"
+        },
+        {
+          "name": "Purple Lavender",
+          "image": "/assets/sunflower-land/flowers/purple-lavender.png"
+        },
+        {
+          "name": "White Clover",
+          "image": "/assets/sunflower-land/flowers/white-clover.png"
+        },
+        {
+          "name": "Blue Clover",
+          "image": "/assets/sunflower-land/flowers/blue-clover.png"
+        }
+      ],
+      "favorites": [
+        {
+          "bumpkin": "OLD SALTY",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "points": 4
+    }
+  ],
+  "gifts": [
+    {
+      "name": "BETTY",
+      "image": "/assets/sunflower-land/flowers/betty.png",
+      "favorites": [
+        {
+          "name": "Red Pansy",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "name": "Yellow Pansy",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "name": "Purple Pansy",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "name": "White Pansy",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "name": "Blue Pansy",
+          "bonus": 5,
+          "total": 8
+        }
+      ],
+      "rewards": [
+        [
+          "10",
+          "Coins: 120"
+        ],
+        [
+          "20",
+          "Coins: 960"
+        ],
+        [
+          "20",
+          "Recipe: Basic Bed"
+        ],
+        [
+          "40",
+          "Treasure Key: 1"
+        ],
+        [
+          "40",
+          "Recipe: Doll"
+        ],
+        [
+          "110",
+          "Radish Cake: 1"
+        ],
+        [
+          "110",
+          "Recipe: Buzz Doll"
+        ],
+        [
+          "Then every 100"
+        ],
+        [
+          "Treasure Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "PUMPKIN' PETE",
+      "image": "/assets/sunflower-land/flowers/pumpkin'-pete.png",
+      "favorites": [
+        {
+          "name": "Yellow Cosmos",
+          "bonus": 6,
+          "total": 9
+        }
+      ],
+      "rewards": [
+        [
+          "5",
+          "Coins: 160"
+        ],
+        [
+          "12",
+          "Treasure Key: 1"
+        ],
+        [
+          "50",
+          "Pumpkin Hat: 1"
+        ],
+        [
+          "100",
+          "Coins: 640"
+        ],
+        [
+          "Then every 100"
+        ],
+        [
+          "Coins: 640,Treasure Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "BLACKSMITH",
+      "image": "/assets/sunflower-land/flowers/blacksmith.png",
+      "favorites": [
+        {
+          "name": "Red Carnation",
+          "bonus": 5,
+          "total": 10
+        }
+      ],
+      "rewards": [
+        [
+          "50",
+          "Treasure Key: 1"
+        ],
+        [
+          "50",
+          "Recipe: Timber"
+        ],
+        [
+          "110",
+          "Coins: 760"
+        ],
+        [
+          "110",
+          "Recipe: Cushion"
+        ],
+        [
+          "200",
+          "Coins: 1600"
+        ],
+        [
+          "200",
+          "Recipe: Hardened Leather"
+        ],
+        [
+          "320",
+          "Pickaxe: 10"
+        ],
+        [
+          "320",
+          "Recipe: Crimsteel"
+        ],
+        [
+          "Then every 150"
+        ],
+        [
+          "Coins: 960,Treasure Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "BERT",
+      "image": "/assets/sunflower-land/flowers/bert.png",
+      "favorites": [
+        {
+          "name": "Red Lotus",
+          "bonus": 6,
+          "total": 13
+        },
+        {
+          "name": "Yellow Lotus",
+          "bonus": 6,
+          "total": 13
+        },
+        {
+          "name": "Purple Lotus",
+          "bonus": 6,
+          "total": 13
+        },
+        {
+          "name": "White Lotus",
+          "bonus": 6,
+          "total": 13
+        },
+        {
+          "name": "Blue Lotus",
+          "bonus": 6,
+          "total": 13
+        }
+      ],
+      "rewards": [
+        [
+          "60",
+          "Tattered Jacket: 1"
+        ],
+        [
+          "60",
+          "Recipe: Wooly Doll"
+        ],
+        [
+          "100",
+          "Gem: 20"
+        ],
+        [
+          "100",
+          "Recipe: Cluck Doll"
+        ],
+        [
+          "210",
+          "Pirate Cake: 3"
+        ],
+        [
+          "210",
+          "Recipe: Cow Bed"
+        ],
+        [
+          "330",
+          "Greyed Glory: 1"
+        ],
+        [
+          "330",
+          "Recipe: Moo Doll"
+        ],
+        [
+          "Then every 150"
+        ],
+        [
+          "Rare Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "FINLEY",
+      "image": "/assets/sunflower-land/flowers/finley.png",
+      "favorites": [
+        {
+          "name": "Red Daffodil",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "name": "Yellow Daffodil",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "name": "Purple Daffodil",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "name": "White Daffodil",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "name": "Blue Daffodil",
+          "bonus": 5,
+          "total": 12
+        }
+      ],
+      "rewards": [
+        [
+          "25",
+          "Fishing Lure: 3"
+        ],
+        [
+          "25",
+          "Recipe: Fisher Bed"
+        ],
+        [
+          "95",
+          "Coins: 3200"
+        ],
+        [
+          "150",
+          "Tuna: 5"
+        ],
+        [
+          "Then every 100"
+        ],
+        [
+          "Fishing Lure: 5"
+        ]
+      ]
+    },
+    {
+      "name": "RAVEN",
+      "image": "/assets/sunflower-land/flowers/raven.png",
+      "favorites": [
+        {
+          "name": "Purple Carnation",
+          "bonus": 6,
+          "total": 11
+        },
+        {
+          "name": "Purple Lotus",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "name": "Purple Daffodil",
+          "bonus": 4,
+          "total": 11
+        },
+        {
+          "name": "Purple Pansy",
+          "bonus": 4,
+          "total": 7
+        },
+        {
+          "name": "Purple Cosmos",
+          "bonus": 4,
+          "total": 7
+        },
+        {
+          "name": "Purple Balloon Flower",
+          "bonus": 4,
+          "total": 9
+        },
+        {
+          "name": "Purple Gladiolus",
+          "bonus": 3,
+          "total": 7
+        },
+        {
+          "name": "Purple Lavender",
+          "bonus": 4,
+          "total": 8
+        },
+        {
+          "name": "Purple Clover",
+          "bonus": 3,
+          "total": 7
+        },
+        {
+          "name": "Purple Edelweiss",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "rewards": [
+        [
+          "50",
+          "Time Warp Totem: 1"
+        ],
+        [
+          "140",
+          "Coins: 2560"
+        ],
+        [
+          "140",
+          "Recipe: Lunar Doll"
+        ],
+        [
+          "220",
+          "Victorian Hat: 1"
+        ],
+        [
+          "330",
+          "Coins: 1600"
+        ],
+        [
+          "330",
+          "Eggplant Seed: 50"
+        ],
+        [
+          "330",
+          "Recipe: Shadow Doll"
+        ],
+        [
+          "700",
+          "Bat Wings: 1"
+        ],
+        [
+          "Then every 160"
+        ],
+        [
+          "Rare Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "OLD SALTY",
+      "image": "/assets/sunflower-land/flowers/old-salty.png",
+      "favorites": [
+        {
+          "name": "Blue Carnation",
+          "bonus": 6,
+          "total": 11
+        },
+        {
+          "name": "Blue Lotus",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "name": "Blue Daffodil",
+          "bonus": 4,
+          "total": 11
+        },
+        {
+          "name": "Blue Pansy",
+          "bonus": 4,
+          "total": 7
+        },
+        {
+          "name": "Blue Balloon Flower",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "name": "Blue Cosmos",
+          "bonus": 4,
+          "total": 7
+        },
+        {
+          "name": "Blue Gladiolus",
+          "bonus": 4,
+          "total": 8
+        },
+        {
+          "name": "Blue Lavender",
+          "bonus": 3,
+          "total": 7
+        },
+        {
+          "name": "Blue Clover",
+          "bonus": 4,
+          "total": 8
+        },
+        {
+          "name": "Blue Edelweiss",
+          "bonus": 3,
+          "total": 7
+        }
+      ],
+      "rewards": [
+        [
+          "30",
+          "Coins: 80"
+        ],
+        [
+          "30",
+          "Striped Blue Shirt: 1"
+        ],
+        [
+          "90",
+          "Coins: 260"
+        ],
+        [
+          "90",
+          "Peg Leg: 1"
+        ],
+        [
+          "90",
+          "Recipe: Gilded Doll"
+        ],
+        [
+          "500",
+          "Pirate Potion: 1"
+        ],
+        [
+          "500",
+          "Recipe: Pirate Bed"
+        ],
+        [
+          "850",
+          "Pirate Bounty: 1"
+        ],
+        [
+          "850",
+          "Pirate Hat: 1"
+        ],
+        [
+          "850",
+          "Recipe: Ocean's Treasure"
+        ],
+        [
+          "Then every 250"
+        ],
+        [
+          "Coins: 2500"
+        ]
+      ]
+    },
+    {
+      "name": "MIRANDA",
+      "image": "/assets/sunflower-land/flowers/miranda.png",
+      "favorites": [
+        {
+          "name": "Yellow Carnation",
+          "bonus": 6,
+          "total": 11
+        },
+        {
+          "name": "Yellow Lotus",
+          "bonus": 5,
+          "total": 12
+        },
+        {
+          "name": "Yellow Daffodil",
+          "bonus": 4,
+          "total": 11
+        },
+        {
+          "name": "Yellow Pansy",
+          "bonus": 4,
+          "total": 7
+        },
+        {
+          "name": "Yellow Balloon Flower",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "name": "Yellow Cosmos",
+          "bonus": 4,
+          "total": 7
+        },
+        {
+          "name": "Yellow Gladiolus",
+          "bonus": 4,
+          "total": 8
+        },
+        {
+          "name": "Yellow Lavender",
+          "bonus": 4,
+          "total": 8
+        },
+        {
+          "name": "Yellow Clover",
+          "bonus": 4,
+          "total": 8
+        },
+        {
+          "name": "Yellow Edelweiss",
+          "bonus": 4,
+          "total": 8
+        }
+      ],
+      "rewards": [
+        [
+          "30",
+          "Time Warp Totem: 1"
+        ],
+        [
+          "30",
+          "Recipe: Floral Bed"
+        ],
+        [
+          "90",
+          "Coins: 960"
+        ],
+        [
+          "90",
+          "Fruit Picker Shirt: 1"
+        ],
+        [
+          "260",
+          "Fruit Picker Apron: 1"
+        ],
+        [
+          "260",
+          "Recipe: Desert Bed"
+        ],
+        [
+          "500",
+          "Coins: 6400"
+        ],
+        [
+          "500",
+          "Fruit Bowl: 1"
+        ],
+        [
+          "500",
+          "Recipe: Juicy Doll"
+        ],
+        [
+          "Then every 100"
+        ],
+        [
+          "Blueberry Seed: 5, Apple Seed: 5, Banana Plant: 5, Orange Seed: 5"
+        ]
+      ]
+    },
+    {
+      "name": "FINN",
+      "image": "/assets/sunflower-land/flowers/finn.png",
+      "favorites": [
+        {
+          "name": "White Cosmos",
+          "bonus": 5,
+          "total": 8
+        },
+        {
+          "name": "Blue Cosmos",
+          "bonus": 5,
+          "total": 8
+        }
+      ],
+      "rewards": [
+        [
+          "40",
+          "Rod: 10"
+        ],
+        [
+          "150",
+          "Coins: 960"
+        ],
+        [
+          "Then every 130"
+        ],
+        [
+          "Rare Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "CORALE",
+      "image": "/assets/sunflower-land/flowers/corale.png",
+      "favorites": [
+        {
+          "name": "Prism Petal",
+          "bonus": 6,
+          "total": 18
+        }
+      ],
+      "rewards": [
+        [
+          "45",
+          "Coins: 960"
+        ],
+        [
+          "150",
+          "Gem: 40"
+        ],
+        [
+          "150",
+          "Recipe: Synthetic Fabric"
+        ],
+        [
+          "320",
+          "Pink Ponytail: 1"
+        ],
+        [
+          "320",
+          "Recipe: Kelp Fibre"
+        ],
+        [
+          "Then every 200"
+        ],
+        [
+          "Coins: 3200"
+        ]
+      ]
+    },
+    {
+      "name": "CORNWELL",
+      "image": "/assets/sunflower-land/flowers/cornwell.png",
+      "favorites": [
+        {
+          "name": "Red Balloon Flower",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "name": "Yellow Balloon Flower",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "name": "Purple Balloon Flower",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "name": "White Balloon Flower",
+          "bonus": 5,
+          "total": 10
+        },
+        {
+          "name": "Blue Balloon Flower",
+          "bonus": 5,
+          "total": 10
+        }
+      ],
+      "rewards": [
+        [
+          "65",
+          "Rare Key: 1"
+        ],
+        [
+          "65",
+          "Recipe: Sturdy Bed"
+        ],
+        [
+          "175",
+          "Gem: 20"
+        ],
+        [
+          "340",
+          "Wise Robes: 1"
+        ],
+        [
+          "340",
+          "Recipe: Harvest Doll"
+        ],
+        [
+          "600",
+          "Wise Beard: 1"
+        ],
+        [
+          "600",
+          "Recipe: Ember Doll"
+        ],
+        [
+          "Then every 200"
+        ],
+        [
+          "Luxury Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "TYWIN",
+      "image": "/assets/sunflower-land/flowers/tywin.png",
+      "favorites": [
+        {
+          "name": "Primula Enigma",
+          "bonus": 7,
+          "total": 19
+        },
+        {
+          "name": "Celestial Frostbloom",
+          "bonus": 6,
+          "total": 18
+        }
+      ],
+      "rewards": [
+        [
+          "35",
+          "Rare Key: 1"
+        ],
+        [
+          "175",
+          "Coins: 3200"
+        ],
+        [
+          "330",
+          "Pirate Cake: 5"
+        ],
+        [
+          "Then every 160"
+        ],
+        [
+          "Luxury Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "VICTORIA",
+      "image": "/assets/sunflower-land/flowers/victoria.png",
+      "favorites": [
+        {
+          "name": "Primula Enigma",
+          "bonus": 8,
+          "total": 20
+        }
+      ],
+      "rewards": [
+        [
+          "50",
+          "Coins: 2560"
+        ],
+        [
+          "140",
+          "Time Warp Totem: 1"
+        ],
+        [
+          "140",
+          "Recipe: Royal Bed"
+        ],
+        [
+          "340",
+          "Royal Dress: 1"
+        ],
+        [
+          "520",
+          "Coins: 16000"
+        ],
+        [
+          "850",
+          "Queen's Crown: 1"
+        ],
+        [
+          "Then every 160"
+        ],
+        [
+          "Rare Key: 1"
+        ]
+      ]
+    },
+    {
+      "name": "JESTER",
+      "image": "/assets/sunflower-land/flowers/jester.png",
+      "favorites": [
+        {
+          "name": "Red Balloon Flower",
+          "bonus": 6,
+          "total": 11
+        },
+        {
+          "name": "Red Carnation",
+          "bonus": 6,
+          "total": 11
+        }
+      ],
+      "rewards": [
+        [
+          "50",
+          "Time Warp Totem: 1"
+        ],
+        [
+          "50",
+          "Recipe: Royal Bedding"
+        ],
+        [
+          "140",
+          "Rare Key: 1"
+        ],
+        [
+          "140",
+          "Recipe: Royal Ornament"
+        ],
+        [
+          "340",
+          "Cap n Bells: 1"
+        ],
+        [
+          "520",
+          "Coins: 16000"
+        ],
+        [
+          "740",
+          "Motley: 1"
+        ],
+        [
+          "Then every 90"
+        ],
+        [
+          "Treasure Key: 1"
+        ]
+      ]
+    }
+  ]
+}

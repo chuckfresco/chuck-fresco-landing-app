@@ -1,15 +1,12 @@
+import SunflowerPageHeader from "../../components/SunflowerPageHeader";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import { getSunflowerSeasonClock } from "../../utils/sunflowerSeason";
 
 const asset = name => encodeURI(`/assets/sunflower-land/fishing/${name}`);
 const seasonAssetPath = "/assets/sunflower-land/seasons";
-const sunflowerLogo = "/assets/sunflower-land/logo/logo_v2.png";
-const lightningIcon = "/assets/sunflower-land/icons/lightning.png";
-const referralUrl = "https://sunflower-land.com/play/?ref=ChuckFresco";
 
 const images = {
   "Fish Flake": asset("imgi_76_Fish Flake.png"), "Fish Stick": asset("imgi_99_Fish Stick.png"),
@@ -102,10 +99,10 @@ const useStyles = makeStyles(theme => ({
   heroSubtitle: { color: "#fff8d6", maxWidth: 700, font: "900 18px/1.35 'Courier New',monospace", margin: "12px 0 0" },
   logoPanel: { flex: "0 0 auto", background: "#e8ad76", border: "5px solid #101018", borderRadius: 14, boxShadow: "inset 0 0 0 4px #f8d29b,8px 8px 0 rgba(0,0,0,.24)", padding: "18px 22px", transform: "rotate(1.5deg)", [theme.breakpoints.down("sm")]: { transform: "none" } },
   logo: { width: 280, maxWidth: "62vw", display: "block", imageRendering: "pixelated" },
-  referral: { width: "calc(100% + 24px)", margin: "-5px -12px 0", padding: "7px 16px 9px", backgroundColor: "#b95791", borderTop: "4px solid #1d1730", borderRight: "5px solid #4c2b67", borderBottom: "5px solid #4c2b67", borderLeft: "4px solid #fb6f8c", boxShadow: "inset 0 4px 0 #f78ab2,inset 0 -4px 0 #f16383", position: "relative", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 10, flexWrap: "wrap", [theme.breakpoints.down("xs")]: { justifyContent: "flex-start", padding: "7px 12px 9px", gap: 8 } },
+  referral: { width: "calc(100% + 24px)", margin: "-5px -12px 0", padding: "3px 16px 5px", backgroundColor: "#b95791", borderTop: "3px solid #1d1730", borderRight: "4px solid #4c2b67", borderBottom: "4px solid #4c2b67", borderLeft: "3px solid #fb6f8c", boxShadow: "inset 0 2px 0 #f78ab2,inset 0 -2px 0 #f16383", position: "relative", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 10, flexWrap: "wrap", [theme.breakpoints.down("xs")]: { justifyContent: "flex-start", padding: "3px 12px 5px", gap: 8 } },
   referralIcon: { width: 16, height: 22, imageRendering: "pixelated", flex: "0 0 auto" },
   referralText: { color: "#fff4ff", fontFamily: "SmallestPixel7,monospace", fontSize: 18, fontWeight: 900, lineHeight: 1, textAlign: "center", textShadow: "2px 2px 0 rgba(43,28,64,.65)", [theme.breakpoints.down("xs")]: { flex: "1 1 190px", fontSize: 15, textAlign: "left" } },
-  referralLink: { display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 7, minHeight: 28, padding: "4px 12px", color: "#2d2739", backgroundColor: "#d8def2", border: "3px solid #12162a", boxShadow: "4px 4px 0 #f5f3ef,0 5px 0 #12162a", fontFamily: "SmallestPixel7,monospace", fontSize: 22, lineHeight: 1, textDecoration: "none", whiteSpace: "nowrap", transition: "transform 120ms ease,box-shadow 120ms ease", "&:hover": { color: "#2d2739", textDecoration: "none", transform: "translate(2px,2px)", boxShadow: "2px 2px 0 #f5f3ef,0 3px 0 #12162a" }, [theme.breakpoints.down("xs")]: { minHeight: 26, padding: "4px 8px", fontSize: 18 } },
+  referralLink: { display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 7, minHeight: 25, padding: "2px 10px", color: "#2d2739", backgroundColor: "#d8def2", border: "3px solid #12162a", boxShadow: "4px 4px 0 #f5f3ef,0 5px 0 #12162a", fontFamily: "SmallestPixel7,monospace", fontSize: 22, lineHeight: 1, textDecoration: "none", whiteSpace: "nowrap", transition: "transform 120ms ease,box-shadow 120ms ease", "&:hover": { color: "#2d2739", textDecoration: "none", transform: "translate(2px,2px)", boxShadow: "2px 2px 0 #f5f3ef,0 3px 0 #12162a" }, [theme.breakpoints.down("xs")]: { minHeight: 24, padding: "2px 8px", fontSize: 18 } },
   referralLinkIcon: { width: 17, height: 17, flex: "0 0 auto", strokeWidth: 3 },
   nav: { width: "calc(100% + 24px)", margin: "0 -12px 18px", padding: "8px 12px", borderBottom: "4px solid #101018", display: "flex", justifyContent: "center", gap: 8, flexWrap: "wrap" },
   navLink: { minHeight: 32, display: "inline-flex", alignItems: "center", color: "#fff8d6", background: "#1f5da8", border: "3px solid #101018", borderRadius: 8, font: "900 18px/1 SmallestPixel7,'Courier New',monospace", padding: "4px 12px", textDecoration: "none", "&:hover": { color: "#fff8d6", textDecoration: "none", filter: "brightness(1.08)" } },
@@ -365,16 +362,7 @@ const SunflowerLandFishMarket = () => {
         ]
       })}</script>
     </Helmet>
-    <header className={classes.hero}><div className={classes.heroInner}><div><h1 className={classes.heroTitle}>Sunflower Land Fish Market</h1><p className={classes.heroSubtitle}>Plan every seasonal recipe, then choose a market bait to see exactly which fish it guarantees.</p></div><div className={classes.logoPanel}><img src={sunflowerLogo} alt="Sunflower Land" className={classes.logo} /></div></div></header>
-    <div className={classes.referral}>
-      <img src={lightningIcon} alt="" className={classes.referralIcon} />
-      <span className={classes.referralText}>If you'd like to support me, use my referral code:</span>
-      <a className={classes.referralLink} href={referralUrl} target="_blank" rel="noopener noreferrer" aria-label="Use referral code ChuckFresco">
-        ChuckFresco
-        <OpenInNewIcon className={classes.referralLinkIcon} aria-hidden="true" />
-      </a>
-    </div>
-    <nav className={classes.nav} aria-label="Sunflower Land pages"><Link className={classes.navLink} to="/sfl/helpers">Leaderboard</Link><Link className={classes.navLink} to="/sfl/fishing">Fishing</Link><Link className={`${classes.navLink} ${classes.activeNav}`} to="/sfl/fish-market">Fish Market</Link><Link className={classes.navLink} to="/sfl/crops">Crops</Link></nav>
+    <SunflowerPageHeader title="Sunflower Land Fish Market" description="Plan every seasonal recipe, then choose a market bait to see exactly which fish it guarantees." active="fish-market" />
     <main className={classes.shell}>
       <section className={classes.panel}><div className={classes.panelHeader}><h2 className={classes.title}>Fish Market recipes by season</h2><p className={classes.intro}>Select a season to compare the four craft recipes. Select a recipe card to inspect its guaranteed catches.</p></div><div className={classes.body}>
         <nav className={classes.tabs} aria-label="Fish Market season">{seasons.map(s => <button type="button" key={s.id} className={`${classes.tab} ${activeSeason === s.id ? classes.activeTab : ""}`} style={activeSeason === s.id ? { background: s.color, boxShadow: `inset 0 0 0 3px ${s.shadow}` } : undefined} onClick={() => setActiveSeason(s.id)} aria-pressed={activeSeason === s.id}><img src={s.icon} alt="" className={classes.seasonIcon} />{s.label}</button>)}</nav>
